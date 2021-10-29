@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes '(sanityinc-tomorrow-bright))
  '(package-selected-packages
-   '(disable-mouse default-text-scale keyfreq dimmer color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized meow seq use-package)))
+   '(anzu diff-hl diredfl disable-mouse default-text-scale keyfreq dimmer color-theme-sanityinc-tomorrow color-theme-sanityinc-solarized meow seq use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

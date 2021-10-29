@@ -26,3 +26,5 @@
 (require 'init-keyfreq)
 (require 'init-osx-keys)
 (require 'init-gui-frames)
+(require 'init-dired)
+(require 'init-isearch)
