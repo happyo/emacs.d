@@ -30,3 +30,4 @@
 (require 'init-isearch)
 (require 'init-grep)
 (require 'init-ibuffer)
+(require 'init-minibuffer)
