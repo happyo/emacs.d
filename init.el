@@ -28,3 +28,5 @@
 (require 'init-gui-frames)
 (require 'init-dired)
 (require 'init-isearch)
+(require 'init-grep)
+(require 'init-ibuffer)
