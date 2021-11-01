@@ -34,3 +34,4 @@
 (require 'init-projectile)
 (require 'init-folding)
 (require 'init-dash)
+(require 'init-lisp)
