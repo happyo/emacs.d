@@ -31,3 +31,6 @@
 (require 'init-grep)
 (require 'init-ibuffer)
 (require 'init-minibuffer)
+(require 'init-projectile)
+;; (require 'init-folding)
+;; (require 'init-dash)
