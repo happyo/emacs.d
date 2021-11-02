@@ -35,5 +35,7 @@
 (require 'init-ibuffer)
 (require 'init-minibuffer)
 (require 'init-hippie-expand)
-(require 'init-company)
+;; (require 'init-company)
 (require 'init-windows)
+(require 'init-mmm)
+
