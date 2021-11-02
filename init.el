@@ -12,6 +12,8 @@
 
 ;; Bootstrap config
 
+(desktop-save-mode 1)
+
 (setq custom-file (locate-user-emacs-file "custom.el"))
 ;; (require 'init-utils)
 ;; (require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
@@ -19,6 +21,7 @@
 (require 'init-elpa)      ;; Machinery for installing required packages
 ;; (require 'init-exec-path) ;; Set up $PATH
 (require 'init-meow)
+(require 'init-smex)
 
 (require 'init-frame-hooks)
 (require 'init-xterm)
@@ -31,3 +34,6 @@
 (require 'init-grep)
 (require 'init-ibuffer)
 (require 'init-minibuffer)
+(require 'init-hippie-expand)
+(require 'init-company)
+(require 'init-windows)

@@ -80,7 +80,7 @@
    '("s" . meow-kill)
    '("t" . meow-till)
    '("T" . meow-till-expand)
-   '("u" . undo-fu-only-undo)
+   '("u" . undo)
    '("U" . meow-page-up)
    '("v" . meow-expand)
    '("V" . meow-kmacro-matches)
@@ -108,6 +108,7 @@
                                         (meow-replace . meow-replace-char)
                                         (meow-cancel . meow-minibuffer-quit)
                                         (meow-kill . meow-C-d)
+                                        (meow-quit . meow-minibuffer-quit)
                                          ))
 
 (use-package meow
