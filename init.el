@@ -38,4 +38,7 @@
 ;; (require 'init-company)
 (require 'init-windows)
 (require 'init-mmm)
-
+(require 'init-projectile)
+(require 'init-folding)
+(require 'init-dash)
+(require 'init-lisp)
