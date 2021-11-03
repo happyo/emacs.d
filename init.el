@@ -19,7 +19,7 @@
 ;; (require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
 ;; Calls (package-initialize)
 (require 'init-elpa)      ;; Machinery for installing required packages
-;; (require 'init-exec-path) ;; Set up $PATH
+(require 'init-exec-path) ;; Set up $PATH
 (require 'init-meow)
 (require 'init-smex)
 
@@ -41,4 +41,11 @@
 (require 'init-projectile)
 (require 'init-folding)
 (require 'init-dash)
+
+(require 'init-lsp)
 (require 'init-lisp)
+(require 'init-haskell)
+
+
+(when (file-exists-p custom-file)
+  (load custom-file))

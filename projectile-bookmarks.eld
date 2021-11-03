@@ -1,1 +1,1 @@
-("~/.emacs.d/")
+("~/development/mProjects/EvilEye/" "~/.emacs.d/")
