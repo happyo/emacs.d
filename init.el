@@ -41,6 +41,7 @@
 (require 'init-windows)
 (require 'init-mmm)
 
+(require 'init-treemacs)
 (require 'init-projectile)
 (require 'init-folding)
 (require 'init-dash)
