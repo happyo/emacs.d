@@ -33,11 +33,14 @@
 (require 'init-isearch)
 (require 'init-grep)
 (require 'init-ibuffer)
+(require 'init-flycheck)
+
 (require 'init-minibuffer)
 (require 'init-hippie-expand)
-;; (require 'init-company)
+(require 'init-company)
 (require 'init-windows)
 (require 'init-mmm)
+
 (require 'init-projectile)
 (require 'init-folding)
 (require 'init-dash)
@@ -45,6 +48,7 @@
 (require 'init-lsp)
 (require 'init-lisp)
 (require 'init-haskell)
+(require 'init-scheme)
 
 
 (when (file-exists-p custom-file)
