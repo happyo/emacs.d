@@ -21,7 +21,7 @@
 (require 'init-elpa)      ;; Machinery for installing required packages
 (require 'init-exec-path) ;; Set up $PATH
 (require 'init-meow)
-(require 'init-smex)
+;; (require 'init-smex)
 
 (require 'init-frame-hooks)
 (require 'init-xterm)
@@ -49,6 +49,7 @@
 (require 'init-lisp)
 (require 'init-haskell)
 (require 'init-scheme)
+(require 'init-dart)
 
 
 (when (file-exists-p custom-file)
