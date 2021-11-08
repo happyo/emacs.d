@@ -123,5 +123,9 @@
   ;; If you need setup indicator, see `meow-indicator' for customizing by hand.
   (meow-setup-indicator))
 
+(global-set-key (kbd "M-c") 'meow-clipboard-save)
+(global-set-key (kbd "M-v") 'meow-clipboard-yank)
+
+
 (provide 'init-meow)
 ;;; init-meow.el ends here

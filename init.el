@@ -20,7 +20,9 @@
 ;; Calls (package-initialize)
 (require 'init-elpa)      ;; Machinery for installing required packages
 (require 'init-exec-path) ;; Set up $PATH
+
 (require 'init-meow)
+(require 'init-editing-utils)
 ;; (require 'init-smex)
 
 (require 'init-frame-hooks)
@@ -51,6 +53,7 @@
 (require 'init-haskell)
 (require 'init-scheme)
 (require 'init-dart)
+
 
 
 (when (file-exists-p custom-file)
