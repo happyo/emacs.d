@@ -255,14 +255,14 @@ there is no current file, eval the current buffer."
 
 
 ;; Extras for theme editing
-(when (maybe-require-package 'rainbow-mode)
-  (defun sanityinc/enable-rainbow-mode-if-theme ()
-    (when (and (buffer-file-name) (string-match-p "\\(color-theme-\\|-theme\\.el\\)" (buffer-file-name)))
-      (rainbow-mode)))
-  (add-hook 'emacs-lisp-mode-hook 'sanityinc/enable-rainbow-mode-if-theme)
-  (add-hook 'help-mode-hook 'rainbow-mode)
-  (with-eval-after-load 'rainbow-mode
-    (diminish 'rainbow-mode)))
+;; (when (maybe-require-package 'rainbow-mode)
+;;   (defun sanityinc/enable-rainbow-mode-if-theme ()
+;;     (when (and (buffer-file-name) (string-match-p "\\(color-theme-\\|-theme\\.el\\)" (buffer-file-name)))
+;;       (rainbow-mode)))
+;;   (add-hook 'emacs-lisp-mode-hook 'sanityinc/enable-rainbow-mode-if-theme)
+;;   (add-hook 'help-mode-hook 'rainbow-mode)
+;;   (with-eval-after-load 'rainbow-mode
+;;     (diminish 'rainbow-mode)))
 
 
 
