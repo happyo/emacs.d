@@ -152,21 +152,20 @@
 (add-hook 'after-init-hook 'show-paren-mode)
 
 
-;; 
-;; ;;; Handy key bindings
+;; Handy key bindings
 
-;; (global-set-key (kbd "C-.") 'set-mark-command)
-;; (global-set-key (kbd "C-x C-.") 'pop-global-mark)
+(global-set-key (kbd "C-.") 'set-mark-command)
+(global-set-key (kbd "C-x C-.") 'pop-global-mark)
 
-;; (when (maybe-require-package 'avy)
-;;   (global-set-key (kbd "C-;") 'avy-goto-char-timer))
+(when (maybe-require-package 'avy)
+  (global-set-key (kbd "C-;") 'avy-goto-char-timer))
 
-;; ;; (require-package 'multiple-cursors)
-;; ;; ;; multiple-cursors
-;; ;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
-;; ;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
-;; ;; (global-set-key (kbd "C-+") 'mc/mark-next-like-this)
-;; ;; (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
+;; (require-package 'multiple-cursors)
+;; ;; multiple-cursors
+;; (global-set-key (kbd "C-<") 'mc/mark-previous-like-this)
+;; (global-set-key (kbd "C->") 'mc/mark-next-like-this)
+;; (global-set-key (kbd "C-+") 'mc/mark-next-like-this)
+;; (global-set-key (kbd "C-c C-<") 'mc/mark-all-like-this)
 
 ;; ;; Train myself to use M-f and M-b instead
 ;; (global-unset-key [M-left])
@@ -182,8 +181,7 @@
 ;; (global-set-key (kbd "C-M-<backspace>") 'kill-back-to-indentation)
 
 
-;; 
-;; ;;; Page break lines
+;; Page break lines
 
 ;; (when (maybe-require-package 'page-break-lines)
 ;;   (add-hook 'after-init-hook 'global-page-break-lines-mode)
@@ -196,14 +194,14 @@
 ;; ;; it will use those keybindings. For this reason, you might prefer to
 ;; ;; use M-S-up and M-S-down, which will work even in lisp modes.
 
-;; (require-package 'move-dup)
-;; (global-set-key [M-up] 'move-dup-move-lines-up)
-;; (global-set-key [M-down] 'move-dup-move-lines-down)
-;; (global-set-key [M-S-up] 'move-dup-move-lines-up)
-;; (global-set-key [M-S-down] 'move-dup-move-lines-down)
+(require-package 'move-dup)
+(global-set-key [M-up] 'move-dup-move-lines-up)
+(global-set-key [M-down] 'move-dup-move-lines-down)
+(global-set-key [M-S-up] 'move-dup-move-lines-up)
+(global-set-key [M-S-down] 'move-dup-move-lines-down)
 
-;; (global-set-key (kbd "C-c d") 'move-dup-duplicate-down)
-;; (global-set-key (kbd "C-c u") 'move-dup-duplicate-up)
+(global-set-key (kbd "C-c d") 'move-dup-duplicate-down)
+(global-set-key (kbd "C-c u") 'move-dup-duplicate-up)
 
 ;; 
 ;; ;;; Fix backward-up-list to understand quotes, see http://bit.ly/h7mdIL
@@ -277,7 +275,6 @@
 ;;         (sort-subr nil 'forward-line 'end-of-line nil nil
 ;;                    (lambda (s1 s2) (eq (random 2) 0)))))))
 
-;; 
 
 ;; (require-package 'highlight-escape-sequences)
 ;; (add-hook 'after-init-hook 'hes-mode)
@@ -289,7 +286,7 @@
 ;; (with-eval-after-load 'which-key
 ;;   (diminish 'which-key-mode))
 
-;; 
+
 ;; (defun sanityinc/disable-features-during-macro-call (orig &rest args)
 ;;   "When running a macro, disable features that might be expensive.
 ;; ORIG is the advised function, which is called with its ARGS."
