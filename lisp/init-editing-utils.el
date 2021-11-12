@@ -276,8 +276,8 @@
 ;;                    (lambda (s1 s2) (eq (random 2) 0)))))))
 
 
-;; (require-package 'highlight-escape-sequences)
-;; (add-hook 'after-init-hook 'hes-mode)
+(require-package 'highlight-escape-sequences)
+(add-hook 'after-init-hook 'hes-mode)
 
 ;; 
 ;; (require-package 'which-key)
