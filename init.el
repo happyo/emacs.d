@@ -29,7 +29,7 @@
 (require 'init-desktop)
 
 (require 'init-meow)
-;; (require 'init-editing-utils)
+(require 'init-editing-utils)
 ;; (require 'init-smex)
 
 (require 'init-chinese)
