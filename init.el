@@ -26,11 +26,13 @@
 (maybe-require-package 'scratch)
 (require-package 'command-log-mode)
 
+(require 'init-desktop)
 
 (require 'init-meow)
-(require 'init-editing-utils)
+;; (require 'init-editing-utils)
 ;; (require 'init-smex)
 
+(require 'init-chinese)
 (require 'init-frame-hooks)
 (require 'init-xterm)
 (require 'init-themes)

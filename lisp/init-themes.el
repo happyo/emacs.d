@@ -11,23 +11,23 @@
 (setq custom-safe-themes t)
 
 ;; If you don't customize it, this is the theme you get.
-(setq-default custom-enabled-themes '(sanityinc-tomorrow-bright))
+(setq-default custom-enabled-themes '(flucui-dark))
 
 ;; Ensure that themes will be applied even if they have not been customized
 (defun reapply-themes ()
   "Forcibly load the themes listed in `custom-enabled-themes'."
   (dolist (theme custom-enabled-themes)
     (unless (custom-theme-p theme)
-      (load-theme theme)))
+      (load-theme theme t)))
   (custom-set-variables `(custom-enabled-themes (quote ,custom-enabled-themes)))
   (set-face-background 'line-number (face-attribute 'default :background))
-)
+  )
 
 (add-hook 'after-init-hook 'reapply-themes)
 
 
-
-;; Toggle between light and dark
+;; 
+;; ;; Toggle between light and dark
 
 (defun light ()
   "Activate a light color theme."
@@ -41,6 +41,7 @@
   (setq custom-enabled-themes '(flucui-dark))
   (reapply-themes))
 
+;; (load-theme 'flucui-dark t)
 
 (when (maybe-require-package 'dimmer)
   (setq-default dimmer-fraction 0.15)
@@ -55,7 +56,6 @@
     (defun sanityinc/display-non-graphic-p ()
       (not (display-graphic-p)))
     (add-to-list 'dimmer-exclusion-predicates 'sanityinc/display-non-graphic-p)))
-
 
 (provide 'init-themes)
 ;;; init-themes.el ends here

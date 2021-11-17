@@ -61,9 +61,9 @@
 ;; (global-set-key (kbd "M-C-9") (lambda () (interactive) (sanityinc/adjust-opacity nil 2)))
 ;; (global-set-key (kbd "M-C-7") (lambda () (interactive) (modify-frame-parameters nil `((alpha . 100)))))
 
-(require-package 'seethru)
-(seethru-recommended-keybinds "C-x") ;; "C-x 8" and "C-x 9"
-(seethru-mouse-bindings "C") ;; hold control while wheeling
+;; (require-package 'seethru)
+;; (seethru-recommended-keybinds "C-x") ;; "C-x 8" and "C-x 9"
+;; (seethru-mouse-bindings "C") ;; hold control while wheeling
                              ;; mouse to change transparency
 
 
