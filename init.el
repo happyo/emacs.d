@@ -12,7 +12,7 @@
 
 ;; Bootstrap config
 
-(desktop-save-mode 1)
+;; (desktop-save-mode 1)
 
 (setq custom-file (locate-user-emacs-file "custom.el"))
 ;; (require 'init-utils)
@@ -20,6 +20,12 @@
 ;; Calls (package-initialize)
 (require 'init-elpa)      ;; Machinery for installing required packages
 (require 'init-exec-path) ;; Set up $PATH
+
+
+(require-package 'diminish)
+(maybe-require-package 'scratch)
+(require-package 'command-log-mode)
+
 
 (require 'init-meow)
 (require 'init-editing-utils)

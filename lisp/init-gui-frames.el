@@ -61,10 +61,15 @@
 ;; (global-set-key (kbd "M-C-9") (lambda () (interactive) (sanityinc/adjust-opacity nil 2)))
 ;; (global-set-key (kbd "M-C-7") (lambda () (interactive) (modify-frame-parameters nil `((alpha . 100)))))
 
+(require-package 'seethru)
+(seethru-recommended-keybinds "C-x") ;; "C-x 8" and "C-x 9"
+(seethru-mouse-bindings "C") ;; hold control while wheeling
+                             ;; mouse to change transparency
 
-;; (when *is-a-mac*
-;;   (when (maybe-require-package 'ns-auto-titlebar)
-;;     (ns-auto-titlebar-mode)))
+
+(when *is-a-mac*
+  (when (maybe-require-package 'ns-auto-titlebar)
+    (ns-auto-titlebar-mode)))
 
 
 (setq frame-title-format
@@ -74,9 +79,9 @@
 
 ;; Non-zero values for `line-spacing' can mess up ansi-term and co,
 ;; so we zero it explicitly in those cases.
-;; (add-hook 'term-mode-hook
-;;           (lambda ()
-;;             (setq line-spacing 0)))
+(add-hook 'term-mode-hook
+          (lambda ()
+            (setq line-spacing 0)))
 
 
 ;; Change global font size easily

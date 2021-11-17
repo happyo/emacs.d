@@ -19,7 +19,9 @@
   (dolist (theme custom-enabled-themes)
     (unless (custom-theme-p theme)
       (load-theme theme)))
-  (custom-set-variables `(custom-enabled-themes (quote ,custom-enabled-themes))))
+  (custom-set-variables `(custom-enabled-themes (quote ,custom-enabled-themes)))
+  (set-face-background 'line-number (face-attribute 'default :background))
+)
 
 (add-hook 'after-init-hook 'reapply-themes)
 
