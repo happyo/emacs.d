@@ -56,11 +56,13 @@
 (require 'init-folding)
 (require 'init-dash)
 
+;; Language
 (require 'init-lsp)
 (require 'init-lisp)
 (require 'init-haskell)
 (require 'init-scheme)
 (require 'init-dart)
+(require 'init-python)
 
 
 
