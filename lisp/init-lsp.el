@@ -1,6 +1,8 @@
 (require-package 'lsp-mode)
 (require-package 'use-package)
 (require-package 'lsp-ui)
+(require-package 'yasnippet)
+(require-package 'yasnippet-snippets)
 
 (use-package lsp-mode
   :init
@@ -9,8 +11,8 @@
   :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
          (lisp-mode . lsp)
          (haskell-mode . lsp)
-        ;;  ;; if you want which-key integration
-        ;;  (lsp-mode . lsp-enable-which-key-integration)
+         ;;  ;; if you want which-key integration
+         ;;  (lsp-mode . lsp-enable-which-key-integration)
          )
   :commands lsp)
 

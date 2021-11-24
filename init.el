@@ -2,6 +2,10 @@
 
 (defconst *is-a-mac* (eq system-type 'darwin))
 
+;; ignore cl warning
+(setq byte-compile-warnings '(cl-functions))
+
+
 ;; Adjust garbage collection thresholds during startup, and thereafter
 
 ;; (let ((normal-gc-cons-threshold (* 20 1024 1024))

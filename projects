@@ -1,2 +1,3 @@
 ;;; -*- lisp-data -*-
-(("~/.emacs.d/"))
+(("~/development/mProjects/PyTorch-CycleGAN/")
+ ("~/.emacs.d/"))

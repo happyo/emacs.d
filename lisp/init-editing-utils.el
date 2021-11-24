@@ -100,14 +100,7 @@
   (add-hook 'prog-mode-hook 'display-line-numbers-mode)
   )
 
-;; 
-
-(when (boundp 'display-fill-column-indicator)
-  (setq-default indicate-buffer-boundaries 'left)
-  ;; (setq-default display-fill-column-indicator-character ?\N{U+254E})
-  (add-hook 'prog-mode-hook 'display-fill-column-indicator-mode))
-
-;; 
+(require-package 'fill-column-indicator)
 
 (when (require-package 'rainbow-delimiters)
   (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))

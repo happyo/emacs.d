@@ -13,6 +13,8 @@
                          (require 'lsp-pyright)
                          (lsp))))  ; or lsp-deferred
 
+(when (maybe-require-package 'reformatter)
+  (reformatter-define black :program "black" :args '("-")))
 
 (provide 'init-python)
 ;;; init-python.el ends here
