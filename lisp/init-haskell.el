@@ -1,3 +1,6 @@
+;;; init-dash.el --- Integrate with the Mac app "Dash" -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
 (require-package 'lsp-haskell)
 (require-package 'haskell-mode)
 (require-package 'use-package)

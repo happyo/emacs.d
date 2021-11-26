@@ -1,3 +1,6 @@
+;;; init-dash.el --- Integrate with the Mac app "Dash" -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
 ;; (require-package 'anaconda-mode)
 (require-package 'lsp-pyright)
 (require-package 'conda)

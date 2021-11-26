@@ -1,6 +1,7 @@
 ;;; init-lisp.el --- Emacs lisp settings, and common config for other lisps -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
+(require 'init-elpa)
 
 (setq-default debugger-bury-or-kill 'kill)
 
@@ -8,6 +9,21 @@
 (dolist (hook '(emacs-lisp-mode-hook ielm-mode-hook))
   (add-hook hook 'turn-on-elisp-slime-nav-mode))
 (add-hook 'emacs-lisp-mode-hook (lambda () (setq-defaultq mode-name "ELisp")))
+
+;; (use-package elisp-mode
+;;   :ensure nil
+;;   :defines flycheck-disabled-checkers
+;;   :bind (:map emacs-lisp-mode-map
+;;          ("C-c C-x" . ielm)
+;;          ("C-c C-c" . eval-defun)
+;;          ("C-c C-b" . eval-buffer))
+;;   :hook (emacs-lisp-mode . (lambda ()
+;;                              "Disable the checkdoc checker."
+;;                              (setq-local flycheck-disabled-checkers
+;;                                          '(emacs-lisp-checkdoc))))
+:config
+(when (boundp 'elisp-flymake-byte-compile-load-path)
+  (add-to-list 'elisp-flymake-byte-compile-load-path load-path))
 
 (setq-default initial-scratch-message
               (concat ";; Happy hacking, " user-login-name " - Emacs ♥ you!\n\n"))

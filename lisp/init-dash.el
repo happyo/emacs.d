@@ -3,6 +3,8 @@
 ;;; Code:
 
 ;; Support for the http://kapeli.com/dash documentation browser
+(require 'init-elpa)
+(require 'init-func)
 
 (when *is-a-mac*
   (require-package 'dash-at-point)

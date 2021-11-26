@@ -1,3 +1,7 @@
+;;; init-dash.el --- Integrate with the Mac app "Dash" -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
+
 (require-package 'desktop)
 
 (use-package desktop

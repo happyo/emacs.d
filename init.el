@@ -1,6 +1,31 @@
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+;;; init.el --- Load the full configuration -*- lexical-binding: t -*-
+;;; Commentary:
 
-(defconst *is-a-mac* (eq system-type 'darwin))
+;; This file bootstraps the configuration, which is divided into
+;; a number of other files.
+
+;;; Code:
+
+;; Produce backtraces when errors occur: can be helpful to diagnose startup issues
+;;(setq debug-on-error t)
+
+;; Load path
+;; Optimize: Force "lisp"" and "site-lisp" at the head to reduce the startup time.
+(defun update-load-path (&rest _)
+  "Update `load-path'."
+  (dolist (dir '("site-lisp" "lisp"))
+    (push (expand-file-name dir user-emacs-directory) load-path)))
+
+(defun add-subdirs-to-load-path (&rest _)
+  "Add subdirectories to `load-path'."
+  (let ((default-directory (expand-file-name "site-lisp" user-emacs-directory)))
+    (normal-top-level-add-subdirs-to-load-path)))
+
+(advice-add #'package-initialize :after #'update-load-path)
+(advice-add #'package-initialize :after #'add-subdirs-to-load-path)
+
+(update-load-path)
+
 
 ;; ignore cl warning
 (setq byte-compile-warnings '(cl-functions))
@@ -19,6 +44,7 @@
 ;; (desktop-save-mode 1)
 
 (setq custom-file (locate-user-emacs-file "custom.el"))
+(require 'init-func)
 ;; (require 'init-utils)
 ;; (require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
 ;; Calls (package-initialize)
@@ -61,6 +87,7 @@
 (require 'init-dash)
 
 ;; Language
+(require 'init-yasnippet)
 (require 'init-lsp)
 (require 'init-lisp)
 (require 'init-haskell)

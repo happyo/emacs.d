@@ -1,3 +1,6 @@
+;;; init-dash.el --- Integrate with the Mac app "Dash" -*- lexical-binding: t -*-
+;;; Commentary:
+;;; Code:
 (require-package 'keyfreq)
 (keyfreq-mode 1)
 (keyfreq-autosave-mode 1)

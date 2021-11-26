@@ -5,6 +5,8 @@
 ;; WAITING: haskell-mode sets tags-table-list globally, breaks tags-completion-at-point-function
 ;; TODO Default sort order should place [a-z] before punctuation
 
+(require 'init-elpa)
+
 (require-package 'company)
 (require-package 'company-tabnine)
 
@@ -51,7 +53,7 @@
 ;;     company-files
 ;;     company-yasnippet))
 
-(setq +lsp-company-backend '(company-lsp :with company-tabnine :separate))
+;; (setq +lsp-company-backend '(company-lsp :with company-tabnine :separate))
 
 
 (provide 'init-company)
