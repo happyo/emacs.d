@@ -56,7 +56,9 @@
 (maybe-require-package 'scratch)
 (require-package 'command-log-mode)
 
-(require 'init-desktop)
+(require 'init-rime)
+
+;; (require 'init-desktop)
 
 (require 'init-meow)
 (require 'init-editing-utils)

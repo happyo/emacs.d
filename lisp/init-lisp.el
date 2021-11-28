@@ -133,11 +133,11 @@ there is no current file, eval the current buffer."
 
 ;; Hippie-expand
 
-(defun set-up-hippie-expand-for-elisp ()
-  "Locally set `hippie-expand' completion functions for use with Emacs Lisp."
-  (make-local-variable 'hippie-expand-try-functions-list)
-  (add-to-list 'hippie-expand-try-functions-list 'try-complete-lisp-symbol t)
-  (add-to-list 'hippie-expand-try-functions-list 'try-complete-lisp-symbol-partially t))
+;; (defun set-up-hippie-expand-for-elisp ()
+;;   "Locally set `hippie-expand' completion functions for use with Emacs Lisp."
+;;   (make-local-variable 'hippie-expand-try-functions-list)
+;;   (add-to-list 'hippie-expand-try-functions-list 'try-complete-lisp-symbol t)
+;;   (add-to-list 'hippie-expand-try-functions-list 'try-complete-lisp-symbol-partially t))
 
 
 
