@@ -4,12 +4,9 @@
 
 (require 'init-elpa)
 
-(require-package 'dart-mode)
-(require-package 'lsp-dart)
-(require-package 'lsp-treemacs)
-
-(add-hook 'dart-mode-hook 'lsp)
-
+(use-package dart-mode)
+(use-package lsp-dart)
+(use-package lsp-treemacs)
 
 (provide 'init-dart)
 ;;; init-dart.el ends here

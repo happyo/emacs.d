@@ -2,9 +2,13 @@
 ;;; Commentary:
 ;;; Code:
 
-(require-package 'cnfonts)
+;; (require-package 'cnfonts)
 
-(cnfonts-enable)
+(require 'init-elpa)
+
+(use-package cnfonts
+    :config
+    (cnfonts-enable))
 
 (provide 'init-chinese)
 ;;; init-chinese.el ends here
