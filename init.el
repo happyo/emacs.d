@@ -9,6 +9,14 @@
 ;; Produce backtraces when errors occur: can be helpful to diagnose startup issues
 ;;(setq debug-on-error t)
 
+(setq gc-cons-threshold most-positive-fixnum
+      gc-cons-percentage 0.5)
+(add-hook 'emacs-startup-hook
+          (lambda ()
+            "Recover GC values after startup."
+            (setq gc-cons-threshold 800000
+                  gc-cons-percentage 0.1)))
+
 ;; Load path
 ;; Optimize: Force "lisp"" and "site-lisp" at the head to reduce the startup time.
 (defun update-load-path (&rest _)
@@ -44,11 +52,11 @@
 ;; (desktop-save-mode 1)
 
 (setq custom-file (locate-user-emacs-file "custom.el"))
+(require 'init-elpa)      ;; Machinery for installing required packages
 (require 'init-func)
 ;; (require 'init-utils)
 ;; (require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
 ;; Calls (package-initialize)
-(require 'init-elpa)      ;; Machinery for installing required packages
 (require 'init-exec-path) ;; Set up $PATH
 
 

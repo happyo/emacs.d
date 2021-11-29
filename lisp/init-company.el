@@ -13,6 +13,34 @@
 (setq tab-always-indent 'complete)
 (add-to-list 'completion-styles 'initials t)
 
+
+;; Customize company backends.
+(setq company-backends
+      '(
+        (company-tabnine company-dabbrev company-keywords company-files company-capf)
+        ))
+
+
+;; Add yasnippet support for all company backends.
+(defvar company-mode/enable-yas t
+  "Enable yasnippet for all backends.")
+
+(defun company-mode/backend-with-yas (backend)
+  (if (or (not company-mode/enable-yas) (and (listp backend) (member 'company-yasnippet backend)))
+      backend
+    (append (if (consp backend) backend (list backend))
+            '(:with company-yasnippet))))
+
+(setq company-backends (mapcar #'company-mode/backend-with-yas company-backends))
+
+;; Add `company-elisp' backend for elisp.
+(add-hook 'emacs-lisp-mode-hook
+          #'(lambda ()
+              (require 'company-elisp)
+              (push 'company-elisp company-backends)))
+
+;; Remove duplicate candidate.
+;; (add-to-list 'company-transformers #'delete-dups)
 ;; (when (maybe-require-package 'company)
 ;;   (add-hook 'after-init-hook 'global-company-mode)
 ;;   (with-eval-after-load 'company
