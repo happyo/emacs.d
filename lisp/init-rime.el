@@ -3,7 +3,6 @@
 ;;; Code:
 
 (require 'init-elpa)
-(require-package 'rime)
 
 (use-package rime
   :custom

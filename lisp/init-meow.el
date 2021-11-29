@@ -1,8 +1,8 @@
-;;; init-dash.el --- Integrate with the Mac app "Dash" -*- lexical-binding: t -*-
+;;; init-meow.el --- Integrate with the "Meow" -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
-(require-package 'meow)
-(require-package 'use-package)
+
+(require 'init-elpa)
 
 ;; meow
 (defun meow-setup ()

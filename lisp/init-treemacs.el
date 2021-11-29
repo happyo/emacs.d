@@ -1,8 +1,8 @@
-;;; init-dash.el --- Integrate with the Mac app "Dash" -*- lexical-binding: t -*-
+;;; init-treemacs.el --- Integrate with the "Treemacs" -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
-(require-package 'treemacs)
-(require-package 'treemacs-persp)
+
+(require 'init-elpa)
 
 (use-package treemacs
   :ensure t

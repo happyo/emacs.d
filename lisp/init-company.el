@@ -7,8 +7,8 @@
 
 (require 'init-elpa)
 
-(require-package 'company)
-(require-package 'company-tabnine)
+(use-package company)
+(use-package company-tabnine)
 
 (setq tab-always-indent 'complete)
 (add-to-list 'completion-styles 'initials t)

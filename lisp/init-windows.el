@@ -13,7 +13,7 @@
 
 
 ;; Make "C-x o" prompt for a target window when there are more than 2
-(require-package 'switch-window)
+(use-package switch-window)
 (setq-default switch-window-shortcut-style 'alphabet)
 (setq-default switch-window-timeout nil)
 (global-set-key (kbd "M-o") 'switch-window)
@@ -69,7 +69,6 @@
 (global-set-key (kbd "C-x |") 'split-window-horizontally-instead)
 (global-set-key (kbd "C-x _") 'split-window-vertically-instead)
 
-
 ;; Borrowed from http://postmomentum.ch/blog/201304/blog-on-emacs
 
 (defun sanityinc/split-window()
@@ -86,8 +85,6 @@ Call a second time to restore the original window configuration."
 (global-set-key (kbd "<f7>") 'sanityinc/split-window)
 
 
-
-
 (defun sanityinc/toggle-current-window-dedication ()
   "Toggle whether the current window is dedicated to its current buffer."
   (interactive)
@@ -101,10 +98,8 @@ Call a second time to restore the original window configuration."
 (global-set-key (kbd "C-c <down>") 'sanityinc/toggle-current-window-dedication)
 
 
-
-
 (unless (memq window-system '(nt w32))
-  (require-package 'windswap)
+  (use-package windswap)
   (add-hook 'after-init-hook (apply-partially 'windmove-default-keybindings 'control))
   (add-hook 'after-init-hook (apply-partially 'windswap-default-keybindings 'shift 'control)))
 

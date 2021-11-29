@@ -61,9 +61,9 @@
 (require 'init-exec-path) ;; Set up $PATH
 
 
-(require-package 'diminish)
-(maybe-require-package 'scratch)
-(require-package 'command-log-mode)
+(use-package diminish)
+(use-package scratch)
+(use-package command-log-mode)
 
 (require 'init-rime)
 

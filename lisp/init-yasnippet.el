@@ -2,8 +2,6 @@
 ;;; Commentary:
 ;;; Code:
 (require 'init-elpa)
-(require-package 'yasnippet)
-(require-package 'yasnippet-snippets)
 
 (use-package yasnippet
   :diminish yas-minor-mode

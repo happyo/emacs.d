@@ -29,34 +29,34 @@
 
 ;;; On-demand installation of packages
 
-(defun require-package (package &optional min-version no-refresh)
-  "Install given PACKAGE, optionally requiring MIN-VERSION.
-If NO-REFRESH is non-nil, the available package lists will not be
-re-downloaded in order to locate PACKAGE."
-  (or (package-installed-p package min-version)
-      (let* ((known (cdr (assoc package package-archive-contents)))
-             (best (car (sort known (lambda (a b)
-                                      (version-list-<= (package-desc-version b)
-                                                       (package-desc-version a)))))))
-        (if (and best (version-list-<= min-version (package-desc-version best)))
-            (package-install best)
-          (if no-refresh
-              (error "No version of %s >= %S is available" package min-version)
-            (package-refresh-contents)
-            (require-package package min-version t)))
-        (package-installed-p package min-version))))
+;; (defun require-package (package &optional min-version no-refresh)
+;;   "Install given PACKAGE, optionally requiring MIN-VERSION.
+;; If NO-REFRESH is non-nil, the available package lists will not be
+;; re-downloaded in order to locate PACKAGE."
+;;   (or (package-installed-p package min-version)
+;;       (let* ((known (cdr (assoc package package-archive-contents)))
+;;              (best (car (sort known (lambda (a b)
+;;                                       (version-list-<= (package-desc-version b)
+;;                                                        (package-desc-version a)))))))
+;;         (if (and best (version-list-<= min-version (package-desc-version best)))
+;;             (package-install best)
+;;           (if no-refresh
+;;               (error "No version of %s >= %S is available" package min-version)
+;;             (package-refresh-contents)
+;;             (require-package package min-version t)))
+;;         (package-installed-p package min-version))))
 
-(defun maybe-require-package (package &optional min-version no-refresh)
-  "Try to install PACKAGE, and return non-nil if successful.
-In the event of failure, return nil and print a warning message.
-Optionally require MIN-VERSION.  If NO-REFRESH is non-nil, the
-available package lists will not be re-downloaded in order to
-locate PACKAGE."
-  (condition-case err
-      (require-package package min-version no-refresh)
-    (error
-     (message "Couldn't install optional package `%s': %S" package err)
-     nil)))
+;; (defun maybe-require-package (package &optional min-version no-refresh)
+;;   "Try to install PACKAGE, and return non-nil if successful.
+;; In the event of failure, return nil and print a warning message.
+;; Optionally require MIN-VERSION.  If NO-REFRESH is non-nil, the
+;; available package lists will not be re-downloaded in order to
+;; locate PACKAGE."
+;;   (condition-case err
+;;       (require-package package min-version no-refresh)
+;;     (error
+;;      (message "Couldn't install optional package `%s': %S" package err)
+;;      nil)))
 
 
 ;;; Fire up package.el
@@ -88,27 +88,27 @@ locate PACKAGE."
 ;; after custom-file has been loaded, which is a bug. We work around this by adding
 ;; the required packages to package-selected-packages after startup is complete.
 
-(defvar sanityinc/required-packages nil)
+;; (defvar sanityinc/required-packages nil)
 
-(defun sanityinc/note-selected-package (oldfun package &rest args)
-  "If OLDFUN reports PACKAGE was successfully installed, note that fact.
-The package name is noted by adding it to
-`sanityinc/required-packages'.  This function is used as an
-advice for `require-package', to which ARGS are passed."
-  (let ((available (apply oldfun package args)))
-    (prog1
-        available
-      (when available
-        (add-to-list 'sanityinc/required-packages package)))))
+;; (defun sanityinc/note-selected-package (oldfun package &rest args)
+;;   "If OLDFUN reports PACKAGE was successfully installed, note that fact.
+;; The package name is noted by adding it to
+;; `sanityinc/required-packages'.  This function is used as an
+;; advice for `require-package', to which ARGS are passed."
+;;   (let ((available (apply oldfun package args)))
+;;     (prog1
+;;         available
+;;       (when available
+;;         (add-to-list 'sanityinc/required-packages package)))))
 
-(advice-add 'require-package :around 'sanityinc/note-selected-package)
+;; (advice-add 'require-package :around 'sanityinc/note-selected-package)
 
-(when (fboundp 'package--save-selected-packages)
-  (require-package 'seq)
-  (add-hook 'after-init-hook
-            (lambda ()
-              (package--save-selected-packages
-               (seq-uniq (append sanityinc/required-packages package-selected-packages))))))
+;; (when (fboundp 'package--save-selected-packages)
+;;   (require-package 'seq)
+;;   (add-hook 'after-init-hook
+;;             (lambda ()
+;;               (package--save-selected-packages
+;;                (seq-uniq (append sanityinc/required-packages package-selected-packages))))))
 
 
 ;; (require-package 'fullframe)

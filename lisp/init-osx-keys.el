@@ -2,6 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
+(require 'init-func)
+
 (when *is-a-mac*
   (setq mac-command-modifier 'meta)
   (setq mac-option-modifier 'super)

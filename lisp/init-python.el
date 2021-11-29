@@ -1,12 +1,13 @@
-;;; init-dash.el --- Integrate with the Mac app "Dash" -*- lexical-binding: t -*-
+;;; init-python.el --- Integrate with the "Python" -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 ;; (require-package 'anaconda-mode)
-(require-package 'lsp-pyright)
-(require-package 'conda)
-(require-package 'pyimport)
-(require-package 'pip-requirements)
-(require-package 'use-package)
+
+(require 'init-elpa)
+
+(use-package conda)
+(use-package pyimport)
+(use-package pip-requirements)
 
 (setq python-shell-interpreter "python3")
 
@@ -16,8 +17,8 @@
                          (require 'lsp-pyright)
                          (lsp))))  ; or lsp-deferred
 
-(when (maybe-require-package 'reformatter)
-  (reformatter-define black :program "black" :args '("-")))
+;; (when (maybe-require-package 'reformatter)
+;;   (reformatter-define black :program "black" :args '("-")))
 
 (provide 'init-python)
 ;;; init-python.el ends here

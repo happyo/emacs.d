@@ -83,7 +83,8 @@
 
 (use-package fill-column-indicator)
 
-(when (require-package 'rainbow-delimiters)
+(use-package rainbow-delimiters
+  :config
   (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
 
@@ -97,7 +98,7 @@
 ;;     (define-key symbol-overlay-mode-map (kbd "M-n") 'symbol-overlay-jump-next)
 ;;     (define-key symbol-overlay-mode-map (kbd "M-p") 'symbol-overlay-jump-prev)))
 
-(require-package 'browse-kill-ring)
+(use-package browse-kill-ring)
 (setq browse-kill-ring-separator "\f")
 (global-set-key (kbd "M-Y") 'browse-kill-ring)
 (with-eval-after-load 'browse-kill-ring
@@ -115,10 +116,11 @@
 (global-set-key (kbd "C-.") 'set-mark-command)
 (global-set-key (kbd "C-x C-.") 'pop-global-mark)
 
-(when (maybe-require-package 'avy)
-  (global-set-key (kbd "C-;") 'avy-goto-char-timer))
+(use-package avy
+  :bind
+  ("C-;" . 'avy-goto-char-timer))
 
-(require-package 'move-dup)
+(use-package move-dup)
 (global-set-key [M-up] 'move-dup-move-lines-up)
 (global-set-key [M-down] 'move-dup-move-lines-down)
 (global-set-key [M-S-up] 'move-dup-move-lines-up)
@@ -127,10 +129,10 @@
 (global-set-key (kbd "C-c d") 'move-dup-duplicate-down)
 (global-set-key (kbd "C-c u") 'move-dup-duplicate-up)
 
-(require-package 'highlight-escape-sequences)
+(use-package highlight-escape-sequences)
 (add-hook 'after-init-hook 'hes-mode)
 
-(require-package 'which-key)
+(use-package which-key)
 (add-hook 'after-init-hook 'which-key-mode)
 (setq-default which-key-idle-delay 1.5)
 
