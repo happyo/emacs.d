@@ -3,6 +3,7 @@
 ;;; Code:
 (require 'init-elpa)
 (require 'init-lisp)
+(require 'init-benchmarking)
 
 (setq desktop-path (list user-emacs-directory)
       desktop-auto-save-timeout 600)

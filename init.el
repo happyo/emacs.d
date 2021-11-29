@@ -34,6 +34,7 @@
 
 (update-load-path)
 
+(require 'init-benchmarking) ;; Measure startup time
 
 ;; ignore cl warning
 (setq byte-compile-warnings '(cl-functions))
