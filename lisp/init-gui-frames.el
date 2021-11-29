@@ -53,26 +53,25 @@
 ;;     (when (and (<= frame-alpha-lower-limit newalpha) (>= 100 newalpha))
 ;;       (modify-frame-parameters frame (list (cons 'alpha newalpha))))))
 
-(when (and *is-a-mac* (fboundp 'toggle-frame-fullscreen))
-  ;; Command-Option-f to toggle fullscreen mode
-  ;; Hint: Customize `ns-use-native-fullscreen'
-  (global-set-key (kbd "M-ƒ") 'toggle-frame-fullscreen))
+;; (when (and *is-a-mac* (fboundp 'toggle-frame-fullscreen))
+;;   ;; Command-Option-f to toggle fullscreen mode
+;;   ;; Hint: Customize `ns-use-native-fullscreen'
+;;   (global-set-key (kbd "M-ƒ") 'toggle-frame-fullscreen))
 
 ;; TODO: use seethru package instead?
 ;; (global-set-key (kbd "M-C-8") (lambda () (interactive) (sanityinc/adjust-opacity nil -2)))
 ;; (global-set-key (kbd "M-C-9") (lambda () (interactive) (sanityinc/adjust-opacity nil 2)))
 ;; (global-set-key (kbd "M-C-7") (lambda () (interactive) (modify-frame-parameters nil `((alpha . 100)))))
 
-(require-package 'seethru)
-(seethru-recommended-keybinds "C-x") ;; "C-x 8" and "C-x 9"
-(seethru-mouse-bindings "C") ;; hold control while wheeling
-                             ;; mouse to change transparency
+(use-package seethru
+  :config
+  (seethru-recommended-keybinds "C-x") ;; "C-x 8" and "C-x 9"
+  (seethru-mouse-bindings "C") ;; hold control while wheeling
+  )
 
-
-(when *is-a-mac*
-  (when (maybe-require-package 'ns-auto-titlebar)
-    (ns-auto-titlebar-mode)))
-
+(use-package ns-auto-titlebar
+  :config
+  (when *is-a-mac* (ns-auto-titlebar-mode)))
 
 (setq frame-title-format
       '((:eval (if (buffer-file-name)
@@ -85,15 +84,12 @@
           (lambda ()
             (setq line-spacing 0)))
 
-
 ;; Change global font size easily
 
-(require-package 'default-text-scale)
+(use-package default-text-scale)
 (add-hook 'after-init-hook 'default-text-scale-mode)
 
-
-
-(require-package 'disable-mouse)
+(use-package disable-mouse)
 
 
 (provide 'init-gui-frames)

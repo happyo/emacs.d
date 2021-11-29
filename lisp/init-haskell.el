@@ -1,12 +1,8 @@
-;;; init-dash.el --- Integrate with the Mac app "Dash" -*- lexical-binding: t -*-
+;;; init-haskell.el --- haskell programming -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
-(require-package 'lsp-haskell)
-(require-package 'haskell-mode)
-(require-package 'use-package)
 
-(add-hook 'haskell-mode-hook #'lsp)
-(add-hook 'haskell-literate-mode-hook #'lsp)
+(require 'init-elpa)
 
 (use-package lsp-haskell
  :config
