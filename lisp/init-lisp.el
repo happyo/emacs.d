@@ -195,10 +195,6 @@ there is no current file, eval the current buffer."
   "Enable features useful in any Lisp mode."
   (run-hooks 'sanityinc/lispy-modes-hook))
 
-(defun sanityinc/emacs-lisp-setup ()
-  "Enable features useful when working with elisp."
-  (set-up-hippie-expand-for-elisp))
-
 (defconst sanityinc/elispy-modes
   '(emacs-lisp-mode ielm-mode)
   "Major modes relating to elisp.")

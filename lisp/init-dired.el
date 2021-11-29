@@ -2,29 +2,53 @@
 ;;; Commentary:
 ;;; Code:
 
-(setq-default dired-dwim-target t)
+(require 'init-elpa)
+(require 'init-func)
 
-;; Prefer g-prefixed coreutils version of standard utilities when available
-(let ((gls (executable-find "gls")))
+(use-package dired
+  :ensure nil
+  :config
+  (setq dired-recursive-deletes 'always
+        dired-recursive-copies 'always)
+  
+  (let ((gls (executable-find "gls")))
   (when gls (setq insert-directory-program gls)))
 
-(when (maybe-require-package 'diredfl)
-  (with-eval-after-load 'dired
-    (diredfl-global-mode)
-    (require 'dired-x)))
+  ;; Colourful dired
+  (use-package diredfl
+    :init (diredfl-global-mode 1))
 
-;; Hook up dired-x global bindings without loading it up-front
-(define-key ctl-x-map "\C-j" 'dired-jump)
-(define-key ctl-x-4-map "\C-j" 'dired-jump-other-window)
+  ;; Extra Dired functionality
+  (use-package dired-aux :ensure nil)
+  (use-package dired-x
+    :ensure nil
+    :demand
+    :config
+    (let ((cmd (cond (*is-a-mac* "open")
+                     (*is-a-linux* "xdg-open")
+                     (*is-a-win32p* "start")
+                     (t ""))))
+      (setq dired-guess-shell-alist-user
+            `(("\\.pdf\\'" ,cmd)
+              ("\\.docx\\'" ,cmd)
+              ("\\.\\(?:djvu\\|eps\\)\\'" ,cmd)
+              ("\\.\\(?:jpg\\|jpeg\\|png\\|gif\\|xpm\\)\\'" ,cmd)
+              ("\\.\\(?:xcf\\)\\'" ,cmd)
+              ("\\.csv\\'" ,cmd)
+              ("\\.tex\\'" ,cmd)
+              ("\\.\\(?:mp4\\|mkv\\|avi\\|flv\\|rm\\|rmvb\\|ogv\\)\\(?:\\.part\\)?\\'" ,cmd)
+              ("\\.\\(?:mp3\\|flac\\)\\'" ,cmd)
+              ("\\.html?\\'" ,cmd)
+              ("\\.md\\'" ,cmd))))
 
-(with-eval-after-load 'dired
-  (setq dired-recursive-deletes 'top)
-  (define-key dired-mode-map [mouse-2] 'dired-find-file)
-  (define-key dired-mode-map (kbd "C-c C-q") 'wdired-change-to-wdired-mode))
+    (setq dired-omit-files
+          (concat dired-omit-files
+                  "\\|^.DS_Store$\\|^.projectile$\\|^.git*\\|^.svn$\\|^.vscode$\\|\\.js\\.meta$\\|\\.meta$\\|\\.elc$\\|^.emacs.*")))
+  )
 
-(when (maybe-require-package 'diff-hl)
-  (with-eval-after-load 'dired
-    (add-hook 'dired-mode-hook 'diff-hl-dired-mode)))
+;; (when (maybe-require-package 'diff-hl)
+;;   (with-eval-after-load 'dired
+;;     (add-hook 'dired-mode-hook 'diff-hl-dired-mode)))
 
 (provide 'init-dired)
 ;;; init-dired.el ends here

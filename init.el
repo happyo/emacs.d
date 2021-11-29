@@ -66,7 +66,7 @@
 
 (require 'init-rime)
 
-;; (require 'init-desktop)
+(require 'init-desktop)
 
 (require 'init-meow)
 (require 'init-editing-utils)
