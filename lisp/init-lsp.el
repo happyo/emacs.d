@@ -12,13 +12,13 @@
   ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
   (setq lsp-keymap-prefix "C-c l")
   :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
-         (lisp-mode . lsp-deffered)
-         (dart-mode . lsp-deffered)
-         (haskell-mode . lsp-deffered)
+         (lisp-mode . lsp-deferred)
+         (dart-mode . lsp-deferred)
+         (haskell-mode . lsp-deferred)
          ;;  ;; if you want which-key integration
          ;;  (lsp-mode . lsp-enable-which-key-integration)
          )
-  :commands (lsp lsp-deffered))
+  :commands (lsp lsp-deferred))
 
 ;; optionally
 (use-package lsp-ui :commands lsp-ui-mode)

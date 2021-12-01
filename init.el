@@ -55,9 +55,6 @@
 (setq custom-file (locate-user-emacs-file "custom.el"))
 (require 'init-elpa)      ;; Machinery for installing required packages
 (require 'init-func)
-;; (require 'init-utils)
-;; (require 'init-site-lisp) ;; Must come before elpa, as it may provide package.el
-;; Calls (package-initialize)
 (require 'init-exec-path) ;; Set up $PATH
 
 
@@ -67,7 +64,7 @@
 
 (require 'init-rime)
 
-(require 'init-desktop)
+;; (require 'init-desktop)
 
 (require 'init-meow)
 (require 'init-editing-utils)
@@ -82,12 +79,10 @@
 (require 'init-gui-frames)
 (require 'init-dired)
 (require 'init-isearch)
-;; (require 'init-grep)
+(require 'init-grep)
 (require 'init-ibuffer)
 (require 'init-flycheck)
 
-(require 'init-minibuffer)
-;; (require 'init-hippie-expand)
 (require 'init-company)
 (require 'init-windows)
 (require 'init-mmm)

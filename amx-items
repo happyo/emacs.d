@@ -1,0 +1,19 @@
+
+;; ----- amx-history -----
+(
+ counsel-rg
+ ivy-mode
+ execute-extended-command-for-buffer
+ execute-extended-command
+ cd
+ rg
+ 5x5
+)
+
+;; ----- amx-data -----
+(
+ (execute-extended-command . 1)
+ (execute-extended-command-for-buffer . 1)
+ (ivy-mode . 1)
+ (counsel-rg . 1)
+)

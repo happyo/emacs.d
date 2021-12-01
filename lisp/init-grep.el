@@ -4,28 +4,11 @@
 (require 'init-elpa)
 (require 'init-func)
 
-(setq-default grep-highlight-matches t
-              grep-scroll-output t)
-
-(when *is-a-mac*
-  (setq-default locate-command "mdfind"))
-
-(require-package 'wgrep)
-(global-set-key (kbd "C-c C-q") 'wgrep-change-to-wgrep-mode)
-;; (with-eval-after-load 'grep
-;;   (dolist (key (list (kbd "C-c C-q") (kbd "w")))
-;;     (define-key grep-mode-map key 'wgrep-change-to-wgrep-mode)))
-
-;; (when (and (executable-find "ag")
-;;            (maybe-require-package 'ag))
-;;   (require-package 'wgrep-ag)
-;;   (setq-default ag-highlight-search t)
-;;   (global-set-key (kbd "M-?") 'ag-project))
-
-;; (when (and (executable-find "rg")
-;;            (maybe-require-package 'rg))
-;;   (global-set-key (kbd "M-?") 'rg-project))
-
+(use-package counsel
+  :diminish ivy-mode counsel-mode
+  :hook ((after-init . ivy-mode)
+         (ivy-mode . counsel-mode))
+  )
 
 (provide 'init-grep)
 ;;; init-grep.el ends here
