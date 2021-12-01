@@ -8,6 +8,26 @@
   :diminish ivy-mode counsel-mode
   :hook ((after-init . ivy-mode)
          (ivy-mode . counsel-mode))
+  :bind
+  ("M-f" . counsel-git-grep)
+  :config
+  (setq enable-recursive-minibuffers t) ; Allow commands in minibuffers
+  (setq swiper-action-recenter t)
+
+  ;; Use the faster search tools
+  (when (executable-find "rg")
+    (setq counsel-grep-base-command "rg -S --no-heading --line-number --color never '%s' '%s'"))
+  (when (executable-find "fd")
+    (setq counsel-fzf-cmd
+          "fd --type f --hidden --follow --exclude .git --color never '%s'"))
+  ;; Enhance M-x
+  (use-package amx
+    :init (setq amx-history-length 20))
+
+  ;; Avy integration
+  (use-package ivy-avy
+    :bind (:map ivy-minibuffer-map
+           ("C-'" . ivy-avy)))
   )
 
 (provide 'init-grep)

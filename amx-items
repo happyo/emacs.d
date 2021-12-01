@@ -1,6 +1,8 @@
 
 ;; ----- amx-history -----
 (
+ counsel-ibuffer
+ counsel-git-grep
  counsel-rg
  ivy-mode
  execute-extended-command-for-buffer
@@ -8,6 +10,17 @@
  cd
  rg
  5x5
+ amx
+ arp
+ dbx
+ dig
+ erc
+ ert
+ eww
+ ftp
+ gdb
+ irc
+ jdb
 )
 
 ;; ----- amx-data -----
@@ -16,4 +29,6 @@
  (execute-extended-command-for-buffer . 1)
  (ivy-mode . 1)
  (counsel-rg . 1)
+ (counsel-git-grep . 1)
+ (counsel-ibuffer . 1)
 )
