@@ -1,6 +1,9 @@
 
 ;; ----- amx-history -----
 (
+ meow-indent
+ avy-goto-char
+ ivy-avy
  counsel-ibuffer
  counsel-git-grep
  counsel-rg
@@ -18,9 +21,6 @@
  ert
  eww
  ftp
- gdb
- irc
- jdb
 )
 
 ;; ----- amx-data -----
@@ -31,4 +31,7 @@
  (counsel-rg . 1)
  (counsel-git-grep . 1)
  (counsel-ibuffer . 1)
+ (ivy-avy . 1)
+ (avy-goto-char . 3)
+ (meow-indent . 2)
 )

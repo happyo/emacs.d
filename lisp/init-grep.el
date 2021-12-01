@@ -28,6 +28,17 @@
   (use-package ivy-avy
     :bind (:map ivy-minibuffer-map
            ("C-'" . ivy-avy)))
+  ;; More friendly display transformer for Ivy
+  (use-package ivy-rich
+    :hook ((counsel-projectile-mode . ivy-rich-mode) ; MUST after `counsel-projectile'
+           (ivy-rich-mode . ivy-rich-project-root-cache-mode)
+           (ivy-rich-mode . (lambda ()
+                              "Use abbreviate in `ivy-rich-mode'."
+                              (setq ivy-virtual-abbreviate
+                                    (or (and ivy-rich-mode 'abbreviate) 'name)))))
+    :init
+    ;; For better performance
+    (setq ivy-rich-parse-remote-buffer nil))
   )
 
 (provide 'init-grep)
