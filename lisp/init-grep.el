@@ -24,6 +24,15 @@
   (use-package amx
     :init (setq amx-history-length 20))
 
+  ;; Ivy integration for Projectile
+  (use-package counsel-projectile
+    :hook (counsel-mode . counsel-projectile-mode)
+    :init (setq counsel-projectile-grep-initial-input '(ivy-thing-at-point)))
+
+  ;; Integrate yasnippet
+  (use-package ivy-yasnippet
+    :bind ("C-c C-y" . ivy-yasnippet))
+
   ;; Avy integration
   (use-package ivy-avy
     :bind (:map ivy-minibuffer-map

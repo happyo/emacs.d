@@ -1,9 +1,16 @@
 
 ;; ----- amx-history -----
 (
+ text-scale-decrease
+ text-scale-increase
+ dark
+ light
+ sanityinc/headerise-elisp
+ seethru
  meow-indent
- avy-goto-char
  ivy-avy
+ ivy-rich-mode
+ avy-goto-char
  counsel-ibuffer
  counsel-git-grep
  counsel-rg
@@ -14,13 +21,6 @@
  rg
  5x5
  amx
- arp
- dbx
- dig
- erc
- ert
- eww
- ftp
 )
 
 ;; ----- amx-data -----
@@ -31,7 +31,14 @@
  (counsel-rg . 1)
  (counsel-git-grep . 1)
  (counsel-ibuffer . 1)
- (ivy-avy . 1)
+ (ivy-avy . 2)
  (avy-goto-char . 3)
- (meow-indent . 2)
+ (meow-indent . 4)
+ (ivy-rich-mode . 1)
+ (seethru . 1)
+ (sanityinc/headerise-elisp . 1)
+ (dark . 2)
+ (light . 1)
+ (text-scale-increase . 1)
+ (text-scale-decrease . 1)
 )

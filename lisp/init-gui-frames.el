@@ -7,12 +7,12 @@
 
 ;; Stop C-z from minimizing windows under OS X
 
-(defun sanityinc/maybe-suspend-frame ()
-  (interactive)
-  (unless (and *is-a-mac* window-system)
-    (suspend-frame)))
+;; (defun sanityinc/maybe-suspend-frame ()
+;;   (interactive)
+;;   (unless (and *is-a-mac* window-system)
+;;     (suspend-frame)))
 
-(global-set-key (kbd "C-z") 'sanityinc/maybe-suspend-frame)
+;; (global-set-key (kbd "C-z") 'sanityinc/maybe-suspend-frame)
 
 
 
@@ -64,14 +64,11 @@
 ;; (global-set-key (kbd "M-C-7") (lambda () (interactive) (modify-frame-parameters nil `((alpha . 100)))))
 
 (use-package seethru
-  :config
-  (seethru-recommended-keybinds "C-x") ;; "C-x 8" and "C-x 9"
-  (seethru-mouse-bindings "C") ;; hold control while wheeling
   )
+(seethru-recommended-keybinds "C-x") ;; "C-x 8" and "C-x 9"
+(seethru-mouse-bindings "C") ;; hold control while wheeling
 
-(use-package ns-auto-titlebar
-  :config
-  (when *is-a-mac* (ns-auto-titlebar-mode)))
+(use-package ns-auto-titlebar)
 
 (setq frame-title-format
       '((:eval (if (buffer-file-name)
@@ -87,7 +84,7 @@
 ;; Change global font size easily
 
 (use-package default-text-scale)
-(add-hook 'after-init-hook 'default-text-scale-mode)
+(when *is-a-mac* (ns-auto-titlebar-mode))
 
 (use-package disable-mouse)
 
