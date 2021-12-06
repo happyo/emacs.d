@@ -1,13 +1,17 @@
 
 ;; ----- amx-history -----
 (
+ paradox-upgrade-packages
+ auto-package-update-now
+ paradox-list-packages
+ meow-indent
+ list-packages
  light
  text-scale-decrease
  text-scale-increase
  dark
  sanityinc/headerise-elisp
  seethru
- meow-indent
  avy-goto-char
  ivy-avy
  ivy-mode
@@ -17,10 +21,6 @@
  counsel-git-grep
  execute-extended-command
  execute-extended-command-for-buffer
- cd
- rg
- 5x5
- amx
 )
 
 ;; ----- amx-data -----
@@ -33,7 +33,7 @@
  (counsel-ibuffer . 1)
  (ivy-avy . 2)
  (avy-goto-char . 3)
- (meow-indent . 4)
+ (meow-indent . 6)
  (ivy-rich-mode . 1)
  (seethru . 1)
  (sanityinc/headerise-elisp . 1)
@@ -41,4 +41,9 @@
  (light . 2)
  (text-scale-increase . 1)
  (text-scale-decrease . 1)
+ (auto-package-update-now . 5)
+ (paradox-list-packages . 4)
+ (paradox-filter-regexp . 3)
+ (list-packages . 1)
+ (paradox-upgrade-packages . 2)
 )
