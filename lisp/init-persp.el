@@ -38,7 +38,8 @@
              (format "      '((top . %d)\n" (eval (frame-parameter nil 'top)))
              (format "        (left . %d)\n" (eval (frame-parameter nil 'left)))
              (format "        (width . %d)\n" (eval (frame-parameter nil 'width)))
-             (format "        (height . %d)\n" (eval (frame-parameter nil 'height)))
+             (format "        (height . %d)\n" (eval (frame-parameterpersp-save-frame ()
+    "Save the current frame parameters to file." nil 'height)))
              (format "        (fullscreen . %s)))\n" (frame-parameter nil 'fullscreen)))
             (write-file persp-frame-file))
         (error
@@ -50,7 +51,7 @@
     (when (and (display-graphic-p) persp-mode)
       (condition-case error
           (progn
-            (fix-fullscreen-cocoa)
+            ;; (fix-fullscreen-cocoa)
             (load persp-frame-file)
 
             ;; Handle multiple monitors gracefully

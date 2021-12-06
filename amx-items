@@ -1,22 +1,22 @@
 
 ;; ----- amx-history -----
 (
+ light
  text-scale-decrease
  text-scale-increase
  dark
- light
  sanityinc/headerise-elisp
  seethru
  meow-indent
- ivy-avy
- ivy-rich-mode
  avy-goto-char
+ ivy-avy
+ ivy-mode
+ counsel-rg
+ ivy-rich-mode
  counsel-ibuffer
  counsel-git-grep
- counsel-rg
- ivy-mode
- execute-extended-command-for-buffer
  execute-extended-command
+ execute-extended-command-for-buffer
  cd
  rg
  5x5
@@ -38,7 +38,7 @@
  (seethru . 1)
  (sanityinc/headerise-elisp . 1)
  (dark . 2)
- (light . 1)
+ (light . 2)
  (text-scale-increase . 1)
  (text-scale-decrease . 1)
 )

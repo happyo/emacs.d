@@ -64,7 +64,7 @@
 
 (require 'init-rime)
 
-;; (require 'init-persp)
+(require 'init-persp)
 
 ;; (require 'init-desktop)
 

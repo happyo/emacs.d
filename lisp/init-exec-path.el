@@ -27,9 +27,12 @@
 
 (use-package exec-path-from-shell)
 
-(with-eval-after-load 'exec-path-from-shell
-  (dolist (var '("SSH_AUTH_SOCK" "SSH_AGENT_PID" "GPG_AGENT_INFO" "LANG" "LC_CTYPE" "NIX_SSL_CERT_FILE" "NIX_PATH"))
-    (add-to-list 'exec-path-from-shell-variables var)))
+;; (with-eval-after-load 'exec-path-from-shell
+;;   (dolist (var '("PATH"))
+;;     (add-to-list 'exec-path-from-shell-variables var)))
+
+(setq exec-path-from-shell-variables '("PATH")
+      exec-path-from-shell-arguments '("-l"))
 
 
 (when (or (memq window-system '(mac ns x))

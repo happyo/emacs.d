@@ -65,7 +65,7 @@
 
 (use-package seethru
   )
-(seethru-recommended-keybinds "C-x") ;; "C-x 8" and "C-x 9"
+(seethru-recommended-keybinds "C-c") ;; "C-x 8" and "C-x 9"
 (seethru-mouse-bindings "C") ;; hold control while wheeling
 
 (use-package ns-auto-titlebar)
