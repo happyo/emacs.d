@@ -1,9 +1,18 @@
 
 ;; ----- amx-history -----
 (
- paradox-upgrade-packages
- auto-package-update-now
+ meow-tutor
  paradox-list-packages
+ auto-package-update-now
+ meow-last-buffer
+ beacon-mode
+ meow-pop-grab
+ meow-end-kmacro
+ meow-grab
+ meow-beacon-insert-exit
+ meow-beacon-insert
+ meow-left
+ paradox-upgrade-packages
  meow-indent
  list-packages
  light
@@ -12,15 +21,6 @@
  dark
  sanityinc/headerise-elisp
  seethru
- avy-goto-char
- ivy-avy
- ivy-mode
- counsel-rg
- ivy-rich-mode
- counsel-ibuffer
- counsel-git-grep
- execute-extended-command
- execute-extended-command-for-buffer
 )
 
 ;; ----- amx-data -----
@@ -41,9 +41,18 @@
  (light . 2)
  (text-scale-increase . 1)
  (text-scale-decrease . 1)
- (auto-package-update-now . 5)
- (paradox-list-packages . 4)
+ (auto-package-update-now . 6)
+ (paradox-list-packages . 6)
  (paradox-filter-regexp . 3)
  (list-packages . 1)
  (paradox-upgrade-packages . 2)
+ (meow-left . 1)
+ (meow-beacon-insert . 1)
+ (meow-beacon-insert-exit . 1)
+ (meow-grab . 1)
+ (meow-end-kmacro . 1)
+ (meow-pop-grab . 2)
+ (beacon-mode . 2)
+ (meow-last-buffer . 2)
+ (meow-tutor . 2)
 )

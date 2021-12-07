@@ -77,7 +77,7 @@
    '("p" . meow-yank)
    '("P" . meow-sync-grab)
    '("q" . meow-quit)
-   '("Q" . meow-goto-line)
+   '("Q" . meow-last-buffer)
    '("r" . meow-replace)
    '("R" . meow-swap-grab)
    '("s" . meow-kill)
@@ -100,16 +100,15 @@
    '("'" . repeat)
    '("\\" . quoted-insert)
    '("/" . meow-visit)
-   '("<escape>" . meow-cancel)
+   '("<escape>" . meow-cancel-selection)
    ))
 
 (setq meow-selection-command-fallback '((meow-delete . meow-kill-whole-line)
                                         (meow-change . meow-change-char)
                                         (meow-save . meow-save-char)
                                         (meow-replace . meow-replace-char)
-                                        (meow-cancel . meow-minibuffer-quit)
-                                        (meow-kill . meow-C-d)
                                         (meow-quit . meow-minibuffer-quit)
+                                        (meow-kill . meow-C-d)
                                          ))
 
 (use-package meow
