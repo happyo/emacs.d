@@ -3,6 +3,7 @@
 ;;; Code:
 
 (require 'init-elpa)
+(require 'init-editing-utils)
 
 ;; meow
 (defun meow-setup ()
@@ -51,7 +52,7 @@
    '("B" . meow-back-symbol)
    '("c" . meow-change)
    '("C" . meow-change-save)
-   '("d" . meow-delete)
+   '("d" . meow-kill-whole-line)
    '("D" . scroll-up)
    '("e" . meow-next-word)
    '("E" . meow-next-symbol)
@@ -103,13 +104,14 @@
    '("<escape>" . meow-cancel-selection)
    ))
 
-(setq meow-selection-command-fallback '((meow-delete . meow-kill-whole-line)
+(setq meow-selection-command-fallback '(
                                         (meow-change . meow-change-char)
                                         (meow-save . meow-save-char)
                                         (meow-replace . meow-replace-char)
                                         (meow-quit . meow-minibuffer-quit)
                                         (meow-kill . meow-C-d)
-                                         ))
+                                        ))
+
 
 (use-package meow
   :demand t
@@ -120,12 +122,8 @@
   (meow-setup)
   ;; If you want relative line number in NORMAL state(for display-line-numbers-mode)
   (meow-setup-line-number)
-  ;; If you need setup indicator, see `meow-indicator' for customizing by hand.
-  (meow-setup-indicator))
-
-(global-set-key (kbd "M-c") 'meow-clipboard-save)
-(global-set-key (kbd "M-v") 'meow-clipboard-yank)
-
+  (beacon-mode 1)
+  )
 
 (provide 'init-meow)
 ;;; init-meow.el ends here

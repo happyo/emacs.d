@@ -6,15 +6,19 @@
 ;; (use-package unfill)
 
 (global-set-key (kbd "M-/") 'comment-line)
+(global-set-key (kbd "M-a") 'mark-whole-buffer)
+(global-set-key (kbd "M-v") 'yank)
+(global-set-key (kbd "M-c") 'kill-ring-save)
+(global-set-key (kbd "M-s") 'save-buffer)
+(global-set-key (kbd "M-w") 'delete-frame)
+(global-set-key (kbd "M-z") 'undo)
 
-
-(when (fboundp 'electric-pair-mode)
-  (add-hook 'after-init-hook 'electric-pair-mode))
-(add-hook 'after-init-hook 'electric-indent-mode)
+;; (when (fboundp 'electric-pair-mode)
+;;   (add-hook 'after-init-hook 'electric-pair-mode))
+;; (add-hook 'after-init-hook 'electric-indent-mode)
 
 ;; (maybe-require-package 'list-unicode-display)
 
-
 ;;; Some basic preferences
 
 (setq-default
@@ -70,8 +74,9 @@
 
 (use-package beacon
   :init
-  (setq-default beacon-lighter "")
+  ;; (setq-default beacon-lighter "")
   (setq-default beacon-size 20)
+  (setq-default beacon-color "#666600")
   :config
   (beacon-mode 1))
 

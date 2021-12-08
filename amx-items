@@ -1,11 +1,13 @@
 
 ;; ----- amx-history -----
 (
+ meow-kill
+ meow-delete
+ beacon-mode
  meow-tutor
  paradox-list-packages
  auto-package-update-now
  meow-last-buffer
- beacon-mode
  meow-pop-grab
  meow-end-kmacro
  meow-grab
@@ -19,8 +21,6 @@
  text-scale-decrease
  text-scale-increase
  dark
- sanityinc/headerise-elisp
- seethru
 )
 
 ;; ----- amx-data -----
@@ -52,7 +52,9 @@
  (meow-grab . 1)
  (meow-end-kmacro . 1)
  (meow-pop-grab . 2)
- (beacon-mode . 2)
+ (beacon-mode . 4)
  (meow-last-buffer . 2)
  (meow-tutor . 2)
+ (meow-delete . 1)
+ (meow-kill . 1)
 )
