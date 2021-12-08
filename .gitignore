@@ -109,5 +109,10 @@ cookies
 /smex-items
 /eln-cache/
 
+persp-confs/
+amx-items
+rime/
+
+
 
 # End of https://www.toptal.com/developers/gitignore/api/emacs
