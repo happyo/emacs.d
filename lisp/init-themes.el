@@ -53,5 +53,8 @@
   (add-to-list 'dimmer-exclusion-predicates 'sanityinc/display-non-graphic-p)
   )
 
+(use-package all-the-icons
+  :if (display-graphic-p))
+
 (provide 'init-themes)
 ;;; init-themes.el ends here
