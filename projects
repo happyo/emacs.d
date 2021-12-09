@@ -1,3 +1,4 @@
 ;;; -*- lisp-data -*-
 (("~/.emacs.d/")
+ ("~/development/mProjects/my_flutter/")
  ("~/development/mProjects/PyTorch-CycleGAN/"))

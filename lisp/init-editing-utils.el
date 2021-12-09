@@ -13,9 +13,9 @@
 (global-set-key (kbd "M-w") 'delete-frame)
 (global-set-key (kbd "M-z") 'undo)
 
-;; (when (fboundp 'electric-pair-mode)
-;;   (add-hook 'after-init-hook 'electric-pair-mode))
-;; (add-hook 'after-init-hook 'electric-indent-mode)
+(when (fboundp 'electric-pair-mode)
+  (add-hook 'after-init-hook 'electric-pair-mode))
+(add-hook 'after-init-hook 'electric-indent-mode)
 
 ;; (maybe-require-package 'list-unicode-display)
 

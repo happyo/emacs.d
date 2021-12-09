@@ -7,37 +7,64 @@
 
 (require 'init-elpa)
 
-(use-package company)
-(use-package company-tabnine)
+(use-package company
+  :config
+  (defun company//sort-by-tabnine (candidates)
+    (if (or (functionp company-backend)
+            (not (and (listp company-backend) (memq 'company-tabnine company-backend))))
+        candidates
+      (let ((candidates-table (make-hash-table :test #'equal))
+            candidates-1
+            candidates-2)
+        (dolist (candidate candidates)
+          (if (eq (get-text-property 0 'company-backend candidate)
+                  'company-tabnine)
+              (unless (gethash candidate candidates-table)
+                (push candidate candidates-2))
+            (push candidate candidates-1)
+            (puthash candidate t candidates-table)))
+        (setq candidates-1 (nreverse candidates-1))
+        (setq candidates-2 (nreverse candidates-2))
+        (nconc (seq-take candidates-1 2)
+               (seq-take candidates-2 2)
+               (seq-drop candidates-1 2)
+               (seq-drop candidates-2 2)))))
+
+  (add-to-list 'company-transformers 'company//sort-by-tabnine t)
+  ;; `:separate`  使得不同 backend 分开排序
+  (add-to-list 'company-backends '(company-capf :with company-tabnine :separate))
+  )
+(use-package company-tabnine
+  :ensure t)
 
 (setq tab-always-indent 'complete)
 (add-to-list 'completion-styles 'initials t)
 
 
 ;; Customize company backends.
-(setq company-backends
-      '(
-        (company-tabnine company-dabbrev company-keywords company-files company-capf)
-        ))
+;; (setq company-backends
+;;       '(
+;;         (company-tabnine company-dabbrev company-keywords company-files company-capf)
+;;         ))
 
 
 ;; Add yasnippet support for all company backends.
-(defvar company-mode/enable-yas t
-  "Enable yasnippet for all backends.")
+;; (defvar company-mode/enable-yas t
+;;   "Enable yasnippet for all backends.")
 
-(defun company-mode/backend-with-yas (backend)
-  (if (or (not company-mode/enable-yas) (and (listp backend) (member 'company-yasnippet backend)))
-      backend
-    (append (if (consp backend) backend (list backend))
-            '(:with company-yasnippet))))
+;; (defun company-mode/backend-with-yas (backend)
+;;   (if (or (not company-mode/enable-yas) (and (listp backend) (member 'company-yasnippet backend)))
+;;       backend
+;;     (append (if (consp backend) backend (list backend))
+;;             '(:with company-yasnippet))))
 
-(setq company-backends (mapcar #'company-mode/backend-with-yas company-backends))
+;; (setq company-backends (mapcar #'company-mode/backend-with-yas company-backends))
 
 ;; Add `company-elisp' backend for elisp.
-(add-hook 'emacs-lisp-mode-hook
-          #'(lambda ()
-              (require 'company-elisp)
-              (push 'company-elisp company-backends)))
+;; (add-hook 'emacs-lisp-mode-hook
+;;           #'(lambda ()
+;;               (require 'company-elisp)
+;;               (push 'company-elisp company-backends)))
 
 ;; Remove duplicate candidate.
 ;; (add-to-list 'company-transformers #'delete-dups)

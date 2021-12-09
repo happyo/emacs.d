@@ -50,8 +50,6 @@
 
 ;; Bootstrap config
 
-;; (desktop-save-mode 1)
-
 (setq custom-file (locate-user-emacs-file "custom.el"))
 (require 'init-elpa)      ;; Machinery for installing required packages
 (require 'init-func)
@@ -65,8 +63,6 @@
 (require 'init-rime)
 
 (require 'init-persp)
-
-;; (require 'init-desktop)
 
 (require 'init-meow)
 (require 'init-editing-utils)
@@ -85,7 +81,6 @@
 (require 'init-ibuffer)
 (require 'init-flycheck)
 
-(require 'init-company)
 (require 'init-windows)
 (require 'init-mmm)
 
@@ -98,11 +93,12 @@
 (require 'init-yasnippet)
 (require 'init-lsp)
 (require 'init-lisp)
-(require 'init-haskell)
-(require 'init-scheme)
-(require 'init-dart)
-(require 'init-python)
+;; (require 'init-haskell)
+;; (require 'init-scheme)
+;; (require 'init-dart)
+;; (require 'init-python)
 
+(require 'init-company)
 
 
 (when (file-exists-p custom-file)
