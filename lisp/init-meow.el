@@ -13,8 +13,8 @@
    '("k" . meow-prev))
   (meow-leader-define-key
    ;; SPC j/k will run the original command in MOTION state.
-   '("j" . meow-motion-origin-command)
-   '("k" . meow-motion-origin-command)
+   '("j" . "H-j")
+   '("k" . "H-k")
    ;; Use SPC (0-9) for digit arguments.
    '("1" . meow-digit-argument)
    '("2" . meow-digit-argument)
@@ -93,7 +93,7 @@
    '("x" . meow-kill)
    '("X" . meow-kmacro-lines)
    '("y" . meow-save)
-   '("Y" . meow-grab)
+   '("Y" . meow-sync-grab)
    '("z" . meow-pop-selection)
    '("Z" . meow-pop-all-selection)
    '("&" . meow-query-replace)
@@ -106,22 +106,22 @@
 
 (setq meow-selection-command-fallback '(
                                         (meow-change . meow-change-char)
-                                        (meow-save . meow-save-char)
-                                        (meow-replace . meow-replace-char)
+                                        (meow-kill . meow-C-k)
+                                        (meow-cancel-selection . keyboard-quit)
+                                        (meow-pop-selection . meow-pop-grab)
+                                        (meow-beacon-change . meow-beacon-change-char)
                                         (meow-quit . meow-minibuffer-quit)
-                                        (meow-kill . meow-C-d)
                                         ))
 
 
 (use-package meow
   :demand t
-  :init
-  (meow-global-mode 1)
   :config
   ;; meow-setup is your custom function, see below
   (meow-setup)
   ;; If you want relative line number in NORMAL state(for display-line-numbers-mode)
   (meow-setup-line-number)
+  (meow-global-mode 1)
   (beacon-mode 1)
   )
 

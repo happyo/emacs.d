@@ -10,7 +10,7 @@
 (global-set-key (kbd "M-v") 'yank)
 (global-set-key (kbd "M-c") 'kill-ring-save)
 (global-set-key (kbd "M-s") 'save-buffer)
-(global-set-key (kbd "M-w") 'delete-frame)
+;; (global-set-key (kbd "M-w") 'kill-current-buffer)
 (global-set-key (kbd "M-z") 'undo)
 
 (when (fboundp 'electric-pair-mode)

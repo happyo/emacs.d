@@ -64,9 +64,10 @@
 ;; (global-set-key (kbd "M-C-7") (lambda () (interactive) (modify-frame-parameters nil `((alpha . 100)))))
 
 (use-package seethru
+  :config
+  (seethru-recommended-keybinds "C-c") ;; "C-x 8" and "C-x 9"
+  (seethru-mouse-bindings "C") ;; hold control while wheeling
   )
-(seethru-recommended-keybinds "C-c") ;; "C-x 8" and "C-x 9"
-(seethru-mouse-bindings "C") ;; hold control while wheeling
 
 (use-package ns-auto-titlebar)
 
