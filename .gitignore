@@ -113,6 +113,6 @@ persp-confs/
 amx-items
 rime/
 
-
+.dap-breakpoints
 
 # End of https://www.toptal.com/developers/gitignore/api/emacs
