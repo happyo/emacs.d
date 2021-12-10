@@ -7,8 +7,21 @@
 (require 'init-elpa)
 
 (use-package cnfonts
-    :config
-    (cnfonts-enable))
+  :init
+  (setq cnfonts-personal-fontnames
+        '(
+          ("Operator Mono" "Victor Mono" "JetBrains Mono")
+          ("等距更纱黑体 SC")
+          ("Operator Mono" "等距更纱黑体 SC")
+          ("Operator Mono" "等距更纱黑体 SC")
+          ("Operator Mono" "等距更纱黑体 SC")
+          ))
+  (setq cnfonts-profiles
+    '("program" "org-profile" "read-book"))
+  :config
+  (cnfonts--select-profile "program")
+  (cnfonts-enable)
+)
 
 (provide 'init-chinese)
 ;;; init-chinese.el ends here
