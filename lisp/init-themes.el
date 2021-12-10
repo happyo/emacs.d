@@ -17,7 +17,7 @@
 ;; (setq custom-safe-themes t)
 
 ;; ;; ;; If you don't customize it, this is the theme you get.
-;; (setq-default custom-enabled-themes '(kaolin-dark))
+(setq-default custom-enabled-themes '(kaolin-dark))
 
 ;; Or if you have use-package installed
 (use-package kaolin-themes
