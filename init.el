@@ -67,11 +67,10 @@
 (require 'init-meow)
 (require 'init-editing-utils)
 ;; (require 'init-smex)
-
+(require 'init-themes)
 (require 'init-chinese)
 (require 'init-frame-hooks)
 (require 'init-xterm)
-(require 'init-themes)
 (require 'init-keyfreq)
 (require 'init-osx-keys)
 (require 'init-gui-frames)

@@ -7,6 +7,7 @@
 (require 'init-elpa)
 
 (use-package cnfonts
+  :ensure t
   :init
   (setq cnfonts-personal-fontnames
         '(
@@ -18,10 +19,14 @@
           ))
   (setq cnfonts-profiles
     '("program" "org-profile" "read-book"))
-  :config
-  (cnfonts--select-profile "program")
-  (cnfonts-enable)
-)
+  ;; :config
+  ;; (select-program)
+  )
+  (cnfonts-mode 1)
+
+  ;; (defun select-program () 
+  ;;   (cnfonts--select-profile "program"))
+
 
 (provide 'init-chinese)
 ;;; init-chinese.el ends here

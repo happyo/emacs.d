@@ -6,7 +6,11 @@
 
 ;; (require-package 'color-theme-sanityinc-solarized)
 ;; (require-package 'color-theme-sanityinc-tomorrow)
-;; (use-package flucui-themes)
+;; (use-package flucui-themes
+  ;; :ensure t
+  ;; :config
+  ;; (load-theme 'flucui-dark t)
+  ;; )
 ;; (use-package color-theme-sanityinc-solarized)
 ;; (use-package color-theme-sanityinc-tomorrow)
 ;; (use-package dracula-theme)
@@ -14,17 +18,18 @@
 
 ;; Don't prompt to confirm theme safety. This avoids problems with
 ;; first-time startup on Emacs > 26.3.
-;; (setq custom-safe-themes t)
+(setq custom-safe-themes t)
 
 ;; ;; ;; If you don't customize it, this is the theme you get.
-(setq-default custom-enabled-themes '(kaolin-dark))
+(setq-default custom-enabled-themes '(flucui-dark))
 
 ;; Or if you have use-package installed
-(use-package kaolin-themes
+;; (use-package kaolin-themes
+  ;; :ensure t
   ;; :config
   ;; (load-theme 'kaolin-dark t)
   ;; (kaolin-treemacs-theme)
-  )
+  ;; )
 
 ;; Ensure that themes will be applied even if they have not been customized
 (defun reapply-themes ()
@@ -39,21 +44,22 @@
 (add-hook 'after-init-hook 'reapply-themes)
 
 
-;; ;; ;; Toggle between light and dark
+;; ;; Toggle between light and dark
 
 (defun light ()
   "Activate a light color theme."
   (interactive)
-  (setq custom-enabled-themes '(sanityinc-tomorrow-day))
+  (setq custom-enabled-themes '(flucui-dark flucui-light kaolin-dark))
   ;; (setq custom-enabled-themes '(flucui-light))
   (reapply-themes))
 
 (defun dark ()
   "Activate a dark color theme."
   (interactive)
+  ;; (setq custom-enabled-themes '(sanityinc-solarized-dark))
   (setq custom-enabled-themes '(kaolin-dark))
-  ;; (setq custom-enabled-themes '(flucui-dark))
   (reapply-themes))
+
 
 ;; (use-package dimmer
 ;;   :config
