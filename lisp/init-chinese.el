@@ -7,7 +7,6 @@
 (require 'init-elpa)
 
 (use-package cnfonts
-  :ensure t
   :init
   (setq cnfonts-personal-fontnames
         '(
