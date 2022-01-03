@@ -15,7 +15,7 @@
   :ensure t
   :hook (python-mode . (lambda ()
                          (require 'lsp-pyright)
-                         (lsp))))  ; or lsp-deferred
+                         (lsp-deferred))))  ; or lsp-deferred
 
 ;; (when (maybe-require-package 'reformatter)
 ;;   (reformatter-define black :program "black" :args '("-")))

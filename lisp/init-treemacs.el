@@ -77,7 +77,7 @@
        (treemacs-git-mode 'simple)))
 
     (treemacs-hide-gitignored-files-mode nil))
-    (treemacs-load-all-the-icons-with-workaround-font "Monaco")
+    (treemacs-load-all-the-icons-with-workaround-font "Operator Mono")
   :bind
   (:map global-map
         ("M-0"       . treemacs-select-window)
@@ -100,6 +100,8 @@
 (use-package treemacs-icons-dired
   :hook (dired-mode . treemacs-icons-dired-enable-once)
   :ensure t)
+
+(use-package treemacs-all-the-icons)
 
 
 ;; (use-package treemacs-magit

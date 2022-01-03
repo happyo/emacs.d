@@ -8,6 +8,12 @@
 (require 'init-elpa)
 
 (use-package company
+  :hook (after-init . global-company-mode)
+  :init
+  (setq company-idle-delay 0
+      company-tooltip-idle-delay 10
+      company-require-match nil
+      )
   :config
   (defun company//sort-by-tabnine (candidates)
     (if (or (functionp company-backend)
@@ -37,8 +43,8 @@
 (use-package company-tabnine
   :ensure t)
 
-(setq tab-always-indent 'complete)
-(add-to-list 'completion-styles 'initials t)
+;; (setq tab-always-indent 'complete)
+;; (add-to-list 'completion-styles 'initials t)
 
 
 ;; Customize company backends.

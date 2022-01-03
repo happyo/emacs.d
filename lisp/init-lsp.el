@@ -16,6 +16,7 @@
          (lisp-mode . lsp-deferred)
          (dart-mode . lsp-deferred)
          (haskell-mode . lsp-deferred)
+         (python-mode . lsp-deferred)
          ;;  ;; if you want which-key integration
          ;;  (lsp-mode . lsp-enable-which-key-integration)
          )

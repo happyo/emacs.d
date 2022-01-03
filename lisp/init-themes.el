@@ -5,8 +5,8 @@
 (require 'init-elpa)
 
 (use-package flucui-themes
-  :config
-  (flucui-themes-load-style 'dark)
+  ;; :config
+  ;; (flucui-themes-load-style 'dark)
   )
 
 (use-package lab-themes
@@ -53,8 +53,10 @@
 ;;       ('modus-vivendi (modus-themes-load-vivendi)))))
 
 
-(add-hook 'after-init-hook (lambda () (lab-themes-load-style 'dark)
-                                       )
+(add-hook 'after-init-hook (lambda () (progn
+                                        (lab-themes-load-style 'dark)
+                                        (set-face-background 'line-number (face-attribute 'default :background))
+                                       ))
                             )
 
 
@@ -131,4 +133,4 @@
   :if (display-graphic-p))
 
 (provide 'init-themes)
-;;; init-themes.el ends here
+;;; init-themes.el end

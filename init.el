@@ -62,13 +62,15 @@
 
 (require 'init-rime)
 
-(require 'init-persp)
+(if *is-a-mac*
+    (require 'init-persp)
+    )
 
 (require 'init-meow)
 (require 'init-editing-utils)
 ;; (require 'init-smex)
-(require 'init-themes)
 (require 'init-chinese)
+(require 'init-themes)
 (require 'init-frame-hooks)
 (require 'init-xterm)
 (require 'init-keyfreq)
