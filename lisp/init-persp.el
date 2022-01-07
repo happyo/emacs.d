@@ -7,7 +7,6 @@
 
 ;; Windows/buffers sets shared among frames + save/load.
 (use-package persp-mode
-  :unless *is-a-mac*
   :diminish
   :defines (recentf-exclude ivy-ignore-buffers)
   :commands (get-current-persp persp-contain-buffer-p)
@@ -126,7 +125,6 @@
 
 ;; Projectile integration
 (use-package persp-mode-projectile-bridge
-  :unless *is-a-mac*
   :commands (persp-mode-projectile-bridge-find-perspectives-for-all-buffers
              persp-mode-projectile-bridge-kill-perspectives)
   :hook ((persp-mode . persp-mode-projectile-bridge-mode)

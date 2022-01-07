@@ -62,9 +62,7 @@
 
 (require 'init-rime)
 
-(if *is-a-mac*
-    (require 'init-persp)
-    )
+(require 'init-persp)
 
 (require 'init-meow)
 (require 'init-editing-utils)
@@ -100,6 +98,9 @@
 ;; (require 'init-python)
 
 (require 'init-company)
+
+;; org
+(require 'init-org)
 
 
 (when (file-exists-p custom-file)
