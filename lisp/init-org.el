@@ -33,7 +33,7 @@
                        ;; (sequence "FIXME(f)" "BUG(u)")
                        ))
   (org-todo-keyword-faces
-        '(
+   '(
           ("NOTES" . "#FA5055")
           ("BOLD_P" . "#FF6B47")
           ("HIGHLIGHT_P" . "#E2B17C")
