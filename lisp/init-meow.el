@@ -104,18 +104,22 @@
    '("<escape>" . meow-cancel-selection)
    ))
 
-(setq meow-selection-command-fallback '(
-                                        (meow-change . meow-change-char)
-                                        (meow-kill . meow-C-k)
-                                        (meow-cancel-selection . keyboard-quit)
-                                        (meow-pop-selection . meow-pop-grab)
-                                        (meow-beacon-change . meow-beacon-change-char)
-                                        (meow-quit . meow-minibuffer-quit)
-                                        ))
+
+      
 
 
 (use-package meow
   :demand t
+  :init
+  (setq meow-selection-command-fallback '(
+                                          (meow-change . meow-change-char)
+                                          (meow-kill . meow-C-d)
+                                          (meow-cancel-selection . keyboard-quit)
+                                          (meow-pop-selection . meow-pop-grab)
+                                          (meow-beacon-change . meow-beacon-change-char)
+                                          (meow-quit . meow-minibuffer-quit)
+                                          )) 
+  (setq meow-expand-exclude-mode-list '(markdown-mode org-mode eaf-mode))
   :config
   ;; meow-setup is your custom function, see below
   (meow-setup)

@@ -27,7 +27,15 @@
       :if-new (file+head "FleetingNotes/%<%Y%m%d>-${slug}.org"
                          "#+title: ${title}\n")
       :unnarrowed t)
-      ))
+     ("t" "Tasks" plain "\n* Tasks \n%?"
+      :if-new (file+head "PersonalTasks/${slug}.org"
+                         "#+title: ${title}\n")
+      :unnarrowed t)
+     ("w" "Work" plain "\n* Tasks \n%?"
+      :if-new (file+head "WorkTasks/${slug}.org"
+                         "#+title: ${title}\n")
+      :unnarrowed t)
+     ))
   (org-todo-keywords '((sequence "NOTES(n)" "BOLD_P(b)" "HIGHLIGHT_P(h)" "MINI_SUM(m)" "REMIX(r)")
                        (sequence "TODO(t)" "DONE(d)")
                        ;; (sequence "FIXME(f)" "BUG(u)")
@@ -42,26 +50,16 @@
           ("TODO" . "#FA5055")
           ("DONE" . "$00CC7E")
           ))
+  :bind (("C-c n l" . org-roam-buffer-toggle)
+         ("C-c n f" . org-roam-node-find)
+         ("C-c n g" . org-roam-graph)
+         ("C-c n i" . org-roam-node-insert)
+         ("C-c n c" . org-roam-capture)
+         ;; Dailies
+         ("C-c n j" . org-roam-dailies-capture-today))
   :config
   (org-roam-db-autosync-mode)
   )
-
-
-;; (use-package org-roam
-;;   :ensure t
-;;   :custom
-;;   (org-roam-directory (file-truename "/Zettelkasten"))
-;;   :bind (("C-c n l" . org-roam-buffer-toggle)
-;;          ("C-c n f" . org-roam-node-find)
-;;          ("C-c n g" . org-roam-graph)
-;;          ("C-c n i" . org-roam-node-insert)
-;;          ("C-c n c" . org-roam-capture)
-;;          ;; Dailies
-;;          ("C-c n j" . org-roam-dailies-capture-today))
-;;   :config
-;;   (org-roam-db-autosync-mode)
-;;   ;; If using org-roam-protocol
-;;   (require 'org-roam-protocol))
 
 (require 'org-bars)
 (add-hook 'org-mode-hook #'org-bars-mode)

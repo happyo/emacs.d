@@ -114,5 +114,7 @@ amx-items
 rime/
 
 .dap-breakpoints
+eaf/
+*.db
 
 # End of https://www.toptal.com/developers/gitignore/api/emacs

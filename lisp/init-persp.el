@@ -26,7 +26,7 @@
   (defun persp-save-frame ()
     "Save the current frame parameters to file."
     (interactive)
-    (when (and (display-graphic-p) persp-mode)
+    (when (and (display-graphic-p) *is-a-mac* persp-mode)
       (condition-case error
           (with-temp-buffer
             (erase-buffer)
@@ -48,7 +48,7 @@
   (defun persp-load-frame ()
     "Load frame with the previous frame's geometry."
     (interactive)
-    (when (and (display-graphic-p) persp-mode)
+    (when (and (display-graphic-p) *is-a-mac* persp-mode)
       (condition-case error
           (progn
             ;; (fix-fullscreen-cocoa)
@@ -83,12 +83,23 @@
   ;; Don't save dead or temporary buffers
   (add-hook 'persp-filter-save-buffers-functions
             (lambda (b)
+              "Ignore temporary buffers."
+              (message "Filter eaf")
+              (let ((mname (buffer-local-value 'major-mode b)))
+                (or (eq 'eaf-mode mname)
+                    (eq 'eaf-mode mname)
+                    )
+                )))
+  (add-hook 'persp-filter-save-buffers-functions
+            (lambda (b)
+              (message "Filter dead")
               "Ignore dead and unneeded buffers."
               (or (not (buffer-live-p b))
                   (string-prefix-p " *" (buffer-name b)))))
   (add-hook 'persp-filter-save-buffers-functions
             (lambda (b)
               "Ignore temporary buffers."
+              (message "Filter magit")
               (let ((bname (file-name-nondirectory (buffer-name b))))
                 (or (string-prefix-p ".newsrc" bname)
                     (string-prefix-p "magit" bname)
@@ -97,7 +108,7 @@
                     (string-prefix-p "treemacs-persist" bname)
                     (string-match-p "\\.elc\\|\\.tar\\|\\.gz\\|\\.zip\\'" bname)
                     (string-match-p "\\.bin\\|\\.so\\|\\.dll\\|\\.exe\\'" bname)))))
-
+  
   ;; Don't save persp configs in `recentf'
   (with-eval-after-load 'recentf
     (push persp-save-dir recentf-exclude))

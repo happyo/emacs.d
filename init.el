@@ -95,13 +95,15 @@
 ;; (require 'init-haskell)
 ;; (require 'init-scheme)
 ;; (require 'init-dart)
-;; (require 'init-python)
+(require 'init-python)
 
 (require 'init-company)
 
 ;; org
 (require 'init-org)
 
+;; eaf
+(require 'init-eaf)
 
 (when (file-exists-p custom-file)
   (load custom-file))
