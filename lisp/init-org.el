@@ -37,7 +37,7 @@
       :unnarrowed t)
      ))
   (org-todo-keywords '((sequence "NOTES(n)" "BOLD_P(b)" "HIGHLIGHT_P(h)" "MINI_SUM(m)" "REMIX(r)")
-                       (sequence "TODO(t)" "DONE(d)")
+                       (sequence "TODO(t!)" "DONE(d!)")
                        ;; (sequence "FIXME(f)" "BUG(u)")
                        ))
   (org-todo-keyword-faces
@@ -55,14 +55,21 @@
          ("C-c n g" . org-roam-graph)
          ("C-c n i" . org-roam-node-insert)
          ("C-c n c" . org-roam-capture)
+         ("C-c n a" . org-agenda)
          ;; Dailies
-         ("C-c n j" . org-roam-dailies-capture-today))
+         ("C-c n j" . org-roam-dailies-capture-today)
+         )
   :config
   (org-roam-db-autosync-mode)
   )
 
 (require 'org-bars)
 (add-hook 'org-mode-hook #'org-bars-mode)
+
+(use-package org
+  :init
+  (setq org-agenda-span 'day)
+  )
 
 (provide 'init-org)
 ;;; init-org.el ends here
