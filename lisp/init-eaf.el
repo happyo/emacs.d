@@ -13,7 +13,6 @@
 ;; (require 'eaf-airshare)
 (require 'eaf-image-viewer)
 ;; (require 'eaf-rss-reader)
-
 (use-package eaf
   :load-path "~/.emacs.d/site-lisp/emacs-application-framework" ; Set to "/usr/share/emacs/site-lisp/eaf" if installed from AUR
   :custom
