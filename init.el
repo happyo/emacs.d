@@ -103,7 +103,9 @@
 (require 'init-org)
 
 ;; eaf
-(require 'init-eaf)
+(if (not *is-a-mac*)
+    (require 'init-eaf)
+    )
 
 (when (file-exists-p custom-file)
   (load custom-file))

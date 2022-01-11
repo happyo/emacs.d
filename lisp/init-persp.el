@@ -38,8 +38,7 @@
              (format "      '((top . %d)\n" (eval (frame-parameter nil 'top)))
              (format "        (left . %d)\n" (eval (frame-parameter nil 'left)))
              (format "        (width . %d)\n" (eval (frame-parameter nil 'width)))
-             (format "        (height . %d)\n" (eval (frame-parameterpersp-save-frame ()
-    "Save the current frame parameters to file." nil 'height)))
+             (format "        (height . %d)\n" (eval (frame-parameter nil 'height)))
              (format "        (fullscreen . %s)))\n" (frame-parameter nil 'fullscreen)))
             (write-file persp-frame-file))
         (error
@@ -84,7 +83,6 @@
   (add-hook 'persp-filter-save-buffers-functions
             (lambda (b)
               "Ignore temporary buffers."
-              (message "Filter eaf")
               (let ((mname (buffer-local-value 'major-mode b)))
                 (or (eq 'eaf-mode mname)
                     (eq 'eaf-mode mname)
