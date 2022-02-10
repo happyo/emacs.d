@@ -94,7 +94,7 @@
 (require 'init-lisp)
 ;; (require 'init-haskell)
 ;; (require 'init-scheme)
-;; (require 'init-dart)
+(require 'init-dart)
 (require 'init-python)
 
 (require 'init-company)
