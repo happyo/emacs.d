@@ -12,7 +12,6 @@
 (global-set-key (kbd "M-s") 'save-buffer)
 ;; (global-set-key (kbd "M-w") 'kill-current-buffer)
 (global-set-key (kbd "M-z") 'undo)
-(global-set-key (kbd "M-O") 'project-find-file)
 
 (when (fboundp 'electric-pair-mode)
   (add-hook 'after-init-hook 'electric-pair-mode))
