@@ -3,6 +3,8 @@
 ;;; Code:
 (require 'init-elpa)
 
+(use-package format-all)
+
 ;; (use-package unfill)
 
 (global-set-key (kbd "M-/") 'comment-line)

@@ -1,4 +1,4 @@
-;;; init.el --- Load the full configuration -*- lexical-binding: t -*-
+
 ;;; Commentary:
 
 ;; This file bootstraps the configuration, which is divided into
@@ -16,6 +16,9 @@
             "Recover GC values after startup."
             (setq gc-cons-threshold 800000
                   gc-cons-percentage 0.1)))
+
+;; (setq package-gnupghome-dir "~/.emace.d/elpa/gnupg")
+
 
 ;; Load path
 ;; Optimize: Force "lisp"" and "site-lisp" at the head to reduce the startup time.
@@ -55,6 +58,11 @@
 (require 'init-func)
 (require 'init-exec-path) ;; Set up $PATH
 
+(let ((my/old package-check-signature))
+  (use-package gnu-elpa-keyring-update
+    :ensure t
+    :init   (setq package-check-signature nil)
+    :config (setq package-check-signature my/old)))
 
 (use-package diminish)
 (use-package scratch)

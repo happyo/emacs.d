@@ -50,6 +50,7 @@
 ;;     (setq ivy-rich-parse-remote-buffer nil))
 ;;   )
 (use-package vertico
+  :ensure t
   :init
   (vertico-mode)
 
