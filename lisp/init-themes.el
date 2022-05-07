@@ -8,9 +8,7 @@
   ;; :config
   ;; (flucui-themes-load-style 'dark)
   )
-
-(use-package lab-themes
-  )
+(use-package moe-theme)
 
 ;; (use-package modus-themes
 ;;   :init
@@ -53,11 +51,13 @@
 ;;       ('modus-vivendi (modus-themes-load-vivendi)))))
 
 
-(add-hook 'after-init-hook (lambda () (progn
-                                        (lab-themes-load-style 'dark)
-                                        (set-face-background 'line-number (face-attribute 'default :background))
-                                       ))
-                            )
+;; (add-hook 'after-init-hook (lambda () (progn
+;;                                         (moe-light)
+;;                                         (set-face-background 'line-number (face-attribute 'default :background))
+;;                                        ))
+;;                             )
+
+(load-theme 'moe-dark t)
 
 
 ;; sample Elisp calls (or call `my-modus-themes-saturate' interactively)

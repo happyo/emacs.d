@@ -104,6 +104,7 @@
 ;; (require 'init-scheme)
 (require 'init-dart)
 (require 'init-python)
+(require 'init-swift)
 
 (require 'init-company)
 
