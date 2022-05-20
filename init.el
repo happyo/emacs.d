@@ -98,7 +98,7 @@
 
 ;; Language
 (require 'init-yasnippet)
-(require 'init-lsp)
+;; (require 'init-lsp)
 (require 'init-lisp)
 ;; (require 'init-haskell)
 ;; (require 'init-scheme)

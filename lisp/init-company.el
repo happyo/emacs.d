@@ -7,13 +7,7 @@
 
 (require 'init-elpa)
 
-;; (use-package company)
 (use-package corfu
-  ;; Optional customizations
-  ;; :custom
-  ;; (corfu-cycle t)                ;; Enable cycling for `corfu-next/previous'
-  ;; (corfu-auto t)                 ;; Enable auto completion
-  ;; (corfu-separator ?\s)          ;; Orderless field separator
   ;; (corfu-quit-at-boundary nil)   ;; Never quit at completion boundary
   ;; (corfu-quit-no-match nil)      ;; Never quit, even if there is no match
   ;; (corfu-preview-current nil)    ;; Disable current candidate preview
@@ -56,39 +50,7 @@
   (setq completion-styles '(orderless basic)
         completion-category-defaults nil
         completion-category-overrides '((file (styles . (partial-completion))))))
-;; (use-package company
-;;   :hook (after-init . global-company-mode)
-;;   :init
-;;   (setq company-idle-delay 0
-;;       company-tooltip-idle-delay 10
-;;       company-require-match nil
-;;       )
-;;   :config
-;;   (defun company//sort-by-tabnine (candidates)
-;;     (if (or (functionp company-backend)
-;;             (not (and (listp company-backend) (memq 'company-tabnine company-backend))))
-;;         candidates
-;;       (let ((candidates-table (make-hash-table :test #'equal))
-;;             candidates-1
-;;             candidates-2)
-;;         (dolist (candidate candidates)
-;;           (if (eq (get-text-property 0 'company-backend candidate)
-;;                   'company-tabnine)
-;;               (unless (gethash candidate candidates-table)
-;;                 (push candidate candidates-2))
-;;             (push candidate candidates-1)
-;;             (puthash candidate t candidates-table)))
-;;         (setq candidates-1 (nreverse candidates-1))
-;;         (setq candidates-2 (nreverse candidates-2))
-;;         (nconc (seq-take candidates-1 2)
-;;                (seq-take candidates-2 2)
-;;                (seq-drop candidates-1 2)
-;;                (seq-drop candidates-2 2)))))
 
-;;   (add-to-list 'company-transformers 'company//sort-by-tabnine t)
-;;   ;; `:separate`  使得不同 backend 分开排序
-;;   (add-to-list 'company-backends '(company-capf :with company-tabnine :separate))
-;;   )
 (use-package dash)
 (use-package s)
 (use-package editorconfig)
@@ -112,6 +74,23 @@
 ;;   (define-key company-active-map (kbd "<tab>") 'my-tab)
 ;;   (define-key company-active-map (kbd "TAB") 'my-tab))
 
+(add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-bridge")
+
+(require 'yasnippet)
+(require 'lsp-bridge)             ;; load lsp-bridge
+(require 'lsp-bridge-jdtls)       ;; provide Java third-party library jump and -data directory support, optional
+(yas-global-mode 1)
+
+;; For corfu users:
+(setq lsp-bridge-completion-provider 'corfu)
+(require 'corfu)
+(require 'corfu-info)
+(require 'corfu-history)
+(require 'lsp-bridge-icon)        ;; show icons for completion items, optional
+(require 'lsp-bridge-orderless)   ;; make lsp-bridge support fuzzy match, optional
+(global-corfu-mode)               ;; use corfu as completion ui
+(corfu-history-mode t)
+(global-lsp-bridge-mode)
 
 (provide 'init-company)
 ;;; init-company.el ends here
