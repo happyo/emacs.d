@@ -47,7 +47,7 @@ This is useful when followed by an immediate kill."
   ([remap isearch-query-replace] . 'anzu-query-replace)
   ([remap isearch-query-replace-regexp] . 'anzu-query-replace-regexp)
   ("M-F" . 'anzu-query-replace)
-  ("M-R" . 'anzu-query-replace-regexp)
+  ("M-r" . 'anzu-query-replace-regexp)
   :config
   (add-hook 'after-init-hook 'global-anzu-mode)
   )

@@ -51,12 +51,12 @@
         completion-category-defaults nil
         completion-category-overrides '((file (styles . (partial-completion))))))
 
-(use-package dash)
-(use-package s)
-(use-package editorconfig)
-(load-file "~/.emacs.d/site-lisp/copilot.el/copilot.el")
+;; (use-package dash)
+;; (use-package s)
+;; (use-package editorconfig)
+;; (load-file "~/.emacs.d/site-lisp/copilot.el/copilot.el")
 
-(add-hook 'prog-mode-hook 'copilot-mode)
+;; (add-hook 'prog-mode-hook 'copilot-mode)
 
 ; complete by copilot first, then company-mode
 ;; (defun my-tab ()
@@ -74,23 +74,7 @@
 ;;   (define-key company-active-map (kbd "<tab>") 'my-tab)
 ;;   (define-key company-active-map (kbd "TAB") 'my-tab))
 
-(add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-bridge")
 
-(require 'yasnippet)
-(require 'lsp-bridge)             ;; load lsp-bridge
-(require 'lsp-bridge-jdtls)       ;; provide Java third-party library jump and -data directory support, optional
-(yas-global-mode 1)
-
-;; For corfu users:
-(setq lsp-bridge-completion-provider 'corfu)
-(require 'corfu)
-(require 'corfu-info)
-(require 'corfu-history)
-(require 'lsp-bridge-icon)        ;; show icons for completion items, optional
-(require 'lsp-bridge-orderless)   ;; make lsp-bridge support fuzzy match, optional
-(global-corfu-mode)               ;; use corfu as completion ui
-(corfu-history-mode t)
-(global-lsp-bridge-mode)
 
 (provide 'init-company)
 ;;; init-company.el ends here

@@ -26,11 +26,13 @@
   ;;    ("r" origami-reset "reset")
   ;;    ("n" origami-next-fold "next fold")
   ;;    ("p" origami-previous-fold "previous fold"))))
-  ;; :bind (:map origami-mode-map
-  ;;        ("C-~" . origami-hydra/body))
+  :bind (:map origami-mode-map
+         ("C-~" . origami-hydra/body))
   :hook (prog-mode . origami-mode)
   :init (setq origami-show-fold-header t)
-  :config (face-spec-reset-face 'origami-fold-header-face))
+  :config
+  (face-spec-reset-face 'origami-fold-header-face)
+   )
 
 
 (provide 'init-folding)

@@ -94,34 +94,8 @@
   :config
   (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
 
-
-;; (when (maybe-require-package 'symbol-overlay)
-;;   (dolist (hook '(prog-mode-hook html-mode-hook yaml-mode-hook conf-mode-hook))
-;;     (add-hook hook 'symbol-overlay-mode))
-;;   (with-eval-after-load 'symbol-overlay
-;;     (diminish 'symbol-overlay-mode)
-;;     (define-key symbol-overlay-mode-map (kbd "M-i") 'symbol-overlay-put)
-;;     (define-key symbol-overlay-mode-map (kbd "M-I") 'symbol-overlay-remove-all)
-;;     (define-key symbol-overlay-mode-map (kbd "M-n") 'symbol-overlay-jump-next)
-;;     (define-key symbol-overlay-mode-map (kbd "M-p") 'symbol-overlay-jump-prev)))
-
-(use-package browse-kill-ring)
-(setq browse-kill-ring-separator "\f")
-(global-set-key (kbd "M-Y") 'browse-kill-ring)
-(with-eval-after-load 'browse-kill-ring
-  (define-key browse-kill-ring-mode-map (kbd "C-g") 'browse-kill-ring-quit)
-  (define-key browse-kill-ring-mode-map (kbd "M-n") 'browse-kill-ring-forward)
-  (define-key browse-kill-ring-mode-map (kbd "M-p") 'browse-kill-ring-previous))
-(with-eval-after-load 'page-break-lines
-  (add-to-list 'page-break-lines-modes 'browse-kill-ring-mode))
-
 ;; Show matching parens
 (add-hook 'after-init-hook 'show-paren-mode)
-
-
-;; Handy key bindings
-(global-set-key (kbd "C-.") 'set-mark-command)
-(global-set-key (kbd "C-x C-.") 'pop-global-mark)
 
 (use-package avy
   :bind
@@ -136,12 +110,12 @@
 (global-set-key (kbd "C-c d") 'move-dup-duplicate-down)
 (global-set-key (kbd "C-c u") 'move-dup-duplicate-up)
 
-(use-package highlight-escape-sequences)
-(add-hook 'after-init-hook 'hes-mode)
+;; (use-package highlight-escape-sequences)
+;; (add-hook 'after-init-hook 'hes-mode)
 
-(use-package which-key)
-(add-hook 'after-init-hook 'which-key-mode)
-(setq-default which-key-idle-delay 1.5)
+;; (use-package which-key)
+;; (add-hook 'after-init-hook 'which-key-mode)
+;; (setq-default which-key-idle-delay 1.5)
 
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
