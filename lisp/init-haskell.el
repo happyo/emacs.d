@@ -5,5 +5,6 @@
 (require 'init-elpa)
 
 
+
 (provide 'init-haskell)
 ;;; init-haskell.el ends here
