@@ -6,6 +6,8 @@
 
 (require 'init-elpa)
 
+(require 'cnfonts)
+
 (use-package cnfonts
   :ensure t
   :init
@@ -30,12 +32,8 @@
   :config
   (cnfonts--select-profile "program")
   (cnfonts-enable)
-  ;; (select-program)
-  )
-
+)
 (cnfonts-mode 1)
-  ;; (defun select-program () 
-  ;;   (cnfonts--select-profile "program"))
 
 
 (provide 'init-chinese)

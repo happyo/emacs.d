@@ -4,14 +4,14 @@
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp/emacs-application-framework/")
 (require 'eaf)
-(require 'eaf-org-previewer)
-(require 'eaf-mindmap)
+;; (require 'eaf-org-previewer)
+;; (require 'eaf-mindmap)
 ;; (require 'eaf-mermaid)
 (require 'eaf-pdf-viewer)
-(require 'eaf-markdown-previewer)
+;; (require 'eaf-markdown-previewer)
 (require 'eaf-browser)
 ;; (require 'eaf-airshare)
-(require 'eaf-image-viewer)
+;; (require 'eaf-image-viewer)
 ;; (require 'eaf-rss-reader)
 (use-package eaf
   :load-path "~/.emacs.d/site-lisp/emacs-application-framework" ; Set to "/usr/share/emacs/site-lisp/eaf" if installed from AUR

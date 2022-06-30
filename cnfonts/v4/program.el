@@ -1,11 +1,11 @@
 ;; `cnfonts--custom-set-fontsnames' 结构与 `cnfonts--fontnames-fallback' 相同。
 (setq cnfonts--custom-set-fontnames
       '(
-        ("Operator Mono" "JetBrains Mono" "Monaco" "3270" "Victor Mono" "Consolas" "DejaVu Sans Mono" "Droid Sans Mono" "PragmataPro" "Courier" "Courier New" "Ubuntu Mono" "Liberation Mono" "MonacoB" "MonacoB2" "MonacoBSemi" "Droid Sans Mono Pro" "Inconsolata" "Source Code Pro" "Lucida Console" "Envy Code R" "Andale Mono" "Lucida Sans Typewriter" "monoOne" "Lucida Typewriter" "Panic Sans" "Hack" "Bitstream Vera Sans Mono" "HyperFont" "PT Mono" "Ti92Pluspc" "Excalibur Monospace" "Menlof" "Cousine" "Fira Mono" "Lekton" "M+ 1mn" "BPmono" "Free Mono" "Anonymous Pro" "ProFont" "ProFontWindows" "Latin Modern Mono" "Code 2002" "ProggyCleanTT" "ProggyTinyTT" "Iosevka Term" "Inconsolata-dz" "American Typewriter" "Menlo" "Anka/Coder Condensed" "Fantasque Sans Mono" "M+ 1m" "CamingoCode" "Office Code Pro" "Roboto Mono" "Input Mono" "Courier Prime Code" "NanumGothicCoding" "Monoid" "Edlo" "Iosevka" "Mononoki" "Robot Mono" "Fantasque" "Fira Code" "Go Mono" "Noto Sans Mono CJK" "InputMonoCompressed" "Hasklig" "Terminus" "FantasqueSansMono" "AnonymousPro" "Arimo" "D2Coding" "Inconsolata-g" "ProFont for Powerline" "Meslo" "Meslo Dotted" "Noto Mono" "Symbol Neu" "Tinos" "Space Mono" "SFMono Nerd Font")
-        ("微软雅黑" "等距更纱黑体 SC" "Noto Sans Mono CJK SC" "Noto Sans Mono CJK TC" "Noto Sans CJK SC" "Noto Sans CJK TC" "Microsoft Yahei" "Microsoft YaHei Mono" "Microsoft_Yahei" "Ubuntu Mono" "文泉驿等宽微米黑" "文泉驿等宽正黑" "黑体" "Source Han Serif CN" "Source Han Sans CN" "思源黑体 CN" "思源宋体 CN" "Hiragino Sans GB" "文泉驿正黑" "文泉驿点阵正黑" "SimHei" "SimSun" "NSimSun" "FangSong" "KaiTi" "FangSong_GB2312" "KaiTi_GB2312" "LiSu" "YouYuan" "新宋体" "宋体" "楷体_GB2312" "仿宋_GB2312" "幼圆" "隶书" "STXihei" "STKaiti" "STSong" "STFangsong" "STXingkai" "华文仿宋" "华文行楷" "华文细黑" "华文楷体")
-        ("Operator Mono" "HanaMinB" "等距更纱黑体 SC" "SimSun-ExtB" "MingLiU-ExtB" "PMingLiU-ExtB" "MingLiU_HKSCS-ExtB" "Hanazono Mincho" "Hanazono Mincho A" "Hanazono Mincho B" "Hanazono Mincho C" "Hanazono Mincho Ex" "Hanazono Mincho Ex A1" "Hanazono Mincho Ex A2" "Hanazono Mincho Ex B" "Hanazono Mincho Ex C" "Hanazono Mincho I")
-        ("Operator Mono" "等距更纱黑体 SC" "Segoe UI Symbol" "Symbola" "Standard Symbols L")
-        ("Operator Mono" "NanumGothic" "Arial Unicode MS" "MS Gothic" "Lucida Sans Unicode" "等距更纱黑体 SC")
+        ("Victor Mono" "JetBrains Mono" "Operator Mono" "Courier" "Monaco" "Consolas" "DejaVu Sans Mono" "Droid Sans Mono" "PragmataPro" "Courier New" "Ubuntu Mono" "Liberation Mono" "MonacoB" "MonacoB2" "MonacoBSemi" "Droid Sans Mono Pro" "Inconsolata" "Source Code Pro" "Lucida Console" "Envy Code R" "Andale Mono" "Lucida Sans Typewriter" "monoOne" "Lucida Typewriter" "Panic Sans" "Hack" "Bitstream Vera Sans Mono" "HyperFont" "PT Mono" "Ti92Pluspc" "Excalibur Monospace" "Menlof" "Cousine" "Fira Mono" "Lekton" "M+ 1mn" "BPmono" "Free Mono" "Anonymous Pro" "ProFont" "ProFontWindows" "Latin Modern Mono" "Code 2002" "ProggyCleanTT" "ProggyTinyTT" "Iosevka Term" "Inconsolata-dz" "American Typewriter" "Menlo" "Anka/Coder Condensed" "Fantasque Sans Mono" "M+ 1m" "CamingoCode" "Office Code Pro" "Roboto Mono" "Input Mono" "Courier Prime Code" "NanumGothicCoding" "Monoid" "Edlo" "Iosevka" "Mononoki" "Robot Mono" "Fantasque" "Fira Code" "Go Mono" "Noto Sans Mono CJK" "InputMonoCompressed" "Hasklig" "Terminus" "FantasqueSansMono" "AnonymousPro" "3270" "Arimo" "D2Coding" "Inconsolata-g" "ProFont for Powerline" "Meslo" "Meslo Dotted" "Noto Mono" "Symbol Neu" "Tinos" "Space Mono" "SFMono Nerd Font")
+        ("等距更纱黑体 SC" "微软雅黑" "Noto Sans Mono CJK SC" "Noto Sans Mono CJK TC" "Noto Sans CJK SC" "Noto Sans CJK TC" "Microsoft Yahei" "Microsoft YaHei Mono" "Microsoft_Yahei" "Ubuntu Mono" "文泉驿等宽微米黑" "文泉驿等宽正黑" "黑体" "Source Han Serif CN" "Source Han Sans CN" "思源黑体 CN" "思源宋体 CN" "Hiragino Sans GB" "文泉驿正黑" "文泉驿点阵正黑" "SimHei" "SimSun" "NSimSun" "FangSong" "KaiTi" "FangSong_GB2312" "KaiTi_GB2312" "LiSu" "YouYuan" "新宋体" "宋体" "楷体_GB2312" "仿宋_GB2312" "幼圆" "隶书" "STXihei" "STKaiti" "STSong" "STFangsong" "STXingkai" "华文仿宋" "华文行楷" "华文细黑" "华文楷体")
+        ("HanaMinB" "等距更纱黑体 SC" "SimSun-ExtB" "MingLiU-ExtB" "PMingLiU-ExtB" "MingLiU_HKSCS-ExtB" "Hanazono Mincho" "Hanazono Mincho A" "Hanazono Mincho B" "Hanazono Mincho C" "Hanazono Mincho Ex" "Hanazono Mincho Ex A1" "Hanazono Mincho Ex A2" "Hanazono Mincho Ex B" "Hanazono Mincho Ex C" "Hanazono Mincho I" "Operator Mono")
+        ("等距更纱黑体 SC" "Operator Mono" "Segoe UI Symbol" "Symbola" "Standard Symbols L")
+        ("等距更纱黑体 SC" "NanumGothic" "Arial Unicode MS" "MS Gothic" "Lucida Sans Unicode" "Operator Mono")
         ))
 
 ;; `cnfonts--custom-set-fontsizes' 结构与 `cnfonts--fontsizes-fallback' 相同。
@@ -16,11 +16,11 @@
         (11   13.0 13.0 11   11  )
         (11.5 13.5 13.5 11.5 11.5)
         (12   14.0 14.0 12   12  )
-        (12.5 13.5 13.0 12.5 12.5)
-        (13   14.5 15.5 13   13  )
-        (13.5 14.5 15.0 14.0 14.0)
-        (14   16.5 16.0 15.5 14  )
-        (14.5 16.5 16.0 14.5 14.5)
+        (12.5 15.0 15.0 12.5 12.5)
+        (13   15.5 15.5 13   13  )
+        (13.5 16.0 16.0 13.5 13.5)
+        (14   16.5 16.5 14   14  )
+        (14.5 16.5 13.5 16.0 16.0)
         (15   18.0 18.0 15   15  )
         (16   19.5 19.5 16   16  )
         (18   21.0 21.0 18   18  )

@@ -113,9 +113,9 @@
 ;; (use-package highlight-escape-sequences)
 ;; (add-hook 'after-init-hook 'hes-mode)
 
-;; (use-package which-key)
-;; (add-hook 'after-init-hook 'which-key-mode)
-;; (setq-default which-key-idle-delay 1.5)
+(use-package which-key)
+(add-hook 'after-init-hook 'which-key-mode)
+(setq-default which-key-idle-delay 1.5)
 
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here

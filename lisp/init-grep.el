@@ -165,8 +165,7 @@
    :preview-key '(:debounce 0.2 any)
    consult-ripgrep consult-git-grep consult-grep
    consult-bookmark consult-recent-file consult-xref
-   consult--source-recent-file consult--source-project-recent-file consult--source-bookmark
-   :preview-key (kbd "M-."))
+   consult--source-recent-file consult--source-project-recent-file consult--source-bookmark)
 
   ;; Optionally configure the narrowing key.
   ;; Both < and C-+ work reasonably well.
