@@ -276,45 +276,45 @@ Lisp function does not specify a special indentation."
          ("C-c e" . macrostep-expand)))
 
 ;; A better *Help* buffer
-(use-package helpful
-  :defines (counsel-describe-function-function
-            counsel-describe-variable-function)
-  :commands helpful--buffer
-  :bind (([remap describe-key] . helpful-key)
-         ([remap describe-symbol] . helpful-symbol)
-         ("C-c C-d" . helpful-at-point)
-         :map helpful-mode-map
-         ("r" . remove-hook-at-point))
-  :hook (helpful-mode . cursor-sensor-mode) ; for remove-advice button
-  :init
-  (with-eval-after-load 'counsel
-    (setq counsel-describe-function-function #'helpful-callable
-          counsel-describe-variable-function #'helpful-variable))
+;; (use-package helpful
+;;   :defines (counsel-describe-function-function
+;;             counsel-describe-variable-function)
+;;   :commands helpful--buffer
+;;   :bind (([remap describe-key] . helpful-key)
+;;          ([remap describe-symbol] . helpful-symbol)
+;;          ("C-c C-d" . helpful-at-point)
+;;          :map helpful-mode-map
+;;          ("r" . remove-hook-at-point))
+;;   :hook (helpful-mode . cursor-sensor-mode) ; for remove-advice button
+;;   :init
+;;   (with-eval-after-load 'counsel
+;;     (setq counsel-describe-function-function #'helpful-callable
+;;           counsel-describe-variable-function #'helpful-variable))
 
-  (with-eval-after-load 'apropos
-    ;; patch apropos buttons to call helpful instead of help
-    (dolist (fun-bt '(apropos-function apropos-macro apropos-command))
-      (button-type-put
-       fun-bt 'action
-       (lambda (button)
-         (helpful-callable (button-get button 'apropos-symbol)))))
-    (dolist (var-bt '(apropos-variable apropos-user-option))
-      (button-type-put
-       var-bt 'action
-       (lambda (button)
-         (helpful-variable (button-get button 'apropos-symbol))))))
-  :config
-  (with-no-warnings
-    ;; Open the buffer in other window
-    (defun my-helpful--navigate (button)
-      "Navigate to the path this BUTTON represents."
-      (find-file-other-window (substring-no-properties (button-get button 'path)))
-      ;; We use `get-text-property' to work around an Emacs 25 bug:
-      ;; http://git.savannah.gnu.org/cgit/emacs.git/commit/?id=f7c4bad17d83297ee9a1b57552b1944020f23aea
-      (-when-let (pos (get-text-property button 'position
-                                         (marker-buffer button)))
-        (helpful--goto-char-widen pos)))
-    (advice-add #'helpful--navigate :override #'my-helpful--navigate)))
+;;   (with-eval-after-load 'apropos
+;;     ;; patch apropos buttons to call helpful instead of help
+;;     (dolist (fun-bt '(apropos-function apropos-macro apropos-command))
+;;       (button-type-put
+;;        fun-bt 'action
+;;        (lambda (button)
+;;          (helpful-callable (button-get button 'apropos-symbol)))))
+;;     (dolist (var-bt '(apropos-variable apropos-user-option))
+;;       (button-type-put
+;;        var-bt 'action
+;;        (lambda (button)
+;;          (helpful-variable (button-get button 'apropos-symbol))))))
+;;   :config
+;;   (with-no-warnings
+;;     ;; Open the buffer in other window
+;;     (defun my-helpful--navigate (button)
+;;       "Navigate to the path this BUTTON represents."
+;;       (find-file-other-window (substring-no-properties (button-get button 'path)))
+;;       ;; We use `get-text-property' to work around an Emacs 25 bug:
+;;       ;; http://git.savannah.gnu.org/cgit/emacs.git/commit/?id=f7c4bad17d83297ee9a1b57552b1944020f23aea
+;;       (-when-let (pos (get-text-property button 'position
+;;                                          (marker-buffer button)))
+;;         (helpful--goto-char-widen pos)))
+;;     (advice-add #'helpful--navigate :override #'my-helpful--navigate)))
 
 ;; For ERT
 (use-package overseer

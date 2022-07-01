@@ -113,7 +113,7 @@
 
 ;; eaf
 ;; (if (not *is-a-mac*)
-    (require 'init-eaf)
+    ;; (require 'init-eaf)
     ;; )
 
 (when (file-exists-p custom-file)
