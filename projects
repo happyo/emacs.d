@@ -1,5 +1,5 @@
 ;;; -*- lisp-data -*-
-(("~/.emacs.d/")
+(("~/development/mProjects/my_flutter/")
+ ("~/.emacs.d/")
  ("~/work/iProjects/ucmooc-iphone/")
- ("~/development/mProjects/my_flutter/")
  ("~/development/mProjects/PyTorch-CycleGAN/"))

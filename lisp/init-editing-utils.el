@@ -14,6 +14,8 @@
 (global-set-key (kbd "M-s") 'save-buffer)
 ;; (global-set-key (kbd "M-w") 'kill-current-buffer)
 (global-set-key (kbd "M-z") 'undo)
+(global-set-key (kbd "M-k") 'kill-this-buffer)
+(global-set-key (kbd "M-K") 'delete-window)
 
 (when (fboundp 'electric-pair-mode)
   (add-hook 'after-init-hook 'electric-pair-mode))
@@ -76,9 +78,9 @@
 
 (use-package beacon
   :init
-  ;; (setq-default beacon-lighter "")
+  (setq-default beacon-lighter "")
   (setq-default beacon-size 20)
-  (setq-default beacon-color "#666600")
+  (setq-default beacon-color "#E45C5C")
   :config
   (beacon-mode 1))
 

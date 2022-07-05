@@ -116,7 +116,6 @@
                                           (meow-kill . meow-C-d)
                                           (meow-cancel-selection . keyboard-quit)
                                           (meow-pop-selection . meow-pop-grab)
-                                          (meow-beacon-change . meow-beacon-change-char)
                                           (meow-quit . meow-minibuffer-quit)
                                           )) 
   (setq meow-expand-exclude-mode-list '(markdown-mode org-mode eaf-mode))
@@ -126,7 +125,6 @@
   ;; If you want relative line number in NORMAL state(for display-line-numbers-mode)
   (meow-setup-line-number)
   (meow-global-mode 1)
-  (beacon-mode 1)
   )
 
 (provide 'init-meow)

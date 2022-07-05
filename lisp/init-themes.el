@@ -4,11 +4,19 @@
 
 (require 'init-elpa)
 
-(use-package flucui-themes)
+;; (use-package flucui-themes)
 
-(use-package moe-theme)
+;; (use-package moe-theme)
 
-(load-theme 'moe-dark t)
+;; (load-theme 'moe-dark t)
+
+(use-package ample-theme
+  :init (progn (load-theme 'ample t t)
+               (load-theme 'ample-flat t t)
+               (load-theme 'ample-light t t)
+               (enable-theme 'ample-light))
+  :defer t
+  :ensure t)
 
 (use-package dimmer
   :config
