@@ -56,6 +56,8 @@
 ;; (global-corfu-mode)               ;; use corfu as completion ui
 ;; (corfu-history-mode t)
 (global-lsp-bridge-mode)
+(global-set-key (kbd "M-.") 'lsp-bridge-find-define)
+(global-set-key (kbd "M-,") 'lsp-bridge-return-from-def)
 
 (provide 'init-lsp)
 ;;; init-lsp.el ends here

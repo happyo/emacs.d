@@ -7,7 +7,11 @@
 
 ;; meow
 (defun meow-setup ()
+  (setq meow--kbd-delete-char "M-d")
   (setq meow-cheatsheet-layout meow-cheatsheet-layout-qwerty)
+  ;; Must set before enable `meow-global-mode`
+  (setq meow-use-cursor-position-hack t
+        meow-use-enhanced-selection-effect t)  ;; optional, for visual effect
   (meow-motion-overwrite-define-key
    '("j" . meow-next)
    '("k" . meow-prev))
@@ -53,7 +57,7 @@
    '("c" . meow-change)
    '("C" . meow-change-save)
    '("d" . meow-kill-whole-line)
-   '("D" . scroll-up)
+   '("C-d" . scroll-up)
    '("e" . meow-next-word)
    '("E" . meow-next-symbol)
    '("f" . meow-find)
@@ -85,7 +89,7 @@
    '("t" . meow-till)
    '("T" . meow-till-expand)
    '("u" . undo)
-   '("U" . scroll-down)
+   '("C-u" . scroll-down)
    '("v" . meow-line)
    '("V" . meow-kmacro-matches)
    '("w" . meow-mark-word)

@@ -57,30 +57,20 @@
         completion-category-defaults nil
         completion-category-overrides '((file (styles . (partial-completion))))))
 
-;; (use-package dash)
-;; (use-package s)
-;; (use-package editorconfig)
-;; (load-file "~/.emacs.d/site-lisp/copilot.el/copilot.el")
+(use-package dash)
+(use-package s)
+(use-package editorconfig)
+(load-file "~/.emacs.d/site-lisp/copilot.el/copilot.el")
 
-;; (add-hook 'prog-mode-hook 'copilot-mode)
+(add-hook 'prog-mode-hook 'copilot-mode)
 
-; complete by copilot first, then company-mode
-;; (defun my-tab ()
-;;   (interactive)
-;;   (or (copilot-accept-completion)
-;;       (company-indent-or-complete-common nil)))
+(defun my/copilot-tab ()
+  (interactive)
+  (or (copilot-accept-completion)
+      (indent-for-tab-command)))
 
-;; ; modify company-mode behaviors
-;; (with-eval-after-load 'company
-;;   ; disable inline previews
-;;   (delq 'company-preview-if-just-one-frontend company-frontends)
-;;   ; enable tab completion
-;;   (define-key company-mode-map (kbd "<tab>") 'my-tab)
-;;   (define-key company-mode-map (kbd "TAB") 'my-tab)
-;;   (define-key company-active-map (kbd "<tab>") 'my-tab)
-;;   (define-key company-active-map (kbd "TAB") 'my-tab))
-
-
+(with-eval-after-load 'copilot
+  (define-key copilot-mode-map (kbd "<tab>") #'my/copilot-tab))
 
 (provide 'init-company)
 ;;; init-company.el ends here

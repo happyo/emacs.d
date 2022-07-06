@@ -16,6 +16,7 @@
 (global-set-key (kbd "M-z") 'undo)
 (global-set-key (kbd "M-k") 'kill-this-buffer)
 (global-set-key (kbd "M-K") 'delete-window)
+(global-set-key (kbd "M-d") 'delete-char)
 
 (when (fboundp 'electric-pair-mode)
   (add-hook 'after-init-hook 'electric-pair-mode))
