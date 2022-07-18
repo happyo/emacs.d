@@ -11,6 +11,7 @@
 ;; `cnfonts--custom-set-fontsizes' 结构与 `cnfonts--fontsizes-fallback' 相同。
 (setq cnfonts--custom-set-fontsizes
       '(
+        (8    9    9    8    8   )
         (9    10.5 10.5 9    9   )
         (10   12.0 12.0 10   10  )
         (11   13.0 13.0 11   11  )

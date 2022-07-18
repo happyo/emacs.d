@@ -5,15 +5,14 @@
 
 (require 'init-elpa)
 
-(use-package conda
-  )
-  (custom-set-variables
-   '(conda-anaconda-home "~/opt/anaconda3"))
-  (setq conda-env-home-directory (expand-file-name "~/opt/anaconda3"))
-(message "Conda act")
-(conda-env-autoactivate-mode t)
-(add-hook 'find-file-hook (lambda () (when (bound-and-true-p conda-project-env-path)
-                                          (conda-env-activate-for-buffer))))
+;; (use-package conda
+;;   )
+;;   (custom-set-variables
+;;    '(conda-anaconda-home "~/opt/anaconda3"))
+;;   (setq conda-env-home-directory (expand-file-name "~/opt/anaconda3"))
+;; ;; (conda-env-autoactivate-mode t)
+;; (add-hook 'find-file-hook (lambda () (when (bound-and-true-p conda-project-env-path)
+;;                                           (conda-env-activate-for-buffer))))
 (use-package pyimport)
 (use-package pip-requirements)
 

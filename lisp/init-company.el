@@ -60,17 +60,17 @@
 (use-package dash)
 (use-package s)
 (use-package editorconfig)
-(load-file "~/.emacs.d/site-lisp/copilot.el/copilot.el")
+;; (load-file "~/.emacs.d/site-lisp/copilot.el/copilot.el")
 
-(add-hook 'prog-mode-hook 'copilot-mode)
+;; (add-hook 'prog-mode-hook 'copilot-mode)
 
-(defun my/copilot-tab ()
-  (interactive)
-  (or (copilot-accept-completion)
-      (indent-for-tab-command)))
+;; (defun my/copilot-tab ()
+;;   (interactive)
+;;   (or (copilot-accept-completion)
+;;       (indent-for-tab-command)))
 
-(with-eval-after-load 'copilot
-  (define-key copilot-mode-map (kbd "<tab>") #'my/copilot-tab))
+;; (with-eval-after-load 'copilot
+;;   (define-key copilot-mode-map (kbd "<tab>") #'my/copilot-tab))
 
 (provide 'init-company)
 ;;; init-company.el ends here

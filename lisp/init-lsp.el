@@ -42,20 +42,14 @@
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-bridge")
 
-(require 'lsp-bridge)             ;; load lsp-bridge
-(require 'lsp-bridge-jdtls)       ;; provide Java third-party library jump and -data directory support, optional
 (yas-global-mode 1)
 
-;; For corfu users:
-(setq lsp-bridge-completion-provider 'corfu)
-;; (require 'corfu)
-(require 'corfu-info)
-(require 'corfu-history)
-(require 'lsp-bridge-icon)        ;; show icons for completion items, optional
-(require 'lsp-bridge-orderless)   ;; make lsp-bridge support fuzzy match, optional
-;; (global-corfu-mode)               ;; use corfu as completion ui
-;; (corfu-history-mode t)
+(require 'lsp-bridge)
+
+(defvar lsp-bridge-get-project-path-by-filepath "/Users/belyenochi/work/iProjects/jyvcoursevip")
+(setq acm-snippet-insert-index 0)
 (global-lsp-bridge-mode)
+
 (global-set-key (kbd "M-.") 'lsp-bridge-find-define)
 (global-set-key (kbd "M-,") 'lsp-bridge-return-from-def)
 
