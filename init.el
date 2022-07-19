@@ -104,7 +104,7 @@
 (require 'init-yasnippet)
 (require 'init-lsp)
 (require 'init-lisp)
-;; (require 'init-haskell)
+(require 'init-haskell)
 ;; (require 'init-scheme)
 (require 'init-dart)
 (require 'init-python)

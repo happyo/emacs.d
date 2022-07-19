@@ -6,7 +6,8 @@
 (use-package yasnippet)
 (use-package yasnippet-snippets)
 
-
+(use-package markdown-mode)
+(use-package posframe)
 ;; (use-package lsp-mode
 ;;   :init
 ;;   ;; set prefix for lsp-command-keymap (few alternatives - "C-l", "C-c l")
@@ -45,13 +46,64 @@
 (yas-global-mode 1)
 
 (require 'lsp-bridge)
+(require 'lsp-bridge-jdtls)
 
-(defvar lsp-bridge-get-project-path-by-filepath "/Users/belyenochi/work/iProjects/jyvcoursevip")
-(setq acm-snippet-insert-index 0)
 (global-lsp-bridge-mode)
 
-(global-set-key (kbd "M-.") 'lsp-bridge-find-define)
-(global-set-key (kbd "M-,") 'lsp-bridge-return-from-def)
+;; 融合 `lsp-bridge' `find-function' 以及 `dumb-jump' 的智能跳转
+(defun lsp-bridge-jump ()
+  (interactive)
+  (cond
+   ((eq major-mode 'emacs-lisp-mode)
+    (let ((symb (function-called-at-point)))
+      (when symb
+        (find-function symb))))
+   (lsp-bridge-mode
+    (lsp-bridge-find-def))
+   (t
+    (require 'dumb-jump)
+    (dumb-jump-go))))
+
+(defun lsp-bridge-jump-back ()
+  (interactive)
+  (cond
+   (lsp-bridge-mode
+    (lsp-bridge-return-from-def))
+   (t
+    (require 'dumb-jump)
+    (dumb-jump-back))))
+
+(global-set-key (kbd "M-.") 'lsp-bridge-jump)
+(global-set-key (kbd "M-,") 'lsp-bridge-jump-back)
+
+(use-package unicode-escape)
+
+(add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-bridge")
+(require 'tabnine-capf)
+;; (add-to-list 'completion-at-point-functions #'tabnine-completion-at-point)
+
+
+(defun lsp-bridge-mix-multi-backends ()
+  (setq-local completion-category-defaults nil)
+  (setq-local completion-at-point-functions
+              (list
+               (cape-capf-buster
+                (cape-super-capf
+                 #'lsp-bridge-capf
+
+                 ;; 我嫌弃TabNine太占用我的CPU了， 需要的同学注释下面这一行就好了
+                 #'tabnine-completion-at-point
+
+                 #'cape-file
+                 #'cape-dabbrev
+                 )
+                'equal)
+               )))
+
+(dolist (hook lsp-bridge-default-mode-hooks)
+  (add-hook hook (lambda ()
+                   (lsp-bridge-mix-multi-backends) ; 通过Cape融合多个补全后端
+                   )))
 
 (provide 'init-lsp)
 ;;; init-lsp.el ends here

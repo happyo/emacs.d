@@ -6,8 +6,6 @@
 
 (require 'init-elpa)
 
-(require 'cnfonts)
-
 (use-package cnfonts
   :ensure t
   :init
