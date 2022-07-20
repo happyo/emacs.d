@@ -1,0 +1,31 @@
+# -*- mode: snippet -*-
+# name: tbm
+# key: tbm
+# --
+
+    private lazy var tableView: UITableView = {
+        let tableView: UITableView
+        
+        tableView = UITableView(frame: CGRect(), style: .plain)
+        tableView.backgroundColor = .clear
+        tableView.rowHeight = UITableView.automaticDimension
+        tableView.estimatedRowHeight = 50
+        tableView.sectionHeaderHeight = UITableView.automaticDimension
+        tableView.estimatedSectionHeaderHeight = 50
+        tableView.sectionFooterHeight = UITableView.automaticDimension
+        tableView.estimatedSectionHeaderHeight = 100
+        tableView.keyboardDismissMode = .onDrag
+        tableView.separatorColor = UIColor.jy_splitLine
+        tableView.separatorStyle = .none
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 100))
+        tableView.tableFooterView = footerView
+        
+        return tableView
+    }()
+    
+    private lazy var manager: JYTableViewManager = {
+        let manager = JYTableViewManager(tableView: tableView)
+//        manager.registerCellWithItem(JYVSSStepCell.self, JYVSSStepItem.self)
+        
+        return manager
+    }()

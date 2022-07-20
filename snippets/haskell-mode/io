@@ -1,0 +1,5 @@
+# -*- mode: snippet -*-
+# name: io
+# key: io
+# --
+$0 :: IO () -> $1

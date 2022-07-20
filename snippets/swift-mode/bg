@@ -1,0 +1,10 @@
+# -*- mode: snippet -*-
+# name: bg
+# key: bg
+# --
+private lazy var clickButton: UIButton = {
+    let button = UIButton()
+    button.rx.tap.subscribe(onNext: onClicked).disposed(by: disposeBag)
+    
+    return button
+}()

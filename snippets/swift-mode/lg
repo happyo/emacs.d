@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: lg
+# key: lg
+# --
+private lazy var $0Label: UILabel = {
+    let label = UILabel()
+    label.text = "title"
+    label.textColor = .jy_hexColor("#FFFFFF")
+    label.font = .jy_pingfangMedium(16)
+
+    return label	
+}()

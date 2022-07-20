@@ -8,9 +8,7 @@
 ;;   :config
 ;;   (setq lsp-sourcekit-executable "/Applications/Xcode-beta.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp"))
 
-;; (use-package swift-mode
-;;   :hook (swift-mode . (lambda () (lsp))))
-
+(use-package swift-mode)
 
 (provide 'init-swift)
 ;;; init-swift.el ends here

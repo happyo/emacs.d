@@ -47,6 +47,8 @@
  truncate-lines nil
  truncate-partial-width-windows nil)
 
+(setq tab-width 4)
+
 (add-hook 'after-init-hook 'delete-selection-mode)
 
 ;; (add-hook 'after-init-hook 'global-auto-revert-mode)

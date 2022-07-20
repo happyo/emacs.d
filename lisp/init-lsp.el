@@ -6,7 +6,11 @@
 (use-package yasnippet)
 (use-package yasnippet-snippets)
 
-(use-package markdown-mode)
+(use-package markdown-mode
+  :ensure t
+  :mode ("README\\.md\\'" . gfm-mode)
+  :init (setq markdown-command "multimarkdown"))
+
 (use-package posframe)
 ;; (use-package lsp-mode
 ;;   :init
@@ -47,6 +51,8 @@
 
 (require 'lsp-bridge)
 (require 'lsp-bridge-jdtls)
+
+(setq lsp-bridge-python-command "/Users/belyenochi/opt/anaconda3/bin/python")
 
 (global-lsp-bridge-mode)
 
