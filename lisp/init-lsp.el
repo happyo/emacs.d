@@ -52,7 +52,9 @@
 (require 'lsp-bridge)
 (require 'lsp-bridge-jdtls)
 
-(setq lsp-bridge-python-command "/Users/belyenochi/opt/anaconda3/bin/python")
+(setq lsp-bridge-python-command (if (string-match-p user-login-name "happyo")
+                                    "/opt/miniconda3/bin/python"
+                                    "/Users/belyenochi/opt/anaconda3/bin/python"))
 
 (global-lsp-bridge-mode)
 
