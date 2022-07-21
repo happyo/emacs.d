@@ -56,6 +56,8 @@
 
 (global-lsp-bridge-mode)
 
+(use-package dumb-jump)
+
 ;; 融合 `lsp-bridge' `find-function' 以及 `dumb-jump' 的智能跳转
 (defun lsp-bridge-jump ()
   (interactive)
@@ -85,31 +87,31 @@
 (use-package unicode-escape)
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-bridge")
-(require 'tabnine-capf)
+;; (require 'tabnine-capf)
 ;; (add-to-list 'completion-at-point-functions #'tabnine-completion-at-point)
 
 
-(defun lsp-bridge-mix-multi-backends ()
-  (setq-local completion-category-defaults nil)
-  (setq-local completion-at-point-functions
-              (list
-               (cape-capf-buster
-                (cape-super-capf
-                 #'lsp-bridge-capf
+;; (defun lsp-bridge-mix-multi-backends ()
+;;   (setq-local completion-category-defaults nil)
+;;   (setq-local completion-at-point-functions
+;;               (list
+;;                (cape-capf-buster
+;;                 (cape-super-capf
+;;                  ;; #'lsp-bridge-capf
 
-                 ;; 我嫌弃TabNine太占用我的CPU了， 需要的同学注释下面这一行就好了
-                 #'tabnine-completion-at-point
+;;                  ;; 我嫌弃TabNine太占用我的CPU了， 需要的同学注释下面这一行就好了
+;;                  #'tabnine-completion-at-point
 
-                 #'cape-file
-                 #'cape-dabbrev
-                 )
-                'equal)
-               )))
+;;                  #'cape-file
+;;                  #'cape-dabbrev
+;;                  )
+;;                 'equal)
+;;                )))
 
-(dolist (hook lsp-bridge-default-mode-hooks)
-  (add-hook hook (lambda ()
-                   (lsp-bridge-mix-multi-backends) ; 通过Cape融合多个补全后端
-                   )))
+;; (dolist (hook lsp-bridge-default-mode-hooks)
+;;   (add-hook hook (lambda ()
+;;                    (lsp-bridge-mix-multi-backends) ; 通过Cape融合多个补全后端
+;;                    )))
 
 (provide 'init-lsp)
 ;;; init-lsp.el ends here
