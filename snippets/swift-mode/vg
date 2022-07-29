@@ -2,7 +2,7 @@
 # name: vg
 # key: vg
 # --
-private lazy var searchBackgroundView: UIView = {
+private lazy var $0View: UIView = {
     let view = UIView()
     
     return view

@@ -55,10 +55,14 @@
 (setq lsp-bridge-python-command (if (string-match-p user-login-name "happyo")
                                     "/opt/miniconda3/bin/python"
                                     "/Users/belyenochi/opt/anaconda3/bin/python"))
+(setq acm-snippet-insert-index 0)
+(setq lsp-bridge-enable-log t)
 
 (global-lsp-bridge-mode)
 
 (use-package dumb-jump)
+(add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
+(setq xref-show-definitions-function #'xref-show-definitions-completing-read)
 
 ;; 融合 `lsp-bridge' `find-function' 以及 `dumb-jump' 的智能跳转
 (defun lsp-bridge-jump ()
@@ -67,31 +71,36 @@
    ((eq major-mode 'emacs-lisp-mode)
     (let ((symb (function-called-at-point)))
       (when symb
-        (find-function symb))))
+        (xref-find-definitions symb))))
    (lsp-bridge-mode
     (lsp-bridge-find-def))
    (t
-    (require 'dumb-jump)
     (dumb-jump-go))))
 
 (defun lsp-bridge-jump-back ()
   (interactive)
   (cond
+   ((eq major-mode 'emacs-lisp-mode)
+    (xref-pop-marker-stack))
+   (lsp-bridge-mode
+    (lsp-bridge-find-def))
    (lsp-bridge-mode
     (lsp-bridge-return-from-def))
    (t
-    (require 'dumb-jump)
-    (dumb-jump-back))))
+    (xref-pop-marker-stack)
+    )
+   ))
 
-(global-set-key (kbd "M-.") 'lsp-bridge-jump)
-(global-set-key (kbd "M-,") 'lsp-bridge-jump-back)
+;; (global-set-key (kbd "M-.") 'lsp-bridge-jump)
+;; (global-set-key (kbd "M-,") 'lsp-bridge-jump-back)
+(global-set-key (kbd "M-.") 'xref-find-definitions)
+(global-set-key (kbd "M-,") 'xref-pop-marker-stack)
 
 (use-package unicode-escape)
 
-(add-to-list 'load-path "~/.emacs.d/site-lisp/lsp-bridge")
-;; (require 'tabnine-capf)
-;; (add-to-list 'completion-at-point-functions #'tabnine-completion-at-point)
-
+(add-to-list 'load-path "~/.emacs.d/site-lisp/tabnine-capf")
+(require 'tabnine-capf)
+(add-to-list 'completion-at-point-functions #'tabnine-completion-at-point)
 
 ;; (defun lsp-bridge-mix-multi-backends ()
 ;;   (setq-local completion-category-defaults nil)

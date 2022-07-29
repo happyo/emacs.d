@@ -34,7 +34,7 @@
   (global-corfu-mode))
 
 ;; Add extensions
-(use-package cape
+;; (use-package cape
   ;; Bind dedicated completion commands
   ;; Alternative prefix keys: C-c p, M-p, M-+, ...
   ;; :bind (("C-c p p" . completion-at-point) ;; capf
@@ -56,7 +56,7 @@
   ;; :init
   ;; (add-to-list 'completion-at-point-functions #'cape-dabbrev)
   ;; (add-to-list 'completion-at-point-functions #'cape-file)
-  )
+  ;; )
 
 ;; A few more useful configurations...
 (use-package emacs
@@ -100,3 +100,4 @@
 
 (provide 'init-company)
 ;;; init-company.el ends here
+
