@@ -33,7 +33,7 @@
    '("/" . meow-keypad-describe-key)
    '("?" . meow-cheatsheet))
   (meow-normal-define-key
-   '("RET" . meow-next)
+   ;; '("RET" . meow-next)
    '("0" . meow-expand-0)
    '("9" . meow-expand-9)
    '("8" . meow-expand-8)
@@ -100,12 +100,10 @@
    '("Y" . meow-sync-grab)
    '("z" . meow-pop-selection)
    '("Z" . meow-pop-all-selection)
-   '("&" . meow-query-replace)
-   '("%" . meow-query-replace-regexp)
    '("'" . repeat)
    '("\\" . quoted-insert)
    '("/" . meow-visit)
-   '("<escape>" . meow-cancel-selection)
+   '("<escape>" . ignore)
    ))
 
 
@@ -120,7 +118,7 @@
                                           (meow-kill . meow-C-d)
                                           (meow-cancel-selection . keyboard-quit)
                                           (meow-pop-selection . meow-pop-grab)
-                                          (meow-quit . meow-minibuffer-quit)
+                                          ;; (meow-quit . meow-minibuffer-quit)
                                           )) 
   (setq meow-expand-exclude-mode-list '(markdown-mode org-mode eaf-mode))
   :config

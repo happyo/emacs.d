@@ -18,6 +18,10 @@
 (global-set-key (kbd "M-K") 'delete-window)
 (global-set-key (kbd "M-d") 'delete-char)
 (global-set-key (kbd "M-[") 'indent-region)
+(global-set-key (kbd "M-=") 'text-scale-increase)
+(global-set-key (kbd "M--") 'text-scale-decrease)
+(global-set-key (kbd "C-d") 'scroll-up)
+(global-set-key (kbd "C-u") 'scroll-down)
 
 (when (fboundp 'electric-pair-mode)
   (add-hook 'after-init-hook 'electric-pair-mode))

@@ -80,6 +80,9 @@
   ;; Replace bindings. Lazily loaded due by `use-package'.
   :bind (;; C-c bindings (mode-specific-map)
          ("C-c h" . consult-history)
+         ("M-O" . consult-find)
+         ("M-f" . consult-git-grep)
+         ("M-b" . consult-buffer)
          ;; ("C-c m" . consult-mode-command)
          ;; ("C-c k" . consult-kmacro)
          ;; C-x bindings (ctl-x-map)
@@ -120,14 +123,14 @@
          ;; Isearch integration
          ;; ("M-s e" . consult-isearch-history)
          :map isearch-mode-map
-         ("M-e" . consult-isearch-history)         ;; orig. isearch-edit-string
+         ("M-h" . consult-isearch-history)         ;; orig. isearch-edit-string
          ;; ("M-s e" . consult-isearch-history)       ;; orig. isearch-edit-string
          ;; ("M-s l" . consult-line)                  ;; needed by consult-line to detect isearch
          ;; ("M-s L" . consult-line-multi)            ;; needed by consult-line to detect isearch
          ;; Minibuffer history
          :map minibuffer-local-map
          ;; ("M-s" . consult-history)                 ;; orig. next-matching-history-element
-         ("M-r" . consult-history))                ;; orig. previous-matching-history-element
+         ("M-h" . consult-history))                ;; orig. previous-matching-history-element
 
   ;; Enable automatic preview at point in the *Completions* buffer. This is
   ;; relevant when you use the default completion UI.
