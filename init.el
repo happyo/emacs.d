@@ -78,6 +78,7 @@
 
 (require 'init-meow)
 (require 'init-editing-utils)
+(require 'init-company)
 ;; (require 'init-smex)
 (require 'init-chinese)
 (require 'init-themes)
@@ -100,6 +101,7 @@
 (require 'init-folding)
 (require 'init-dash)
 
+
 ;; Language
 (require 'init-yasnippet)
 (require 'init-lsp)
@@ -110,7 +112,6 @@
 (require 'init-python)
 (require 'init-swift)
 
-(require 'init-company)
 
 ;; org
 (require 'init-org)

@@ -1,7 +1,5 @@
 # -*- mode: snippet -*-
-# name: elc
-# key: elc
+# name: test
+# key: test
 # --
-#+BEGIN_SRC  emacs-lisp
-
-#+END_SRC
+** asdfasdf

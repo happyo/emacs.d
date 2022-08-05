@@ -22,6 +22,7 @@
 (global-set-key (kbd "M--") 'text-scale-decrease)
 (global-set-key (kbd "C-d") 'scroll-up)
 (global-set-key (kbd "C-u") 'scroll-down)
+(global-set-key (kbd "M-r") 'eval-last-sexp)
 
 (when (fboundp 'electric-pair-mode)
   (add-hook 'after-init-hook 'electric-pair-mode))
