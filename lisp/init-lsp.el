@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 (require 'init-elpa)
+(require 'init-func)
 
 (use-package yasnippet)
 (use-package yasnippet-snippets)
@@ -18,9 +19,16 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
-(setq lsp-bridge-python-command (if (string-match-p user-login-name "happyo")
+(defun pythonPath ()
+  "Different computer python path"
+  (if *is-a-mac*
+      (if (string-match-p user-login-name "happyo")
                                     "/opt/miniconda3/bin/python"
-                                    "/Users/belyenochi/opt/anaconda3/bin/python"))
+                                  "/Users/belyenochi/opt/anaconda3/bin/python")
+  "/home/happyo/miniconda3/bin/python"))
+(setq lsp-bridge-python-command (pythonPath))
+
+
 (setq acm-snippet-insert-index 0)
 (setq acm-enable-icon nil)
 
