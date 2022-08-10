@@ -44,9 +44,5 @@
 
 (use-package unicode-escape)
 
-(add-to-list 'load-path "~/.emacs.d/site-lisp/tabnine-capf")
-(require 'tabnine-capf)
-(add-to-list 'completion-at-point-functions #'tabnine-completion-at-point)
-
 (provide 'init-lsp)
 ;;; init-lsp.el ends here
