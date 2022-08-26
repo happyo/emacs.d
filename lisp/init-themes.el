@@ -40,7 +40,7 @@
 (mapc #'disable-theme custom-enabled-themes)
 
 ;; Load the theme of choice:
-(load-theme 'ef-spring :no-confirm)
+(load-theme 'ef-my :no-confirm)
 
 ;; The themes we provide:
 ;;
@@ -60,6 +60,18 @@
 
 (use-package all-the-icons
   :if (display-graphic-p))
+
+(use-package rainbow-mode
+  :init
+  (defun sanityinc/enable-rainbow-mode-if-theme ()
+    (when (and (buffer-file-name) (string-match-p "-theme\\.el" (buffer-file-name)))
+      (rainbow-mode)))
+  (add-hook 'emacs-lisp-mode-hook 'sanityinc/enable-rainbow-mode-if-theme)
+  (add-hook 'help-mode-hook 'rainbow-mode)
+)
+
+    ;; (diminish 'rainbow-mode)))
+
 
 (provide 'init-themes)
 ;;; init-themes.el end
