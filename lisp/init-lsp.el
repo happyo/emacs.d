@@ -19,6 +19,8 @@
 (require 'yasnippet)
 (yas-global-mode 1)
 
+
+(require 'lsp-bridge)
 (defun pythonPath ()
   "Different computer python path"
   (if *is-a-mac*
@@ -31,8 +33,8 @@
 
 (setq acm-snippet-insert-index 0)
 (setq acm-enable-icon nil)
+(setq acm-enable-tabnine-helper t)
 
-(require 'lsp-bridge)
 (global-lsp-bridge-mode)
 
 (use-package dumb-jump)

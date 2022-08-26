@@ -3,6 +3,7 @@
 ;;; Code:
 
 (require 'init-elpa)
+(require 'init-grep)
 
 (use-package denote)
 (message "denote init")
@@ -100,6 +101,10 @@
                  :immediate-finish nil
                  :kill-buffer t
                  :jump-to-captured t)))
+
+(defun denote-find-note ()
+  (interactive)
+    (consult-fd denote-directory))
 
 (provide 'init-denote)
 ;;; init-denote.el ends here

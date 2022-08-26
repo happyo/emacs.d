@@ -154,7 +154,5 @@ See `consult-grep' for more details regarding the asynchronous search."
       (find-file (consult--find (car prompt-dir) #'consult--fd-builder initial))))
   )
 
-
-
 (provide 'init-grep)
 ;;; init-grep.el ends here
