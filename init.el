@@ -101,8 +101,8 @@
 (require 'init-folding)
 (require 'init-dash)
 
-
 ;; Language
+(require 'init-magit)
 (require 'init-yasnippet)
 (require 'init-lsp)
 (require 'init-lisp)
