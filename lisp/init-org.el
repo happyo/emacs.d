@@ -81,6 +81,7 @@
 
   (setq
    ;; Edit settings
+   org-use-sub-superscripts "{}"
    org-auto-align-tags nil
    org-tags-column 0
    org-catch-invisible-edits 'show-and-error
