@@ -70,7 +70,7 @@
   (add-hook 'help-mode-hook 'rainbow-mode)
 )
 
-    ;; (diminish 'rainbow-mode)))
+;; (diminish 'rainbow-mode)))
 
 
 (provide 'init-themes)
