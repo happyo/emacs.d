@@ -78,8 +78,7 @@
 
 (require 'init-meow)
 (require 'init-editing-utils)
-(require 'init-company)
-;; (require 'init-smex)
+(require 'init-completion)
 (require 'init-chinese)
 (require 'init-themes)
 (require 'init-frame-hooks)
@@ -89,12 +88,11 @@
 (require 'init-gui-frames)
 (require 'init-dired)
 (require 'init-isearch)
-(require 'init-grep)
+(require 'init-search)
 (require 'init-ibuffer)
 (require 'init-flycheck)
 
 (require 'init-windows)
-(require 'init-mmm)
 
 (require 'init-treemacs)
 (require 'init-projectile)

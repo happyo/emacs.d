@@ -11,11 +11,11 @@
   :init
   (setq cnfonts-personal-fontnames
         '(
-          ("Operator Mono" "Victor Mono" "JetBrains Mono")
+          ("SF Mono" "Victor Mono" "JetBrains Mono")
           ("等距更纱黑体 SC")
-          ("Operator Mono" "等距更纱黑体 SC")
-          ("Operator Mono" "等距更纱黑体 SC")
-          ("Operator Mono" "等距更纱黑体 SC")
+          ("SF Mono" "等距更纱黑体 SC")
+          ("SF Mono" "等距更纱黑体 SC")
+          ("SF Mono" "等距更纱黑体 SC")
           ))
   (setq cnfonts-profiles
         '("program" "org-profile" "read-book"))

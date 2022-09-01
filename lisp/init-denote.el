@@ -3,10 +3,9 @@
 ;;; Code:
 
 (require 'init-elpa)
-(require 'init-grep)
+(require 'init-search)
 
 (use-package denote)
-(message "denote init")
 
 ;; Remember to check the doc strings of those variables.
 (setq denote-directory (expand-file-name "~/Zettelkasten"))

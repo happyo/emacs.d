@@ -106,10 +106,6 @@
    '("<escape>" . ignore)
    ))
 
-
-      
-
-
 (use-package meow
   :demand t
   :init
@@ -118,7 +114,6 @@
                                           (meow-kill . meow-C-d)
                                           (meow-cancel-selection . keyboard-quit)
                                           (meow-pop-selection . meow-pop-grab)
-                                          ;; (meow-quit . meow-minibuffer-quit)
                                           )) 
   (setq meow-expand-exclude-mode-list '(markdown-mode org-mode eaf-mode))
   :config
@@ -126,8 +121,15 @@
   (meow-setup)
   ;; If you want relative line number in NORMAL state(for display-line-numbers-mode)
   (meow-setup-line-number)
-  (meow-global-mode 1)
-  )
+  (meow-global-mode 1))
+
+(use-package beacon
+  :init
+  (setq-default beacon-lighter "")
+  (setq-default beacon-size 20)
+  (setq-default beacon-color "#E45C5C")
+  :config
+  (beacon-mode 1))
 
 (provide 'init-meow)
 ;;; init-meow.el ends here

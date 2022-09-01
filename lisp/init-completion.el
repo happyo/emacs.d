@@ -1,4 +1,4 @@
-;;; init-company.el --- Completion with company -*- lexical-binding: t -*-
+;;; init-company.el --- Completion with corfu -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 
@@ -98,6 +98,6 @@
 (with-eval-after-load 'copilot
   (define-key copilot-mode-map (kbd "<tab>") #'my/copilot-tab))
 
-(provide 'init-company)
-;;; init-company.el ends here
+(provide 'init-completion)
+;;; init-completion.el ends here
 
