@@ -99,6 +99,8 @@
 (require 'init-folding)
 (require 'init-dash)
 
+(require 'init-translate)
+
 ;; Language
 (require 'init-magit)
 (require 'init-yasnippet)

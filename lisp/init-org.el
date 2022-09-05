@@ -46,5 +46,8 @@
   (setq org-agenda-span 'day)
   )
 
+
+(use-package org-pomodoro)
+
 (provide 'init-org)
 ;;; init-org.el ends here
