@@ -116,6 +116,7 @@
 ;; org
 (require 'init-org)
 (require 'init-denote)
+;; (require 'init-mode-line)
 
 ;; eaf
 ;; (if (not *is-a-mac*)
