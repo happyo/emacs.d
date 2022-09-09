@@ -102,6 +102,7 @@
 (require 'init-translate)
 
 ;; Language
+(require 'init-citre)
 (require 'init-magit)
 (require 'init-yasnippet)
 (require 'init-lsp)
