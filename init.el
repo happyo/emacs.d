@@ -99,7 +99,10 @@
 (require 'init-folding)
 (require 'init-dash)
 
+(require 'init-translate)
+
 ;; Language
+(require 'init-citre)
 (require 'init-magit)
 (require 'init-yasnippet)
 (require 'init-lsp)
@@ -114,6 +117,7 @@
 ;; org
 (require 'init-org)
 (require 'init-denote)
+;; (require 'init-mode-line)
 
 ;; eaf
 ;; (if (not *is-a-mac*)

@@ -34,6 +34,7 @@
 (setq acm-snippet-insert-index 0)
 (setq acm-enable-icon nil)
 (setq acm-enable-tabnine-helper t)
+(setq acm-enable-citre t)
 
 (global-lsp-bridge-mode)
 

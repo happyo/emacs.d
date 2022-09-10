@@ -51,7 +51,6 @@
 
 ;; (add-hook 'after-init-hook 'transient-mark-mode)
 
-
 ;; Huge files
 
 ;; (when (fboundp 'so-long-enable)
@@ -67,15 +66,10 @@
 ;;       (error "File does not exist: %s" file))
 ;;     (vlf file)))
 
-;;; A simple visible bell which works in all terminal types
-;; (require-package 'mode-line-bell)
-;; (add-hook 'after-init-hook 'mode-line-bell-mode)
-
-
-;; (when (fboundp 'display-line-numbers-mode)
-;;   (setq-default display-line-numbers-width 3)
-;;   (add-hook 'prog-mode-hook 'display-line-numbers-mode)
-;;   )
+(when (fboundp 'display-line-numbers-mode)
+  (setq-default display-line-numbers-width 3)
+  (add-hook 'prog-mode-hook 'display-line-numbers-mode)
+  )
 
 (use-package fill-column-indicator)
 
