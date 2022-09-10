@@ -37,7 +37,7 @@
 
 (update-load-path)
 
-(require 'init-benchmarking) ;; Measure startup time
+;;  (require 'init-benchmarking) ;; Measure startup time
 
 ;; Adjust garbage collection thresholds during startup, and thereafter
 
