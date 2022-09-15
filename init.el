@@ -37,7 +37,6 @@
 
 (update-load-path)
 
-
 ;; Adjust garbage collection thresholds during startup, and thereafter
 
 ;; (let ((normal-gc-cons-threshold (* 20 1024 1024))
