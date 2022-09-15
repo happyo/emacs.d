@@ -70,7 +70,8 @@
 (use-package scratch)
 (use-package command-log-mode)
 
-(require 'init-rime)
+(if (not *is-a-mac*)
+    (require 'init-rime))
 
 (require 'init-persp)
 
