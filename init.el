@@ -37,7 +37,6 @@
 
 (update-load-path)
 
-(require 'init-benchmarking) ;; Measure startup time
 
 ;; Adjust garbage collection thresholds during startup, and thereafter
 
@@ -56,9 +55,9 @@
 
 ;; Adjust garbage collection thresholds during startup, and thereafter
 
-
 (setq custom-file (locate-user-emacs-file "custom.el"))
 (require 'init-elpa)      ;; Machinery for installing required packages
+(require 'init-benchmarking) ;; Measure startup time
 (require 'init-func)
 (require 'init-exec-path) ;; Set up $PATH
 
@@ -122,7 +121,7 @@
 ;; eaf
 ;; (if (not *is-a-mac*)
     ;; (require 'init-eaf)
-    ;; )
+;; )
 
 (when (file-exists-p custom-file)
   (load custom-file))
