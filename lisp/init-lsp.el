@@ -21,20 +21,25 @@
 
 
 (require 'lsp-bridge)
-(defun pythonPath ()
-  "Different computer python path"
-  (if *is-a-mac*
-      (if (string-match-p user-login-name "happyo")
-                                    "/opt/miniconda3/bin/python"
-                                  "/Users/belyenochi/opt/anaconda3/bin/python")
-  "/home/happyo/miniconda3/bin/python"))
 (setq lsp-bridge-python-command (pythonPath))
+(defun my-lsp-bridge-workspace (proj)
+  (let* ((proj-2-workspace
+          '(("/Users/belyenochi/work/tempWork/example-package-dealer" .
+             "file:///Users/belyenochi/work/tempWork/example-package-dealer")
+            ("/home/user/projects/workspace2/proj2" .
+             "file:///home/user/projects/workspace2/")))
+         (kv (assoc proj proj-2-workspace)))
+    (when kv
+        (cdr kv))))
+
+(custom-set-variables '(lsp-bridge-get-workspace-folder 'my-lsp-bridge-workspace))
 
 
 (setq acm-snippet-insert-index 0)
 (setq acm-enable-icon nil)
-(setq acm-enable-tabnine-helper t)
-(setq acm-enable-citre t)
+(setq lsp-bridge-enable-log t)
+(setq acm-enable-tempel nil)
+(setq acm-enable-tabnine nil)
 
 (global-lsp-bridge-mode)
 

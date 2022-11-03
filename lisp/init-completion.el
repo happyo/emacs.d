@@ -8,6 +8,8 @@
 (require 'init-elpa)
 
 (use-package corfu
+  :custom
+  (corfu-auto t)          ;; Enable auto completion
     ;; Use TAB for cycling, default is `corfu-complete'.
   :bind
   (:map corfu-map

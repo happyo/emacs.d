@@ -7,6 +7,7 @@
 ;;; Code:
 
 ;; Produce backtraces when errors occur: can be helpful to diagnose startup issues
+
 ;;(setq debug-on-error t)
 
 (setq gc-cons-threshold most-positive-fixnum
@@ -104,6 +105,7 @@
 (require 'init-citre)
 (require 'init-magit)
 (require 'init-yasnippet)
+;;(require 'init-eglot)
 (require 'init-lsp)
 (require 'init-lisp)
 (require 'init-haskell)
@@ -120,8 +122,11 @@
 
 ;; eaf
 ;; (if (not *is-a-mac*)
-    ;; (require 'init-eaf)
+;; (require 'init-eaf)
 ;; )
+
+;; pdf
+;;(require 'init-pdf)
 
 (when (file-exists-p custom-file)
   (load custom-file))
