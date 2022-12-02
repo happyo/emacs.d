@@ -43,12 +43,12 @@
 
 (global-lsp-bridge-mode)
 
-(use-package dumb-jump)
-(add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
-(setq xref-show-definitions-function #'xref-show-definitions-completing-read)
+;; (use-package dumb-jump)
+;; (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
+;; (setq xref-show-definitions-function #'xref-show-definitions-completing-read)
 
-(global-set-key (kbd "M-.") 'xref-find-definitions)
-(global-set-key (kbd "M-,") 'xref-pop-marker-stack)
+(global-set-key (kbd "M-.") 'lsp-bridge-find-def)
+(global-set-key (kbd "M-,") 'lsp-bridge-find-def-return)
 
 (use-package unicode-escape)
 

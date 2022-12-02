@@ -126,7 +126,7 @@
 ;; )
 
 ;; pdf
-;;(require 'init-pdf)
+(require 'init-pdf)
 
 (when (file-exists-p custom-file)
   (load custom-file))

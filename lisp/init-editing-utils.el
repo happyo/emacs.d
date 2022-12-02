@@ -3,8 +3,12 @@
 ;;; Code:
 (require 'init-elpa)
 
-(use-package format-all)
+;; emacs every where
+(use-package emacs-everywhere
+  )
 
+
+(use-package format-all)
 
 (global-set-key (kbd "M-/") 'comment-line)
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
