@@ -3,6 +3,7 @@
 ;;; Code:
 
 (use-package tablist)
+(use-package pdf-tools)
 
 (pdf-tools-install)  ; Standard activation command
 (pdf-loader-install) ; On demand loading, leads to faster startup time
