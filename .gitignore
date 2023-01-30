@@ -117,7 +117,6 @@ rime/
 eaf/
 *.db
 
-site-lisp/*
 
 .last-package-update-day
 projects
