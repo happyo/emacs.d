@@ -106,8 +106,13 @@
    '("<escape>" . ignore)
    ))
 
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/meow")
+;; (require 'meow)
+
 (use-package meow
   :demand t
+  :ensure nil
+  :load-path "~/.emacs.d/site-lisp/meow"
   :init
   (setq meow-selection-command-fallback '(
                                           (meow-change . meow-change-char)
