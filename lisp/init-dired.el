@@ -7,6 +7,12 @@
 
 (use-package dired
   :ensure nil
+  :custom
+  (dired-dwim-target t)
+  (dired-listing-switches "-alGh")
+  (dired-recursive-copies 'always)
+  (dired-kill-when-opening-new-dired-buffer t)
+  :hook (dired-mode . dired-hide-details-mode)
   :config
   (setq dired-recursive-deletes 'always
         dired-recursive-copies 'always)
