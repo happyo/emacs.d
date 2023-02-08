@@ -60,6 +60,7 @@
 (require 'init-benchmarking) ;; Measure startup time
 (require 'init-func)
 (require 'init-exec-path) ;; Set up $PATH
+(require 'init-proxy)
 
 (let ((my/old package-check-signature))
   (use-package gnu-elpa-keyring-update
