@@ -5,6 +5,8 @@
 (require 'init-elpa)
 (require 'init-func)
 
+(recentf-mode 1)
+
 ;; Windows/buffers sets shared among frames + save/load.
 (use-package persp-mode
   :diminish
