@@ -2,7 +2,9 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package magit)
+(use-package magit
+  :config
+  (setq magit-status-buffer-switch-function 'switch-to-buffer))
 
 (provide 'init-magit)
 ;;; init-magit.el ends here

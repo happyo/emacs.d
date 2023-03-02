@@ -81,7 +81,7 @@
    '("O" . meow-open-above)
    '("p" . meow-yank)
    '("P" . meow-sync-grab)
-   '("q" . meow-quit)
+   '("q" . meow-minibuffer-quit)
    '("Q" . meow-last-buffer)
    '("r" . meow-replace)
    '("R" . meow-swap-grab)
