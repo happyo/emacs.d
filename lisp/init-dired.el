@@ -56,5 +56,6 @@
 ;;   (with-eval-after-load 'dired
 ;;     (add-hook 'dired-mode-hook 'diff-hl-dired-mode)))
 
-(provide 'init-dired)
+(provide 'init-
+         dired)
 ;;; init-dired.el ends here

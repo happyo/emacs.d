@@ -46,6 +46,7 @@
   (setq org-agenda-span 'day)
   )
 
+(use-package xmind-org)
 
 (use-package org-pomodoro)
 

@@ -82,13 +82,11 @@
 (require 'init-completion)
 (require 'init-chinese)
 (require 'init-themes)
-(require 'init-frame-hooks)
 (require 'init-xterm)
 (require 'init-keyfreq)
 (require 'init-osx-keys)
 (require 'init-gui-frames)
 (require 'init-dired)
-(require 'init-isearch)
 (require 'init-search)
 (require 'init-ibuffer)
 (require 'init-flycheck)
@@ -97,7 +95,6 @@
 
 (require 'init-treemacs)
 (require 'init-projectile)
-(require 'init-folding)
 (require 'init-dash)
 
 (require 'init-translate)

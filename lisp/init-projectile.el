@@ -10,6 +10,7 @@
   :config
   (add-hook 'after-init-hook 'projectile-mode)
   (setq-default projectile-mode-line-prefix " Proj")
+  (setq projectile-require-project-root nil)
 
   (when (executable-find "rg")
     (setq-default projectile-generic-command "rg --files --hidden"))
