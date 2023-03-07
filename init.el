@@ -75,8 +75,6 @@
 (if (not *is-a-mac*)
     (require 'init-rime))
 
-(require 'init-persp)
-
 (require 'init-meow)
 (require 'init-editing-utils)
 (require 'init-completion)
@@ -121,7 +119,9 @@
 ;; eaf
 (if (needEAF)
     (require 'init-eaf)
-)
+  )
+
+(require 'init-sessions)
 
 ;; pdf
 ;; (require 'init-pdf)

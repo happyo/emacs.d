@@ -17,11 +17,11 @@
 
 (use-package eaf
   :load-path "~/.emacs.d/site-lisp/emacs-application-framework"
-  ;; :custom
+  :custom
   ; See https://github.com/emacs-eaf/emacs-application-framework/wiki/Customization
   ;; (eaf-browser-continue-where-left-off t)
   ;; (eaf-browser-enable-adblocker t)
-  ;; (eaf-python-command (pythonPath))
+  (eaf-python-command (pythonPath))
   ;; (browse-url-browser-function 'eaf-open-browser)
   :config
   ;; (defalias 'browse-web #'eaf-open-browser)
