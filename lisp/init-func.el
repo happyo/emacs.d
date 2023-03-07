@@ -17,7 +17,7 @@
 (setq mac "xxzdeMacBook-Pro.local")
 (defun pythonPath()
   (cond
-   ((string-match-p system-name mac) "/usr/bin/python3")
+   ((string-match-p system-name mac) "/opt/homebrew/bin/python3")
    (t "python")
    )
   )
