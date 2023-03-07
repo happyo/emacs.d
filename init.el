@@ -119,9 +119,9 @@
 ;; (require 'init-mode-line)
 
 ;; eaf
-;; (if (not *is-a-mac*)
-;; (require 'init-eaf)
-;; )
+(if (needEAF)
+    (require 'init-eaf)
+)
 
 ;; pdf
 ;; (require 'init-pdf)

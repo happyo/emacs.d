@@ -1,9 +1,6 @@
 [submodule "site-lisp/lsp-bridge"]
 	path = site-lisp/lsp-bridge
 	url = git@github.com:happyo/lsp-bridge.git
-[submodule "site-lisp/copilot.el"]
-	path = site-lisp/copilot.el
-	url = https://github.com/zerolfx/copilot.el.git
 [submodule "site-lisp/dictionary-overlay"]
 	path = site-lisp/dictionary-overlay
 	url = https://github.com/ginqi7/dictionary-overlay.git

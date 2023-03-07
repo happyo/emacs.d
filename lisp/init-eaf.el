@@ -5,10 +5,10 @@
 (require 'init-func)
 (add-to-list 'load-path "~/.emacs.d/site-lisp/emacs-application-framework/")
 (require 'eaf)
+(require 'eaf-pdf-viewer)
 ;; (require 'eaf-org-previewer)
 ;; (require 'eaf-mindmap)
 ;; (require 'eaf-mermaid)
-(require 'eaf-pdf-viewer)
 ;; (require 'eaf-markdown-previewer)
 ;; (require 'eaf-browser)
 ;; (require 'eaf-airshare)
@@ -17,11 +17,11 @@
 
 (use-package eaf
   :load-path "~/.emacs.d/site-lisp/emacs-application-framework"
-  :custom
+  ;; :custom
   ; See https://github.com/emacs-eaf/emacs-application-framework/wiki/Customization
   ;; (eaf-browser-continue-where-left-off t)
   ;; (eaf-browser-enable-adblocker t)
-  (eaf-python-command (pythonPath))
+  ;; (eaf-python-command (pythonPath))
   ;; (browse-url-browser-function 'eaf-open-browser)
   :config
   ;; (defalias 'browse-web #'eaf-open-browser)

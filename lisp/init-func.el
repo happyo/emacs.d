@@ -13,10 +13,18 @@
 ;;                                     "/opt/miniconda3/bin/python"
 ;;                                   "/Users/belyenochi/opt/anaconda3/bin/python")
 ;;     "/home/happyo/miniconda3/bin/python"))
+
+(setq mac "xxzdeMacBook-Pro.local")
 (defun pythonPath()
-  (cond ((string-match-p system-name "xxzdeMBP") "/usr/bin/python3")
-        ;; ((string-match-p ))
-        )
+  (cond
+   ((string-match-p system-name mac) "/usr/bin/python3")
+   (t "python")
+   )
+  )
+
+(defun needEAF()
+  (cond ((string-match-p system-name mac) t)
+        (t t))
   )
 
 (provide 'init-func)
