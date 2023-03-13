@@ -16,3 +16,6 @@
 [submodule "site-lisp/meow"]
 	path = site-lisp/meow
 	url = git@github.com:happyo/meow.git
+[submodule "site-lisp/mind-wave"]
+	path = site-lisp/mind-wave
+	url = git@github.com:happyo/mind-wave.git

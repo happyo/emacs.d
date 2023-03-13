@@ -116,10 +116,13 @@
 (require 'init-denote)
 ;; (require 'init-mode-line)
 
+;; chat
+(require 'init-chat)
+
 ;; eaf
-(if (needEAF)
-    (require 'init-eaf)
-  )
+;; (if (needEAF)
+;;     (require 'init-eaf)
+;;   )
 
 (require 'init-sessions)
 

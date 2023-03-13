@@ -25,8 +25,12 @@
   ;; (browse-url-browser-function 'eaf-open-browser)
   :config
   ;; (defalias 'browse-web #'eaf-open-browser)
-  (eaf-bind-key scroll_up "C-n" eaf-pdf-viewer-keybinding)
-  (eaf-bind-key scroll_down "C-p" eaf-pdf-viewer-keybinding)
+  (eaf-bind-key scroll_up_page "C-d" eaf-pdf-viewer-keybinding)
+  (eaf-bind-key scroll_down_page "C-u" eaf-pdf-viewer-keybinding)
+  (eaf-bind-key save-current-pos "x" eaf-pdf-viewer-keybinding)
+  (eaf-bind-key jump_to_save_pos "d" eaf-pdf-viewer-keybinding)
+  (eaf-bind-key jump_to_page "g" eaf-pdf-viewer-keybinding)
+
   ;; (eaf-bind-key take_photo "p" eaf-camera-keybinding)
   ;; (eaf-bind-key nil "M-q" eaf-browser-keybinding)
   ) ;; unbind, see more in the Wiki
