@@ -4,6 +4,8 @@
 (require 'init-elpa)
 (require 'init-func)
 
+(use-package unicode-escape)
+
 (use-package yasnippet)
 (use-package yasnippet-snippets)
 
@@ -47,7 +49,6 @@
 (global-set-key (kbd "M-.") 'lsp-bridge-find-def)
 (global-set-key (kbd "M-,") 'lsp-bridge-find-def-return)
 
-(use-package unicode-escape)
 
 (provide 'init-lsp)
 ;;; init-lsp.el ends here

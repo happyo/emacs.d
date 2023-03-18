@@ -14,18 +14,39 @@
 ;;                                   "/Users/belyenochi/opt/anaconda3/bin/python")
 ;;     "/home/happyo/miniconda3/bin/python"))
 
+(message system-name)
+
 (setq mac "xxzdeMacBook-Pro.local")
+(setq archWsl "happy-pc")
+
 (defun pythonPath()
   (cond
    ((string-match-p system-name mac) "/opt/homebrew/bin/python3")
-   (t "python")
+   ((string-match-p system-name archWsl) "/home/linuxbrew/.linuxbrew/bin/python3")
+   (t "python3")
    )
   )
 
 (defun needEAF()
   (cond ((string-match-p system-name mac) t)
+        ((string-match-p system-name archWsl) t)
         (t t))
   )
+
+(defun needConda()
+  (cond ((string-match-p system-name mac) t)
+        ((string-match-p system-name archWsl) nil)
+        (t nil)))
+
+(defun needFonts()
+  (cond ((string-match-p system-name mac) t)
+        ((string-match-p system-name archWsl) t)
+        (t nil)))
+
+(defun needRime()
+  (cond ((string-match-p system-name mac) nil)
+        ((string-match-p system-name archWsl) t)
+        (t nil)))
 
 (provide 'init-func)
 ;;; init-func.el ends here

@@ -72,13 +72,18 @@
 (use-package scratch)
 (use-package command-log-mode)
 
-(if (not *is-a-mac*)
+(if (needRime)
     (require 'init-rime))
 
 (require 'init-meow)
 (require 'init-editing-utils)
 (require 'init-completion)
-(require 'init-chinese)
+
+(if (needFonts)
+    (require 'init-chinese)
+    )
+
+
 (require 'init-themes)
 (require 'init-xterm)
 (require 'init-keyfreq)
@@ -120,9 +125,9 @@
 (require 'init-chat)
 
 ;; eaf
-;; (if (needEAF)
-;;     (require 'init-eaf)
-;;   )
+(if (needEAF)
+    (require 'init-eaf)
+  )
 
 (require 'init-sessions)
 
