@@ -28,9 +28,10 @@
   )
 
 (defun needEAF()
-  (cond ((string-match-p system-name mac) t)
+  (cond
+   ;; ((string-match-p system-name mac) t)
         ((string-match-p system-name archWsl) t)
-        (t t))
+        (t nil))
   )
 
 (defun needConda()
