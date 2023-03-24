@@ -19,3 +19,12 @@
 [submodule "site-lisp/mind-wave"]
 	path = site-lisp/mind-wave
 	url = git@github.com:happyo/mind-wave.git
+[submodule "site-lisp/denote"]
+	path = site-lisp/denote
+	url = https://github.com/protesilaos/denote.git
+[submodule "site-lisp/consult-notes"]
+	path = site-lisp/consult-notes
+	url = https://github.com/mclear-tools/consult-notes.git
+[submodule "site-lisp/org-super-links"]
+	path = site-lisp/org-super-links
+	url = https://github.com/toshism/org-super-links.git

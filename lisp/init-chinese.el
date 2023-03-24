@@ -42,7 +42,8 @@
     (set-fontset-font (frame-parameter nil 'font) charset
                       (font-spec :family chinese :size chinese-size :weight 'medium))))
 
-(set-font "monego" "LXGW WenKai" 32 32)
+;; (set-font "monego" "LXGW WenKai" 32 32)
+(set-font "monego" "LXGW WenKai" 17 20)
 
 (provide 'init-chinese)
 ;;; init-chinese.el ends here

@@ -3,9 +3,12 @@
 ;;; Code:
 
 (require 'init-elpa)
-(require 'init-search)
 
-(use-package denote)
+(add-to-list 'load-path "~/.emacs.d/site-lisp/denote")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/consult-notes")
+(add-to-list 'load-path "~/.emacs.d/site-lisp/org-super-links")
+
+(require 'denote)
 
 ;; Remember to check the doc strings of those variables.
 (setq denote-directory (expand-file-name "~/Zettelkasten"))
@@ -101,9 +104,36 @@
                  :kill-buffer t
                  :jump-to-captured t)))
 
-(defun denote-find-note ()
-  (interactive)
-    (consult-fd denote-directory))
+(use-package consult-notes
+  :demand t
+  :ensure nil
+  :load-path "~/.emacs.d/site-lisp/consult-notes"
+  :commands (consult-notes
+             consult-notes-search-in-all-notes)
+  :config
+  (setq consult-notes-file-dir-sources
+        '(
+          ;; ("denote"             ?n "~/Zettelkasten")
+        ("Org Refile"      ?w "~/work")))
+  ;; Set org-roam integration, denote integration, or org-heading integration e.g.:
+  ;; (setq consult-notes-org-headings-files '("~/path/to/file1.org"
+  ;;                                          "~/path/to/file2.org"))
+  ;; (consult-notes-org-headings-mode)
+  (when (locate-library "denote")
+    (consult-notes-denote-mode)))
+
+(use-package org-super-links
+  :demand t
+  :ensure nil
+  :load-path "~/.emacs.d/site-lisp/org-super-links"
+  :bind (("C-c s s" . org-super-links-link)
+         ("C-c s l" . org-super-links-store-link)
+         ("C-c s C-l" . org-super-links-insert-link)))
+
+;; org-super-links
+;; (defun denote-find-note ()
+;;   (interactive)
+;;     (consult-fd denote-directory))
 
 (provide 'init-denote)
 ;;; init-denote.el ends here
