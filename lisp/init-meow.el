@@ -113,16 +113,17 @@
   :demand t
   :ensure nil
   :load-path "~/.emacs.d/site-lisp/meow"
-  :init
-  (setq meow-selection-command-fallback '(
+  :custom
+  (meow-selection-command-fallback '(
                                           (meow-change . meow-change-char)
                                           (meow-kill . meow-C-d)
                                           (meow-cancel-selection . keyboard-quit)
                                           (meow-pop-selection . meow-pop-grab)
                                           )) 
-  (setq meow-expand-exclude-mode-list '(markdown-mode org-mode eaf-mode))
+  (meow-expand-exclude-mode-list '(markdown-mode org-mode eaf-mode))
   :config
   ;; meow-setup is your custom function, see below
+  (add-to-list 'meow-mode-state-list '(eaf-mode . normal))
   (meow-setup)
   ;; If you want relative line number in NORMAL state(for display-line-numbers-mode)
   (meow-setup-line-number)
