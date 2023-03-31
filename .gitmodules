@@ -28,3 +28,6 @@
 [submodule "site-lisp/org-super-links"]
 	path = site-lisp/org-super-links
 	url = https://github.com/toshism/org-super-links.git
+[submodule "site-lisp/copilot"]
+	path = site-lisp/copilot
+	url = git@github.com:happyo/copilot.el.git

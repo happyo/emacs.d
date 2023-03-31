@@ -35,7 +35,7 @@
   )
 
 (defun needConda()
-  (cond ((string-match-p system-name mac) t)
+  (cond ((string-match-p system-name mac) nil)
         ((string-match-p system-name archWsl) nil)
         (t nil)))
 

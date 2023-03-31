@@ -75,6 +75,7 @@
 (if (needRime)
     (require 'init-rime))
 
+(require 'init-keybinding)
 (require 'init-meow)
 (require 'init-editing-utils)
 (require 'init-completion)
@@ -102,17 +103,21 @@
 
 (require 'init-translate)
 
+;; Code Completion
+(require 'init-lsp)
+(require 'init-copilot)
+
 ;; Language
 (require 'init-citre)
 (require 'init-magit)
 (require 'init-yasnippet)
 ;; (require 'init-eglot)
-(require 'init-lsp)
 (require 'init-lisp)
 (require 'init-haskell)
 ;; (require 'init-scheme)
 (require 'init-dart)
-(require 'init-python)
+(if (needConda)
+    (require 'init-python))
 (require 'init-swift)
 
 
