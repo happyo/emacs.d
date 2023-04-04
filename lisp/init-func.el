@@ -27,9 +27,29 @@
    )
   )
 
+(defun proxy-ip()
+  (cond
+   ((string-match-p system-name mac) "127.0.0.1:7890")
+   ((string-match-p system-name archWsl) "172.25.112.1:7890")
+   (t "127.0.0.1:7890")
+   )
+  )
+
 (defun needEAF()
   (cond
    ;; ((string-match-p system-name mac) t)
+        ((string-match-p system-name archWsl) t)
+        (t nil))
+  )
+
+(defun needEAFWeb()
+  (cond
+        ((string-match-p system-name archWsl) t)
+        (t nil))
+  )
+
+(defun needEAFTerminal()
+  (cond
         ((string-match-p system-name archWsl) t)
         (t nil))
   )

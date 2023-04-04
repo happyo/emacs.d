@@ -5,6 +5,7 @@
 ;; (require-package 'cnfonts)
 
 (require 'init-elpa)
+(require 'init-func)
 
 ;; (use-package cnfonts
 ;;   :ensure t
@@ -42,8 +43,9 @@
     (set-fontset-font (frame-parameter nil 'font) charset
                       (font-spec :family chinese :size chinese-size :weight 'medium))))
 
-;; (set-font "monego" "LXGW WenKai" 32 32)
-(set-font "monego" "LXGW WenKai" 17 20)
+(if *is-a-mac*
+   (set-font "monego" "LXGW WenKai" 17 20)
+  (set-font "monego" "LXGW WenKai" 32 32))
 
 (provide 'init-chinese)
 ;;; init-chinese.el ends here

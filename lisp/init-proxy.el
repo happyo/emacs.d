@@ -2,19 +2,23 @@
 ;;; Commentary:
 ;;; Code:
 
-(defcustom centaur-proxy "127.0.0.1:7890"
+(require 'init-func)
+
+(setq my-proxy (proxy-ip))
+
+(defcustom centaur-proxy my-proxy
   "Set HTTP/HTTPS proxy."
   :group 'happyo
   :type 'string)
 
-(defcustom centaur-socks-proxy "127.0.0.1:7890"
+(defcustom centaur-socks-proxy my-proxy
   "Set HTTP/HTTPS proxy."
   :group 'happyo
   :type 'string)
 
-(setq centaur-socks-proxy "127.0.0.1:7890")    ; SOCKS proxy
+(setq centaur-socks-proxy my-proxy)    ; SOCKS proxy
 
-(setq centaur-proxy "127.0.0.1:7890")          ; HTTP/HTTPS proxy
+(setq centaur-proxy my-proxy)          ; HTTP/HTTPS proxy
 
 (defvar socks-noproxy)
 (defvar socks-server)
