@@ -40,7 +40,7 @@
 (mapc #'disable-theme custom-enabled-themes)
 
 ;; Load the theme of choice:
-;; (load-theme 'ef-spring :no-confirm)
+;; (load-theme 'ef-summer :no-confirm)
 (load-theme 'ef-my :no-confirm)
 
 ;; The themes we provide:
