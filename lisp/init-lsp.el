@@ -49,6 +49,5 @@
 (global-set-key (kbd "M-.") 'lsp-bridge-find-def)
 (global-set-key (kbd "M-,") 'lsp-bridge-find-def-return)
 
-
 (provide 'init-lsp)
 ;;; init-lsp.el ends here
