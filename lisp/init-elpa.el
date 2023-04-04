@@ -1,4 +1,4 @@
-;;; init-elpa.el --- Settings and helpers for package.el -*- lexical-binding: t -*-
+;;; init-elpa.el --- Init elpa auto download packages -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 

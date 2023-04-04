@@ -1,5 +1,5 @@
 ;;; init-citre.el --- Init citre -*- lexical-binding: t -*-
-;;; Commentary:
+;;; Commentary: This is c++ code completion backend
 ;;; Code:
 (require 'init-elpa)
 

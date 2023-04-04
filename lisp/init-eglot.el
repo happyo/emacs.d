@@ -1,5 +1,5 @@
-;;; init-eglot.el --- Insert description here -*- lexical-binding: t -*-
-;;; Commentary:
+;;; init-eglot.el --- Init eglot -*- lexical-binding: t -*-
+;;; Commentary: Now using lsp-bridge, this is not using
 ;;; Code:
 
 (require 'init-elpa)

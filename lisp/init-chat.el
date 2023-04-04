@@ -1,4 +1,4 @@
-;;; init-chat.el --- Insert description here -*- lexical-binding: t -*-
+;;; init-chat.el --- Interect with Chatgpt -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 

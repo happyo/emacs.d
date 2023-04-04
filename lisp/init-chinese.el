@@ -1,4 +1,4 @@
-;;; init-elpa.el --- Settings and helpers for package.el -*- lexical-binding: t -*-
+;;; init-elpa.el --- Setting fonts -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 

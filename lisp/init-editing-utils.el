@@ -1,14 +1,9 @@
 ;;; init-editing-utils.el --- Day-to-day editing helpers -*- lexical-binding: t -*-
-;;; Commentary:
+;;; Commentary: Some helpful default setting
 ;;; Code:
 (require 'init-elpa)
 
-;; emacs every where
-(use-package emacs-everywhere
-  )
-
 (use-package format-all)
-
 
 (when (fboundp 'electric-pair-mode)
   (add-hook 'after-init-hook 'electric-pair-mode))
@@ -33,11 +28,9 @@
  scroll-preserve-screen-position 'always
  set-mark-command-repeat-pop t
  tooltip-delay 1.5
- truncate-lines nil
+ truncate-lines t
  truncate-partial-width-windows nil
  tab-width 4)
-
-;; (add-hook 'after-init-hook 'transient-mark-mode)
 
 ;; Huge files
 
@@ -60,7 +53,6 @@
   )
 
 (use-package fill-column-indicator)
-
 
 ;; rainbow-delimiters is a "rainbow parentheses"-like mode which highlights delimiters such as parentheses
 (use-package rainbow-delimiters

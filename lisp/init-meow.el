@@ -1,5 +1,5 @@
 ;;; init-meow.el --- Integrate with the "Meow" -*- lexical-binding: t -*-
-;;; Commentary:
+;;; Commentary: Vim like edit package
 ;;; Code:
 
 (require 'init-elpa)

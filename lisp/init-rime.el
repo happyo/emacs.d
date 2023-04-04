@@ -1,5 +1,5 @@
 ;;; init-rime.el --- Chinese input -*- lexical-binding: t -*-
-;;; Commentary:
+;;; Commentary: Only need in wsl
 ;;; Code:
 
 (require 'init-elpa)
