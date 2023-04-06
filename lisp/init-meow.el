@@ -106,9 +106,6 @@
    '("<escape>" . ignore)
    ))
 
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/meow")
-;; (require 'meow)
-
 (use-package meow
   :demand t
   :ensure nil
@@ -133,7 +130,7 @@
   :init
   (setq-default beacon-lighter "")
   (setq-default beacon-size 20)
-  (setq-default beacon-color "#E45C5C")
+  (setq-default beacon-color "#e45c5c")
   :config
   (beacon-mode 1))
 

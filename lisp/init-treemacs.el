@@ -7,9 +7,6 @@
 (use-package treemacs
   :ensure t
   :defer t
-;;   :init
-;;   (with-eval-after-load 'winum
-;;     (define-key winum-keymap (kbd "M-0") #'treemacs-select-window))
   :config
   (progn
     (setq treemacs-collapse-dirs                   (if treemacs-python-executable 2 0)
@@ -77,19 +74,20 @@
        (treemacs-git-mode 'simple)))
 
     (treemacs-hide-gitignored-files-mode nil))
-    (treemacs-load-all-the-icons-with-workaround-font "Operator Mono")
+  (treemacs-load-all-the-icons-with-workaround-font "Operator Mono")
+  (add-hook 'projectile-after-switch-project-hook 'treemacs-display-current-project-exclusively)
   :bind
   (:map global-map
-        ("M-0"       . treemacs-select-window)
-        ;; ("C-x t 1"   . treemacs-delete-other-windows)
-        ("M-T"   . treemacs-display-current-project-exclusively)
-        ("M-t"   . treemacs)
-        ("M-J"   . treemacs-find-file)
-        ;; ("C-x t B"   . treemacs-bookmark)
-        ;; ("C-x t C-t" . treemacs-find-file)
-        ;; ("C-x t M-t" . treemacs-find-tag)
-        )
-    )
+   ("M-0"       . treemacs-select-window)
+   ;; ("C-x t 1"   . treemacs-delete-other-windows)
+   ("M-T"   . treemacs-display-current-project-exclusively)
+   ("M-t"   . treemacs)
+   ("M-J"   . treemacs-find-file)
+   ;; ("C-x t B"   . treemacs-bookmark)
+   ;; ("C-x t C-t" . treemacs-find-file)
+   ;; ("C-x t M-t" . treemacs-find-tag)
+   )
+  )
 
 ;; (use-package treemacs-evil
 ;;   :after (treemacs evil)
