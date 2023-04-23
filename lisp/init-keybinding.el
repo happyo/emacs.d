@@ -18,6 +18,7 @@
 (global-set-key (kbd "C-u") 'scroll-down)
 (global-set-key (kbd "M-r") 'eval-last-sexp)
 (global-set-key (kbd "C-o") 'universal-argument)
+(global-set-key (kbd "M-DEL") 'backward-kill-sentence)
 
 (provide 'init-keybinding)
 ;;; init-keybinding.el ends here

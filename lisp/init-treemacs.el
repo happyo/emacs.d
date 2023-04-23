@@ -75,7 +75,7 @@
 
     (treemacs-hide-gitignored-files-mode nil))
   (treemacs-load-all-the-icons-with-workaround-font "Operator Mono")
-  (add-hook 'projectile-after-switch-project-hook 'treemacs-display-current-project-exclusively)
+  ;; (add-hook 'projectile-after-switch-project-hook 'treemacs-display-current-project-exclusively)
   :bind
   (:map global-map
    ("M-0"       . treemacs-select-window)
