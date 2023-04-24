@@ -80,7 +80,7 @@
    '("o" . meow-open-below)
    '("O" . meow-open-above)
    '("p" . meow-yank)
-   '("P" . meow-sync-grab)
+   ;; '("P" . meow-sync-grab)
    '("q" . meow-minibuffer-quit)
    '("Q" . meow-last-buffer)
    '("r" . meow-replace)
@@ -115,7 +115,7 @@
                                           (meow-change . meow-change-char)
                                           (meow-kill . meow-C-d)
                                           (meow-cancel-selection . keyboard-quit)
-                                          (meow-pop-selection . meow-pop-grab)
+                                          ;; (meow-pop-selection . meow-pop-grab)
                                           )) 
   (meow-expand-exclude-mode-list '(markdown-mode org-mode eaf-mode))
   :config

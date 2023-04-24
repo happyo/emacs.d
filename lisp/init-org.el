@@ -17,6 +17,7 @@
   ;;   (face-spec-reset-face face)
   ;;   (set-face-foreground face (face-attribute 'default :background)))
   ;; (set-face-background 'fringe (face-attribute 'default :background))
+  (setq-local truncate-lines nil)
 
   (setq
    ;; Edit settings

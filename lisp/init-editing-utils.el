@@ -28,9 +28,13 @@
  scroll-preserve-screen-position 'always
  set-mark-command-repeat-pop t
  tooltip-delay 1.5
- truncate-lines t
+ truncate-lines nil
  truncate-partial-width-windows nil
  tab-width 4)
+
+(delete-selection-mode 1)
+(transient-mark-mode 1)
+
 
 ;; Huge files
 

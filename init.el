@@ -75,7 +75,6 @@
 (if (needRime)
     (require 'init-rime))
 
-(require 'init-keybinding)
 (require 'init-meow)
 (require 'init-editing-utils)
 (require 'init-completion)
@@ -133,6 +132,8 @@
 (if (needEAF)
     (require 'init-eaf)
   )
+
+(require 'init-keybinding)
 
 (require 'init-sessions)
 
