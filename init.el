@@ -83,7 +83,6 @@
     (require 'init-chinese)
     )
 
-
 (require 'init-themes)
 (require 'init-xterm)
 (require 'init-keyfreq)
@@ -107,12 +106,13 @@
 (require 'init-copilot)
 
 ;; Language
-(require 'init-citre)
+;; (require 'init-citre)
 (require 'init-magit)
 (require 'init-yasnippet)
 ;; (require 'init-eglot)
 (require 'init-lisp)
 (require 'init-haskell)
+(require 'init-web)
 ;; (require 'init-scheme)
 (require 'init-dart)
 (if (needConda)

@@ -16,21 +16,27 @@
 
 (message system-name)
 
-(setq mac "xxzdeMacBook-Pro.local")
+(setq mac "belyenochi")
 (setq archWsl "happy-pc")
+
+(defun isNewMac ()
+    (string-match-p user-login-name mac))
+
+(defun isMyWsl ()
+    (string-match-p system-name archWsl))
 
 (defun pythonPath()
   (cond
-   ((string-match-p system-name mac) "/opt/homebrew/bin/python3")
-   ((string-match-p system-name archWsl) "/home/linuxbrew/.linuxbrew/bin/python3")
+   ((isNewMac) "/opt/homebrew/bin/python3")
+   ((isMyWsl) "/home/linuxbrew/.linuxbrew/bin/python3")
    (t "python3")
    )
   )
 
 (defun proxy-ip()
   (cond
-   ((string-match-p system-name mac) "127.0.0.1:7890")
-   ((string-match-p system-name archWsl) "172.25.112.1:7890")
+   ((isNewMac) "127.0.0.1:7890")
+   ((isMyWsl) "172.25.112.1:7890")
    (t "127.0.0.1:7890")
    )
   )
@@ -38,35 +44,35 @@
 (defun needEAF()
   (cond
    ;; ((string-match-p system-name mac) t)
-        ((string-match-p system-name archWsl) t)
+        ((isMyWsl) t)
         (t nil))
   )
 
 (defun needEAFWeb()
   (cond
-        ((string-match-p system-name archWsl) t)
+        ((isMyWsl) t)
         (t nil))
   )
 
 (defun needEAFTerminal()
   (cond
-        ((string-match-p system-name archWsl) t)
+        ((isMyWsl) t)
         (t nil))
   )
 
 (defun needConda()
-  (cond ((string-match-p system-name mac) nil)
-        ((string-match-p system-name archWsl) nil)
+  (cond ((isNewMac) nil)
+        ((isMyWsl) nil)
         (t nil)))
 
 (defun needFonts()
-  (cond ((string-match-p system-name mac) t)
-        ((string-match-p system-name archWsl) t)
+  (cond ((isNewMac) t)
+        ((isMyWsl) t)
         (t nil)))
 
 (defun needRime()
-  (cond ((string-match-p system-name mac) nil)
-        ((string-match-p system-name archWsl) t)
+  (cond ((isNewMac) nil)
+        ((isMyWsl) t)
         (t nil)))
 
 (provide 'init-func)

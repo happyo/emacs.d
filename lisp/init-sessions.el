@@ -1,5 +1,5 @@
-
 ;;; init-sessions.el --- Save and restore editor sessions between restarts -*- lexical-binding: t -*-
+
 ;;; Commentary:
 ;;; Code:
 
@@ -10,23 +10,14 @@
 ;; Restore histories and registers after saving
 
 (setq-default history-length 1000)
-;; (add-hook 'after-init-hook 'savehist-mode)
 (savehist-mode 1)
 
 (recentf-mode 1)
 (setq recentf-max-menu-items 25)
 (setq recentf-max-saved-items 25)
 
-(use-package session)
-
-(setq session-save-file (locate-user-emacs-file ".session"))
-(setq session-name-disable-regexp "\\(?:\\`'/tmp\\|\\.git/[A-Z_]+\\'\\)")
-(setq session-save-file-coding-system 'utf-8)
-
-(add-hook 'after-init-hook 'session-initialize)
-
-;; save a bunch of variables to the desktop file
-;; for lists specify the len of the maximal saved data also
+;; Save a bunch of variables to the desktop file
+;; For lists, specify the length of the maximal saved data also
 (setq desktop-globals-to-save
       '((comint-input-ring        . 50)
         (compile-history          . 30)
@@ -46,7 +37,6 @@
         (search-ring              . 20)
         (shell-command-history    . 50)
         ))
-
 
 (provide 'init-sessions)
 ;;; init-sessions.el ends here

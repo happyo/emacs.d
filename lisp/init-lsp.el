@@ -39,9 +39,10 @@
 
 ;; (setq acm-enable-tempel nil)
 ;; (setq acm-enable-tabnine t)
+(setq lsp-bridge-enable-log t)
 (setq lsp-bridge-enable-signature-help t)
 (setq acm-enable-tabnine nil)
-(setq acm-enable-codeium t)
+(setq acm-enable-codeium nil)
 
 (global-lsp-bridge-mode)
 
@@ -51,6 +52,15 @@
 
 (global-set-key (kbd "M-.") 'lsp-bridge-find-def)
 (global-set-key (kbd "M-,") 'lsp-bridge-find-def-return)
+(global-set-key (kbd "M-]") 'lsp-bridge-code-format)
+
+(use-package treesit-auto
+  :demand t
+  :config
+  (setq treesit-auto-install 'prompt)
+  (global-treesit-auto-mode))
+
+(use-package prettier)
 
 (provide 'init-lsp)
 ;;; init-lsp.el ends here

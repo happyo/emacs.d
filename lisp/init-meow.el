@@ -14,7 +14,8 @@
         meow-use-enhanced-selection-effect t)  ;; optional, for visual effect
   (meow-motion-overwrite-define-key
    '("j" . meow-next)
-   '("k" . meow-prev))
+   '("k" . meow-prev)
+   '("<escape>" . ignore))
   (meow-leader-define-key
    ;; SPC j/k will run the original command in MOTION state.
    '("j" . "H-j")
@@ -63,7 +64,7 @@
    '("f" . meow-find)
    '("F" . meow-find-expand)
    '("g" . meow-goto-line)
-   ;; '("G" . meow-grab)
+   '("G" . meow-grab)
    '("h" . meow-left)
    '("H" . meow-left-expand)
    '("i" . meow-insert)
@@ -104,6 +105,7 @@
    '("\\" . quoted-insert)
    '("/" . meow-visit)
    '("<escape>" . ignore)
+   '("DEL" . meow-beacon-kill-delete)
    ))
 
 (use-package meow
