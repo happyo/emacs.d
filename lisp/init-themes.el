@@ -4,6 +4,9 @@
 
 (require 'init-elpa)
 
+;; (use-package all-the-icons
+;;   :ensure t)
+
 ;; (use-package ample-theme
 ;;   :init (progn (load-theme 'ample t t)
 ;;                (load-theme 'ample-flat t t)
@@ -61,6 +64,9 @@
 
 (use-package all-the-icons
   :if (display-graphic-p))
+
+(add-to-list 'load-path "~/.emacs.d/site-lisp/treemacs-nerd-icons")
+(require 'nerd-icons)
 
 (use-package rainbow-mode
   :init
