@@ -10,7 +10,7 @@
   :bind
   (:map global-map
    ("M-0"       . treemacs-select-window)
-   ("M-T"   . treemacs-display-current-project-exclusively)
+   ("M-T"   . treemacs-add-and-display-current-project-exclusively)
    ("M-t"   . treemacs)
    ("M-J"   . treemacs-find-file)
    ("C-x t 1"   . treemacs-delete-other-windows)

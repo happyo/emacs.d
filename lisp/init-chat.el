@@ -6,5 +6,7 @@
 
 (require 'mind-wave)
 
+;; (setq mind-wave-chat-model "gpt-4")
+
 (provide 'init-chat)
 ;;; init-chat.el ends here
