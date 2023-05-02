@@ -4,6 +4,31 @@
 (require 'init-elpa)
 (require 'init-func)
 
+(use-package substitute)
+(require 'substitute)
+
+;; Set this to nil if you do not like visual feedback on the matching
+;; target.  Default is t.
+(setq substitute-highlight nil)
+
+;; Set this to t if you want to always treat the letter casing
+;; literally.  Otherwise each command accepts a `C-u' prefix
+  ;; argument to do this on-demand.
+(setq substitute-fixed-letter-case t)
+
+;; If you want a message reporting the matches that changed in the
+;; given context.  We don't do it by default.
+(add-hook 'substitute-post-replace-functions #'substitute-report-operation)
+
+;; We do not bind any keys.  This is just an idea.  The mnemonic is
+;; that M-# (or M-S-3) is close to M-% (or M-S-5).
+(let ((map global-map))
+  (define-key map (kbd "M-# s") #'substitute-target-below-point)
+  (define-key map (kbd "M-# r") #'substitute-target-above-point)
+  (define-key map (kbd "M-# d") #'substitute-target-in-defun)
+  (define-key map (kbd "M-# b") #'substitute-target-in-buffer))
+
+
 ;; Show number of matches while searching
 (use-package anzu
   :init

@@ -25,7 +25,6 @@
 (defvar consult-buffer-sources)
 (declare-function consult--buffer-state "consult")
 
-(use-package substitute)
 
 ;; (with-eval-after-load 'consult
 ;;   (defface beframe-buffer

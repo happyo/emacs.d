@@ -73,9 +73,5 @@
         ((isMyWsl) t)
         (t nil)))
 
-(defun rgb-to-hex (r g b)
-  "Convert RGB values (R, G, B) to a hexadecimal string."
-  (format "#%02x%02x%02x" r g b))
-
 (provide 'init-func)
 ;;; init-func.el ends here
