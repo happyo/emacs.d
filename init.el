@@ -134,7 +134,7 @@
   )
 
 (require 'init-keybinding)
-
+(require 'init-beframe)
 (require 'init-sessions)
 
 (when (file-exists-p custom-file)

@@ -60,7 +60,7 @@
   (setq treesit-auto-install 'prompt)
   (global-treesit-auto-mode))
 
-(use-package prettier)
+(use-package prettier-js)
 
 (provide 'init-lsp)
 ;;; init-lsp.el ends here

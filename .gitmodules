@@ -37,3 +37,6 @@
 [submodule "site-lisp/nerd-icons"]
 	path = site-lisp/nerd-icons
 	url = https://github.com/rainstormstudio/nerd-icons.el.git
+[submodule "site-lisp/beframe"]
+	path = site-lisp/beframe
+	url = https://github.com/protesilaos/beframe.git

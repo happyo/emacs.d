@@ -44,8 +44,8 @@
                       (font-spec :family chinese :size chinese-size :weight 'medium))))
 
 (if *is-a-mac*
-   (set-font "monego" "LXGW WenKai" 17 20)
-  (set-font "monego" "LXGW WenKai" 32 32))
+   (set-font "Iosevka Comfy Wide Motion" "LXGW WenKai" 17 20)
+  (set-font "Iosevka Comfy Wide Motion" "LXGW WenKai" 32 32))
 
 (provide 'init-chinese)
 ;;; init-chinese.el ends here
