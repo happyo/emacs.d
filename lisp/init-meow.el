@@ -58,7 +58,7 @@
    '("c" . meow-change)
    '("C" . meow-change-save)
    '("d" . meow-kill-whole-line)
-   '("C-d" . scroll-up)
+   ;; '("C-d" . scroll-up)
    '("e" . meow-next-word)
    '("E" . meow-next-symbol)
    '("f" . meow-find)
@@ -90,7 +90,7 @@
    '("t" . meow-till)
    '("T" . meow-till-expand)
    '("u" . undo)
-   '("C-u" . scroll-down)
+   ;; '("C-u" . scroll-down)
    '("v" . meow-line)
    ;; '("V" . meow-kmacro-matches)
    '("w" . meow-mark-word)
@@ -128,13 +128,13 @@
   (meow-setup-line-number)
   (meow-global-mode 1))
 
-(use-package beacon
-  :init
-  (setq-default beacon-lighter "")
-  (setq-default beacon-size 20)
-  (setq-default beacon-color "#e45c5c")
-  :config
-  (beacon-mode 1))
+;; (use-package beacon
+;;   :init
+;;   (setq-default beacon-lighter "")
+;;   (setq-default beacon-size 20)
+;;   (setq-default beacon-color "#e45c5c")
+;;   :config
+;;   (beacon-mode 1))
 
 (provide 'init-meow)
 ;;; init-meow.el ends here

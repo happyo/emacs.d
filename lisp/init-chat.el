@@ -6,7 +6,8 @@
 
 (require 'mind-wave)
 
-;; (setq mind-wave-chat-model "gpt-4")
+(setq mind-wave-chat-model "gpt-4")
+(setq mind-wave-chat-temperature 0.8)
 
 (provide 'init-chat)
 ;;; init-chat.el ends here

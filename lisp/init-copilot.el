@@ -11,6 +11,7 @@
   :demand t
   :ensure nil
   :load-path "~/.emacs.d/site-lisp/copilot"
+  :hook (prog-mode . copilot-mode)
   :config
   (define-key copilot-mode-map (kbd "<tab>") #'my/copilot-tab)
   (define-key copilot-mode-map (kbd "s-<tab>") #'copilot-accept-completion-by-word)

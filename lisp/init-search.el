@@ -4,16 +4,17 @@
 (require 'init-elpa)
 (require 'init-func)
 
-(use-package substitute)
-(require 'substitute)
+(use-package substitute
+  )
 
+(require 'substitute)
 ;; Set this to nil if you do not like visual feedback on the matching
 ;; target.  Default is t.
 (setq substitute-highlight nil)
 
 ;; Set this to t if you want to always treat the letter casing
 ;; literally.  Otherwise each command accepts a `C-u' prefix
-  ;; argument to do this on-demand.
+;; argument to do this on-demand.
 (setq substitute-fixed-letter-case t)
 
 ;; If you want a message reporting the matches that changed in the
@@ -28,21 +29,6 @@
   (define-key map (kbd "M-# d") #'substitute-target-in-defun)
   (define-key map (kbd "M-# b") #'substitute-target-in-buffer))
 
-
-;; Show number of matches while searching
-(use-package anzu
-  :init
-  (setq anzu-mode-lighter "")
-  :bind
-  ;; ("\C-\M-w" . 'isearch-yank-symbol)
-  ;; ("<C-return>" . 'sanityinc/isearch-exit-other-end)
-  ;; ([remap isearch-query-replace] . 'anzu-query-replace)
-  ;; ([remap isearch-query-replace-regexp] . 'anzu-query-replace-regexp)
-  ("M-F" . 'anzu-query-replace)
-  ;; ("M-r" . 'anzu-query-replace-regexp)
-  :config
-  (add-hook 'after-init-hook 'global-anzu-mode)
-  )
 
 (use-package vertico
   :ensure t
@@ -70,9 +56,9 @@
   :ensure nil
   ;; More convenient directory navigation commands
   :bind (:map vertico-map
-              ("RET" . vertico-directory-enter)
-              ("DEL" . vertico-directory-delete-char)
-              ("M-DEL" . vertico-directory-delete-word))
+         ("RET" . vertico-directory-enter)
+         ("DEL" . vertico-directory-delete-char)
+         ("M-DEL" . vertico-directory-delete-word))
   ;; Tidy shadowed file names
   :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
 
@@ -114,6 +100,11 @@
   ;; Optionally replace the key help with a completing-read interface
   (setq prefix-help-command #'embark-prefix-help-command)
 
+  ;; Show the Embark target at point via Eldoc.  You may adjust the Eldoc
+  ;; strategy, if you want to see the documentation from multiple providers.
+  (add-hook 'eldoc-documentation-functions #'embark-eldoc-first-target)
+  ;; (setq eldoc-documentation-strategy #'eldoc-documentation-compose-eagerly)
+
   :config
 
   ;; Hide the mode line of the Embark live/completions buffers
@@ -124,11 +115,7 @@
 
 ;; Consult users will also want the embark-consult package.
 (use-package embark-consult
-  :ensure t
-  :after (embark consult)
-  :demand t ; only necessary if you have the hook below
-  ;; if you want to have consult previews as you move around an
-  ;; auto-updating embark collect buffer
+  :ensure t ; only need to install it, embark loads it after consult if found
   :hook
   (embark-collect-mode . consult-preview-at-point-mode))
 
@@ -148,7 +135,7 @@
          :map minibuffer-local-map
          ("M-h" . consult-history))                ;; orig. previous-matching-history-element
 
-;; Enable automatic preview at point in the *Completions* buffer. This is
+  ;; Enable automatic preview at point in the *Completions* buffer. This is
   ;; relevant when you use the default completion UI.
   :hook (completion-list-mode . consult-preview-at-point-mode)
 
@@ -234,6 +221,11 @@
            (default-directory (car (cdr prompt-dir))))
       (find-file (consult--find (car (car prompt-dir)) #'consult--fd-builder initial))))
   )
+
+(use-package wgrep
+  :bind
+  (:map grep-mode-map
+   ("C-c C-p" . wgrep-change-to-wgrep-mode)))
 
 (provide 'init-search)
 ;;; init-search.el ends here
