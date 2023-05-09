@@ -40,3 +40,6 @@
 [submodule "site-lisp/beframe"]
 	path = site-lisp/beframe
 	url = https://github.com/protesilaos/beframe.git
+[submodule "site-lisp/blink-search"]
+	path = site-lisp/blink-search
+	url = git@github.com:happyo/blink-search.git

@@ -73,5 +73,48 @@
         ((isMyWsl) t)
         (t nil)))
 
+
+(defun transform-content (content)
+  "Transform content based on given rules."
+  (let ((lines (split-string content "\n"))
+        (result ""))
+    (dolist (line lines)
+      (let* ((level (length (car (s-match "^\\*+" line))))
+             (indentation (make-string (max (1- level) 0) ?\t))
+             (clean-line (replace-regexp-in-string "^\\*+ " "" line)))
+        (setq result (concat result indentation clean-line "\n"))))
+    result))
+
+(defun transform-selected-content-to-clipboard ()
+  "Transform selected content according to the specified rules and add it to the clipboard."
+  (interactive)
+  (let* ((start (region-beginning))
+         (end (region-end))
+         (content (buffer-substring-no-properties start end))
+         (transformed-content (transform-content content)))
+    (kill-new transformed-content)
+    (message "Transformed content added to clipboard.")))
+
+(defun reverse-transform-content (content)
+  "Reverse transform content from indented format to original format."
+  (let ((lines (split-string content "\n"))
+        (result ""))
+    (dolist (line lines)
+      (let* ((indentation (length (car (s-match "^\\(\t\\)+" line))))
+             (stars (make-string (1+ indentation) ?*))
+             (clean-line (replace-regexp-in-string "^\t+" "" line)))
+        (setq result (concat result stars " " clean-line "\n"))))
+    result))
+
+(defun reverse-transform-selected-content ()
+  "Reverse transform selected content to original format and replace the selection."
+  (interactive)
+  (let* ((start (region-beginning))
+         (end (region-end))
+         (content (buffer-substring-no-properties start end))
+         (reversed-content (reverse-transform-content content)))
+    (delete-region start end)
+    (insert reversed-content)))
+
 (provide 'init-func)
 ;;; init-func.el ends here

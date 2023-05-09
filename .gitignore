@@ -123,6 +123,7 @@ mind-wave/
 
 .last-package-update-day
 projects
+blink-search/
 
 *.cache
 # End of https://www.toptal.com/developers/gitignore/api/emacs

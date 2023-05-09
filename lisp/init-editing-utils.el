@@ -23,7 +23,7 @@
  create-lockfiles nil
  auto-save-default nil
  make-backup-files nil
- mouse-yank-at-point t
+ ;; mouse-yank-at-point t
  save-interprogram-paste-before-kill t
  scroll-preserve-screen-position 'always
  set-mark-command-repeat-pop t
