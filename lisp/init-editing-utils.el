@@ -81,5 +81,8 @@
   :config
   (add-hook 'after-init-hook 'which-key-mode))
 
+;; undo
+(use-package vundo)
+
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here

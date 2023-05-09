@@ -1,6 +1,7 @@
 ;;; init-keybinding.el --- Global key binding -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
+(require 'init-projectile)
 
 (global-set-key (kbd "M-/") 'comment-line)
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
@@ -35,6 +36,8 @@
 (define-key my-custom-minor-mode-map (kbd "M-v") 'yank)
 (define-key my-custom-minor-mode-map (kbd "M-V") 'consult-yank-from-kill-ring)
 (define-key my-custom-minor-mode-map (kbd "M-s-v") 'consult-yank-from-kill-ring)
+(define-key my-custom-minor-mode-map (kbd "M-p") 'projectile-switch-project)
+
 
 (define-minor-mode my-custom-minor-mode
   "自定义的 minor mode，用于覆盖其他 mode 的快捷键。"
