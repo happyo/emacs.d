@@ -38,7 +38,7 @@
 
 
 ;; (setq acm-enable-tempel nil)
-;; (setq acm-enable-tabnine t)
+(setq acm-enable-citre t)
 ;; (setq lsp-bridge-enable-log t)
 ;; (setq lsp-bridge-enable-signature-help t)
 (setq acm-enable-tabnine nil)
@@ -50,9 +50,6 @@
 ;; (add-hook 'xref-backend-functions #'dumb-jump-xref-activate)
 ;; (setq xref-show-definitions-function #'xref-show-definitions-completing-read)
 
-(global-set-key (kbd "M-.") 'lsp-bridge-find-def)
-(global-set-key (kbd "M-,") 'lsp-bridge-find-def-return)
-(global-set-key (kbd "M-]") 'lsp-bridge-code-format)
 
 (use-package treesit-auto
   :demand t

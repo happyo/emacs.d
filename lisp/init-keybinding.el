@@ -2,19 +2,30 @@
 ;;; Commentary:
 ;;; Code:
 (require 'init-projectile)
+(require 'init-lsp)
+(require 'init-func)
+
+(add-to-list 'auto-mode-alist '("\\.h\\'" . objc-mode))
 
 (global-set-key (kbd "M-/") 'comment-line)
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
-(global-set-key (kbd "M-d") 'delete-char)
 (global-set-key (kbd "M-[") 'indent-region)
 
-(defun my-scroll-up-half-page ()
-  (interactive)
-  (scroll-up-command (/ (window-body-height) 2)))
 
-(defun my-scroll-down-half-page ()
+(defun my-jump-to-definition ()
+  "根据当前的 major-mode 调用相应的跳转到定义的函数。"
   (interactive)
-  (scroll-down-command (/ (window-body-height) 2)))
+  (if (my-is-mode-jump-by-xref)
+      (xref-find-definitions (xref-backend-identifier-at-point (xref-find-backend)))
+    (lsp-bridge-find-def)))
+
+(defun my-go-back ()
+  "根据当前的 major-mode 调用相应的返回上一个位置的函数。"
+  (interactive)
+  (if (my-is-mode-jump-by-xref)
+      (xref-go-back)
+    (lsp-bridge-find-def-return)))
+
 
 (defvar my-custom-minor-mode-map (make-sparse-keymap)
   "自定义的 keymap，用于覆盖其他 mode 的快捷键。")
@@ -37,6 +48,9 @@
 (define-key my-custom-minor-mode-map (kbd "M-V") 'consult-yank-from-kill-ring)
 (define-key my-custom-minor-mode-map (kbd "M-s-v") 'consult-yank-from-kill-ring)
 (define-key my-custom-minor-mode-map (kbd "M-p") 'projectile-switch-project)
+(define-key my-custom-minor-mode-map (kbd "M-.") 'my-jump-to-definition)
+(define-key my-custom-minor-mode-map (kbd "M-,") 'my-go-back)
+(define-key my-custom-minor-mode-map (kbd "M-]") 'lsp-bridge-code-format)
 
 
 (define-minor-mode my-custom-minor-mode

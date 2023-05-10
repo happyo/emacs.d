@@ -116,5 +116,24 @@
     (delete-region start end)
     (insert reversed-content)))
 
+;; my custom functions
+(defun my-scroll-up-half-page ()
+  (interactive)
+  (scroll-up-command (/ (window-body-height) 2)))
+
+(defun my-scroll-down-half-page ()
+  (interactive)
+  (scroll-down-command (/ (window-body-height) 2)))
+
+(defun my-is-mode-jump-by-xref ()
+  "判断当前的 major-mode 是否是 objc-mode 或 emacs-lisp-mode。"
+  (message "Current major-mode: %s" major-mode)
+  (or (eq major-mode 'objc-mode)
+      (eq major-mode 'emacs-lisp-mode)
+      (eq major-mode 'c-mode)
+      (eq major-mode 'c++-mode)
+      ))
+
+
 (provide 'init-func)
 ;;; init-func.el ends here

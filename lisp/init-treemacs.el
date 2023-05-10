@@ -17,7 +17,8 @@
    ("C-x t d"   . treemacs-select-directory)
    ("C-x t B"   . treemacs-bookmark)
    ("C-x t C-t" . treemacs-find-file))
-  ;; :config
+  :config
+  (setq treemacs-indentation 1)
   ;; (treemacs-load-all-the-icons-with-workaround-font "monego")
   )
 

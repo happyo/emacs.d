@@ -5,6 +5,8 @@
 (require 'init-elpa)
 (require 'init-editing-utils)
 
+(global-set-key (kbd "M-d") 'delete-char)
+
 ;; meow
 (defun meow-setup ()
   (setq meow--kbd-delete-char "M-d")
@@ -97,7 +99,7 @@
    '("W" . meow-mark-symbol)
    '("x" . meow-kill)
    ;; '("X" . meow-kmacro-lines)
-   '("y" . meow-save)
+   '("y" . kill-ring-save)
    '("Y" . meow-sync-grab)
    '("z" . meow-pop-selection)
    '("Z" . meow-pop-all-selection)
@@ -115,8 +117,8 @@
   :custom
   (meow-selection-command-fallback '(
                                           (meow-change . meow-change-char)
-                                          (meow-kill . meow-C-d)
-                                          (meow-cancel-selection . keyboard-quit)
+                                          ;; (meow-kill . meow-C-d)
+                                          ;; (meow-cancel-selection . keyboard-quit)
                                           ;; (meow-pop-selection . meow-pop-grab)
                                           )) 
   (meow-expand-exclude-mode-list '(markdown-mode org-mode eaf-mode))

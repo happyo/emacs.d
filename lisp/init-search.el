@@ -198,7 +198,31 @@
   ;; (setq consult-project-function nil)
 
   (defvar consult--fd-command nil)
-  (defun consult--fd-builder (input)
+  (defun my-is-iOS-project (buffer)
+    "检查指定缓冲区关联的文件名是否具有 .m、.h 或 .el 扩展名。"
+    (let ((filename (buffer-file-name buffer)))
+      ;; (message "Associated filename: %s" filename)
+      (when filename
+        (let ((extension (file-name-extension filename)))
+          (or (string= extension "m")
+              (string= extension "h")
+              (string= extension "swift")
+              )))))
+
+  (defun my-consult-fd-options (re buffer)
+    "根据关联的文件名返回 fd 选项列表。"
+    (let ((options (if (my-is-iOS-project buffer)
+                       (list consult--fd-command
+                             "--color=never" "--full-path"
+                             "--no-ignore" "--search-path" "./Pods/"
+                             (consult--join-regexps re 'extended))
+                     (list consult--fd-command
+                           "--color=never" "--full-path"
+                           (consult--join-regexps re 'extended)))))
+      ;; (message "FD options: %s" options)
+      options))
+
+  (defun consult--fd-builder (input buffer)
     (unless consult--fd-command
       (setq consult--fd-command
             (if (eq 0 (call-process-shell-command "fdfind"))
@@ -209,17 +233,20 @@
                                         arg 'extended t)))
       (when re
         (cons (append
-               (list consult--fd-command
-                     "--color=never" "--full-path"
-                     (consult--join-regexps re 'extended))
+               (my-consult-fd-options re buffer)
                opts)
               hl))))
 
   (defun consult-fd (&optional dir initial)
     (interactive "P")
     (let* ((prompt-dir (cdr (consult--directory-prompt "Fd" dir)))
-           (default-directory (car (cdr prompt-dir))))
-      (find-file (consult--find (car (car prompt-dir)) #'consult--fd-builder initial))))
+           (default-directory (car (cdr prompt-dir)))
+           (current-buffer (current-buffer)))
+      (find-file (consult--find (car (car prompt-dir))
+                                (lambda (input)
+                                  (consult--fd-builder input current-buffer))
+                                initial))))
+
   )
 
 (use-package wgrep
