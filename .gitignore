@@ -125,5 +125,7 @@ mind-wave/
 projects
 blink-search/
 
+.extension/
+
 *.cache
 # End of https://www.toptal.com/developers/gitignore/api/emacs

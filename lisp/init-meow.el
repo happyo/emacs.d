@@ -121,7 +121,7 @@
                                           ;; (meow-cancel-selection . keyboard-quit)
                                           ;; (meow-pop-selection . meow-pop-grab)
                                           )) 
-  (meow-expand-exclude-mode-list '(markdown-mode org-mode eaf-mode))
+  (meow-expand-exclude-mode-list '(markdown-mode org-mode eaf-mode treemacs-mode))
   :config
   ;; meow-setup is your custom function, see below
   (add-to-list 'meow-mode-state-list '(eaf-mode . normal))

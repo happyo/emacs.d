@@ -20,8 +20,8 @@
   (setq-local truncate-lines nil)
 
   (modify-all-frames-parameters
-   '((right-divider-width . 30)
-     (internal-border-width . 30)))
+   '((right-divider-width . 20)
+     (internal-border-width . 20)))
   (dolist (face '(window-divider
                   window-divider-first-pixel
                   window-divider-last-pixel))
