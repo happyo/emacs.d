@@ -117,7 +117,7 @@
   :custom
   (meow-selection-command-fallback '(
                                           (meow-change . meow-change-char)
-                                          ;; (meow-kill . meow-C-d)
+                                          (meow-kill . meow-C-d)
                                           ;; (meow-cancel-selection . keyboard-quit)
                                           ;; (meow-pop-selection . meow-pop-grab)
                                           )) 

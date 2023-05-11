@@ -159,7 +159,7 @@
   ;; Configure other variables and modes in the :config section,
   ;; after lazily loading the package.
   :config
-  (setq consult-ripgrep-args "rg --null --line-buffered --color=never --max-columns=1000 --path-separator /   --smart-case --no-heading --with-filename --line-number --search-zip --glob !**/*.xcworkspace --glob !**/*.xcodeproj")
+  (setq consult-ripgrep-args "rg --null --line-buffered --color=never --max-columns=500 --path-separator /   --smart-case --no-heading --with-filename --line-number --search-zip --glob !**/*.xcworkspace --glob !**/*.xcodeproj --glob !Target Support Files/")
   ;; Optionally configure preview. The default value
   ;; is 'any, such that any key triggers the preview.
   ;; (setq consult-preview-key 'any)

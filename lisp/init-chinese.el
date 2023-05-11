@@ -44,7 +44,7 @@
                       (font-spec :family chinese :size chinese-size :weight 'medium))))
 
 (if *is-a-mac*
-   (set-font "Iosevka Comfy Wide Motion" "LXGW WenKai" 17 20)
+   (set-font "Iosevka Comfy Wide Motion" "LXGW WenKai" 18 21)
   (set-font "Iosevka Comfy Wide Motion" "LXGW WenKai" 32 32))
 
 (provide 'init-chinese)
