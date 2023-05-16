@@ -43,3 +43,6 @@
 [submodule "site-lisp/blink-search"]
 	path = site-lisp/blink-search
 	url = git@github.com:happyo/blink-search.git
+[submodule "site-lisp/lsp-sourcekit"]
+	path = site-lisp/lsp-sourcekit
+	url = git@github.com:happyo/lsp-sourcekit.git

@@ -81,8 +81,22 @@
   :config
   (add-hook 'after-init-hook 'which-key-mode))
 
+;; (use-package smex
+;;   :config
+;;   (smex-initialize))
+
+;; (global-set-key (kbd "M-x") 'smex)
+;; (global-set-key (kbd "M-X") 'smex-major-mode-commands)
+;; ;; This is your old M-x.
+;; (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
+
 ;; undo
 (use-package vundo)
+
+(use-package vimish-fold
+  :bind (("C-c f" . vimish-fold)
+         ("C-c d" . vimish-fold-delete)
+         ("C-c t" . vimish-fold-toggle)))
 
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here

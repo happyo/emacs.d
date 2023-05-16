@@ -48,8 +48,8 @@
 (define-key my-custom-minor-mode-map (kbd "M-V") 'consult-yank-from-kill-ring)
 (define-key my-custom-minor-mode-map (kbd "M-s-v") 'consult-yank-from-kill-ring)
 (define-key my-custom-minor-mode-map (kbd "M-p") 'projectile-switch-project)
-(define-key my-custom-minor-mode-map (kbd "M-.") 'my-jump-to-definition)
-(define-key my-custom-minor-mode-map (kbd "M-,") 'my-go-back)
+(define-key my-custom-minor-mode-map (kbd "M-.") 'xref-find-definitions)
+(define-key my-custom-minor-mode-map (kbd "M-,") 'xref-go-back)
 (define-key my-custom-minor-mode-map (kbd "M-]") 'lsp-bridge-code-format)
 
 

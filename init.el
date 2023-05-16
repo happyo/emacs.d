@@ -23,20 +23,22 @@
 
 ;; Load path
 ;; Optimize: Force "lisp"" and "site-lisp" at the head to reduce the startup time.
-(defun update-load-path (&rest _)
-  "Update `load-path'."
-  (dolist (dir '("site-lisp" "lisp"))
-    (push (expand-file-name dir user-emacs-directory) load-path)))
+;; (defun update-load-path (&rest _)
+;;   "Update `load-path'."
+;;   (dolist (dir '("site-lisp" "lisp"))
+;;     (push (expand-file-name dir user-emacs-directory) load-path)))
 
-(defun add-subdirs-to-load-path (&rest _)
-  "Add subdirectories to `load-path'."
-  (let ((default-directory (expand-file-name "site-lisp" user-emacs-directory)))
-    (normal-top-level-add-subdirs-to-load-path)))
+;; (defun add-subdirs-to-load-path (&rest _)
+;;    "Add subdirectories to `load-path'."
+;;    (let ((default-directory (expand-file-name "site-lisp" user-emacs-directory)))
+;;      (normal-top-level-add-subdirs-to-load-path)))
 
-(advice-add #'package-initialize :after #'update-load-path)
-(advice-add #'package-initialize :after #'add-subdirs-to-load-path)
+;; (advice-add #'package-initialize :after #'update-load-path)
+;; (advice-add #'package-initialize :after #'add-subdirs-to-load-path)
 
-(update-load-path)
+;; (update-load-path)
+
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 ;; Adjust garbage collection thresholds during startup, and thereafter
 
@@ -123,7 +125,7 @@
 ;; org
 (require 'init-org)
 (require 'init-denote)
-;; (require 'init-mode-line)
+(require 'init-mode-line)
 
 ;; chat
 (require 'init-chat)
