@@ -38,19 +38,20 @@
 ;;   (cnfonts--select-profile "program")
 ;;   (cnfonts-enable)
 ;; )
+;; (cl-prettyprint (font-family-list))
 ;; (cnfonts-mode 1)
 
 (defun centaur-setup-fonts ()
   "Setup fonts."
   (when (display-graphic-p)
     ;; Set default font
-    (cl-loop for font in '("Monego" "TerminessTTF Nerd Font Mono" "Jetbrains Mono"
+    (cl-loop for font in '("Hack" "Monego" "TerminessTTF Nerd Font Mono" "Jetbrains Mono"
                            "SF Mono" "Iosevka Comfy Wide Motion" "Source Code Pro" "Menlo"
                            "Monaco" "DejaVu Sans Mono" "Consolas")
              when (font-installed-p font)
              return (set-face-attribute 'default nil
                                         :family font
-                                        :height 150)
+                                        :height 155)
                                                       )
 
     ;; Set mode-line font
@@ -81,7 +82,7 @@
                       (set-fontset-font t 'emoji (font-spec :family font) nil 'prepend))))
 
     ;; Specify font for Chinese characters
-    (cl-loop for font in '("Zhi Mang Xing" "PingFang SC" "LXGW WenKai" "STFangsong")
+    (cl-loop for font in '("Xingkai SC" "Zhi Mang Xing" "PingFang SC" "LXGW WenKai" "STFangsong")
              when (font-installed-p font)
              return (progn
                       (setq face-font-rescale-alist `((,font . 1.3)))
