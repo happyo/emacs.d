@@ -198,28 +198,12 @@
   ;; (setq consult-project-function nil)
 
   (defvar consult--fd-command nil)
-  (defun my-is-iOS-project (buffer)
-    "检查指定缓冲区关联的文件名是否具有 .m、.h 或 .el 扩展名。"
-    (let ((filename (buffer-file-name buffer)))
-      ;; (message "Associated filename: %s" filename)
-      (when filename
-        (let ((extension (file-name-extension filename)))
-          (or (string= extension "m")
-              (string= extension "h")
-              (string= extension "swift")
-              )))))
 
   (defun my-consult-fd-options (re buffer)
     "根据关联的文件名返回 fd 选项列表。"
-    (let ((options (if (my-is-iOS-project buffer)
-                       (list consult--fd-command
-                             "--color=never" "--full-path"
-                             "--no-ignore" "--search-path" "./Pods/"
-                             (consult--join-regexps re 'extended))
-                     (list consult--fd-command
+    (let ((options (list consult--fd-command
                            "--color=never" "--full-path"
-                           (consult--join-regexps re 'extended)))))
-      ;; (message "FD options: %s" options)
+                           (consult--join-regexps re 'extended))))
       options))
 
   (defun consult--fd-builder (input buffer)
@@ -246,8 +230,6 @@
                                 (lambda (input)
                                   (consult--fd-builder input current-buffer))
                                 initial))))
-
-  
   )
 
 (use-package wgrep

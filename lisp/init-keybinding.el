@@ -30,7 +30,7 @@
 (defvar my-custom-minor-mode-map (make-sparse-keymap)
   "自定义的 keymap，用于覆盖其他 mode 的快捷键。")
 
-(define-key my-custom-minor-mode-map (kbd "M-h") 'tab-bar-select-tab)
+(define-key my-custom-minor-mode-map (kbd "M-g") 'tab-bar-select-tab)
 (define-key my-custom-minor-mode-map (kbd "M-w") 'delete-window)
 (define-key my-custom-minor-mode-map (kbd "M-DEL") 'backward-kill-sentence)
 (define-key my-custom-minor-mode-map (kbd "C-o") 'universal-argument)

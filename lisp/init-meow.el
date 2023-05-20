@@ -128,15 +128,14 @@
   (meow-setup)
   ;; If you want relative line number in NORMAL state(for display-line-numbers-mode)
   (meow-setup-line-number)
-  (meow-global-mode 1))
+  (meow-global-mode 1)
+  )
 
-;; (use-package beacon
-;;   :init
-;;   (setq-default beacon-lighter "")
-;;   (setq-default beacon-size 20)
-;;   (setq-default beacon-color "#e45c5c")
-;;   :config
-;;   (beacon-mode 1))
+(use-package beacon)
+(setq-default beacon-lighter "")
+(setq-default beacon-size 20)
+(setq-default beacon-color "#e45c5c")
+(beacon-mode 1)
 
 (provide 'init-meow)
 ;;; init-meow.el ends here
