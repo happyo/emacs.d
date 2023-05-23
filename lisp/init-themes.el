@@ -23,17 +23,18 @@
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp/ef-themes")
 (require 'ef-themes)
-(require 'my-theme-utils)
+(add-to-list 'load-path "~/.emacs.d/site-lisp/chinese-color")
+(require 'chinese-color)
 
 (setq ef-summer-palette-overrides
       `(
 ;;; Basic values
 
-      (bg-main     ,my-bg-main)
-      (fg-main     "#282828")
+      (bg-main     ,tcc-351-ningzhi)
+      (fg-main     ,tcc-331-zhumo)
       (bg-dim      "#E9D7DF")
       (fg-dim      "#777294")
-      (bg-alt      "#CCCCD6")
+      (bg-alt      ,tcc-344-baie)
       (fg-alt      "#F07C82")
 
       (bg-active   "#E2E1E4")
@@ -41,14 +42,14 @@
 
 ;;; Basic hues for foreground values
 
-      (red             "#C91F37")
-      (red-warmer      "#DB5A6B")
-      (red-cooler      "#81001E")
-      (red-faint       "#DC6B82")
-      (green           "#21A675")
-      (green-warmer    "#779649")
-      (green-cooler    "#01847F")
-      (green-faint     "#6CA984")
+      (red             ,tcc-021-yanzhi)
+      (red-warmer      ,tcc-010-handan)
+      (red-cooler      ,tcc-024-meiguizi)
+      (red-faint       ,tcc-080-yinghua)
+      (green           ,tcc-231-zhumulv)
+      (green-warmer    ,tcc-226-sunlv)
+      (green-cooler    ,tcc-232-yangse)
+      (green-faint     ,tcc-224-lvcha)
       (yellow          "#F2C830")
       (yellow-warmer   "#D78812")
       (yellow-cooler   "#B2A421")
@@ -293,7 +294,13 @@
       (rainbow-mode)))
   (add-hook 'emacs-lisp-mode-hook 'sanityinc/enable-rainbow-mode-if-theme)
   (add-hook 'help-mode-hook 'rainbow-mode)
-)
+  )
+
+(use-package beacon)
+(setq-default beacon-lighter "")
+(setq-default beacon-size 20)
+(setq-default beacon-color tcc-076-danfeng)
+(beacon-mode 1)
 
 ;; (diminish 'rainbow-mode)))
 

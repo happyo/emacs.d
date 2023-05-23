@@ -46,3 +46,6 @@
 [submodule "site-lisp/lsp-sourcekit"]
 	path = site-lisp/lsp-sourcekit
 	url = git@github.com:happyo/lsp-sourcekit.git
+[submodule "site-lisp/chinese-color"]
+	path = site-lisp/chinese-color
+	url = git@github.com:happyo/chinese-color.git
