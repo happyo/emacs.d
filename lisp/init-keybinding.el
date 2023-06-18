@@ -51,6 +51,7 @@
 (define-key my-custom-minor-mode-map (kbd "M-.") 'xref-find-definitions)
 (define-key my-custom-minor-mode-map (kbd "M-,") 'xref-go-back)
 (define-key my-custom-minor-mode-map (kbd "M-]") 'lsp-bridge-code-format)
+(define-key my-custom-minor-mode-map (kbd "S-<tab>") 'other-frame)
 
 
 (define-minor-mode my-custom-minor-mode
