@@ -38,5 +38,19 @@
         (shell-command-history    . 50)
         ))
 
+;; (add-hook 'after-init-hook 
+;;           (lambda ()
+;;             (modify-all-frames-parameters
+;;              '((right-divider-width . 40)
+;;                (internal-border-width . 40)))
+;;             ;; other functions...
+;;             ))
+
+(add-hook 'desktop-after-read-hook
+          (lambda ()
+            (modify-all-frames-parameters
+             '((right-divider-width . 30)
+               (internal-border-width . 30)))
+          ))
 (provide 'init-sessions)
 ;;; init-sessions.el ends here

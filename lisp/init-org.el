@@ -8,26 +8,15 @@
   :hook ((org-mode . org-modern-mode)
          (org-agenda-finalize . org-morden-agenda))
   :config
-  ;; (modify-all-frames-parameters
-  ;;  '((right-divider-width . 40)
-  ;;    (internal-border-width . 40)))
+  (setq org-modern-timestamp nil)
+  (setq-local truncate-lines nil)
+
   ;; (dolist (face '(window-divider
   ;;                 window-divider-first-pixel
   ;;                 window-divider-last-pixel))
   ;;   (face-spec-reset-face face)
   ;;   (set-face-foreground face (face-attribute 'default :background)))
   ;; (set-face-background 'fringe (face-attribute 'default :background))
-  (setq-local truncate-lines nil)
-
-  (modify-all-frames-parameters
-   '((right-divider-width . 30)
-     (internal-border-width . 30)))
-  (dolist (face '(window-divider
-                  window-divider-first-pixel
-                  window-divider-last-pixel))
-    (face-spec-reset-face face)
-    (set-face-foreground face (face-attribute 'default :background)))
-  (set-face-background 'fringe (face-attribute 'default :background))
 
   (setq
    ;; Edit settings

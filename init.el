@@ -70,7 +70,6 @@
     :init   (setq package-check-signature nil)
     :config (setq package-check-signature my/old)))
 
-(use-package diminish)
 (use-package scratch)
 (use-package command-log-mode)
 

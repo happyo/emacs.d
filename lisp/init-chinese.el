@@ -55,13 +55,13 @@
                                                       )
 
     ;; Set mode-line font
-    (cl-loop for font in '("Hack" "Menlo" "SF Pro Display" "Helvetica")
-             when (font-installed-p font)
-             return (progn
-                      (set-face-attribute 'mode-line nil :family font :height 155)
-                      (when (facep 'mode-line-active)
-                        (set-face-attribute 'mode-line-active nil :family font :height 155))
-                      (set-face-attribute 'mode-line-inactive nil :family font :height 155)))
+    ;; (cl-loop for font in '("Hack" "Menlo" "SF Pro Display" "Helvetica")
+    ;;          when (font-installed-p font)
+    ;;          return (progn
+    ;;                   (set-face-attribute 'mode-line nil :family font :height 155)
+    ;;                   (when (facep 'mode-line-active)
+    ;;                     (set-face-attribute 'mode-line-active nil :family font :height 155))
+    ;;                   (set-face-attribute 'mode-line-inactive nil :family font :height 155)))
 
     ;; Specify font for all unicode characters
     (cl-loop for font in '("Segoe UI Symbol" "Symbola" "Symbol")
