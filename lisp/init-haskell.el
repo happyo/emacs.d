@@ -5,8 +5,9 @@
 (require 'init-elpa)
 
 (use-package haskell-mode
-  :config
-  (add-hook 'haskell-mode-hook 'haskell-indentation-mode))
+  ;; :config
+  ;; (add-hook 'haskell-mode-hook 'haskell-indentation-mode)
+  )
 
 (use-package lsp-haskell)
 

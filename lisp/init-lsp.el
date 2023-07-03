@@ -38,7 +38,7 @@
 
 
 ;; (setq acm-enable-tempel nil)
-(setq acm-enable-citre t)
+;; (setq acm-enable-citre t)
 ;; (setq lsp-bridge-enable-log t)
 ;; (setq lsp-bridge-enable-signature-help t)
 (setq acm-enable-tabnine nil)
@@ -63,9 +63,14 @@
   (setq lsp-keymap-prefix "C-c l")
   ;; (setq lsp-completion-enable nil)
   (setq lsp-headerline-breadcrumb-enable nil)
+  (setq lsp-completion-provider :none)
+  (setq lsp-modeline-diagnostics-enable nil)
+  (setq lsp-modeline-code-actions-enable nil)
+  (setq lsp-lens-enable nil)
+
   :hook (;; replace XXX-mode with concrete major-mode(e. g. python-mode)
-         (dart-mode . lsp-deffered)
-         (haskell-mode . lsp-deffered)
+         (dart-mode . lsp)
+         (haskell-mode . lsp)
          ;; if you want which-key integration
          (lsp-mode . lsp-enable-which-key-integration))
   :commands (lsp lsp-deferred))
