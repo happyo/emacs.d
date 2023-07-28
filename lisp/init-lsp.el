@@ -43,6 +43,7 @@
 ;; (setq lsp-bridge-enable-signature-help t)
 (setq acm-enable-tabnine nil)
 (setq acm-enable-codeium nil)
+(setq acm-enable-copilot nil)
 
 (global-lsp-bridge-mode)
 
