@@ -18,11 +18,11 @@
 ;;   :init
 ;;   (setq cnfonts-personal-fontnames
 ;;         '(
-;;           ("SF Mono" "Victor Mono" "JetBrains Mono" "Monego")
-;;           ("Zhi Mang Xing" "Monego")
-;;           ("SF Mono" "Zhi Mang Xing" "Monego")
-;;           ("SF Mono" "Zhi Mang Xing" "Monego")
-;;           ("SF Mono" "Zhi Mang Xing" "Monego")
+;;           ("Hack" "SF Mono" "Victor Mono" "JetBrains Mono" "Monego")
+;;           ("Xingkai SC" "Zhi Mang Xing" "Monego")
+;;           ("3270 Nerd Font Mono" "SF Mono" "Zhi Mang Xing" "Monego")
+;;           ("3270 Nerd Font Mono" "SF Mono" "Zhi Mang Xing" "Monego")
+;;           ("3270 Nerd Font Mono" "SF Mono" "Zhi Mang Xing" "Monego")
 ;;           ))
 ;;   (setq cnfonts-profiles
 ;;         '("program" "org-profile" "read-book"))
@@ -51,7 +51,7 @@
              when (font-installed-p font)
              return (set-face-attribute 'default nil
                                         :family font
-                                        :height 155)
+                                        :height 170)
                                                       )
 
     ;; Set mode-line font
@@ -64,7 +64,7 @@
     ;;                   (set-face-attribute 'mode-line-inactive nil :family font :height 155)))
 
     ;; Specify font for all unicode characters
-    (cl-loop for font in '("Segoe UI Symbol" "Symbola" "Symbol")
+    (cl-loop for font in '("3270 Nerd Font Mono" "Segoe UI Symbol" "Symbola" "Symbol")
              when (font-installed-p font)
              return (if (< emacs-major-version 27)
                         (set-fontset-font "fontset-default" 'unicode font nil 'prepend)
@@ -85,7 +85,7 @@
     (cl-loop for font in '("Xingkai SC" "Zhi Mang Xing" "PingFang SC" "LXGW WenKai" "STFangsong")
              when (font-installed-p font)
              return (progn
-                      (setq face-font-rescale-alist `((,font . 1.3)))
+                      (setq face-font-rescale-alist `((,font . 1.1)))
                       (set-fontset-font t '(#x4e00 . #x9fff) (font-spec :family font))))))
 
 (centaur-setup-fonts)

@@ -122,27 +122,13 @@
   (when (locate-library "denote")
     (consult-notes-denote-mode)))
 
-(use-package org-super-links
-  :demand t
-  :ensure nil
-  :load-path "~/.emacs.d/site-lisp/org-super-links"
-  :bind (("C-c s s" . org-super-links-link)
-         ("C-c s l" . org-super-links-store-link)
-         ("C-c s C-l" . org-super-links-insert-link)))
-
-
-;; Add all Denote files tagged as "project" to org-agenda-files
-(defun jab/denote-add-to-agenda-files (keyword)
-  "Append list of files containing 'keyword' to org-agenda-files"
-  (interactive)
-  (jab/init-org-agenda-files) ;; start over
-  (setq org-agenda-files (append org-agenda-files (directory-files denote-directory t keyword))))
-
-;;(jab/denote-add-to-agenda-files "_life")
-;; org-super-links
-;; (defun denote-find-note ()
-;;   (interactive)
-;;     (consult-fd denote-directory))
+;; (use-package org-super-links
+;;   :demand t
+;;   :ensure nil
+;;   :load-path "~/.emacs.d/site-lisp/org-super-links"
+;;   :bind (("C-c s s" . org-super-links-link)
+;;          ("C-c s l" . org-super-links-store-link)
+;;          ("C-c s C-l" . org-super-links-insert-link)))
 
 (provide 'init-denote)
 ;;; init-denote.el ends here

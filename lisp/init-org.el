@@ -1,55 +1,72 @@
-;;; init-org.el --- Org mode configuration -*- lexical-binding: t -*-
+;; init-org.el --- Org mode configuration -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 
 (require 'init-elpa)
+(require 'chinese-color)
 
-;; (use-package org-modern
-;;   :hook ((org-mode . org-modern-mode)
-;;          ;; (org-agenda-finalize . org-morden-agenda)
-;;          )
-;;   :config
-;;   (setq org-modern-timestamp nil)
-;;   (setq-local truncate-lines nil)
+(use-package org-modern
+  :hook ((org-mode . org-modern-mode)
+         ;; (org-agenda-finalize . org-morden-agenda)
+         )
+  :config
+  (setq org-modern-timestamp nil)
+  (setq-local truncate-lines nil)
 
-;;   ;; (dolist (face '(window-divider
-;;   ;;                 window-divider-first-pixel
-;;   ;;                 window-divider-last-pixel))
-;;   ;;   (face-spec-reset-face face)
-;;   ;;   (set-face-foreground face (face-attribute 'default :background)))
-;;   ;; (set-face-background 'fringe (face-attribute 'default :background))
+  ;; (dolist (face '(window-divider
+  ;;                 window-divider-first-pixel
+  ;;                 window-divider-last-pixel))
+  ;;   (face-spec-reset-face face)
+  ;;   (set-face-foreground face (face-attribute 'default :background)))
+  ;; (set-face-background 'fringe (face-attribute 'default :background))
 
-;;   (setq
-;;    ;; Edit settings
-;;    org-auto-align-tags nil
-;;    org-tags-column 1
-;;    org-catch-invisible-edits 'show-and-error
-;;    org-special-ctrl-a/e t
-;;    org-insert-heading-respect-content t
+  (setq
+   ;; Edit settings
+   org-auto-align-tags nil
+   org-tags-column 1
+   org-catch-invisible-edits 'show-and-error
+   org-special-ctrl-a/e t
+   org-insert-heading-respect-content t
 
-;;    ;; Org styling, hide markup etc.
-;;    org-hide-emphasis-markers t
-;;    org-pretty-entities t
-;;    org-ellipsis "…"
+   ;; Org styling, hide markup etc.
+   org-hide-emphasis-markers t
+   org-pretty-entities t
+   org-ellipsis "…"
 
-;;    ;; Agenda styling
-;;    ;; org-agenda-tags-column 0
-;;    ;; org-agenda-block-separator ?─
-;;    ;; org-agenda-time-grid
-;;    ;; '((daily today require-timed)
-;;    ;;   (2300 100 300 500 700 900 1100 1300 1500 1700 1900 2100)
-;;    ;;   " ┄┄┄┄┄ " "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄")
-;;    ;; org-agenda-current-time-string
-;;    ;; "⭠ now ─────────────────────────────────────────────────")
-;;    )
+   ;; Agenda styling
+   ;; org-agenda-tags-column 0
+   ;; org-agenda-block-separator ?─
+   ;; org-agenda-time-grid
+   ;; '((daily today require-timed)
+   ;;   (2300 100 300 500 700 900 1100 1300 1500 1700 1900 2100)
+   ;;   " ┄┄┄┄┄ " "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄")
+   ;; org-agenda-current-time-string
+   ;; "⭠ now ─────────────────────────────────────────────────")
+   org-modern-checkbox nil
+   org-modern-todo nil
+   org-modern-keyword nil
+   )
+  
+  ;; (setq org-modern-todo
+  ;;       '((sequence "TODO(t)" "|" "DONE(d)")
+  ;;         (type "IU(s)" "INU(a)" "NIU(b)" "NINU(c)" "|" "COMPLETED(y)" "CANCELED(x)")))
 
-;;   (global-org-modern-mode))
+  ;; (setq org-modern-todo-faces
+  ;;       `(("IU" :background ,tcc-076-danfeng :foreground "white" :box (:line-width -1 :style released-button))
+  ;;         ("INU" :background ,tcc-092-qizi :foreground "white" :box (:line-width -1 :style released-button))
+  ;;         ("NIU" :background ,tcc-192-hupo :foreground "white" :box (:line-width -1 :style released-button))
+  ;;         ("NINU" :background ,tcc-317-hehui :foreground "white" :box (:line-width -1 :style released-button))
+  ;;         ("COMPLETED" :background ,tcc-231-zhumulv :foreground "white" :box (:line-width -1 :style released-button))
+  ;;         ("CANCELED" :background ,tcc-323-shashi :foreground "white" :box (:line-width -1 :style released-button))))
+
+  (global-org-modern-mode))
 
 (use-package org
   :hook (org-mode . org-indent-mode)
   :init
   (setq org-agenda-span 'day)
-  (setq org-agenda-files '("~/Zettelkasten/"))
+  (setq org-agenda-files '("~/Zettelkasten/PersonalTasks/" "~/Zettelkasten/WorkTasks/" "~/Zettelkasten/TodoList/"))
+  ;; (debug-on-variable-change 'org-agenda-files)
   (setq org-agenda-include-diary t)
   (setq diary-file "~/Zettelkasten/standard-diary")
   (setq org-agenda-include-diary "~/Zettelkasten/standard-diary")
@@ -70,9 +87,23 @@
                                    "......"
                                    "-----------------------------------------------------"
                                    )))
+  (setq org-todo-keywords
+        '((sequence "TODO(t)" "|" "DONE(d)")
+          (type "(s)" "(a)" "(b)" "(c)" "|" "(y)" "(x)")))
+
+  (setq org-todo-keyword-faces
+        `(
+          ("" . (:family "3270 Nerd Font Mono" :foreground ,tcc-076-danfeng :background ,tcc-341-ermuyu :weight bold :height 300 :width 100 :box (:line-width 10 :color ,tcc-341-ermuyu)))
+          ("" . (:family "3270 Nerd Font Mono" :foreground ,tcc-095-qingzi :background ,tcc-341-ermuyu :weight bold :height 300 :width 100 :box (:line-width 10 :color ,tcc-341-ermuyu)))
+          ("" . (:family "3270 Nerd Font Mono" :foreground ,tcc-192-hupo :background ,tcc-341-ermuyu :weight bold :height 300 :width 100 :box (:line-width 10 :color ,tcc-341-ermuyu)))
+          ("" . (:family "3270 Nerd Font Mono" :foreground ,tcc-317-hehui :background ,tcc-341-ermuyu :weight bold :height 300 :width 100 :box (:line-width 10 :color ,tcc-341-ermuyu)))
+          ("" . (:family "3270 Nerd Font Mono" :foreground ,tcc-231-zumulv :background ,tcc-341-ermuyu :height 300 :width 100 :box (:line-width 10 :color ,tcc-341-ermuyu)))
+          ("" . (:family "3270 Nerd Font Mono" :foreground ,tcc-323-shashi :background ,tcc-341-ermuyu :weight bold :height 300 :width 100 :box (:line-width 10 :color ,tcc-341-ermuyu)))
+          ))
   ;; location
-(setq calendar-longitude 116.9962)
-(setq calendar-latitude 39.91) 
+;; (setq calendar-longitude 116.9962)
+;; (setq calendar-latitude 39.91) 
+
   
 
   ;;   (setq org-directory "~/org")
@@ -124,6 +155,9 @@
                       shichen-name)
               shichen-events)))
     (mapconcat 'identity (nreverse shichen-events) "\n")))
+
+;; (use-package org-appear
+;;   :hook (org-mode . org-appear-mode))
 
 (provide 'init-org)
 ;;; init-org.el ends here
