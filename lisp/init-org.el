@@ -99,6 +99,8 @@
           ("" . (:family "3270 Nerd Font Mono" :foreground ,tcc-317-hehui :background ,tcc-341-ermuyu :weight bold :height 300 :width 100 :box (:line-width 10 :color ,tcc-341-ermuyu)))
           ("" . (:family "3270 Nerd Font Mono" :foreground ,tcc-231-zumulv :background ,tcc-341-ermuyu :height 300 :width 100 :box (:line-width 10 :color ,tcc-341-ermuyu)))
           ("" . (:family "3270 Nerd Font Mono" :foreground ,tcc-323-shashi :background ,tcc-341-ermuyu :weight bold :height 300 :width 100 :box (:line-width 10 :color ,tcc-341-ermuyu)))
+          ("TODO" . (:background ,tcc-063-zhushi :foreground "white" :weight bold :height 160 :box (:line-width 5 :color ,tcc-169-yujinqun)))
+          ("DONE" . (:background ,tcc-235-zhulv :foreground "white" :weight bold :height 160 :box (:line-width 5 :color ,tcc-169-yujinqun)))
           ))
   ;; location
 ;; (setq calendar-longitude 116.9962)
