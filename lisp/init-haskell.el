@@ -5,7 +5,10 @@
 (require 'init-elpa)
 
 (use-package haskell-mode
-  ;; :config
+  :config
+  (add-hook 'haskell-mode-hook
+            (lambda ()
+              (haskell-indentation-mode -1)))
   ;; (add-hook 'haskell-mode-hook 'haskell-indentation-mode)
   )
 

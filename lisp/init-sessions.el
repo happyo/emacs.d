@@ -49,8 +49,8 @@
 (add-hook 'desktop-after-read-hook
           (lambda ()
             (modify-all-frames-parameters
-             '((right-divider-width . 30)
-               (internal-border-width . 30)))
+             '((right-divider-width . 0)
+               (internal-border-width . 20)))
           ))
 (provide 'init-sessions)
 ;;; init-sessions.el ends here

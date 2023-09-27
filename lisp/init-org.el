@@ -12,6 +12,8 @@
   :config
   (setq org-modern-timestamp nil)
   (setq-local truncate-lines nil)
+  (setq org-use-sub-superscripts nil)
+  (setq org-export-with-sub-superscripts nil)
 
   ;; (dolist (face '(window-divider
   ;;                 window-divider-first-pixel

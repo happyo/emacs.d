@@ -64,6 +64,10 @@
 
 (use-package disable-mouse)
 
+(add-to-list 'load-path "~/.emacs.d/site-lisp/holo-layer")
+(require 'holo-layer)
+(setq holo-layer-enable-cursor-animation t)
+(holo-layer-enable)
 
 (provide 'init-gui-frames)
 ;;; init-gui-frames.el ends here

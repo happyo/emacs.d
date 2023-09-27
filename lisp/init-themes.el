@@ -27,7 +27,7 @@
 (require 'chinese-color)
 
 (setq ef-summer-palette-overrides
-      '(
+      `(
 ;;; Basic values
 
       (bg-main     ,tcc-351-ningzhi)
@@ -42,14 +42,14 @@
 
 ;;; Basic hues for foreground values
 
-      (red             tcc-021-yanzhi)
-      (red-warmer      tcc-010-handan)
-      (red-cooler      tcc-024-meiguizi)
-      (red-faint       tcc-080-yinghua)
-      (green           tcc-231-zhumulv)
-      (green-warmer    tcc-226-sunlv)
-      (green-cooler    tcc-232-yangse)
-      (green-faint     tcc-224-lvcha)
+      (red             ,tcc-021-yanzhi)
+      (red-warmer      ,tcc-010-handan)
+      (red-cooler      ,tcc-024-meiguizi)
+      (red-faint       ,tcc-080-yinghua)
+      (green           ,tcc-231-zumulv)
+      (green-warmer    ,tcc-226-sunlv)
+      (green-cooler    ,tcc-232-yangse)
+      (green-faint     ,tcc-224-lvcha)
       (yellow          "#F2C830")
       (yellow-warmer   "#D78812")
       (yellow-cooler   "#B2A421")
@@ -58,7 +58,7 @@
       (blue-warmer     "#8D68F3")
       (blue-cooler     "#002FA7")
       (blue-faint      "#82D8CF")
-      (magenta         tcc-95-qingzi)
+      (magenta         ,tcc-095-qingzi)
       (magenta-warmer  "#ED5736")
       (magenta-cooler  "#810DAE")
       (magenta-faint   "#CCA4E3")
@@ -117,8 +117,8 @@
 
 ;;; Special hues
 
-      (bg-mode-line       tcc-351-ningzhi)
-      (fg-mode-line       tcc-351-ningzhi)
+      ;; (bg-mode-line       ,tcc-351-ningzhi)
+      ;; (fg-mode-line       ,tcc-351-ningzhi)
       ;; (bg-completion      "#f4cfff")
       ;; (bg-hover           "#b4cfff")
       ;; (bg-hover-secondary "#aaeccf")
@@ -133,17 +133,20 @@
       (cursor        "#BA2F7B")
       (fg-intense    "#282828")
 
-      ;; (modeline-err     red)
-      ;; (modeline-warning yellow)
-      ;; (modeline-info    blue)
+      (modeline-err     "#9f0030")
+      (modeline-warning "#5f0f9f")
+      (modeline-info    "#1240af")
 
-      ;; (underline-err     "#ef0f1f")
-      ;; (underline-warning "#bf5f00")
-      ;; (underline-info    "#02af52")
+      (underline-err     "#ef0f1f")
+      (underline-warning "#bf5f00")
+      (underline-info    "#02af52")
 
+      (bg-char-0 "#7feaff")
+      (bg-char-1 "#ffaaff")
+      (bg-char-2 "#dff000")
 ;;; Conditional hues
 
-      ;; (bg-region-intense "#caaadf")
+      (bg-region-intense "#cfb5f0")
 
 ;;; Mappings
 
@@ -211,6 +214,7 @@
       ;; (mail-cite-0 yellow-cooler)
       ;; (mail-cite-1 magenta)
       ;; (mail-cite-2 blue-warmer)
+      ;; 
       ;; (mail-cite-3 cyan-warmer)
       ;; (mail-part magenta-faint)
       ;; (mail-recipient magenta-warmer)
@@ -231,16 +235,16 @@
 
 (setq ef-themes-to-toggle '(ef-spring ef-autumn))
 
-;; (setq ef-themes-headings ; read the manual's entry or the doc string
-;;       '((0 . (variable-pitch light 1.9))
-;;         (1 . (variable-pitch light 1.8))
-;;         (2 . (variable-pitch regular 1.7))
-;;         (3 . (variable-pitch regular 1.6))
-;;         (4 . (variable-pitch regular 1.5))
-;;         (5 . (variable-pitch 1.4)) ; absence of weight means `bold'
-;;         (6 . (variable-pitch 1.3))
-;;         (7 . (variable-pitch 1.2))
-;;         (t . (variable-pitch 1.1))))
+(setq ef-themes-headings ; read the manual's entry or the doc string
+      '((0 . (variable-pitch light 1.5))
+        (1 . (variable-pitch light 1.4))
+        (2 . (variable-pitch regular 1.3))
+        (3 . (variable-pitch regular 1.2))
+        (4 . (variable-pitch regular 1.2))
+        (5 . (variable-pitch 1.1)) ; absence of weight means `bold'
+        (6 . (variable-pitch 1.1))
+        (7 . (variable-pitch 1.1))
+        (t . (variable-pitch 1.1))))
 
 (setq ef-themes-mixed-fonts t
       ef-themes-variable-pitch-ui t)

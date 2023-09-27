@@ -49,3 +49,6 @@
 [submodule "site-lisp/awesome-tray"]
 	path = site-lisp/awesome-tray
 	url = git@github.com:happyo/awesome-tray.git
+[submodule "site-lisp/holo-layer"]
+	path = site-lisp/holo-layer
+	url = git@github.com:happyo/holo-layer.git
