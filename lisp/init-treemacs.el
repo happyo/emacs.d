@@ -19,6 +19,7 @@
    ("C-x t C-t" . treemacs-find-file))
   :config
   (setq treemacs-indentation 1)
+  (define-key treemacs-mode-map (kbd "M-m") 'magit-status)
   ;; (treemacs-load-all-the-icons-with-workaround-font "monego")
   )
 
