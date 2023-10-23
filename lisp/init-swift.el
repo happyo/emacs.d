@@ -3,13 +3,6 @@
 ;;; Code:
 (require 'init-elpa)
 
-(use-package lsp-sourcekit
-  :after lsp-mode
-  :load-path "~/.emacs.d/site-lisp/lsp-sourcekit"
-  :config
-  (setq lsp-sourcekit-executable "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/sourcekit-lsp"))
-
-
 (use-package cc-mode
     :ensure nil
     :config

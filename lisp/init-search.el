@@ -237,8 +237,5 @@
   (:map grep-mode-map
    ("C-c C-p" . wgrep-change-to-wgrep-mode)))
 
-(add-to-list 'load-path "~/.emacs.d/site-lisp/blink-search")
-(require 'blink-search)
-
 (provide 'init-search)
 ;;; init-search.el ends here

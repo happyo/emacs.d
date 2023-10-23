@@ -5,7 +5,6 @@
 (require 'init-elpa)
 
 (use-package dart-mode)
-(use-package lsp-dart)
 
 (provide 'init-dart)
 ;;; init-dart.el ends here
