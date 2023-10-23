@@ -30,7 +30,7 @@
   "Execute different functions based on the current major mode."
   (interactive)
   (cond ((eq major-mode 'org-mode) (org-open-at-point))
-        (t (xref-find-definitions))))
+        (t (lsp-bridge-find-def))))
 
 (defvar my-custom-minor-mode-map (make-sparse-keymap)
   "自定义的 keymap，用于覆盖其他 mode 的快捷键。")
@@ -49,12 +49,13 @@
 (define-key my-custom-minor-mode-map (kbd "M-z") 'undo)
 (define-key my-custom-minor-mode-map (kbd "M-k") 'kill-this-buffer)
 (define-key my-custom-minor-mode-map (kbd "M-K") 'delete-window)
+(define-key my-custom-minor-mode-map (kbd "M-D") 'delete-other-windows)
 (define-key my-custom-minor-mode-map (kbd "M-v") 'yank)
 (define-key my-custom-minor-mode-map (kbd "M-V") 'consult-yank-from-kill-ring)
 (define-key my-custom-minor-mode-map (kbd "M-s-v") 'consult-yank-from-kill-ring)
 (define-key my-custom-minor-mode-map (kbd "M-p") 'projectile-switch-project)
 (define-key my-custom-minor-mode-map (kbd "M-.") 'my-custom-m-dot-function)
-(define-key my-custom-minor-mode-map (kbd "M-,") 'xref-go-back)
+(define-key my-custom-minor-mode-map (kbd "M-,") 'lsp-bridge-find-def-return)
 (define-key my-custom-minor-mode-map (kbd "M-]") 'lsp-bridge-code-format)
 (define-key my-custom-minor-mode-map (kbd "S-<tab>") 'other-frame)
 

@@ -117,7 +117,7 @@
 
 ;;; Special hues
 
-      ;; (bg-mode-line       ,tcc-351-ningzhi)
+      (bg-mode-line       ,tcc-007-fenhong)
       ;; (fg-mode-line       ,tcc-351-ningzhi)
       ;; (bg-completion      "#f4cfff")
       ;; (bg-hover           "#b4cfff")
@@ -130,7 +130,7 @@
       ;; (bg-info            "#bbefda") ; check with info
 
       (border        "#b4c4c0")
-      (cursor        "#BA2F7B")
+      (cursor        ,tcc-220-putaoshui)
       (fg-intense    "#282828")
 
       (modeline-err     "#9f0030")
@@ -300,11 +300,11 @@
   (add-hook 'help-mode-hook 'rainbow-mode)
   )
 
-(use-package beacon)
-(setq-default beacon-lighter "")
-(setq-default beacon-size 20)
-(setq-default beacon-color tcc-076-danfeng)
-(beacon-mode 1)
+;; (use-package beacon)
+;; (setq-default beacon-lighter "")
+;; (setq-default beacon-size 20)
+;; (setq-default beacon-color tcc-076-danfeng)
+;; (beacon-mode 1)
 
 ;; (diminish 'rainbow-mode)))
 

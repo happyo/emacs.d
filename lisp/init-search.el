@@ -127,7 +127,7 @@
   ;; Replace bindings. Lazily loaded due by `use-package'.
   :bind (;; C-c bindings (mode-specific-map)
          ("C-c h" . consult-history)
-         ("M-f" . consult-ripgrep)
+         ("M-f" . consult-grep)
          ("M-b" . consult-buffer)
          ("M-O" . consult-fd)
          :map isearch-mode-map
