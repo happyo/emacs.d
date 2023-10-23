@@ -4,9 +4,6 @@
 [submodule "site-lisp/dictionary-overlay"]
 	path = site-lisp/dictionary-overlay
 	url = https://github.com/ginqi7/dictionary-overlay.git
-[submodule "site-lisp/websocket-bridge"]
-	path = site-lisp/websocket-bridge
-	url = https://github.com/ginqi7/websocket-bridge.git
 [submodule "site-lisp/ef-themes"]
 	path = site-lisp/ef-themes
 	url = git@github.com:happyo/ef-themes.git
@@ -40,9 +37,6 @@
 [submodule "site-lisp/beframe"]
 	path = site-lisp/beframe
 	url = https://github.com/protesilaos/beframe.git
-[submodule "site-lisp/blink-search"]
-	path = site-lisp/blink-search
-	url = git@github.com:happyo/blink-search.git
 [submodule "site-lisp/chinese-color"]
 	path = site-lisp/chinese-color
 	url = git@github.com:happyo/chinese-color.git
@@ -52,3 +46,6 @@
 [submodule "site-lisp/holo-layer"]
 	path = site-lisp/holo-layer
 	url = git@github.com:happyo/holo-layer.git
+[submodule "site-lisp/dape"]
+	path = site-lisp/dape
+	url = git@github.com:happyo/dape.git

@@ -105,6 +105,7 @@
 ;; Code Completion
 (require 'init-lsp)
 (require 'init-copilot)
+(require 'init-debug)
 
 ;; Language
 (require 'init-citre)
