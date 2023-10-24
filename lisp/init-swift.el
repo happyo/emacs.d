@@ -3,6 +3,9 @@
 ;;; Code:
 (require 'init-elpa)
 
+(use-package ob-swift
+  )
+
 (use-package cc-mode
     :ensure nil
     :config

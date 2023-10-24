@@ -74,6 +74,9 @@
   (setq org-todo-keywords
         '((sequence "TODO(t)" "|" "DONE(d)")
           (type "STODO(s)" "ATODO(a)" "BTODO(b)" "CTODO(c)" "|" "YDONE(y)" "XCANCEL(x)")))
+    (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((swift . t)))
   )
 
 (use-package org-pomodoro)

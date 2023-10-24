@@ -32,13 +32,13 @@
 
       (bg-main     ,tcc-351-ningzhi)
       (fg-main     ,tcc-331-zhumo)
-      (bg-dim      "#E9D7DF")
+      (bg-dim      ,tcc-341-ermuyu)
       (fg-dim      "#777294")
       (bg-alt      ,tcc-344-baie)
       (fg-alt      "#F07C82")
 
       (bg-active   "#E2E1E4")
-      (bg-inactive "#BACCD9")
+      (bg-inactive ,tcc-124-yuebai)
 
 ;;; Basic hues for foreground values
 
@@ -117,7 +117,7 @@
 
 ;;; Special hues
 
-      (bg-mode-line       ,tcc-007-fenhong)
+      (bg-mode-line       ,tcc-026-haitianxia)
       ;; (fg-mode-line       ,tcc-351-ningzhi)
       ;; (bg-completion      "#f4cfff")
       ;; (bg-hover           "#b4cfff")
