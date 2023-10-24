@@ -200,13 +200,13 @@
 ;;;; Prose mappings
 
       ;; (prose-code yellow)
-      ;; (prose-done green-cooler)
+      (prose-done ,tcc-318-yinshu)
       ;; (prose-macro cyan-cooler)
       ;; (prose-metadata fg-dim)
       ;; (prose-metadata-value fg-alt)
       ;; (prose-table fg-alt)
       ;; (prose-tag yellow-faint)
-      ;; (prose-todo red-warmer)
+      (prose-todo ,tcc-076-danfeng)
       ;; (prose-verbatim magenta-cooler)
 
 ;;;; Mail mappings
@@ -223,28 +223,27 @@
 
 ;;;; Rainbow mappings
 
-      ;; (rainbow-0 magenta-warmer)
-      ;; (rainbow-1 magenta-cooler)
-      ;; (rainbow-2 yellow)
-      ;; (rainbow-3 cyan)
-      ;; (rainbow-4 magenta)
-      ;; (rainbow-5 blue-warmer)
-      ;; (rainbow-6 red-cooler)
-      ;; (rainbow-7 cyan-cooler)
+  (rainbow-0 ,tcc-091-putaoqing)
+  (rainbow-1 ,tcc-102-ziluolan)
+  (rainbow-2 ,tcc-131-cangcang)
+  (rainbow-3 ,tcc-156-tianshuibi)
+  (rainbow-4 ,tcc-218-qinggu)
+  (rainbow-5 "#EA86FF")
+  (rainbow-6 "#FFA1FF")
       ))
 
 (setq ef-themes-to-toggle '(ef-spring ef-autumn))
 
 (setq ef-themes-headings ; read the manual's entry or the doc string
-      '((0 . (variable-pitch light 1.5))
-        (1 . (variable-pitch light 1.4))
+      '((0 . (variable-pitch light 1.9))
+        (1 . (variable-pitch light 1.6))
         (2 . (variable-pitch regular 1.3))
-        (3 . (variable-pitch regular 1.2))
-        (4 . (variable-pitch regular 1.2))
-        (5 . (variable-pitch 1.1)) ; absence of weight means `bold'
-        (6 . (variable-pitch 1.1))
-        (7 . (variable-pitch 1.1))
-        (t . (variable-pitch 1.1))))
+        (3 . (variable-pitch regular 1.1))
+        (4 . (variable-pitch regular 1.0))
+        (5 . (variable-pitch 1.0)) ; absence of weight means `bold'
+        (6 . (variable-pitch 1.0))
+        (7 . (variable-pitch 1.0))
+        (t . (variable-pitch 1.0))))
 
 (setq ef-themes-mixed-fonts t
       ef-themes-variable-pitch-ui t)
@@ -287,7 +286,8 @@
   ;; The Nerd Font you want to use in GUI
   ;; "Symbols Nerd Font Mono" is the default and is recommended
   ;; but you can use any other Nerd Font if you want
-  (nerd-icons-font-family "3270 Nerd Font Mono")
+  ;; (nerd-icons-font-family "3270 Nerd Font Mono")
+  (nerd-icons-font-family "Symbols Nerd Font Mono")
   )
 
 
