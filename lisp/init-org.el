@@ -5,66 +5,145 @@
 (require 'init-elpa)
 (require 'chinese-color)
 
-(use-package org-modern
-  :hook ((org-mode . org-modern-mode)
-         ;; (org-agenda-finalize . org-morden-agenda)
-         )
-  :config
-  (setq org-modern-timestamp nil)
-  (setq-local truncate-lines nil)
-  (setq org-use-sub-superscripts nil)
-  (setq org-export-with-sub-superscripts nil)
+;; (use-package org-modern
+;;   :hook ((org-mode . org-modern-mode)
+;;          ;; (org-agenda-finalize . org-morden-agenda)
+;;          )
+;;   :custom
+;;   (org-modern-star '("☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷"))
+;;   :config
+;;    (setq org-modern-priority
+;;     (quote ((?A . \"\")
+;;             (?B . \"\")
+;;             (?C . \"\")
+;;             (?D . \"\"))))
+;;   (setq org-modern-timestamp nil)
+;;   (setq-local truncate-lines nil)
+;;   (setq org-use-sub-superscripts nil)
+;;   (setq org-export-with-sub-superscripts nil)
 
-  ;; (dolist (face '(window-divider
-  ;;                 window-divider-first-pixel
-  ;;                 window-divider-last-pixel))
-  ;;   (face-spec-reset-face face)
-  ;;   (set-face-foreground face (face-attribute 'default :background)))
-  ;; (set-face-background 'fringe (face-attribute 'default :background))
+;;   ;; (dolist (face '(window-divider
+;;   ;;                 window-divider-first-pixel
+;;   ;;                 window-divider-last-pixel))
+;;   ;;   (face-spec-reset-face face)
+;;   ;;   (set-face-foreground face (face-attribute 'default :background)))
+;;   ;; (set-face-background 'fringe (face-attribute 'default :background))
 
-  (setq
-   ;; Edit settings
-   org-auto-align-tags nil
-   org-tags-column 1
-   org-catch-invisible-edits 'show-and-error
-   org-special-ctrl-a/e t
-   org-insert-heading-respect-content t
+;;   (setq
+;;    ;; Edit settings
+;;    org-auto-align-tags nil
+;;    org-tags-column 1
+;;    org-catch-invisible-edits 'show-and-error
+;;    org-special-ctrl-a/e t
+;;    org-insert-heading-respect-content t
 
-   ;; Org styling, hide markup etc.
-   org-hide-emphasis-markers t
-   org-pretty-entities t
-   org-ellipsis "…"
+;;    ;; Org styling, hide markup etc.
+;;    org-hide-emphasis-markers t
+;;    org-pretty-entities t
+;;    org-ellipsis "…"
 
-   ;; Agenda styling
-   ;; org-agenda-tags-column 0
-   ;; org-agenda-block-separator ?─
-   ;; org-agenda-time-grid
-   ;; '((daily today require-timed)
-   ;;   (2300 100 300 500 700 900 1100 1300 1500 1700 1900 2100)
-   ;;   " ┄┄┄┄┄ " "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄")
-   ;; org-agenda-current-time-string
-   ;; "⭠ now ─────────────────────────────────────────────────")
-   org-modern-checkbox nil
-   org-modern-todo nil
-   org-modern-keyword nil
-   )
-  
-  ;; (setq org-modern-todo
-  ;;       '((sequence "TODO(t)" "|" "DONE(d)")
-  ;;         (type "IU(s)" "INU(a)" "NIU(b)" "NINU(c)" "|" "COMPLETED(y)" "CANCELED(x)")))
+;;    ;; Agenda styling
+;;    ;; org-agenda-tags-column 0
+;;    ;; org-agenda-block-separator ?─
+;;    ;; org-agenda-time-grid
+;;    ;; '((daily today require-timed)
+;;    ;;   (2300 100 300 500 700 900 1100 1300 1500 1700 1900 2100)
+;;    ;;   " ┄┄┄┄┄ " "┄┄┄┄┄┄┄┄┄┄┄┄┄┄┄")
+;;    ;; org-agenda-current-time-string
+;;    ;; "⭠ now ─────────────────────────────────────────────────")
+;;    org-modern-checkbox nil
+;;    org-modern-todo t
+;;    org-modern-keyword nil
+;;    )
 
-  ;; (setq org-modern-todo-faces
-  ;;       `(("IU" :background ,tcc-076-danfeng :foreground "white" :box (:line-width -1 :style released-button))
-  ;;         ("INU" :background ,tcc-092-qizi :foreground "white" :box (:line-width -1 :style released-button))
-  ;;         ("NIU" :background ,tcc-192-hupo :foreground "white" :box (:line-width -1 :style released-button))
-  ;;         ("NINU" :background ,tcc-317-hehui :foreground "white" :box (:line-width -1 :style released-button))
-  ;;         ("COMPLETED" :background ,tcc-231-zhumulv :foreground "white" :box (:line-width -1 :style released-button))
-  ;;         ("CANCELED" :background ,tcc-323-shashi :foreground "white" :box (:line-width -1 :style released-button))))
+;; (setq org-modern-todo
+;;       '((sequence "TODO(t)" "|" "DONE(d)")
+;;         (type "IU(s)" "INU(a)" "NIU(b)" "NINU(c)" "|" "COMPLETED(y)" "CANCELED(x)")))
 
-  (global-org-modern-mode))
+;; (setq org-modern-todo-faces
+;;       `(("IU" :background ,tcc-076-danfeng :foreground "white" :box (:line-width -1 :style released-button))
+;;         ("INU" :background ,tcc-092-qizi :foreground "white" :box (:line-width -1 :style released-button))
+;;         ("NIU" :background ,tcc-192-hupo :foreground "white" :box (:line-width -1 :style released-button))
+;;         ("NINU" :background ,tcc-317-hehui :foreground "white" :box (:line-width -1 :style released-button))
+;;         ("COMPLETED" :background ,tcc-231-zhumulv :foreground "white" :box (:line-width -1 :style released-button))
+;;         ("CANCELED" :background ,tcc-323-shashi :foreground "white" :box (:line-width -1 :style released-button))))
+
+;;  (global-org-modern-mode))
+
+
+;; "☰" "☱" "☲" "☳" "☴" "☵" "☶" "☷"
+;; (defun custom-org-symbols ()
+;;   (push '("*" . ?☰) prettify-symbols-alist)
+;;   (push '("**" . ?☱) prettify-symbols-alist)
+;;   (push '("***" . ?☲) prettify-symbols-alist)
+;;   (push '("****" . ?☳) prettify-symbols-alist)
+;;   (push '("*****" . ?☴) prettify-symbols-alist)
+;;   (push '("******" . ?☵) prettify-symbols-alist)
+;;   (push '("*******" . ?☶) prettify-symbols-alist)
+;;   (push '("********" . ?☷) prettify-symbols-alist)
+;;   (push '("S" . ?) prettify-symbols-alist)
+;;   (push '("A" . ?) prettify-symbols-alist)
+;;   (push '("B" . ?) prettify-symbols-alist)
+;;   (push '("C" . ?) prettify-symbols-alist)
+;;   (push '("Y" . ?) prettify-symbols-alist)
+;;   (push '("X" . ?) prettify-symbols-alist))
+
+;; (setq prettify-symbols-alist
+;;                         '(("*" . ?☰)
+;;                           ("**" . ?☱)
+;;                           ("***" . ?☲)
+;;                           ("****" . ?☳)
+;;                           ("*****" . ?☴)
+;;                           ("******" . ?☵)
+;;                           ("*******" . ?☶)
+;;                           ("********" . ?☷)
+;;                           ("S" . ?)
+;;                           ("A" . ?)
+;;                           ("B" . ?)
+;;                           ("C" . ?)
+;;                           ("Y" . ?)
+;;                           ("X" . ?)))
+
+
+(add-hook 'org-mode-hook  (lambda ()
+                            (setq prettify-symbols-alist
+                                  '(("lambda" . ?λ)
+                                    (":PROPERTIES:" . ?)
+                                    (":ID:" . ?)
+                                    (":END:" . ?)
+                                    ("#+TITLE:" . ?)
+                                    ("#+AUTHOR:" . ?)
+                                    ("#+BEGIN_QUOTE" . ?)
+                                    ("#+END_QUOTE" . ?)
+                                    ("#+RESULTS:" . ?)
+                                    ("[ ]" . ?)
+                                    ("[-]" . ?)
+                                    ("[X]" . ?)
+                                    ("*" . ?☰)
+                                    ("**" . ?☱)
+                                    ("***" . ?☲)
+                                    ("****" . ?☳)
+                                    ("*****" . ?☴)
+                                    ("******" . ?☵)
+                                    ("*******" . ?☶)
+                                    ("********" . ?☷)
+                                    ("STODO" . ?)
+                                    ("ATODO" . ?)
+                                    ("BTODO" . ?)
+                                    ("CTODO" . ?)
+                                    ("YDONE" . ?)
+                                    ("XCANCEL" . ?)))
+                            (prettify-symbols-mode)))
+
+(defun my-org-mode-line-spacing ()
+  (setq-local line-spacing 8))  ; 设置为3像素的间距
 
 (use-package org
-  :hook (org-mode . org-indent-mode)
+  :ensure t
+  :hook (
+         ;; (org-mode . org-indent-mode)
+         (org-mode . my-org-mode-line-spacing)
+         )
   :init
   (setq org-agenda-span 'day)
   (setq org-agenda-files '("~/Zettelkasten/PersonalTasks/" "~/Zettelkasten/WorkTasks/" "~/Zettelkasten/TodoList/"))
@@ -73,40 +152,40 @@
   (setq diary-file "~/Zettelkasten/standard-diary")
   (setq org-agenda-include-diary "~/Zettelkasten/standard-diary")
   (setq org-agenda-time-grid (quote ((daily today require-timed)
-                                   (2300
-                                    100
-                                    300
-                                    500
-                                    700
-                                    900
-                                    1100
-                                    1300
-                                    1500
-                                    1700
-                                    1900
-                                    2100
-                                    )
-                                   "......"
-                                   "-----------------------------------------------------"
-                                   )))
+                                     (2300
+                                      100
+                                      300
+                                      500
+                                      700
+                                      900
+                                      1100
+                                      1300
+                                      1500
+                                      1700
+                                      1900
+                                      2100
+                                      )
+                                     "......"
+                                     "-----------------------------------------------------"
+                                     )))
   (setq org-todo-keywords
         '((sequence "TODO(t)" "|" "DONE(d)")
-          (type "(s)" "(a)" "(b)" "(c)" "|" "(y)" "(x)")))
+          (type "STODO(s)" "ATODO(a)" "BTODO(b)" "CTODO(c)" "|" "YDONE(y)" "XCANCEL(x)")))
 
-  (setq org-todo-keyword-faces
-        `(
-          ("" . (:family "3270 Nerd Font Mono" :foreground ,tcc-076-danfeng :background ,tcc-341-ermuyu :weight bold :height 300 :width 100 :box (:line-width 10 :color ,tcc-341-ermuyu)))
-          ("" . (:family "3270 Nerd Font Mono" :foreground ,tcc-095-qingzi :background ,tcc-341-ermuyu :weight bold :height 300 :width 100 :box (:line-width 10 :color ,tcc-341-ermuyu)))
-          ("" . (:family "3270 Nerd Font Mono" :foreground ,tcc-192-hupo :background ,tcc-341-ermuyu :weight bold :height 300 :width 100 :box (:line-width 10 :color ,tcc-341-ermuyu)))
-          ("" . (:family "3270 Nerd Font Mono" :foreground ,tcc-317-hehui :background ,tcc-341-ermuyu :weight bold :height 300 :width 100 :box (:line-width 10 :color ,tcc-341-ermuyu)))
-          ("" . (:family "3270 Nerd Font Mono" :foreground ,tcc-231-zumulv :background ,tcc-341-ermuyu :height 300 :width 100 :box (:line-width 10 :color ,tcc-341-ermuyu)))
-          ("" . (:family "3270 Nerd Font Mono" :foreground ,tcc-323-shashi :background ,tcc-341-ermuyu :weight bold :height 300 :width 100 :box (:line-width 10 :color ,tcc-341-ermuyu)))
-          ("TODO" . (:background ,tcc-063-zhushi :foreground "white" :weight bold :height 160 :box (:line-width 5 :color ,tcc-169-yujinqun)))
-          ("DONE" . (:background ,tcc-235-zhulv :foreground "white" :weight bold :height 160 :box (:line-width 5 :color ,tcc-169-yujinqun)))
-          ))
+  ;; (setq org-todo-keyword-faces
+  ;;       `(
+  ;;         ("" . (:family "3270 Nerd Font Mono" :foreground ,tcc-076-danfeng :background ,tcc-341-ermuyu :weight bold :height 300 :width 100 :box (:line-width 10 :color ,tcc-341-ermuyu)))
+  ;;         ("" . (:family "3270 Nerd Font Mono" :foreground ,tcc-095-qingzi :background ,tcc-341-ermuyu :weight bold :height 300 :width 100 :box (:line-width 10 :color ,tcc-341-ermuyu)))
+  ;;         ("" . (:family "3270 Nerd Font Mono" :foreground ,tcc-192-hupo :background ,tcc-341-ermuyu :weight bold :height 300 :width 100 :box (:line-width 10 :color ,tcc-341-ermuyu)))
+  ;;         ("" . (:family "3270 Nerd Font Mono" :foreground ,tcc-317-hehui :background ,tcc-341-ermuyu :weight bold :height 300 :width 100 :box (:line-width 10 :color ,tcc-341-ermuyu)))
+  ;;         ("" . (:family "3270 Nerd Font Mono" :foreground ,tcc-231-zumulv :background ,tcc-341-ermuyu :height 300 :width 100 :box (:line-width 10 :color ,tcc-341-ermuyu)))
+  ;;         ("" . (:family "3270 Nerd Font Mono" :foreground ,tcc-323-shashi :background ,tcc-341-ermuyu :weight bold :height 300 :width 100 :box (:line-width 10 :color ,tcc-341-ermuyu)))
+  ;;         ("TODO" . (:background ,tcc-063-zhushi :foreground "white" :weight bold :height 160 :box (:line-width 5 :color ,tcc-169-yujinqun)))
+  ;;         ("DONE" . (:background ,tcc-235-zhulv :foreground "white" :weight bold :height 160 :box (:line-width 5 :color ,tcc-169-yujinqun)))
+  ;;         ))
   ;; location
-;; (setq calendar-longitude 116.9962)
-;; (setq calendar-latitude 39.91) 
+  ;; (setq calendar-longitude 116.9962)
+  ;; (setq calendar-latitude 39.91) 
 
   
 
