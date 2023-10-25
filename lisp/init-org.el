@@ -74,7 +74,18 @@
   (setq org-todo-keywords
         '((sequence "TODO(t)" "|" "DONE(d)")
           (type "STODO(s)" "ATODO(a)" "BTODO(b)" "CTODO(c)" "|" "YDONE(y)" "XCANCEL(x)")))
-    (org-babel-do-load-languages
+
+  ;; (setq org-todo-keyword-faces
+  ;;     `(("TODO" . ,tcc-063-zhushi)
+  ;;       ("DONE" . ,tcc-317-hehui)
+  ;;       ("STODO" . ,tcc-076-danfeng)
+  ;;       ("ATODO" . ,tcc-095-qingzi)
+  ;;       ("BTODO" . ,tcc-192-hupo)
+  ;;       ("CTODO" . ,tcc-116-fenqing)
+  ;;       ("YDONE" . ,tcc-317-hehui)
+  ;;       ("XCANCEL" . ,tcc-317-hehui)))
+
+  (org-babel-do-load-languages
    'org-babel-load-languages
    '((swift . t)))
   )

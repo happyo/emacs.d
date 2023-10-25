@@ -57,7 +57,7 @@
 (define-key my-custom-minor-mode-map (kbd "M-.") 'my-custom-m-dot-function)
 (define-key my-custom-minor-mode-map (kbd "M-,") 'lsp-bridge-find-def-return)
 (define-key my-custom-minor-mode-map (kbd "M-]") 'lsp-bridge-code-format)
-(define-key my-custom-minor-mode-map (kbd "S-<tab>") 'other-frame)
+(define-key my-custom-minor-mode-map (kbd "M-e") 'other-frame)
 
 (define-minor-mode my-custom-minor-mode
   "自定义的 minor mode，用于覆盖其他 mode 的快捷键。"

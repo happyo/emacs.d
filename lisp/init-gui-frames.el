@@ -35,7 +35,7 @@
          ;; The 'alpha frame param became a pair at some point in
          ;; emacs 24.x, e.g. (100 100)
          (oldalpha (if (listp oldalpha) (car oldalpha) oldalpha))
-         (newalpha (+ incr oldalpha)))
+()         (newalpha (+ incr oldalpha)))
     (when (and (<= frame-alpha-lower-limit newalpha) (>= 100 newalpha))
       (modify-frame-parameters frame (list (cons 'alpha newalpha))))))
 
