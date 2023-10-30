@@ -46,11 +46,11 @@
 ;;             ;; other functions...
 ;;             ))
 
-(add-hook 'desktop-after-read-hook
-          (lambda ()
-            (modify-all-frames-parameters
-             '((right-divider-width . 0)
-               (internal-border-width . 20)))
-          ))
+;; (add-hook 'desktop-after-read-hook
+;;           (lambda ()
+;;             (modify-all-frames-parameters
+;;              '((right-divider-width . 0)
+;;                (internal-border-width . 0)))
+;;           ))
 (provide 'init-sessions)
 ;;; init-sessions.el ends here

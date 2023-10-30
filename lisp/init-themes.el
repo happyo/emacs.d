@@ -37,7 +37,7 @@
       (bg-alt      ,tcc-344-baie)
       (fg-alt      "#F07C82")
 
-      (bg-active   "#E2E1E4")
+      (bg-active   ,tcc-344-baie)
       (bg-inactive ,tcc-124-yuebai)
 
 ;;; Basic hues for foreground values
@@ -220,7 +220,12 @@
       ;; (mail-recipient magenta-warmer)
       ;; (mail-subject magenta-cooler)
       ;; (mail-other magenta)
+;;;; Tab mappings
 
+      (bg-tab-bar      bg-main)
+      (bg-tab-current  bg-main)
+      (bg-tab-other    bg-active)
+      
 ;;;; Rainbow mappings
 
   (rainbow-0 ,tcc-091-putaoqing)
@@ -307,6 +312,26 @@
 ;; (beacon-mode 1)
 
 ;; (diminish 'rainbow-mode)))
+
+;; (setq tab-bar-show 1)
+(set-face-attribute 'tab-bar nil :height 1.1)
+(set-face-attribute 'tab-bar-tab nil
+                    :box `(:line-width 6 :color ,tcc-351-ningzhi))
+;; (set-face-attribute 'tab-bar-tab-inactive nil
+;;                     :box `(:line-width 6 :color ,tcc-344-baie))
+(set-face-attribute 'tab-bar-tab-inactive nil
+                    :box `(:line-width 6 :color ,tcc-344-baie :radius 4))
+(setq tab-bar-new-button-show nil)
+(setq tab-bar-close-button-show nil)
+;; (setq tab-bar-format '(tab-bar-format-tabs tab-bar-separator))
+(setq tab-bar-tab-hints t) 
+(tab-bar-mode 1)                           ;; enable tab bar
+(set-face-attribute 'mode-line nil
+                    :height 180
+                    :box `(:line-width 4 :color ,tcc-026-haitianxia :style nil))
+(set-face-attribute 'mode-line-inactive nil
+                    :height 180
+                    :box `(:line-width 4 :color ,tcc-344-baie :style nil))
 
 
 (provide 'init-themes)
