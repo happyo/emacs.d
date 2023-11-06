@@ -26,18 +26,19 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/chinese-color")
 (require 'chinese-color)
 
-(setq ef-summer-palette-overrides
+(setq ef-dark-palette-overrides
       `(
 ;;; Basic values
 
-      (bg-main     ,tcc-351-ningzhi)
+      (bg-main     ,tcc-154-xizi)
       (fg-main     ,tcc-331-zhumo)
-      (bg-dim      ,tcc-341-ermuyu)
+      (bg-dim      ,tcc-116-fenqing)
       (fg-dim      "#777294")
-      (bg-alt      ,tcc-344-baie)
+      
+      (bg-alt      ,tcc-242-fenlv)
       (fg-alt      "#F07C82")
 
-      (bg-active   ,tcc-344-baie)
+      (bg-active   ,tcc-155-songshi)
       (bg-inactive ,tcc-124-yuebai)
 
 ;;; Basic hues for foreground values
@@ -117,21 +118,21 @@
 
 ;;; Special hues
 
-      (bg-mode-line       ,tcc-026-haitianxia)
-      ;; (fg-mode-line       ,tcc-351-ningzhi)
-      ;; (bg-completion      "#f4cfff")
-      ;; (bg-hover           "#b4cfff")
-      ;; (bg-hover-secondary "#aaeccf")
-      ;; (bg-hl-line         "#ffd6e5")
-      ;; (bg-region          "#eecfff")
-      ;; (bg-paren           "#9fc0ef")
-      ;; (bg-err             "#ffd0e6") ; check with err
-      ;; (bg-warning         "#ffe5ba") ; check with warning
-      ;; (bg-info            "#bbefda") ; check with info
+      (bg-mode-line       ,tcc-250-piaobi)
+      (fg-mode-line       ,tcc-351-ningzhi)
+      (bg-completion      "#f4cfff")
+      (bg-hover           "#b4cfff")
+      (bg-hover-secondary "#aaeccf")
+      (bg-hl-line         "#ffd6e5")
+      (bg-region          "#eecfff")
+      (bg-paren           "#9fc0ef")
+      (bg-err             "#ffd0e6") ; check with err
+      (bg-warning         "#ffe5ba") ; check with warning
+      (bg-info            "#bbefda") ; check with info
 
       (border        "#b4c4c0")
       (cursor        ,tcc-220-putaoshui)
-      (fg-intense    "#282828")
+      ;; (fg-intense    "#282828")
 
       (modeline-err     "#9f0030")
       (modeline-warning "#5f0f9f")
@@ -141,9 +142,9 @@
       (underline-warning "#bf5f00")
       (underline-info    "#02af52")
 
-      (bg-char-0 "#7feaff")
-      (bg-char-1 "#ffaaff")
-      (bg-char-2 "#dff000")
+      ;; (bg-char-0 "#7feaff")
+      ;; (bg-char-1 "#ffaaff")
+      ;; (bg-char-2 "#dff000")
 ;;; Conditional hues
 
       (bg-region-intense "#cfb5f0")
@@ -200,7 +201,7 @@
 ;;;; Prose mappings
 
       ;; (prose-code yellow)
-      (prose-done ,tcc-318-yinshu)
+      (prose-done ,tcc-319-buzao)
       ;; (prose-macro cyan-cooler)
       ;; (prose-metadata fg-dim)
       ;; (prose-metadata-value fg-alt)
@@ -223,7 +224,7 @@
 ;;;; Tab mappings
 
       (bg-tab-bar      bg-main)
-      (bg-tab-current  bg-main)
+      (bg-tab-current  ,tcc-116-fenqing)
       (bg-tab-other    bg-active)
       
 ;;;; Rainbow mappings
@@ -262,7 +263,7 @@
 
 ;; Load the theme of choice:
 ;; (ef-themes-select 'ef-spring)
-(load-theme 'ef-summer :no-confirm)
+(load-theme 'ef-dark :no-confirm)
 
  ; original value is blue-warmer
 
@@ -314,13 +315,13 @@
 ;; (diminish 'rainbow-mode)))
 
 ;; (setq tab-bar-show 1)
-(set-face-attribute 'tab-bar nil :height 1.1)
+(set-face-attribute 'tab-bar nil :height 1.0)
 (set-face-attribute 'tab-bar-tab nil
-                    :box `(:line-width 6 :color ,tcc-351-ningzhi))
+                    :box `(:line-width 8 :color ,tcc-116-fenqing))
 ;; (set-face-attribute 'tab-bar-tab-inactive nil
 ;;                     :box `(:line-width 6 :color ,tcc-344-baie))
 (set-face-attribute 'tab-bar-tab-inactive nil
-                    :box `(:line-width 6 :color ,tcc-344-baie :radius 4))
+                    :box `(:line-width 8 :color ,tcc-155-songshi :radius 4))
 (setq tab-bar-new-button-show nil)
 (setq tab-bar-close-button-show nil)
 ;; (setq tab-bar-format '(tab-bar-format-tabs tab-bar-separator))
@@ -328,10 +329,10 @@
 (tab-bar-mode 1)                           ;; enable tab bar
 (set-face-attribute 'mode-line nil
                     :height 180
-                    :box `(:line-width 4 :color ,tcc-026-haitianxia :style nil))
+                    :box `(:line-width 4 :color ,tcc-250-piaobi :style nil))
 (set-face-attribute 'mode-line-inactive nil
                     :height 180
-                    :box `(:line-width 4 :color ,tcc-344-baie :style nil))
+                    :box `(:line-width 4 :color ,tcc-242-fenlv :style nil))
 
 
 (provide 'init-themes)

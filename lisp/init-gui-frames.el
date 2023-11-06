@@ -72,5 +72,13 @@
 (setq holo-layer-cursor-block-commands '("watch-other-window-up" "watch-other-window-down" "self-insert-command"))
 (holo-layer-enable)
 
+
+(defun my-set-window-margins ()
+  (set-window-margins nil 1 1))
+
+(add-hook 'window-configuration-change-hook 'my-set-window-margins)
+(setq-default header-line-format " ")
+(set-face-attribute 'header-line nil :height 100)
+
 (provide 'init-gui-frames)
 ;;; init-gui-frames.el ends here
