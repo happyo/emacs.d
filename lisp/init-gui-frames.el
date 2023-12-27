@@ -27,20 +27,19 @@
   (add-to-list 'default-frame-alist no-border)
   (add-to-list 'initial-frame-alist no-border))
 
-(defun sanityinc/adjust-opacity (frame incr)
+(defun adjust-opacity (frame incr)
   "Adjust the background opacity of FRAME by increment INCR."
   (unless (display-graphic-p frame)
     (error "Cannot adjust opacity of this frame"))
-  (let* ((oldalpha (or (frame-parameter frame 'alpha) 100))
-         ;; The 'alpha frame param became a pair at some point in
-         ;; emacs 24.x, e.g. (100 100)
-         (oldalpha (if (listp oldalpha) (car oldalpha) oldalpha))
-()         (newalpha (+ incr oldalpha)))
-    (when (and (<= frame-alpha-lower-limit newalpha) (>= 100 newalpha))
-      (modify-frame-parameters frame (list (cons 'alpha newalpha))))))
+  (let* ((alpha (frame-parameter frame 'alpha))
+         (background-alpha (if (listp alpha) (car alpha) alpha))
+         (text-alpha (if (listp alpha) (cadr alpha) 100))
+         (new-background-alpha (+ background-alpha incr)))
+    (set-frame-parameter frame 'alpha (list new-background-alpha text-alpha))))
 
-(global-set-key (kbd "M-C-8") (lambda () (interactive) (sanityinc/adjust-opacity nil -3)))
-(global-set-key (kbd "M-C-9") (lambda () (interactive) (sanityinc/adjust-opacity nil 3)))
+
+(global-set-key (kbd "M-C-e") (lambda () (interactive) (adjust-opacity (selected-frame) -3)))
+(global-set-key (kbd "M-C-r") (lambda () (interactive) (adjust-opacity (selected-frame) 3)))
 (global-set-key (kbd "M-C-7") (lambda () (interactive) (modify-frame-parameters nil `((alpha . 100)))))
 
 

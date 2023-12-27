@@ -131,7 +131,7 @@
       (bg-info            "#bbefda") ; check with info
 
       (border        "#b4c4c0")
-      (cursor        ,tcc-220-putaoshui)
+      (cursor        ,tcc-171-minghuang)
       ;; (fg-intense    "#282828")
 
       (modeline-err     "#9f0030")
@@ -323,7 +323,7 @@
 (set-face-attribute 'tab-bar-tab-inactive nil
                     :box `(:line-width 8 :color ,tcc-155-songshi :radius 4))
 (setq tab-bar-new-button-show nil)
-(setq tab-bar-close-button-show nil)
+(setq tab-bar-close-button-show t)
 ;; (setq tab-bar-format '(tab-bar-format-tabs tab-bar-separator))
 (setq tab-bar-tab-hints t) 
 (tab-bar-mode 1)                           ;; enable tab bar
@@ -333,6 +333,21 @@
 (set-face-attribute 'mode-line-inactive nil
                     :height 180
                     :box `(:line-width 4 :color ,tcc-242-fenlv :style nil))
+
+(use-package tabspaces
+  :hook (after-init . tabspaces-mode) ;; use this only if you want the minor-mode loaded at startup. 
+  :commands (tabspaces-switch-or-create-workspace
+             tabspaces-open-or-create-project-and-workspace)
+  :custom
+  (tabspaces-use-filtered-buffers-as-default t)
+  (tabspaces-default-tab "Default")
+  (tabspaces-remove-to-default t)
+  (tabspaces-include-buffers '("*scratch*"))
+  (tabspaces-initialize-project-with-todo t)
+  (tabspaces-todo-file-name "project-todo.org")
+  ;; sessions
+  (tabspaces-session t)
+  (tabspaces-session-auto-restore t))
 
 
 (provide 'init-themes)

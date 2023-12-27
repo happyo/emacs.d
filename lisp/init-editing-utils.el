@@ -25,7 +25,7 @@
  make-backup-files nil
  ;; mouse-yank-at-point t
  save-interprogram-paste-before-kill t
- scroll-preserve-screen-position 'always
+ ;; scroll-preserve-screen-position 'always
  set-mark-command-repeat-pop t
  tooltip-delay 1.5
  truncate-lines nil
@@ -34,6 +34,8 @@
 
 (delete-selection-mode 1)
 (transient-mark-mode 1)
+
+(setq scroll-preserve-screen-position t)
 
 
 ;; Huge files

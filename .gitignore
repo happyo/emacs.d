@@ -127,5 +127,7 @@ blink-search/
 
 .extension/
 
+tabsession.el
+
 *.cache
 # End of https://www.toptal.com/developers/gitignore/api/emacs
