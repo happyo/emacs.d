@@ -86,8 +86,11 @@
   ;;       ("XCANCEL" . ,tcc-317-hehui)))
 
   (org-babel-do-load-languages
-   'org-babel-load-languages
-   '((swift . t)))
+ 'org-babel-load-languages
+ '((swift . t)       ; 已存在的 Swift 支持
+   (C . t);; 其他需要支持的语言
+    ))
+  
   )
 
 (use-package org-pomodoro)

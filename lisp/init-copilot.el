@@ -18,7 +18,7 @@
   (define-key copilot-mode-map (kbd "<tab>") #'my/copilot-tab)
   (define-key copilot-mode-map (kbd "s-<tab>") #'copilot-accept-completion-by-word)
   (define-key copilot-mode-map (kbd "M-e") #'copilot-accept-completion-by-word)
-)
+  )
 
 (defadvice! +copilot--get-source-a (fn &rest args)
     :around #'copilot--get-source

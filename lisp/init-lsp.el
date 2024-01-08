@@ -44,6 +44,7 @@
 (setq acm-enable-tabnine nil)
 (setq acm-enable-codeium nil)
 (setq acm-enable-copilot nil)
+(setq lsp-bridge-enable-org-babel t)
 
 (global-lsp-bridge-mode)
 

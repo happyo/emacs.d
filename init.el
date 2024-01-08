@@ -53,6 +53,7 @@
 
 ;; ignore cl warning
 (setq byte-compile-warnings '(cl-functions))
+(setq warning-minimum-level :error)
 
 
 ;; Adjust garbage collection thresholds during startup, and thereafter

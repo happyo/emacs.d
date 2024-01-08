@@ -68,8 +68,9 @@
 (require 'holo-layer)
 ;; (setq holo-layer-sort-tab-ui t)
 (setq holo-layer-enable-cursor-animation t)
+(setq holo-layer-enable-indent-rainbow t)
 (setq holo-layer-cursor-block-commands '("watch-other-window-up" "watch-other-window-down" "self-insert-command"))
-(holo-layer-enable)
+;; (holo-layer-enable)
 
 
 (defun my-set-window-margins ()

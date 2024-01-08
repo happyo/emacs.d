@@ -315,24 +315,24 @@
 ;; (diminish 'rainbow-mode)))
 
 ;; (setq tab-bar-show 1)
-(set-face-attribute 'tab-bar nil :height 1.0)
-(set-face-attribute 'tab-bar-tab nil
-                    :box `(:line-width 8 :color ,tcc-116-fenqing))
+;;(set-face-attribute 'tab-bar nil :height 1.0)
+;;(set-face-attribute 'tab-bar-tab nil
+;;                    :box `(:line-width 8 :color ,tcc-116-fenqing))
 ;; (set-face-attribute 'tab-bar-tab-inactive nil
 ;;                     :box `(:line-width 6 :color ,tcc-344-baie))
-(set-face-attribute 'tab-bar-tab-inactive nil
-                    :box `(:line-width 8 :color ,tcc-155-songshi :radius 4))
+;;(set-face-attribute 'tab-bar-tab-inactive nil
+;;                    :box `(:line-width 8 :color ,tcc-155-songshi :radius 4))
 (setq tab-bar-new-button-show nil)
 (setq tab-bar-close-button-show t)
 ;; (setq tab-bar-format '(tab-bar-format-tabs tab-bar-separator))
 (setq tab-bar-tab-hints t) 
 (tab-bar-mode 1)                           ;; enable tab bar
-(set-face-attribute 'mode-line nil
-                    :height 180
-                    :box `(:line-width 4 :color ,tcc-250-piaobi :style nil))
-(set-face-attribute 'mode-line-inactive nil
-                    :height 180
-                    :box `(:line-width 4 :color ,tcc-242-fenlv :style nil))
+;;(set-face-attribute 'mode-line nil
+;;                    :height 180
+;;                    :box `(:line-width 4 :color ,tcc-250-piaobi :style nil))
+;;(set-face-attribute 'mode-line-inactive nil
+;;                    :height 180
+;;                    :box `(:line-width 4 :color ,tcc-242-fenlv :style nil))
 
 (use-package tabspaces
   :hook (after-init . tabspaces-mode) ;; use this only if you want the minor-mode loaded at startup. 
