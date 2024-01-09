@@ -233,9 +233,9 @@
   (rainbow-1 ,tcc-102-ziluolan)
   (rainbow-2 ,tcc-131-cangcang)
   (rainbow-3 ,tcc-156-tianshuibi)
-  (rainbow-4 ,tcc-218-qinggu)
-  (rainbow-5 "#EA86FF")
-  (rainbow-6 "#FFA1FF")
+  (rainbow-4 ,tcc-165-zhizi)
+  (rainbow-5 ,tcc-013-meihong)
+  (rainbow-6 ,tcc-013-meihong)
       ))
 
 (setq ef-themes-to-toggle '(ef-spring ef-autumn))
@@ -243,9 +243,9 @@
 (setq ef-themes-headings ; read the manual's entry or the doc string
       '((0 . (variable-pitch light 1.9))
         (1 . (variable-pitch light 1.6))
-        (2 . (variable-pitch regular 1.3))
-        (3 . (variable-pitch regular 1.1))
-        (4 . (variable-pitch regular 1.0))
+        (2 . (variable-pitch regular 1.6))
+        (3 . (variable-pitch regular 1.4))
+        (4 . (variable-pitch regular 1.3))
         (5 . (variable-pitch 1.0)) ; absence of weight means `bold'
         (6 . (variable-pitch 1.0))
         (7 . (variable-pitch 1.0))
