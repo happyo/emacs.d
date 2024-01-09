@@ -26,11 +26,11 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/chinese-color")
 (require 'chinese-color)
 
-(setq ef-dark-palette-overrides
+(setq ef-summer-palette-overrides
       `(
 ;;; Basic values
 
-      (bg-main     ,tcc-154-xizi)
+      (bg-main     ,tcc-108-ziyun)
       (fg-main     ,tcc-331-zhumo)
       (bg-dim      ,tcc-116-fenqing)
       (fg-dim      "#777294")
@@ -118,7 +118,7 @@
 
 ;;; Special hues
 
-      (bg-mode-line       ,tcc-250-piaobi)
+      (bg-mode-line       ,tcc-173-chaomi)
       (fg-mode-line       ,tcc-351-ningzhi)
       (bg-completion      "#f4cfff")
       (bg-hover           "#b4cfff")
@@ -224,8 +224,8 @@
 ;;;; Tab mappings
 
       (bg-tab-bar      bg-main)
-      (bg-tab-current  ,tcc-116-fenqing)
-      (bg-tab-other    bg-active)
+      (bg-tab-current  ,tcc-026-haitianxia)
+      (bg-tab-other    ,tcc-081-dingxiang)
       
 ;;;; Rainbow mappings
 
@@ -263,7 +263,7 @@
 
 ;; Load the theme of choice:
 ;; (ef-themes-select 'ef-spring)
-(load-theme 'ef-dark :no-confirm)
+(load-theme 'ef-summer :no-confirm)
 
  ; original value is blue-warmer
 
@@ -315,24 +315,19 @@
 ;; (diminish 'rainbow-mode)))
 
 ;; (setq tab-bar-show 1)
-;;(set-face-attribute 'tab-bar nil :height 1.0)
-;;(set-face-attribute 'tab-bar-tab nil
-;;                    :box `(:line-width 8 :color ,tcc-116-fenqing))
-;; (set-face-attribute 'tab-bar-tab-inactive nil
-;;                     :box `(:line-width 6 :color ,tcc-344-baie))
-;;(set-face-attribute 'tab-bar-tab-inactive nil
-;;                    :box `(:line-width 8 :color ,tcc-155-songshi :radius 4))
+(set-face-attribute 'tab-bar-tab nil
+                   :box `(:line-width 6 :color ,tcc-026-haitianxia))
+(set-face-attribute 'tab-bar-tab-inactive nil
+                    :box `(:line-width 6 :color ,tcc-081-dingxiang))
 (setq tab-bar-new-button-show nil)
 (setq tab-bar-close-button-show t)
 ;; (setq tab-bar-format '(tab-bar-format-tabs tab-bar-separator))
 (setq tab-bar-tab-hints t) 
 (tab-bar-mode 1)                           ;; enable tab bar
-;;(set-face-attribute 'mode-line nil
-;;                    :height 180
-;;                    :box `(:line-width 4 :color ,tcc-250-piaobi :style nil))
-;;(set-face-attribute 'mode-line-inactive nil
-;;                    :height 180
-;;                    :box `(:line-width 4 :color ,tcc-242-fenlv :style nil))
+(set-face-attribute 'mode-line nil
+                   :box `(:line-width 5 :color ,tcc-173-chaomi :style nil))
+(set-face-attribute 'mode-line-inactive nil
+                   :box `(:line-width 5 :color ,tcc-242-fenlv :style nil))
 
 (use-package tabspaces
   :hook (after-init . tabspaces-mode) ;; use this only if you want the minor-mode loaded at startup. 
