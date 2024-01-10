@@ -124,6 +124,9 @@
 
 
 ;; org
+(require 'ob-swift)
+(setq swift-mode:repl-executable "swift repl")
+
 (require 'init-org)
 (require 'init-denote)
 (require 'init-mode-line)
@@ -142,3 +145,4 @@
 
 (when (file-exists-p custom-file)
   (load custom-file))
+(put 'erase-buffer 'disabled nil)

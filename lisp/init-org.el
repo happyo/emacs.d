@@ -114,5 +114,10 @@
               shichen-events)))
     (mapconcat 'identity (nreverse shichen-events) "\n")))
 
+(defun my-org-mode-setup ()
+  (setq truncate-lines nil))
+
+(add-hook 'org-mode-hook 'my-org-mode-setup)
+
 (provide 'init-org)
 ;;; init-org.el ends here

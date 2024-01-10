@@ -3,8 +3,6 @@
 ;;; Code:
 (require 'init-elpa)
 
-(use-package ob-swift
-  )
 
 (use-package cc-mode
     :ensure nil
@@ -18,6 +16,7 @@
 (use-package objc-font-lock
   :ensure t
   :hook (objc-mode . objc-font-lock-mode))
+
 
 (provide 'init-swift)
 ;;; init-swift.el ends here
