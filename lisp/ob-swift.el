@@ -1,4 +1,5 @@
 (require 'ob)
+(require 'swift-mode)
 
 (defgroup ob-swift nil
   "Org Mode blocks for Swift."
