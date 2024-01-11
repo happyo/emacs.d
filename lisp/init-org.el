@@ -5,6 +5,11 @@
 (require 'init-elpa)
 (require 'chinese-color)
 
+(use-package ob-swift-enhanced
+  :ensure nil
+  :load-path "~/.emacs.d/site-lisp/ob-swift-enhanced")
+
+
 (defun my-org-setup ()
   "Setup for Org mode."
 

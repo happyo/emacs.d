@@ -124,9 +124,6 @@
 
 
 ;; org
-(require 'ob-swift)
-(setq swift-mode:repl-executable "swift repl")
-
 (require 'init-org)
 (require 'init-denote)
 (require 'init-mode-line)

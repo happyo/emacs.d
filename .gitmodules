@@ -49,3 +49,6 @@
 [submodule "site-lisp/dape"]
 	path = site-lisp/dape
 	url = git@github.com:happyo/dape.git
+[submodule "site-lisp/ob-swift-enhanced"]
+	path = site-lisp/ob-swift-enhanced
+	url = git@github.com:happyo/ob-swift-enhanced.git

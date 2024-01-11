@@ -3,7 +3,6 @@
 ;;; Code:
 (require 'init-elpa)
 
-
 (use-package cc-mode
     :ensure nil
     :config
