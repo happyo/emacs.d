@@ -46,6 +46,31 @@
 (setq acm-enable-copilot nil)
 (setq lsp-bridge-enable-org-babel t)
 
+;; (defun lsp-bridge--find-swift-package (dir)
+;;   "Recursively search for a Package.swift file in DIR and its parent directories."
+;;   (when dir
+;;     (let ((package-file (expand-file-name "Package.swift" dir)))
+;;       (if (file-exists-p package-file)
+;;           dir
+;;         (unless (string= dir "/")
+;;           (lsp-bridge--find-swift-package (file-name-directory (directory-file-name dir))))))))
+
+
+;; (defun lsp-bridge-get-workspace-folder (project-path language-id)
+;;   "Return the workspace folder for the given PROJECT-PATH and LANGUAGE-ID."
+;;   (if (not (equal language-id "swift"))
+;;       ;; 如果 language-id 不是 Swift，返回空
+;;       nil
+;;     ;; 否则，寻找包含 Package.swift 的目录
+;;     (let ((swift-package-dir (lsp-bridge--find-swift-package project-path)))
+;;       (when swift-package-dir
+;;         (let ((uri (concat "file://" (expand-file-name swift-package-dir))))
+;;           ;; LSP格式的工作空间文件夹应该是一个列表，每个元素都是一个包含'uri'的字典
+;;           (list (list :uri uri)))))))
+
+;; ;; 更新 defcustom 的默认值以反映新的函数签名
+;; (setq lsp-bridge-get-workspace-folder 'lsp-bridge-get-workspace-folder)
+
 (global-lsp-bridge-mode)
 
 ;; (use-package dumb-jump)

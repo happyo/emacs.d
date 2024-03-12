@@ -54,6 +54,7 @@
          (org-mode . org-indent-mode))
   :init
   (setq org-indent-mode-turns-on-hiding-stars nil)
+  (setq org-indent-indentation-per-level 1)
   (setq org-agenda-span 'day)
   (setq org-agenda-files '("~/Zettelkasten/PersonalTasks/" "~/Zettelkasten/WorkTasks/" "~/Zettelkasten/TodoList/"))
   (setq org-agenda-include-diary t)

@@ -1,4 +1,3 @@
-
 ;;; Commentary:
 
 ;; This file bootstraps the configuration, which is divided into
@@ -101,7 +100,7 @@
 (require 'init-projectile)
 (require 'init-dash)
 
-(require 'init-translate)
+;; (require 'init-translate)
 
 ;; Code Completion
 (require 'init-lsp)
@@ -109,10 +108,9 @@
 (require 'init-debug)
 
 ;; Language
-(require 'init-citre)
+;; (require 'init-citre)
 (require 'init-magit)
 (require 'init-yasnippet)
-;; (require 'init-eglot)
 (require 'init-lisp)
 (require 'init-haskell)
 (require 'init-web)
@@ -137,7 +135,7 @@
   )
 
 (require 'init-keybinding)
-(require 'init-beframe)
+;; (require 'init-beframe)
 (require 'init-sessions)
 
 (when (file-exists-p custom-file)

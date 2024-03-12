@@ -63,7 +63,7 @@
 
 (use-package disable-mouse)
 
-
+(add-to-list 'load-path "~/.emacs.d/site-lisp/chinese-color")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/holo-layer")
 (require 'holo-layer)
 ;; (setq holo-layer-sort-tab-ui t)

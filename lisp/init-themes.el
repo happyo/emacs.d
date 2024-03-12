@@ -22,8 +22,8 @@
 ;;   )
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp/ef-themes")
-(require 'ef-themes)
 (add-to-list 'load-path "~/.emacs.d/site-lisp/chinese-color")
+(require 'ef-themes)
 (require 'chinese-color)
 
 (setq ef-summer-palette-overrides
@@ -315,6 +315,14 @@
 ;; (diminish 'rainbow-mode)))
 
 ;; (setq tab-bar-show 1)
+;; (use-package centaur-tabs
+;;   :demand
+;;   :config
+;;   (centaur-tabs-mode t)
+;;   (setq centaur-tabs-style "rounded")
+;;   :bind
+;;   ("C-<prior>" . centaur-tabs-backward)
+;;   ("C-<next>" . centaur-tabs-forward))
 (set-face-attribute 'tab-bar-tab nil
                    :box `(:line-width 6 :color ,tcc-026-haitianxia))
 (set-face-attribute 'tab-bar-tab-inactive nil
@@ -329,20 +337,20 @@
 (set-face-attribute 'mode-line-inactive nil
                    :box `(:line-width 5 :color ,tcc-242-fenlv :style nil))
 
-(use-package tabspaces
-  :hook (after-init . tabspaces-mode) ;; use this only if you want the minor-mode loaded at startup. 
-  :commands (tabspaces-switch-or-create-workspace
-             tabspaces-open-or-create-project-and-workspace)
-  :custom
-  (tabspaces-use-filtered-buffers-as-default t)
-  (tabspaces-default-tab "Default")
-  (tabspaces-remove-to-default t)
-  (tabspaces-include-buffers '("*scratch*"))
-  (tabspaces-initialize-project-with-todo t)
-  (tabspaces-todo-file-name "project-todo.org")
-  ;; sessions
-  (tabspaces-session t)
-  (tabspaces-session-auto-restore t))
+;; (use-package tabspaces
+;;   :hook (after-init . tabspaces-mode) ;; use this only if you want the minor-mode loaded at startup. 
+;;   :commands (tabspaces-switch-or-create-workspace
+;;              tabspaces-open-or-create-project-and-workspace)
+;;   :custom
+;;   (tabspaces-use-filtered-buffers-as-default t)
+;;   (tabspaces-default-tab "Default")
+;;   (tabspaces-remove-to-default t)
+;;   (tabspaces-include-buffers '("*scratch*"))
+;;   (tabspaces-initialize-project-with-todo t)
+;;   (tabspaces-todo-file-name "project-todo.org")
+;;   ;; sessions
+;;   (tabspaces-session t)
+;;   (tabspaces-session-auto-restore t))
 
 
 (provide 'init-themes)

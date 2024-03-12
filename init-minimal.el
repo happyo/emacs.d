@@ -29,9 +29,15 @@
 (require 'init-flycheck)
 (require 'init-windows)
 (require 'init-lsp)
+(require 'init-lisp)
 (require 'init-magit)
 (require 'init-treemacs)
 (require 'init-projectile)
 (require 'init-keybinding)
+
+;; (require 'init-chinese)
+;; (require 'init-swift)
+;; (require 'init-org)
+;; (require 'init-denote)
 
 ;;; init-minimal.el ends here
