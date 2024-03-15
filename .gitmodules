@@ -52,3 +52,6 @@
 [submodule "site-lisp/ob-swift-enhanced"]
 	path = site-lisp/ob-swift-enhanced
 	url = git@github.com:happyo/ob-swift-enhanced.git
+[submodule "site-lisp/treesit-auto"]
+	path = site-lisp/treesit-auto
+	url = https://github.com/happyo/treesit-auto

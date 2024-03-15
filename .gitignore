@@ -126,6 +126,7 @@ projects
 blink-search/
 
 .extension/
+tree-sitter/
 
 tabsession.el
 

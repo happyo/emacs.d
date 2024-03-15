@@ -59,12 +59,12 @@
       (blue-warmer     "#8D68F3")
       (blue-cooler     "#002FA7")
       (blue-faint      "#82D8CF")
-      (magenta         ,tcc-095-qingzi)
-      (magenta-warmer  "#ED5736")
+      (magenta         ,tcc-100-ziyuan)
+      (magenta-warmer  ,tcc-085-hongzhizhu)
       (magenta-cooler  "#810DAE")
       (magenta-faint   "#CCA4E3")
       (cyan            "#3AB6DD")
-      (cyan-warmer     "#A4ABD6")
+      (cyan-warmer     "#53976F")
       (cyan-cooler     "#289BA3")
       (cyan-faint      "#AED0EE")
 
@@ -166,7 +166,7 @@
 
 ;;;; Code mappings
 
-      ;; (builtin magenta)
+      (builtin magenta)
       ;; (comment yellow-faint)
       ;; (constant red-cooler)
       ;; (fnname magenta-warmer)

@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Code:
 (require 'init-elpa)
+(require 'swift-mode)
 
 (use-package cc-mode
     :ensure nil
@@ -11,7 +12,7 @@
 (add-to-list 'auto-mode-alist '("\\.mm\\'" . objc-mode))
 (add-to-list 'auto-mode-alist '("\\.h\\'" . objc-mode))
 
-(use-package swift-mode)
+;; (use-package swift-mode)
 (use-package objc-font-lock
   :ensure t
   :hook (objc-mode . objc-font-lock-mode))
