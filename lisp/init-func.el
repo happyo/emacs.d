@@ -117,13 +117,43 @@
     (insert reversed-content)))
 
 ;; my custom functions
-(defun my-scroll-up-half-page ()
-  (interactive)
-  (scroll-up-command (/ (window-body-height) 2)))
+;; (defun my-scroll-up-half-page ()
+;;   "Scroll up half a page or move to the beginning of the buffer."
+;;   (interactive)
+;;   (let ((half-page (/ (window-body-height) 2)))
+;;     (if (<= (line-number-at-pos) half-page)
+;;         (goto-char (point-min))  ; 如果当前行号小于等于半页行数，则跳到缓冲区开头
+;;       (scroll-up-command half-page))))  ; 否则滚动半页
 
-(defun my-scroll-down-half-page ()
-  (interactive)
-  (scroll-down-command (/ (window-body-height) 2)))
+;; (defun my-scroll-down-half-page ()
+;;   "Scroll down half a page or move to the end of the buffer."
+;;   (interactive)
+;;   (let ((half-page (/ (window-body-height) 2)))
+;;     (if (>= (- (line-number-at-pos (point-max)) (line-number-at-pos))
+;;             half-page)
+;;         (scroll-down-command half-page)  ; 如果从当前位置到缓冲区末尾的行数大于等于半页行数，则滚动半页
+;;       (goto-char (point-max)))))  ; 否则跳到缓冲区末尾
+
+  (defun zz-scroll-half-page (direction)
+    "Scrolls half page up if `direction' is non-nil, otherwise will scroll half page down."
+    (let ((opos (cdr (nth 6 (posn-at-point)))))
+      ;; opos = original position line relative to window
+      (move-to-window-line nil)  ;; Move cursor to middle line
+      (if direction
+          (recenter-top-bottom -1)  ;; Current line becomes last
+        (recenter-top-bottom 0))  ;; Current line becomes first
+      (move-to-window-line opos)))  ;; Restore cursor/point position
+  
+  (defun my-scroll-up-half-page ()
+    "Scrolls exactly half page down keeping cursor/point position."
+    (interactive)
+    (zz-scroll-half-page nil))
+  
+  (defun my-scroll-down-half-page ()
+    "Scrolls exactly half page up keeping cursor/point position."
+    (interactive)
+    (zz-scroll-half-page t))
+
 
 (defun my-is-mode-jump-by-xref ()
   "判断当前的 major-mode 是否是 objc-mode 或 emacs-lisp-mode。"

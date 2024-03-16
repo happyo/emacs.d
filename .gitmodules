@@ -55,3 +55,6 @@
 [submodule "site-lisp/treesit-auto"]
 	path = site-lisp/treesit-auto
 	url = https://github.com/happyo/treesit-auto
+[submodule "site-lisp/dart-ts-mode"]
+	path = site-lisp/dart-ts-mode
+	url = https://github.com/50ways2sayhard/dart-ts-mode.git
