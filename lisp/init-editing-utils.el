@@ -62,8 +62,8 @@
 
 ;; rainbow-delimiters is a "rainbow parentheses"-like mode which highlights delimiters such as parentheses
 (use-package rainbow-delimiters
-  :config
-  (add-hook 'prog-mode-hook 'rainbow-delimiters-mode))
+  :hook
+  (prog-mode . rainbow-delimiters-mode))
 
 ;; Show matching parens
 (add-hook 'after-init-hook 'show-paren-mode)
@@ -82,6 +82,11 @@
   (setq-default which-key-idle-delay 1.5)
   :config
   (add-hook 'after-init-hook 'which-key-mode))
+
+(use-package smartparens
+  :config
+  (require 'smartparens-config)
+  (add-hook 'prog-mode-hook 'smartparens-mode))
 
 ;; (use-package smex
 ;;   :config

@@ -9,7 +9,9 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/org-super-links")
 
 (require 'denote)
+(require 'denote-silo-extras)
 
+(setq denote-silo-extras-directories '("~/Documents/ProcrastinationTerminator/doc/design/" "~/work/lining/doc"))
 ;; Remember to check the doc strings of those variables.
 (setq denote-directory (expand-file-name "~/Zettelkasten"))
 (setq denote-known-keywords '("emacs" "philosophy" "politics" "economics"))
@@ -23,6 +25,37 @@
 ;; (setq denote-allow-multi-word-keywords t)
 
 (setq denote-date-format nil) ; read doc string
+
+(defvar my-denote-silo-directories
+  `("~/Documents/ProcrastinationTerminator/doc/design/"
+    ;; You don't actually need to include the `denote-directory' here
+    ;; if you use the regular commands in their global context.  I am
+    ;; including it for completeness.
+    ;; ,denote-directory
+    )
+  "List of file paths pointing to my Denote silos.
+  This is a list of strings.")
+
+(defvar my-denote-commands-for-silos
+  '(
+    denote-insert-link
+    org-open-at-point
+    )
+  "List of Denote commands to call after selecting a silo.
+  This is a list of symbols that specify the note-creating
+  interactive functions that Denote provides.")
+
+(defun my-denote-pick-silo-then-command (silo command)
+  "Select SILO and run Denote COMMAND in it.
+  SILO is a file path from `my-denote-silo-directories', while
+  COMMAND is one among `my-denote-commands-for-silos'."
+  (interactive
+   (list (completing-read "Select a silo: " my-denote-silo-directories nil t)
+         (intern (completing-read
+                  "Run command in silo: "
+                  my-denote-commands-for-silos nil t))))
+  (let ((denote-directory silo))
+    (call-interactively command)))
 
 ;; ;; You will not need to `require' all those individually once the
 ;; ;; package is available.

@@ -14,6 +14,29 @@
   ;; Must set before enable `meow-global-mode`
   (setq meow-use-cursor-position-hack t
         meow-use-enhanced-selection-effect t)  ;; optional, for visual effect
+  (setq meow-expand-hint-remove-delay 2.0)
+
+  (setq meow-paren-keymap (make-keymap))
+  (meow-define-state paren
+    "meow state for interacting with smartparens"
+    :lighter " [P]"
+    :keymap meow-paren-keymap)
+
+  ;; meow-define-state creates the variable
+  (setq meow-cursor-type-paren 'hollow)
+
+  (meow-define-keys 'paren
+    '("<escape>" . meow-normal-mode)
+    '("l" . sp-forward-sexp)
+    '("h" . sp-backward-sexp)
+    '("j" . sp-down-sexp)
+    '("k" . sp-up-sexp)
+    '("n" . sp-forward-slurp-sexp)
+    '("b" . sp-forward-barf-sexp)
+    '("v" . sp-backward-barf-sexp)
+    '("c" . sp-backward-slurp-sexp)
+    '("u" . meow-undo))
+
   (meow-motion-overwrite-define-key
    '("j" . meow-next)
    '("k" . meow-prev)
@@ -83,7 +106,7 @@
    '("o" . meow-open-below)
    '("O" . meow-open-above)
    '("p" . meow-yank)
-   ;; '("P" . meow-sync-grab)
+   '("P" . meow-paren-mode)
    '("q" . meow-minibuffer-quit)
    '("Q" . meow-last-buffer)
    '("r" . meow-replace)
@@ -128,8 +151,7 @@
   (meow-setup)
   ;; If you want relative line number in NORMAL state(for display-line-numbers-mode)
   (meow-setup-line-number)
-  (meow-global-mode 1)
-  )
+  (meow-global-mode 1))
 
 
 (provide 'init-meow)
