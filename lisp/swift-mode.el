@@ -515,7 +515,7 @@ Use `M-x hs-show-all' to show them again."
 (defgroup swift nil
   "Major mode for editing swift source files."
   :prefix "swift-")
-(add-to-list 'auto-mode-alist '("\\.swift\\'" . swift-mode))
+;; (add-to-list 'auto-mode-alist '("\\.swift\\'" . swift-mode))
 
 (provide 'swift-mode)
 

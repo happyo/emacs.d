@@ -78,14 +78,15 @@
 ;; (setq xref-show-definitions-function #'xref-show-definitions-completing-read)
 
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/treesit-auto")
-;; (require 'treesit)
+(require 'treesit)
 ;; (require 'treesit-auto)
+(add-to-list 'auto-mode-alist '("\\.swift\\'" . swift-ts-mode))
 
 ;; (setq treesit-auto-install 'prompt)
 ;; ;; (treesit-auto-add-to-auto-mode-alist '(dart swift html json javascript typescript css markdown tsx))
 ;; ;; (setq treesit-auto-langs '(dart swift html json javascript typescript css markdown tsx))
 ;; ;;(add-to-list 'major-model-remap-alist '(dart-mode . dart-ts-mode))
-;; ;;(add-to-list 'major-model-remap-alist '(swift-mode . swift-ts-mode))
+;; (add-to-list 'major-model-remap-alist '(swift-mode . swift-ts-mode))
 ;; (global-treesit-auto-mode)
 ;; (use-package treesit-auto
 ;;   :demand t

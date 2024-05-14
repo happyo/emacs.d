@@ -6,7 +6,7 @@
   :diminish
   :bind ("M-m" . magit)
   :config
-  (setq magit-status-buffer-switch-function 'switch-to-buffer)
+  ;; (setq magit-status-buffer-switch-function 'switch-to-buffer)
 
   ;; (setq magit-display-buffer-function
   ;;     (lambda (buffer)

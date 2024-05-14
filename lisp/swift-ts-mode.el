@@ -276,8 +276,7 @@
      (call_expression (simple_identifier) @font-lock-type-face)
      (class_declaration (type_identifier) @font-lock-type-face)
      (inheritance_specifier (user_type (type_identifier)) @font-lock-type-face)
-     ((navigation_expression (simple_identifier) @font-lock-type-face)
-      (:match "^[A-Z]" @font-lock-type-face)))
+     ((navigation_expression (simple_identifier) @font-lock-type-face)))
 
    :language 'swift
    :feature 'keyword

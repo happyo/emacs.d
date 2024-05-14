@@ -139,6 +139,9 @@
 ;; (require 'init-beframe)
 (require 'init-sessions)
 
+;; Start emacsclient server
+(server-start)
+
 (when (file-exists-p custom-file)
   (load custom-file))
 (put 'erase-buffer 'disabled nil)
