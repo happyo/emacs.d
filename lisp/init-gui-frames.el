@@ -56,6 +56,8 @@
           (lambda ()
             (setq line-spacing 0)))
 
+;;(set-default line-spacing 02)
+
 ;; Change global font size easily
 
 (use-package default-text-scale)

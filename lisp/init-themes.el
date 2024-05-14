@@ -29,8 +29,8 @@
 (setq ef-summer-palette-overrides
       `(
 ;;; Basic values
-
-      (bg-main     ,tcc-108-ziyun)
+      ;; (bg-main     ,tcc-108-ziyun)
+      (bg-main     "#dcdcdc")
       (fg-main     ,tcc-331-zhumo)
       (bg-dim      ,tcc-116-fenqing)
       (fg-dim      "#777294")
@@ -261,9 +261,103 @@
 ;; Disable all other themes to avoid awkward blending:
 (mapc #'disable-theme custom-enabled-themes)
 
+;; 定义新的 font-lock faces
+
+(defface font-lock-bracket-face
+  '((t :foreground "orange"))
+  "Face for brackets."
+  :group 'font-lock-faces)
+
+(defface font-lock-delimiter-face
+  '((t :foreground "cyan"))
+  "Face for delimiters."
+  :group 'font-lock-faces)
+
+(defface font-lock-escape-face
+  '((t :foreground "magenta"))
+  "Face for escape characters."
+  :group 'font-lock-faces)
+
+(defface font-lock-function-call-face
+  '((t :foreground "blue" :weight bold))
+  "Face for function calls."
+  :group 'font-lock-faces)
+
+(defface font-lock-misc-punctuation-face
+  '((t :foreground "yellow"))
+  "Face for miscellaneous punctuation."
+  :group 'font-lock-faces)
+
+(defface font-lock-number-face
+  '((t :foreground "purple"))
+  "Face for numbers."
+  :group 'font-lock-faces)
+
+(defface font-lock-operator-face
+  '((t :foreground "red"))
+  "Face for operators."
+  :group 'font-lock-faces)
+
+(defface font-lock-property-name-face
+  '((t :foreground "green" :weight bold))
+  "Face for property names."
+  :group 'font-lock-faces)
+
+(defface font-lock-property-ref-face
+  '((t :foreground "pink" :weight bold))
+  "Face for property names."
+  :group 'font-lock-faces)
+
+(defface font-lock-property-use-face
+  '((t :foreground "blue"))
+  "Face for property use."
+  :group 'font-lock-faces)
+
+(defface font-lock-punctuation-face
+  '((t :foreground "cyan"))
+  "Face for punctuation."
+  :group 'font-lock-faces)
+
+(defface font-lock-regexp-face
+  '((t :foreground "magenta" :weight bold))
+  "Face for regular expressions."
+  :group 'font-lock-faces)
+
+(defface font-lock-variable-use-face
+  '((t :foreground "yellow"))
+  "Face for variable use."
+  :group 'font-lock-faces)
+;; (defun my-ef-themes-custom-faces ()
+;;   "My customizations on top of the Ef themes.
+;; This function is added to the `ef-themes-post-load-hook'."
+;;   (ef-themes-with-colors
+;;     (custom-set-faces
+;;      `(font-lock-function-call-face ((,c :foreground ,variable)))
+;;      `(font-lock-property-ref-face ((,c :foreground ,variable)))
+;;      `(font-lock-comment-face ((,c :foreground ,variable)))
+;;      `(font-lock-variable-name-face ((,c :inherit italic :foreground ,comment)))
+;;      `(font-lock-bracket-face ((,c :foreground ,variable)))
+;;      `(font-lock-delimiter-face ((,c :foreground ,variable)))
+;;      `(font-lock-escape-face ((,c :foreground ,variable)))
+;;      `(font-lock-misc-punctuation-face ((,c :foreground ,variable)))
+;;      `(font-lock-number-face ((,c :foreground ,variable)))
+;;      `(font-lock-operator-face ((,c :foreground ,variable)))
+;;      `(font-lock-property-name-face ((,c :foreground ,variable)))
+;;      `(font-lock-property-use-face ((,c :foreground ,variable)))
+;;      `(font-lock-punctuation-face ((,c :foreground ,variable)))
+;;      `(font-lock-regexp-face ((,c :foreground ,variable)))
+;;      `(font-lock-variable-use-face ((,c :foreground ,variable))))))
+
+
+;; ;; Using the hook lets our changes persist when we use the commands
+;; ;; `ef-themes-toggle', `ef-themes-select', and `ef-themes-load-random'.
+;; (add-hook 'ef-themes-post-load-hook #'my-ef-themes-custom-faces)
+
+;; Load the theme and run `ef-themes-post-load-hook'
+(ef-themes-select 'ef-summer) ; Instead of (load-theme 'ef-summer :no-confirm)
+
 ;; Load the theme of choice:
 ;; (ef-themes-select 'ef-spring)
-(load-theme 'ef-summer :no-confirm)
 
  ; original value is blue-warmer
 
