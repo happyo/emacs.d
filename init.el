@@ -92,7 +92,8 @@
 (require 'init-dired)
 (require 'init-search)
 (require 'init-ibuffer)
-(require 'init-flycheck)
+;; 感觉这个和lsp功能重复了
+;; (require 'init-flycheck)
 
 (require 'init-windows)
 

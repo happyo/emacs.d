@@ -26,7 +26,7 @@
 (require 'init-dired)
 (require 'init-search)
 (require 'init-ibuffer)
-(require 'init-flycheck)
+;; (require 'init-flycheck)
 (require 'init-windows)
 (require 'init-lsp)
 (require 'init-lisp)
