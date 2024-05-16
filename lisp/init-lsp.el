@@ -55,9 +55,6 @@
 ;; (require 'treesit-auto)
 (add-to-list 'auto-mode-alist '("\\.swift\\'" . swift-ts-mode))
 
-;; ;; Debug
-;; (use-package dap-mode)
-
 (use-package prettier-js)
 
 (provide 'init-lsp)
