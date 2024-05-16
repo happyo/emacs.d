@@ -31,7 +31,8 @@
 ;;; Basic values
       ;; (bg-main     ,tcc-108-ziyun)
       (bg-main     "#dcdcdc")
-      (fg-main     ,tcc-331-zhumo)
+      (fg-main     ,tcc-326-yanmo)
+      ;; (fg-main     "#333333")
       (bg-dim      ,tcc-116-fenqing)
       (fg-dim      "#777294")
       
@@ -225,7 +226,7 @@
 
       (bg-tab-bar      bg-main)
       (bg-tab-current  ,tcc-026-haitianxia)
-      (bg-tab-other    ,tcc-081-dingxiang)
+      (bg-tab-other    ,tcc-124-yuebai)
       
 ;;;; Rainbow mappings
 
@@ -233,7 +234,7 @@
   (rainbow-1 ,tcc-102-ziluolan)
   (rainbow-2 ,tcc-131-cangcang)
   (rainbow-3 ,tcc-156-tianshuibi)
-  (rainbow-4 ,tcc-165-zhizi)
+  (rainbow-4 ,tcc-157-facui)
   (rainbow-5 ,tcc-013-meihong)
   (rainbow-6 ,tcc-013-meihong)
       ))
@@ -304,7 +305,7 @@
   :group 'font-lock-faces)
 
 (defface font-lock-property-ref-face
-  '((t :foreground "pink" :weight bold))
+  '((t :foreground "#ff69b4" :weight bold))
   "Face for property names."
   :group 'font-lock-faces)
 
@@ -418,9 +419,15 @@
 ;;   ("C-<prior>" . centaur-tabs-backward)
 ;;   ("C-<next>" . centaur-tabs-forward))
 (set-face-attribute 'tab-bar-tab nil
-                   :box `(:line-width 6 :color ,tcc-026-haitianxia))
+                    :box `(:line-width 6 :color ,tcc-026-haitianxia)
+                    :weight 'normal
+  )
+
 (set-face-attribute 'tab-bar-tab-inactive nil
-                    :box `(:line-width 6 :color ,tcc-081-dingxiang))
+                    :box `(:line-width 6 :color ,tcc-124-yuebai)
+                    :weight 'normal
+  )
+
 (setq tab-bar-new-button-show nil)
 (setq tab-bar-close-button-show t)
 ;; (setq tab-bar-format '(tab-bar-format-tabs tab-bar-separator))
