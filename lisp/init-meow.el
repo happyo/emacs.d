@@ -148,6 +148,7 @@
   :config
   ;; meow-setup is your custom function, see below
   (add-to-list 'meow-mode-state-list '(eaf-mode . normal))
+  (setq meow-goto-line-function #'goto-line)
   (meow-setup)
   ;; If you want relative line number in NORMAL state(for display-line-numbers-mode)
   (meow-setup-line-number)

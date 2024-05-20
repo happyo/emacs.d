@@ -5,6 +5,18 @@
 
 (require 'swift-mode)
 
+(use-package ob-swift-enhanced
+  :ensure nil
+  :load-path "~/.emacs.d/site-lisp/ob-swift-enhanced")
+
+(require 'ob-swift-enhanced)
+(use-package swift-ts-mode
+  :ensure nil
+  :bind (:map swift-ts-mode-map
+              ("M-r" . xcode-build:run))
+  :load-path "~/.emacs.d/lisp/swift-ts-mode")
+(require 'swift-ts-mode)
+
 (use-package cc-mode
     :ensure nil
     :config
@@ -17,7 +29,6 @@
 (use-package objc-font-lock
   :ensure t
   :hook (objc-mode . objc-font-lock-mode))
-
 
 ;; (defun my-swift-mode-save-hook ()
 ;;   "在 Swift 模式文件保存时执行 'swift build'。"

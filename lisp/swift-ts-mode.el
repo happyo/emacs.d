@@ -41,6 +41,11 @@
 (declare-function treesit-node-parent "treesit.c")
 (declare-function treesit-query-compile "treesit.c")
 
+(defvar swift-ts-mode-map
+  (let ((keymap (make-sparse-keymap)))
+    keymap)
+  "Keymap for `swift-ts-mode'.")
+
 (defcustom swift-ts-mode-indent-offset 4
   "Number of spaces for each indentation step in `swift-ts-mode'."
   :version "29.1"
@@ -413,6 +418,11 @@ Return nil if there is no name or if NODE is not a defun node."
 
 (if (treesit-ready-p 'swift)
     (add-to-list 'auto-mode-alist '("\\.swift\\'" . swift-ts-mode)))
+
+;; 绑定键映射到 swift-ts-mode
+(add-hook 'swift-ts-mode-hook
+          (lambda ()
+            (use-local-map swift-ts-mode-map)))
 
 (provide 'swift-ts-mode)
 

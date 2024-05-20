@@ -28,7 +28,7 @@
   :bind (:map emacs-lisp-mode-map
          ("C-c C-x" . ielm)
          ("C-c C-c" . eval-defun)
-         ("C-c C-b" . eval-buffer))
+         ("M-r" . eval-buffer))
   :hook (emacs-lisp-mode . (lambda ()
                              "Disable the checkdoc checker."
                              (setq-local flycheck-disabled-checkers

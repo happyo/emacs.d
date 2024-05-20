@@ -81,12 +81,14 @@
   :init
   (setq-default which-key-idle-delay 1.5)
   :config
-  (add-hook 'after-init-hook 'which-key-mode))
+  (which-key-mode))
 
-(use-package smartparens
+(use-package smartparens-mode
+  :ensure smartparens  ;; install the package
+  :hook (prog-mode text-mode markdown-mode) ;; add `smartparens-mode` to these hooks
   :config
-  (require 'smartparens-config)
-  (add-hook 'prog-mode-hook 'smartparens-mode))
+  ;; load default config
+  (require 'smartparens-config))
 
 ;; (use-package smex
 ;;   :config

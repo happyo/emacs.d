@@ -120,7 +120,6 @@
 (if (needConda)
     (require 'init-python))
 (require 'init-swift)
-(require 'swift-ts-mode)
 
 
 ;; org

@@ -127,7 +127,7 @@
   ;; Replace bindings. Lazily loaded due by `use-package'.
   :bind (;; C-c bindings (mode-specific-map)
          ("C-c h" . consult-history)
-         ("M-f" . consult-grep)
+         ("M-f" . consult-ripgrep)
          ("M-b" . consult-buffer)
          ("M-O" . consult-fd)
          :map isearch-mode-map
@@ -145,7 +145,7 @@
   ;; Optionally configure the register formatting. This improves the register
   ;; preview for `consult-register', `consult-register-load',
   ;; `consult-register-store' and the Emacs built-ins.
-  (setq register-preview-delay 0.5
+  (setq register-preview-delay 0
         register-preview-function #'consult-register-format)
 
   ;; Optionally tweak the register preview window.

@@ -32,16 +32,22 @@
   (cond ((eq major-mode 'org-mode) (org-open-at-point))
         (t (lsp-bridge-find-def))))
 
+(defun my-delete-to-line-beginning ()
+  "Delete text from the current position to the beginning of the line."
+  (interactive)
+  (delete-region (point) (line-beginning-position)))
+
 (defvar my-custom-minor-mode-map (make-sparse-keymap)
   "自定义的 keymap，用于覆盖其他 mode 的快捷键。")
 
 (define-key my-custom-minor-mode-map (kbd "M-g") 'tab-bar-select-tab)
 (define-key my-custom-minor-mode-map (kbd "M-w") 'tab-close)
-(define-key my-custom-minor-mode-map (kbd "M-DEL") 'backward-kill-sentence)
+(define-key my-custom-minor-mode-map (kbd "M-DEL") 'my-delete-to-line-beginning)
 (define-key my-custom-minor-mode-map (kbd "C-o") 'universal-argument)
+;; (define-key my-custom-minor-mode-map (kbd "C-n") 'universal-argument)
 (define-key my-custom-minor-mode-map (kbd "C-d") 'my-scroll-up-half-page)
 (define-key my-custom-minor-mode-map (kbd "C-u") 'my-scroll-down-half-page)
-(define-key my-custom-minor-mode-map (kbd "M-r") 'eval-last-sexp)
+;; (define-key my-custom-minor-mode-map (kbd "M-r") 'eval-buffer)
 (define-key my-custom-minor-mode-map (kbd "M--") 'text-scale-decrease)
 (define-key my-custom-minor-mode-map (kbd "M-=") 'text-scale-increase)
 (define-key my-custom-minor-mode-map (kbd "M-c") 'kill-ring-save)
