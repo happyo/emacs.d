@@ -34,9 +34,6 @@
 [submodule "site-lisp/chinese-color"]
 	path = site-lisp/chinese-color
 	url = git@github.com:happyo/chinese-color.git
-[submodule "site-lisp/holo-layer"]
-	path = site-lisp/holo-layer
-	url = git@github.com:happyo/holo-layer.git
 [submodule "site-lisp/dape"]
 	path = site-lisp/dape
 	url = git@github.com:happyo/dape.git
