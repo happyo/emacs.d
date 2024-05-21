@@ -46,3 +46,6 @@
 [submodule "site-lisp/dart-ts-mode"]
 	path = site-lisp/dart-ts-mode
 	url = https://github.com/50ways2sayhard/dart-ts-mode.git
+[submodule "site-lisp/go-translate"]
+	path = site-lisp/go-translate
+	url = https://github.com/lorniu/go-translate.git

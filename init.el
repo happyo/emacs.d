@@ -101,7 +101,7 @@
 (require 'init-projectile)
 (require 'init-dash)
 
-;; (require 'init-translate)
+(require 'init-translate)
 
 ;; Code Completion
 (require 'init-lsp)
