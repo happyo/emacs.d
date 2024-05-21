@@ -154,6 +154,5 @@
   (meow-setup-line-number)
   (meow-global-mode 1))
 
-
 (provide 'init-meow)
 ;;; init-meow.el ends here

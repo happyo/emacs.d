@@ -401,11 +401,11 @@
   (add-hook 'swift-ts-mode-hook 'rainbow-mode)
   )
 
-;; (use-package beacon)
-;; (setq-default beacon-lighter "")
-;; (setq-default beacon-size 20)
-;; (setq-default beacon-color tcc-076-danfeng)
-;; (beacon-mode 1)
+(use-package beacon)
+(setq-default beacon-lighter "")
+(setq-default beacon-size 20)
+(setq-default beacon-color tcc-171-minghuang)
+(beacon-mode 1)
 
 ;; (diminish 'rainbow-mode)))
 
