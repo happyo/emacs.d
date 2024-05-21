@@ -4,34 +4,37 @@
 (require 'init-elpa)
 (require 'init-func)
 
-(use-package substitute
-  )
+;; (use-package substitute
+;;   )
 
-(require 'substitute)
-;; Set this to nil if you do not like visual feedback on the matching
-;; target.  Default is t.
-(setq substitute-highlight nil)
+;; (require 'substitute)
+;; ;; Set this to nil if you do not like visual feedback on the matching
+;; ;; target.  Default is t.
+;; (setq substitute-highlight nil)
 
-;; Set this to t if you want to always treat the letter casing
-;; literally.  Otherwise each command accepts a `C-u' prefix
-;; argument to do this on-demand.
-(setq substitute-fixed-letter-case t)
+;; ;; Set this to t if you want to always treat the letter casing
+;; ;; literally.  Otherwise each command accepts a `C-u' prefix
+;; ;; argument to do this on-demand.
+;; (setq substitute-fixed-letter-case t)
 
-;; If you want a message reporting the matches that changed in the
-;; given context.  We don't do it by default.
-(add-hook 'substitute-post-replace-functions #'substitute-report-operation)
+;; ;; If you want a message reporting the matches that changed in the
+;; ;; given context.  We don't do it by default.
+;; (add-hook 'substitute-post-replace-functions #'substitute-report-operation)
 
-;; We do not bind any keys.  This is just an idea.  The mnemonic is
-;; that M-# (or M-S-3) is close to M-% (or M-S-5).
-(let ((map global-map))
-  (define-key map (kbd "M-# s") #'substitute-target-below-point)
-  (define-key map (kbd "M-# r") #'substitute-target-above-point)
-  (define-key map (kbd "M-# d") #'substitute-target-in-defun)
-  (define-key map (kbd "M-# b") #'substitute-target-in-buffer))
+;; ;; We do not bind any keys.  This is just an idea.  The mnemonic is
+;; ;; that M-# (or M-S-3) is close to M-% (or M-S-5).
+;; (let ((map global-map))
+;;   (define-key map (kbd "M-# s") #'substitute-target-below-point)
+;;   (define-key map (kbd "M-# r") #'substitute-target-above-point)
+;;   (define-key map (kbd "M-# d") #'substitute-target-in-defun)
+;;   (define-key map (kbd "M-# b") #'substitute-target-in-buffer))
 
 
 (use-package vertico
   :ensure t
+  :bind (:map vertico-map
+         ("M-d" . vertico-scroll-up)  ;; 向下翻页
+         ("M-u" . vertico-scroll-down))  ;; 向上翻页
   :init
   (vertico-mode)
 
@@ -50,6 +53,7 @@
   ;; Persist history over Emacs restarts. Vertico sorts by history position.
   )
 
+
 ;; Configure directory extension.
 (use-package vertico-directory
   :after vertico
@@ -58,7 +62,8 @@
   :bind (:map vertico-map
          ("RET" . vertico-directory-enter)
          ("DEL" . vertico-directory-delete-char)
-         ("M-DEL" . vertico-directory-delete-word))
+         ("M-DEL" . vertico-directory-delete-word)
+        )
   ;; Tidy shadowed file names
   :hook (rfn-eshadow-update-overlay . vertico-directory-tidy))
 
@@ -145,7 +150,7 @@
   ;; Optionally configure the register formatting. This improves the register
   ;; preview for `consult-register', `consult-register-load',
   ;; `consult-register-store' and the Emacs built-ins.
-  (setq register-preview-delay 0
+  (setq register-preview-delay 0.2
         register-preview-function #'consult-register-format)
 
   ;; Optionally tweak the register preview window.
@@ -163,18 +168,18 @@
   ;; Optionally configure preview. The default value
   ;; is 'any, such that any key triggers the preview.
   ;; (setq consult-preview-key 'any)
-  ;; (setq consult-preview-key "M-.")
+  (setq consult-preview-key "M-.")
   ;; (setq consult-preview-key '("S-<down>" "S-<up>"))
   ;; For some commands and buffer sources it is useful to configure the
   ;; :preview-key on a per-command basis using the `consult-customize' macro.
   (consult-customize
-   consult-theme :preview-key '(:debounce 0.2 any)
+   consult-theme :preview-key '(:debounce 0.2 "M-.")
    consult-ripgrep consult-git-grep consult-grep
    consult-bookmark consult-recent-file consult-xref
    consult--source-bookmark consult--source-file-register
    consult--source-recent-file consult--source-project-recent-file
    ;; :preview-key "M-."
-   :preview-key '(:debounce 0.4 any))
+   :preview-key '(:debounce 0.2 "M-."))
   ;; Optionally configure the narrowing key.
   ;; Both < and C-+ work reasonably well.
   (setq consult-narrow-key "<") ;; "C-+"

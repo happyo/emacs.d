@@ -10,21 +10,10 @@
 (global-set-key (kbd "M-/") 'comment-line)
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
 (global-set-key (kbd "M-[") 'indent-region)
-
-
-(defun my-jump-to-definition ()
-  "根据当前的 major-mode 调用相应的跳转到定义的函数。"
-  (interactive)
-  (if (my-is-mode-jump-by-xref)
-      (xref-find-definitions (xref-backend-identifier-at-point (xref-find-backend)))
-    (lsp-bridge-find-def)))
-
-(defun my-go-back ()
-  "根据当前的 major-mode 调用相应的返回上一个位置的函数。"
-  (interactive)
-  (if (my-is-mode-jump-by-xref)
-      (xref-go-back)
-    (lsp-bridge-find-def-return)))
+;; (global-set-key (kbd "C-d") 'my-scroll-up-half-page)
+;; (global-set-key (kbd "C-u") 'my-scroll-down-half-page)
+(global-set-key (kbd "C-d") 'vertico-scroll-up)
+(global-set-key (kbd "C-u") 'vertico-scroll-down)
 
 (defun my-custom-m-dot-function ()
   "Execute different functions based on the current major mode."
@@ -45,8 +34,6 @@
 (define-key my-custom-minor-mode-map (kbd "M-DEL") 'my-delete-to-line-beginning)
 (define-key my-custom-minor-mode-map (kbd "C-o") 'universal-argument)
 ;; (define-key my-custom-minor-mode-map (kbd "C-n") 'universal-argument)
-(define-key my-custom-minor-mode-map (kbd "C-d") 'my-scroll-up-half-page)
-(define-key my-custom-minor-mode-map (kbd "C-u") 'my-scroll-down-half-page)
 ;; (define-key my-custom-minor-mode-map (kbd "M-r") 'eval-buffer)
 (define-key my-custom-minor-mode-map (kbd "M--") 'text-scale-decrease)
 (define-key my-custom-minor-mode-map (kbd "M-=") 'text-scale-increase)
