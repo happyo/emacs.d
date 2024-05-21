@@ -381,7 +381,6 @@
 (use-package all-the-icons
   :if (display-graphic-p))
 
-(add-to-list 'load-path "~/.emacs.d/site-lisp/treemacs-nerd-icons")
 (use-package nerd-icons
   :custom
   ;; The Nerd Font you want to use in GUI
@@ -390,7 +389,7 @@
   ;; (nerd-icons-font-family "3270 Nerd Font Mono")
   (nerd-icons-font-family "Symbols Nerd Font Mono")
   )
-
+(add-to-list 'load-path "~/.emacs.d/site-lisp/treemacs-nerd-icons")
 
 (use-package rainbow-mode
   :init
@@ -399,6 +398,7 @@
       (rainbow-mode)))
   (add-hook 'emacs-lisp-mode-hook 'sanityinc/enable-rainbow-mode-if-theme)
   (add-hook 'help-mode-hook 'rainbow-mode)
+  (add-hook 'swift-ts-mode-hook 'rainbow-mode)
   )
 
 ;; (use-package beacon)
@@ -409,15 +409,6 @@
 
 ;; (diminish 'rainbow-mode)))
 
-;; (setq tab-bar-show 1)
-;; (use-package centaur-tabs
-;;   :demand
-;;   :config
-;;   (centaur-tabs-mode t)
-;;   (setq centaur-tabs-style "rounded")
-;;   :bind
-;;   ("C-<prior>" . centaur-tabs-backward)
-;;   ("C-<next>" . centaur-tabs-forward))
 (set-face-attribute 'tab-bar-tab nil
                     :box `(:line-width 6 :color ,tcc-026-haitianxia)
                     :weight 'normal
@@ -429,30 +420,28 @@
   )
 
 (setq tab-bar-new-button-show nil)
-(setq tab-bar-close-button-show t)
+(setq tab-bar-close-button-show nil)
 ;; (setq tab-bar-format '(tab-bar-format-tabs tab-bar-separator))
-(setq tab-bar-tab-hints t) 
+(setq tab-bar-tab-hints t)
+(customize-set-variable 'tab-bar-select-tab-modifiers '(meta))
 (tab-bar-mode 1)                           ;; enable tab bar
+
+;; 自定义函数格式化标签名以增加宽度
+(setq tab-bar-tab-name-format-function
+        (lambda (tab i)
+          (let ((face (funcall tab-bar-tab-face-function tab)))
+            (concat
+             (propertize " " 'face face)
+             (propertize (number-to-string i) 'face `(:inherit ,face :weight ultra-bold))
+             (propertize " " 'face face)
+             (propertize (concat " " (alist-get 'name tab) " ") 'face face)))))
+
+(setq tab-bar-format '(tab-bar-format-tabs))
+
 (set-face-attribute 'mode-line nil
                    :box `(:line-width 5 :color ,tcc-173-chaomi :style nil))
 (set-face-attribute 'mode-line-inactive nil
-                   :box `(:line-width 5 :color ,tcc-242-fenlv :style nil))
-
-;; (use-package tabspaces
-;;   :hook (after-init . tabspaces-mode) ;; use this only if you want the minor-mode loaded at startup. 
-;;   :commands (tabspaces-switch-or-create-workspace
-;;              tabspaces-open-or-create-project-and-workspace)
-;;   :custom
-;;   (tabspaces-use-filtered-buffers-as-default t)
-;;   (tabspaces-default-tab "Default")
-;;   (tabspaces-remove-to-default t)
-;;   (tabspaces-include-buffers '("*scratch*"))
-;;   (tabspaces-initialize-project-with-todo t)
-;;   (tabspaces-todo-file-name "project-todo.org")
-;;   ;; sessions
-;;   (tabspaces-session t)
-;;   (tabspaces-session-auto-restore t))
-
+                    :box `(:line-width 5 :color ,tcc-242-fenlv :style nil))
 
 (provide 'init-themes)
 ;;; init-themes.el end

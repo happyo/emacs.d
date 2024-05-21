@@ -65,13 +65,11 @@
 
 (use-package disable-mouse)
 
-(add-to-list 'load-path "~/.emacs.d/site-lisp/chinese-color")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/holo-layer")
-(require 'holo-layer)
-;; (setq holo-layer-sort-tab-ui t)
-(setq holo-layer-enable-cursor-animation t)
-(setq holo-layer-enable-indent-rainbow t)
-(setq holo-layer-cursor-block-commands '("watch-other-window-up" "watch-other-window-down" "self-insert-command"))
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/holo-layer")
+;; (require 'holo-layer)
+;; (setq holo-layer-enable-cursor-animation t)
+;; (setq holo-layer-enable-indent-rainbow t)
+;; (setq holo-layer-cursor-block-commands '("watch-other-window-up" "watch-other-window-down" "self-insert-command"))
 ;; (holo-layer-enable)
 
 
