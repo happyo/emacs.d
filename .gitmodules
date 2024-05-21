@@ -13,9 +13,6 @@
 [submodule "site-lisp/meow"]
 	path = site-lisp/meow
 	url = git@github.com:happyo/meow.git
-[submodule "site-lisp/mind-wave"]
-	path = site-lisp/mind-wave
-	url = git@github.com:happyo/mind-wave.git
 [submodule "site-lisp/denote"]
 	path = site-lisp/denote
 	url = https://github.com/protesilaos/denote.git
@@ -31,18 +28,12 @@
 [submodule "site-lisp/treemacs-nerd-icons"]
 	path = site-lisp/treemacs-nerd-icons
 	url = https://github.com/rainstormstudio/treemacs-nerd-icons.git
-[submodule "site-lisp/nerd-icons"]
-	path = site-lisp/nerd-icons
-	url = https://github.com/rainstormstudio/nerd-icons.el.git
 [submodule "site-lisp/beframe"]
 	path = site-lisp/beframe
 	url = https://github.com/protesilaos/beframe.git
 [submodule "site-lisp/chinese-color"]
 	path = site-lisp/chinese-color
 	url = git@github.com:happyo/chinese-color.git
-[submodule "site-lisp/awesome-tray"]
-	path = site-lisp/awesome-tray
-	url = git@github.com:happyo/awesome-tray.git
 [submodule "site-lisp/holo-layer"]
 	path = site-lisp/holo-layer
 	url = git@github.com:happyo/holo-layer.git
