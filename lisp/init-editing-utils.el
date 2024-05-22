@@ -5,6 +5,18 @@
 
 (use-package format-all)
 
+;; Type speed
+(use-package speed-type)
+
+;; Indent
+(use-package indent-guide
+  :ensure t
+  :config
+  (set-face-background 'indent-guide-face "#dcdcdc")
+  (setq indent-guide-delay 0.1)
+  (indent-guide-global-mode)
+)
+
 (when (fboundp 'electric-pair-mode)
   (add-hook 'after-init-hook 'electric-pair-mode))
 (add-hook 'after-init-hook 'electric-indent-mode)

@@ -4,6 +4,9 @@
 
 (require 'init-elpa)
 (require 'init-editing-utils)
+(require 'init-copilot)
+
+(add-hook 'prog-mode-hook 'hs-minor-mode)
 
 (global-set-key (kbd "M-d") 'delete-char)
 
@@ -36,6 +39,9 @@
     '("v" . sp-backward-barf-sexp)
     '("c" . sp-backward-slurp-sexp)
     '("u" . meow-undo))
+
+  (meow-define-keys 'insert
+    '("TAB" . my/copilot-tab))
 
   (meow-motion-overwrite-define-key
    '("j" . meow-next)
@@ -131,6 +137,7 @@
    '("/" . meow-visit)
    '("<escape>" . ignore)
    '("DEL" . meow-beacon-kill-delete)
+   '("TAB" . hs-toggle-hiding)
    ))
 
 (use-package meow

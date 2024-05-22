@@ -27,21 +27,9 @@
   (add-to-list 'default-frame-alist no-border)
   (add-to-list 'initial-frame-alist no-border))
 
-(defun adjust-opacity (frame incr)
-  "Adjust the background opacity of FRAME by increment INCR."
-  (unless (display-graphic-p frame)
-    (error "Cannot adjust opacity of this frame"))
-  (let* ((alpha (frame-parameter frame 'alpha))
-         (background-alpha (if (listp alpha) (car alpha) alpha))
-         (text-alpha (if (listp alpha) (cadr alpha) 100))
-         (new-background-alpha (+ background-alpha incr)))
-    (set-frame-parameter frame 'alpha (list new-background-alpha text-alpha))))
-
-
-(global-set-key (kbd "M-C-e") (lambda () (interactive) (adjust-opacity (selected-frame) -3)))
-(global-set-key (kbd "M-C-r") (lambda () (interactive) (adjust-opacity (selected-frame) 3)))
-(global-set-key (kbd "M-C-7") (lambda () (interactive) (modify-frame-parameters nil `((alpha . 100)))))
-
+(use-package transwin)
+(global-set-key (kbd "M-C-e") (lambda () (interactive) (transwin-dec)))
+(global-set-key (kbd "M-C-r") (lambda () (interactive) (transwin-inc)))
 
 (use-package ns-auto-titlebar)
 
@@ -64,14 +52,6 @@
 (when *is-a-mac* (ns-auto-titlebar-mode))
 
 (use-package disable-mouse)
-
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/holo-layer")
-;; (require 'holo-layer)
-;; (setq holo-layer-enable-cursor-animation t)
-;; (setq holo-layer-enable-indent-rainbow t)
-;; (setq holo-layer-cursor-block-commands '("watch-other-window-up" "watch-other-window-down" "self-insert-command"))
-;; (holo-layer-enable)
-
 
 (defun my-set-window-margins ()
   (set-window-margins nil 1 1))

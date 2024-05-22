@@ -99,7 +99,7 @@
 
 (require 'init-treemacs)
 (require 'init-projectile)
-(require 'init-dash)
+(require 'init-docs)
 
 (require 'init-translate)
 
@@ -114,7 +114,7 @@
 (require 'init-yasnippet)
 (require 'init-lisp)
 (require 'init-haskell)
-(require 'init-web)
+;; (require 'init-web)
 ;; (require 'init-scheme)
 (require 'init-dart)
 (if (needConda)
@@ -126,9 +126,6 @@
 (require 'init-org)
 (require 'init-denote)
 (require 'init-mode-line)
-
-;; chat
-(require 'init-chat)
 
 ;; eaf
 (if (needEAF)
