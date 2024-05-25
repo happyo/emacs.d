@@ -10,7 +10,6 @@
 
 ;; Indent
 (use-package indent-guide
-  :ensure t
   :config
   (set-face-background 'indent-guide-face "#dcdcdc")
   (setq indent-guide-delay 0.1)
@@ -18,8 +17,9 @@
 )
 
 (when (fboundp 'electric-pair-mode)
-  (add-hook 'after-init-hook 'electric-pair-mode))
-(add-hook 'after-init-hook 'electric-indent-mode)
+  (add-hook 'after-init-hook 'electric-pair-mode)
+  (add-hook 'after-init-hook 'electric-indent-mode)
+)
 
 ;;; Some basic preferences
 
@@ -65,12 +65,7 @@
 ;;       (error "File does not exist: %s" file))
 ;;     (vlf file)))
 
-(when (fboundp 'display-line-numbers-mode)
-  (setq-default display-line-numbers-width 3)
-  (add-hook 'prog-mode-hook 'display-line-numbers-mode)
-  )
-
-(use-package fill-column-indicator)
+;; (use-package fill-column-indicator)
 
 ;; rainbow-delimiters is a "rainbow parentheses"-like mode which highlights delimiters such as parentheses
 (use-package rainbow-delimiters
@@ -102,22 +97,8 @@
   ;; load default config
   (require 'smartparens-config))
 
-;; (use-package smex
-;;   :config
-;;   (smex-initialize))
-
-;; (global-set-key (kbd "M-x") 'smex)
-;; (global-set-key (kbd "M-X") 'smex-major-mode-commands)
-;; ;; This is your old M-x.
-;; (global-set-key (kbd "C-c C-c M-x") 'execute-extended-command)
-
 ;; undo
 (use-package vundo)
-
-(use-package vimish-fold
-  :bind (("C-c f" . vimish-fold)
-         ("C-c d" . vimish-fold-delete)
-         ("C-c t" . vimish-fold-toggle)))
 
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here

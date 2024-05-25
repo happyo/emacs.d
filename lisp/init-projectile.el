@@ -28,6 +28,7 @@ ARGS are the arguments passed to the original function."
   (advice-add 'projectile-switch-project :around #'my-projectile-switch-project-advice)
 
   (use-package ibuffer-projectile)
+  (global-set-key (kbd "M-p") 'projectile-switch-project)
   )
 
 (provide 'init-projectile)

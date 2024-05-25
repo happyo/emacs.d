@@ -57,7 +57,6 @@
 
 ;; Adjust garbage collection thresholds during startup, and thereafter
 
-(setq custom-file (locate-user-emacs-file "custom.el"))
 (require 'init-elpa)      ;; Machinery for installing required packages
 (require 'init-benchmarking) ;; Measure startup time
 (require 'init-func)
@@ -139,6 +138,3 @@
 ;; Start emacsclient server
 (server-start)
 
-(when (file-exists-p custom-file)
-  (load custom-file))
-(put 'erase-buffer 'disabled nil)

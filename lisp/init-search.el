@@ -34,12 +34,10 @@
   :demand t
   :ensure nil
   :load-path "~/.emacs.d/site-lisp/vertico"
-  :bind (:map vertico-map
-         ("M-d" . vertico-scroll-up)  ;; 向下翻页
-         ("M-u" . vertico-scroll-down))  ;; 向上翻页
   :config
   (vertico-mode)
-
+(global-set-key (kbd "C-d") 'vertico-scroll-up)
+(global-set-key (kbd "C-u") 'vertico-scroll-down)
   ;; Different scroll margin
   ;; (setq vertico-scroll-margin 0)
 

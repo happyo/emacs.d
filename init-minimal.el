@@ -8,12 +8,9 @@
 
 ;; Packages
 ;; Without this comment Emacs25 adds (package-initialize) here
-(setq package-archives
-      '(("gnu"   . "http://elpa.gnu.org/packages/")
-        ("melpa" . "http://melpa.org/packages/")))
-
 ;; Explicitly set the prefered coding systems to avoid annoying prompt
 ;; from emacs (especially on Microsoft Windows)
+(require 'init-elpa)
 (prefer-coding-system 'utf-8)
 
 (setq auto-save-default nil)               ; Disable auto save
@@ -23,21 +20,18 @@
 
 (require 'init-func)
 (require 'init-chinese)
+(require 'init-osx-keys)
+(require 'init-proxy)
 
 ;; Key Modifiers
-(when *is-a-mac*
-;; Compatible with Emacs Mac port
-(setq mac-option-modifier 'super)
-(setq mac-command-modifier 'meta)
-(global-set-key [(super a)] #'mark-whole-buffer)
-(global-set-key [(super v)] #'yank)
-(global-set-key [(super c)] #'kill-ring-save)
-(global-set-key [(super s)] #'save-buffer)
-(global-set-key [(super w)] #'delete-frame)
-(global-set-key [(super z)] #'undo))
-
 (require 'init-meow)
+
+(require 'init-projectile)
+(require 'init-xterm)
 (require 'init-search)
+(require 'init-editing-utils)
+(require 'init-lisp)
+(require 'init-keybinding)
 
 
 ;;; init-minimal.el ends here
