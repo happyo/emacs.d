@@ -45,7 +45,7 @@
   "Setup fonts."
   (when (display-graphic-p)
     ;; Set default font
-    (cl-loop for font in '("Hack" "Monego" "TerminessTTF Nerd Font Mono" "Jetbrains Mono"
+    (cl-loop for font in '("Consolas" "Monego" "TerminessTTF Nerd Font Mono" "Jetbrains Mono"
                            "SF Mono" "Iosevka Comfy Wide Motion" "Source Code Pro" "Menlo"
                            "Monaco" "DejaVu Sans Mono" "Consolas")
              when (font-installed-p font)
@@ -83,7 +83,7 @@
                       (set-fontset-font t 'emoji (font-spec :family font) nil 'prepend))))
 
     ;; Specify font for Chinese characters
-    (cl-loop for font in '("LXGW WenKai" "Xingkai SC" "Zhi Mang Xing" "PingFang SC" "LXGW WenKai" "STFangsong")
+    (cl-loop for font in '("霞鹜文楷等宽" "Xingkai SC" "Zhi Mang Xing" "PingFang SC" "LXGW WenKai" "STFangsong")
              when (font-installed-p font)
              return (progn
                       (setq face-font-rescale-alist `((,font . 1.0)))

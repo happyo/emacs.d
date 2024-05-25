@@ -1,43 +1,43 @@
 ;;; init-minimal.el --- Insert description here -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
-(setq gc-cons-threshold most-positive-fixnum
-      gc-cons-percentage 0.5)
-(add-hook 'emacs-startup-hook
-          (lambda ()
-            "Recover GC values after startup."
-            (setq gc-cons-threshold 800000
-                  gc-cons-percentage 0.1)))
 
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+;; Load path
+(push (expand-file-name "site-lisp" user-emacs-directory) load-path)
+(push (expand-file-name "lisp" user-emacs-directory) load-path)
 
-(setq byte-compile-warnings '(cl-functions))
-(setq warning-minimum-level :error)
+;; Packages
+;; Without this comment Emacs25 adds (package-initialize) here
+(setq package-archives
+      '(("gnu"   . "http://elpa.gnu.org/packages/")
+        ("melpa" . "http://melpa.org/packages/")))
 
-(require 'init-elpa)      ;; Machinery for installing required packages
-(require 'init-benchmarking) ;; Measure startup time
+;; Explicitly set the prefered coding systems to avoid annoying prompt
+;; from emacs (especially on Microsoft Windows)
+(prefer-coding-system 'utf-8)
+
+(setq auto-save-default nil)               ; Disable auto save
+(setq-default c-basic-offset   4
+              tab-width        4
+              indent-tabs-mode nil)
+
 (require 'init-func)
-(require 'init-osx-keys)
+(require 'init-chinese)
+
+;; Key Modifiers
+(when *is-a-mac*
+;; Compatible with Emacs Mac port
+(setq mac-option-modifier 'super)
+(setq mac-command-modifier 'meta)
+(global-set-key [(super a)] #'mark-whole-buffer)
+(global-set-key [(super v)] #'yank)
+(global-set-key [(super c)] #'kill-ring-save)
+(global-set-key [(super s)] #'save-buffer)
+(global-set-key [(super w)] #'delete-frame)
+(global-set-key [(super z)] #'undo))
 
 (require 'init-meow)
-(require 'init-editing-utils)
-(require 'init-completion)
-(require 'init-gui-frames)
-(require 'init-dired)
 (require 'init-search)
-(require 'init-ibuffer)
-;; (require 'init-flycheck)
-(require 'init-windows)
-(require 'init-lsp)
-(require 'init-lisp)
-(require 'init-magit)
-(require 'init-treemacs)
-(require 'init-projectile)
-(require 'init-keybinding)
 
-;; (require 'init-chinese)
-;; (require 'init-swift)
-;; (require 'init-org)
-;; (require 'init-denote)
 
 ;;; init-minimal.el ends here

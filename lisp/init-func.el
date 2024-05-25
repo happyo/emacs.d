@@ -6,14 +6,6 @@
 (defconst *is-a-linux* (eq system-type 'gnu/linux))
 (defconst *is-a-win32p* (eq system-type 'windows-nt))
 
-;; (defun pythonPath ()
-;;   "Different computer python path"
-;;   (if *is-a-mac*
-;;       (if (string-match-p user-login-name "happyo")
-;;                                     "/opt/miniconda3/bin/python"
-;;                                   "/Users/belyenochi/opt/anaconda3/bin/python")
-;;     "/home/happyo/miniconda3/bin/python"))
-
 (setq mac "belyenochi")
 (setq archWsl "happy-pc")
 
@@ -72,117 +64,6 @@
   (cond ((isNewMac) nil)
         ((isMyWsl) t)
         (t nil)))
-
-
-(defun transform-content (content)
-  "Transform content based on given rules."
-  (let ((lines (split-string content "\n"))
-        (result ""))
-    (dolist (line lines)
-      (let* ((level (length (car (s-match "^\\*+" line))))
-             (indentation (make-string (max (1- level) 0) ?\t))
-             (clean-line (replace-regexp-in-string "^\\*+ " "" line)))
-        (setq result (concat result indentation clean-line "\n"))))
-    result))
-
-(defun transform-selected-content-to-clipboard ()
-  "Transform selected content according to the specified rules and add it to the clipboard."
-  (interactive)
-  (let* ((start (region-beginning))
-         (end (region-end))
-         (content (buffer-substring-no-properties start end))
-         (transformed-content (transform-content content)))
-    (kill-new transformed-content)
-    (message "Transformed content added to clipboard.")))
-
-(defun reverse-transform-content (content)
-  "Reverse transform content from indented format to original format."
-  (let ((lines (split-string content "\n"))
-        (result ""))
-    (dolist (line lines)
-      (let* ((indentation (length (car (s-match "^\\(\t\\)+" line))))
-             (stars (make-string (1+ indentation) ?*))
-             (clean-line (replace-regexp-in-string "^\t+" "" line)))
-        (setq result (concat result stars " " clean-line "\n"))))
-    result))
-
-(defun reverse-transform-selected-content ()
-  "Reverse transform selected content to original format and replace the selection."
-  (interactive)
-  (let* ((start (region-beginning))
-         (end (region-end))
-         (content (buffer-substring-no-properties start end))
-         (reversed-content (reverse-transform-content content)))
-    (delete-region start end)
-    (insert reversed-content)))
-
-;; my custom functions
-;; (defun my-scroll-up-half-page ()
-;;   "Scroll up half a page or move to the beginning of the buffer."
-;;   (interactive)
-;;   (let ((half-page (/ (window-body-height) 2)))
-;;     (if (<= (line-number-at-pos) half-page)
-;;         (goto-char (point-min))  ; 如果当前行号小于等于半页行数，则跳到缓冲区开头
-;;       (scroll-up-command half-page))))  ; 否则滚动半页
-
-;; (defun my-scroll-down-half-page ()
-;;   "Scroll down half a page or move to the end of the buffer."
-;;   (interactive)
-;;   (let ((half-page (/ (window-body-height) 2)))
-;;     (if (>= (- (line-number-at-pos (point-max)) (line-number-at-pos))
-;;             half-page)
-;;         (scroll-down-command half-page)  ; 如果从当前位置到缓冲区末尾的行数大于等于半页行数，则滚动半页
-;;       (goto-char (point-max)))))  ; 否则跳到缓冲区末尾
-
-  (defun zz-scroll-half-page (direction)
-    "Scrolls half page up if `direction' is non-nil, otherwise will scroll half page down."
-    (let ((opos (cdr (nth 6 (posn-at-point)))))
-      ;; opos = original position line relative to window
-      (move-to-window-line nil)  ;; Move cursor to middle line
-      (if direction
-          (recenter-top-bottom -1)  ;; Current line becomes last
-        (recenter-top-bottom 0))  ;; Current line becomes first
-      (move-to-window-line opos)))  ;; Restore cursor/point position
-  
-  (defun my-scroll-up-half-page ()
-    "Scrolls exactly half page down keeping cursor/point position."
-    (interactive)
-    (zz-scroll-half-page nil))
-  
-  (defun my-scroll-down-half-page ()
-    "Scrolls exactly half page up keeping cursor/point position."
-    (interactive)
-    (zz-scroll-half-page t))
-
-
-(defun my-is-mode-jump-by-xref ()
-  "判断当前的 major-mode 是否是 objc-mode 或 emacs-lisp-mode。"
-  (message "Current major-mode: %s" major-mode)
-  (or (eq major-mode 'objc-mode)
-      (eq major-mode 'emacs-lisp-mode)
-      (eq major-mode 'c-mode)
-      (eq major-mode 'c++-mode)
-      ))
-
-(defmacro defadvice! (symbol arglist &rest body)
-  "Define an advice called SYMBOL and add it to PLACES.
-
-ARGLIST is as in `defun'. WHERE is a keyword as passed to `advice-add', and
-PLACE is the function to which to add the advice, like in `advice-add'.
-DOCSTRING and BODY are as in `defun'.
-
-\(fn SYMBOL ARGLIST &rest [WHERE PLACES...] BODY\)"
-  (declare (indent defun))
-  (let (where-alist)
-    (while (keywordp (car body))
-      (push `(cons ,(pop body) (ensure-list ,(pop body)))
-            where-alist))
-    `(progn
-       (defun ,symbol ,arglist ,@body)
-       (dolist (targets (list ,@(nreverse where-alist)))
-         (dolist (target (cdr targets))
-           (advice-add target (car targets) #',symbol))))))
-
 
 (provide 'init-func)
 ;;; init-func.el ends here

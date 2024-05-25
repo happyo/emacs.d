@@ -3,8 +3,6 @@
 ;;; Code:
 
 (require 'init-elpa)
-(require 'init-editing-utils)
-(require 'init-copilot)
 
 (add-hook 'prog-mode-hook 'hs-minor-mode)
 
@@ -39,9 +37,6 @@
     '("v" . sp-backward-barf-sexp)
     '("c" . sp-backward-slurp-sexp)
     '("u" . meow-undo))
-
-  (meow-define-keys 'insert
-    '("TAB" . my/copilot-tab))
 
   (meow-motion-overwrite-define-key
    '("j" . meow-next)
@@ -148,8 +143,6 @@
   (meow-selection-command-fallback '(
                                           (meow-change . meow-change-char)
                                           (meow-kill . meow-C-d)
-                                          ;; (meow-cancel-selection . keyboard-quit)
-                                          ;; (meow-pop-selection . meow-pop-grab)
                                           )) 
   (meow-expand-exclude-mode-list '(markdown-mode org-mode eaf-mode treemacs-mode))
   :config

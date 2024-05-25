@@ -46,3 +46,9 @@
 [submodule "site-lisp/go-translate"]
 	path = site-lisp/go-translate
 	url = https://github.com/lorniu/go-translate.git
+[submodule "site-lisp/vertico"]
+	path = site-lisp/vertico
+	url = https://github.com/minad/vertico.git
+[submodule "site-lisp/consult"]
+	path = site-lisp/consult
+	url = https://github.com/minad/consult.git
