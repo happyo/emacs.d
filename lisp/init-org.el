@@ -5,8 +5,6 @@
 (require 'init-elpa)
 (require 'chinese-color)
 
-(use-package async :defer t)
-
 (defun my-org-setup ()
   "Setup for Org mode."
 
@@ -88,15 +86,15 @@
   ;;       ("YDONE" . ,tcc-317-hehui)
   ;;       ("XCANCEL" . ,tcc-317-hehui)))
 
-  (org-babel-do-load-languages
- 'org-babel-load-languages
- '((swift . t)       ; 已存在的 Swift 支持
-   (C . t);; 其他需要支持的语言
-    ))
+;;   (org-babel-do-load-languages
+;;  'org-babel-load-languages
+;;  '((swift . t)       ; 已存在的 Swift 支持
+;;    (C . t);; 其他需要支持的语言
+;;     ))
   
   )
 
-(use-package org-pomodoro)
+;; (use-package org-pomodoro)
 
 (defun diary-shichen ()
   "A diary sexp entry that returns all the Chinese shichen for today."
@@ -117,10 +115,10 @@
               shichen-events)))
     (mapconcat 'identity (nreverse shichen-events) "\n")))
 
-(defun my-org-mode-setup ()
-  (setq truncate-lines nil))
+;; (defun my-org-mode-setup ()
+;;   (setq truncate-lines nil))
 
-(add-hook 'org-mode-hook 'my-org-mode-setup)
+;; (add-hook 'org-mode-hook 'my-org-mode-setup)
 
 (provide 'init-org)
 ;;; init-org.el ends here

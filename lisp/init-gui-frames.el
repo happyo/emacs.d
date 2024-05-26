@@ -31,7 +31,11 @@
 (global-set-key (kbd "M-C-e") (lambda () (interactive) (transwin-dec)))
 (global-set-key (kbd "M-C-r") (lambda () (interactive) (transwin-inc)))
 
-(use-package ns-auto-titlebar)
+(use-package ns-auto-titlebar
+  :demand t
+  :config
+  (when *is-a-mac* (ns-auto-titlebar-mode))
+)
 
 (setq frame-title-format
       '((:eval (if (buffer-file-name)
@@ -40,16 +44,11 @@
 
 ;; Non-zero values for `line-spacing' can mess up ansi-term and co,
 ;; so we zero it explicitly in those cases.
-(add-hook 'term-mode-hook
-          (lambda ()
-            (setq line-spacing 0)))
-
 ;;(set-default line-spacing 02)
 
 ;; Change global font size easily
 
 (use-package default-text-scale)
-(when *is-a-mac* (ns-auto-titlebar-mode))
 
 (use-package disable-mouse)
 

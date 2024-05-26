@@ -4,13 +4,11 @@
 
 (require 'init-elpa)
 
-(add-to-list 'load-path "~/.emacs.d/site-lisp/denote")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/consult-notes")
-(add-to-list 'load-path "~/.emacs.d/site-lisp/org-super-links")
-
-(require 'denote)
-(require 'denote-silo-extras)
-
+(use-package denote
+  :demand t
+  :ensure nil
+  :load-path "~/.emacs.d/site-lisp/denote"
+  :config
 (setq denote-silo-extras-directories '("~/Documents/ProcrastinationTerminator/doc/design/" "~/work/lining/doc"))
 ;; Remember to check the doc strings of those variables.
 (setq denote-directory (expand-file-name "~/Zettelkasten"))
@@ -124,6 +122,10 @@
 ;;   (define-key map (kbd "C-c C-d C-i") #'denote-link-dired-marked-notes)
 ;;   (define-key map (kbd "C-c C-d C-r") #'denote-dired-rename-marked-files)
 ;;   (define-key map (kbd "C-c C-d C-R") #'denote-dired-rename-marked-files-and-add-front-matters))
+
+
+  )
+(require 'denote-silo-extras)
 
 (with-eval-after-load 'org-capture
   (require 'denote-org-capture)

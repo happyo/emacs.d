@@ -4,23 +4,6 @@
 
 (require 'init-elpa)
 
-;; (use-package all-the-icons
-;;   :ensure t)
-
-;; (use-package ample-theme
-;;   :init (progn (load-theme 'ample t t)
-;;                (load-theme 'ample-flat t t)
-;;                (load-theme 'ample-light t t)
-;;                (enable-theme 'ample-light))
-;;   :defer t
-;;   :ensure t)
-
-;; (use-package dimmer
-;;   :config
-;;   (dimmer-configure-which-key)
-;;   (dimmer-mode t)
-;;   )
-
 (add-to-list 'load-path "~/.emacs.d/site-lisp/ef-themes")
 (add-to-list 'load-path "~/.emacs.d/site-lisp/chinese-color")
 (require 'ef-themes)
@@ -396,14 +379,6 @@
   (add-hook 'help-mode-hook 'rainbow-mode)
   (add-hook 'swift-ts-mode-hook 'rainbow-mode)
   )
-
-(use-package beacon)
-(setq-default beacon-lighter "")
-(setq-default beacon-size 20)
-(setq-default beacon-color tcc-171-minghuang)
-(beacon-mode 1)
-
-;; (diminish 'rainbow-mode)))
 
 (set-face-attribute 'tab-bar-tab nil
                     :box `(:line-width 6 :color ,tcc-026-haitianxia)

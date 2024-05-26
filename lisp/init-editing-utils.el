@@ -3,6 +3,8 @@
 ;;; Code:
 (require 'init-elpa)
 
+(global-auto-revert-mode 1)
+
 (use-package format-all)
 
 ;; Type speed

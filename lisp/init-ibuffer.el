@@ -40,7 +40,6 @@
     (file-size-human-readable (buffer-size)))
   )
 
-(global-auto-revert-mode 1)
 
 (provide 'init-ibuffer)
 ;;; init-ibuffer.el ends here
