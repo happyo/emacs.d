@@ -362,6 +362,7 @@
 ;; - `ef-themes-preview-colors-current'
 
 (use-package nerd-icons
+  :demand t
   :custom
   ;; The Nerd Font you want to use in GUI
   ;; "Symbols Nerd Font Mono" is the default and is recommended
@@ -369,6 +370,12 @@
   ;; (nerd-icons-font-family "3270 Nerd Font Mono")
   (nerd-icons-font-family "Symbols Nerd Font Mono")
   )
+
+(use-package treemacs-nerd-icons
+  :demand t
+  :config
+  (treemacs-load-theme "nerd-icons"))
+
 
 (use-package rainbow-mode
   :init
