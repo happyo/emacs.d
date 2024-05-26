@@ -22,16 +22,25 @@
 (require 'init-chinese)
 (require 'init-osx-keys)
 (require 'init-proxy)
-
+    
 ;; Key Modifiers
 (require 'init-meow)
 
 (require 'init-projectile)
+
+;; Need brew install cmake, brew install libtool
 (require 'init-xterm)
+
 (require 'init-search)
 (require 'init-editing-utils)
+
+(require 'init-windows)
+(require 'init-treemacs)
+
 (require 'init-lisp)
 (require 'init-keybinding)
 
+
+(server-start)
 
 ;;; init-minimal.el ends here

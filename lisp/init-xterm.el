@@ -17,10 +17,12 @@
   :config
   (setq vterm-buffer-name-string "vterm: %s")
   (setq vterm-buffer-name "*vterm*")
+  (define-key vterm-mode-map (kbd "M-i") 'vterm-toggle)
 )
 
 (use-package vterm-toggle
-  :ensure t
+  :demand t
+  :ensure t 
   :config 
   (global-set-key (kbd "M-i") 'vterm-toggle)
 )

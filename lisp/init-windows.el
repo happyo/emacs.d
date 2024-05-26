@@ -9,14 +9,10 @@
 
 ;; Navigate window layouts with "C-c <left>" and "C-c <right>"
 
-(add-hook 'after-init-hook 'winner-mode)
-
 
 ;; Make "M-o" prompt for a target window when there are more than 2
-(use-package switch-window)
-(setq-default switch-window-shortcut-style 'alphabet)
-(setq-default switch-window-timeout nil)
-(global-set-key (kbd "M-o") 'switch-window)
+(global-set-key (kbd "M-o") 'other-window)
+(windmove-default-keybindings)
 
 (provide 'init-windows)
 ;;; init-windows.el ends here

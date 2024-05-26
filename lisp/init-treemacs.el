@@ -7,6 +7,8 @@
 ;; (require 'treemacs-all-the-icons)
 
 (use-package treemacs
+  :ensure t
+  :defer t
   :bind
   (:map global-map
    ("M-0"       . treemacs-select-window)
@@ -46,9 +48,9 @@
 ;;   :ensure t
 ;;   :config (treemacs-set-scope-type 'Perspectives))
 
-(add-to-list 'load-path "~/.emacs.d/site-lisp/treemacs-nerd-icons")
-(require 'treemacs-nerd-icons)
-(treemacs-load-theme "nerd-icons")
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/treemacs-nerd-icons")
+;; (require 'treemacs-nerd-icons)
+;; (treemacs-load-theme "nerd-icons")
 
 (provide 'init-treemacs)
 ;;; init-treemacs.el ends here

@@ -378,9 +378,6 @@
 ;; - `ef-themes-preview-colors'
 ;; - `ef-themes-preview-colors-current'
 
-(use-package all-the-icons
-  :if (display-graphic-p))
-
 (use-package nerd-icons
   :custom
   ;; The Nerd Font you want to use in GUI
@@ -389,7 +386,6 @@
   ;; (nerd-icons-font-family "3270 Nerd Font Mono")
   (nerd-icons-font-family "Symbols Nerd Font Mono")
   )
-(add-to-list 'load-path "~/.emacs.d/site-lisp/treemacs-nerd-icons")
 
 (use-package rainbow-mode
   :init
