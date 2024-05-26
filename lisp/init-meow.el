@@ -4,7 +4,7 @@
 
 (require 'init-elpa)
 
-(add-hook 'prog-mode-hook 'hs-minor-mode)
+;; (add-hook 'prog-mode-hook 'hs-minor-mode)
 
 (global-set-key (kbd "M-d") 'delete-char)
 
@@ -132,7 +132,7 @@
    '("/" . meow-visit)
    '("<escape>" . ignore)
    '("DEL" . meow-beacon-kill-delete)
-   '("TAB" . hs-toggle-hiding)
+   ;; '("TAB" . hs-toggle-hiding)
    ))
 
 (use-package meow

@@ -3,9 +3,9 @@
 ;;; Code:
 
 (use-package magit
-  :diminish
+  :demand t
   :bind ("M-m" . magit)
-  :config
+  ;; :config
   ;; (setq magit-status-buffer-switch-function 'switch-to-buffer)
 
   ;; (setq magit-display-buffer-function

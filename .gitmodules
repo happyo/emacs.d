@@ -52,3 +52,6 @@
 [submodule "site-lisp/consult"]
 	path = site-lisp/consult
 	url = https://github.com/minad/consult.git
+[submodule "site-lisp/yasnippet"]
+	path = site-lisp/yasnippet
+	url = https://github.com/joaotavora/yasnippet.git

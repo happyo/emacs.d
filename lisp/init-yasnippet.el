@@ -4,11 +4,15 @@
 (require 'init-elpa)
 
 (use-package yasnippet
-  :diminish yas-minor-mode
-  :hook (after-init . yas-global-mode))
+  :demand t
+  :ensure nil
+  :load-path "~/.emacs.d/site-lisp/yasnippet"
+  :config
+  (yas-global-mode 1)
+  )
 
-(use-package yasnippet-snippets
-  :after yasnippet)
+;; (use-package yasnippet-snippets
+;;   :after yasnippet)
 
 (use-package autoinsert
   :init

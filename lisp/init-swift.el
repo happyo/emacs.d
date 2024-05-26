@@ -5,6 +5,10 @@
 
 (require 'swift-mode)
 
+(use-package async
+  :demand t
+  :ensure t)
+
 (use-package ob-swift-enhanced
   :ensure nil
   :load-path "~/.emacs.d/site-lisp/ob-swift-enhanced")

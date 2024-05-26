@@ -2,7 +2,8 @@
 ;;; Commentary:
 ;;; Code:
 
-(add-to-list 'load-path "~/.emacs.d/site-lisp/dape")
+(require 'swift-mode)
+(require 'swift-ts-mode)
 
 (use-package dape
   ;; Currently only on github

@@ -175,7 +175,7 @@
                  ;; (?' . ?\') ;; This isn't such a great idea because
                  ;; pairs are detected even in strings and comments,
                  ;; and sometimes an apostrophe is just an apostrophe
-                 (?{ . ?})  (?[ . ?]) (?( . ?)) (?` . ?`)) electric-pair-pairs))
+                 (?{ . ?})  (?\[ . ?\]) (?\( . ?\)) (?` . ?`)) electric-pair-pairs))
   (set (make-local-variable 'electric-layout-rules)
        '((?\{ . after) (?\} . before)))
 
@@ -194,19 +194,6 @@
             "\\(?:" continue ".*" eol "\\)*"
             "\\)"))
   "regexp that finds the non-summary part of a swift doc comment as subexpression 2")
-
-(defun swift-hide-doc-comment-detail ()
-  "Hide everything but the summary part of doc comments.
-
-Use `M-x hs-show-all' to show them again."
-    (interactive)
-  (hs-minor-mode)
-  (save-excursion
-    (save-match-data
-      (goto-char (point-min))
-      (while (search-forward-regexp swift-doc-comment-detail-re (point-max) :noerror)
-        (hs-hide-comment-region (match-beginning 2) (match-end 2))
-        (goto-char (match-end 2))))))
 
 (defvar swift-mode-generic-parameter-list-syntax-table
   (let ((s (copy-syntax-table swift-mode-syntax-table)))
@@ -307,47 +294,6 @@ and nil otherwise"
 
 (defconst swift-body-keyword-re
   "\\_<\\(var\\|func\\|init\\|deinit\\|subscript\\)\\_>")
-
-(defun swift-hide-bodies ()
-  "Hide the bodies of methods, functions, and computed properties.
-
-Use `M-x hs-show-all' to show them again."
-    (interactive)
-  (hs-minor-mode)
-  (save-excursion
-    (save-match-data
-      (goto-char (point-min))
-      (while (search-forward-regexp swift-body-keyword-re (point-max) :noerror)
-        (when
-            (and
-             (not (swift-in-string-or-comment))
-             (let ((keyword (match-string 0)))
-               ;; parse up to the opening brace
-               (cond
-                ((equal keyword "deinit") t)
-
-                ((equal keyword "var")
-                 (and (swift-skip-identifier)
-                      (swift-skip-re ":")
-                      (swift-skip-type-name)))
-
-                ;; otherwise, there's a parameter list
-                (t
-                 (and
-                  ;; parse the function's base name or operator symbol
-                  (if (equal keyword "func") (forward-symbol 1) t)
-                  ;; advance to the beginning of the function
-                  ;; parameter list
-                  (progn
-                    (swift-skip-generic-parameter-list)
-                    (swift-skip-comments-and-space)
-                    (equal (char-after) ?\())
-                  ;; parse the parameter list and any return type
-                  (prog1
-                    (swift-skip-type-name)
-                    (swift-skip-where-clause))))))
-             (swift-skip-re "{"))
-          (hs-hide-block :reposition-at-end))))))
 
 (defun swift-indent-line ()
   (interactive)
@@ -515,7 +461,8 @@ Use `M-x hs-show-all' to show them again."
 (defgroup swift nil
   "Major mode for editing swift source files."
   :prefix "swift-")
-;; (add-to-list 'auto-mode-alist '("\\.swift\\'" . swift-mode))
+
+(add-to-list 'auto-mode-alist '("\\.swift\\'" . swift-mode))
 
 (provide 'swift-mode)
 

@@ -2,7 +2,10 @@
 ;;; Commentary:
 ;;; Code:
 
-(require 'init-func)
+;; (require 'init-func)
+
+(use-package f
+  :ensure t)
 
 (defun my/copilot-tab ()
   (interactive)
@@ -20,10 +23,10 @@
   (define-key copilot-mode-map (kbd "M-e") #'copilot-accept-completion-by-word)
   )
 
-(defadvice! +copilot--get-source-a (fn &rest args)
-    :around #'copilot--get-source
-    (cl-letf (((symbol-function #'warn) #'message))
-      (apply fn args)))
+;; (defadvice! +copilot--get-source-a (fn &rest args)
+;;     :around #'copilot--get-source
+;;     (cl-letf (((symbol-function #'warn) #'message))
+;;       (apply fn args)))
 
 (provide 'init-copilot)
 ;;; init-copilot.el ends here

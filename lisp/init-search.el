@@ -54,10 +54,6 @@
   )
 
 
-(use-package savehist
-  :init
-  (savehist-mode))
-
 ;; Optionally use the `orderless' completion style. See
 ;; `+orderless-dispatch' in the Consult wiki for an advanced Orderless style
 ;; dispatcher. Additionally enable `partial-completion' for file path
