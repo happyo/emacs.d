@@ -8,7 +8,7 @@
 
 
 (setq treesit-language-source-alist
-      '((swift . ("https://github.com/tree-sitter/tree-sitter-swift"))))
+      '((swift . ("https://github.com/alex-pinkus/tree-sitter-swift"))))
 
 (treesit-language-available-p 'swift)
 

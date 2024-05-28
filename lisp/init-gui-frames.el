@@ -44,7 +44,7 @@
 
 ;; Non-zero values for `line-spacing' can mess up ansi-term and co,
 ;; so we zero it explicitly in those cases.
-;;(set-default line-spacing 02)
+(setq line-spacing 2)
 
 ;; Change global font size easily
 

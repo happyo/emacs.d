@@ -94,7 +94,7 @@
 (require 'init-copilot)
 
 ;; Language mode
-;; (require 'init-treesit)
+(require 'init-treesit)
 
 ;; Debug
 (require 'init-debug)
