@@ -416,8 +416,8 @@ Return nil if there is no name or if NODE is not a defun node."
 
     (treesit-major-mode-setup)))
 
-;; (if (treesit-ready-p 'swift)
-;;     (add-to-list 'auto-mode-alist '("\\.swift\\'" . swift-ts-mode)))
+(if (treesit-ready-p 'swift)
+    (add-to-list 'auto-mode-alist '("\\.swift\\'" . swift-ts-mode)))
 
 ;; 绑定键映射到 swift-ts-mode
 (add-hook 'swift-ts-mode-hook

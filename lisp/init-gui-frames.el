@@ -44,7 +44,13 @@
 
 ;; Non-zero values for `line-spacing' can mess up ansi-term and co,
 ;; so we zero it explicitly in those cases.
-(setq line-spacing 2)
+;; (setq line-spacing 20)
+
+(defun set-my-prog-mode-line-spacing ()
+  "Set line spacing in programming modes."
+  (setq line-spacing 0.2))  ; 可以调整这个值来适应你的喜好
+
+(add-hook 'prog-mode-hook 'set-my-prog-mode-line-spacing)
 
 ;; Change global font size easily
 
@@ -52,12 +58,18 @@
 
 (use-package disable-mouse)
 
-(defun my-set-window-margins ()
-  (set-window-margins nil 1 1))
+;; (defun my-set-window-margins ()
+;;   (set-window-margins nil 1 1))
 
-(add-hook 'window-configuration-change-hook 'my-set-window-margins)
+;; (add-hook 'window-configuration-change-hook 'my-set-window-margins)
 ;; (setq-default header-line-format " ")
 ;; (set-face-attribute 'header-line nil :height 100)
+(use-package olivetti
+  :ensure t
+  :init
+  (setq olivetti-body-width 0.5)
+  :hook
+  (prog-mode . olivetti-mode))
 
 (provide 'init-gui-frames)
 ;;; init-gui-frames.el ends here

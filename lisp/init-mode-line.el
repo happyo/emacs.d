@@ -5,8 +5,8 @@
 (require 'init-elpa)
 (require 'init-themes)
 
-(use-package diminish
-  :ensure t)
+;; (use-package diminish
+;;   :ensure t)
 
 ;; (defun my-flycheck-error-count ()
 ;;   "Get the number of flycheck errors."
@@ -31,21 +31,22 @@
 ;;     (cond
 ;;      (t (format " ☢ %d W %d ℹ %d " e w i)))))
 
-(setq-default mode-line-format
-              (list
-               "-------- "
-               "%b"
-               " --- "
-               '(line-number-mode "%l 行")
-               " --- "
-               '(:eval (format "%d 字" (count-words (point-min) (point-max))))
-               " --- "
-               ;; '(-3 "%p")
-               " --- "
-               ;; "%-"
-               ;; '(:eval (my-flycheck-mode-line-string))
-               ;; lsp-bridge--mode-line-format
-               ))
+;; (setq-default mode-line-format
+;;               (list
+;;                "-------- "
+;;                "%b"
+;;                " --- "
+;;                '(line-number-mode "%l 行")
+;;                " --- "
+;;                '(:eval (format "%d 字" (count-words (point-min) (point-max))))
+;;                " --- "
+;;                ;; '(-3 "%p")
+;;                " --- "
+;;                ;; "%-"
+;;                ;; '(:eval (my-flycheck-mode-line-string))
+;;                ;; lsp-bridge--mode-line-format
+;;                ))
+(setq-default mode-line-format nil)
 
 (provide 'init-mode-line)
 ;;; init-mode-line.el ends here

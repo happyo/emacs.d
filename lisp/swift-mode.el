@@ -462,7 +462,7 @@ and nil otherwise"
   "Major mode for editing swift source files."
   :prefix "swift-")
 
-(add-to-list 'auto-mode-alist '("\\.swift\\'" . swift-mode))
+;; (add-to-list 'auto-mode-alist '("\\.swift\\'" . swift-mode))
 
 (provide 'swift-mode)
 

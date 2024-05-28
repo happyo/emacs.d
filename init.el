@@ -63,7 +63,6 @@
 ;; 感觉这个和lsp功能重复了
 ;; (require 'init-flycheck)
 ;; (require 'init-docs)
-;; (require 'init-mode-line)
 ;; ;; eaf
 ;; (if (needEAF)
 ;;     (require 'init-eaf)
@@ -74,6 +73,7 @@
 
 (require 'init-themes)
 (require 'init-gui-frames)
+(require 'init-mode-line)
 (require 'init-translate)
 ;; org
 (require 'init-org)

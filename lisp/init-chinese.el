@@ -51,7 +51,7 @@
              when (font-installed-p font)
              return (set-face-attribute 'default nil
                                         :family font
-                                        :height 150)
+                                        :height 160)
              )
 
     ;; Set mode-line font
