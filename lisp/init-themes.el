@@ -402,7 +402,7 @@
 ;; (setq tab-bar-format '(tab-bar-format-tabs tab-bar-separator))
 (setq tab-bar-tab-hints t)
 (customize-set-variable 'tab-bar-select-tab-modifiers '(meta))
-(tab-bar-mode 1)                           ;; enable tab bar
+;; (tab-bar-mode 1)                           ;; enable tab bar
 
 ;; 自定义函数格式化标签名以增加宽度
 (setq tab-bar-tab-name-format-function

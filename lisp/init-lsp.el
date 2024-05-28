@@ -17,6 +17,11 @@
 (use-package lsp-bridge
   :demand t
   :ensure nil
+  :bind (
+         ("M-." . lsp-bridge-find-def)
+         ("M-," . lsp-bridge-find-def-return)
+         ("M-]" . lsp-bridge-code-format)
+      )
   :load-path "~/.emacs.d/site-lisp/lsp-bridge"
   :config
   (setq lsp-bridge-python-command (pythonPath))
@@ -30,6 +35,9 @@
   (setq lsp-bridge-enable-org-babel t)
   (setq lsp-bridge-enable-hover-diagnostic t)
   (setq lsp-bridge-diagnostic-fetch-idle 0.5)
+;; (define-key my-custom-minor-mode-map (kbd "M-.") 'my-custom-m-dot-function)
+;; (define-key my-custom-minor-mode-map (kbd "M-,") 'lsp-bridge-find-def-return)
+;; (define-key my-custom-minor-mode-map (kbd "M-]") 'lsp-bridge-code-format)
   (global-lsp-bridge-mode)
   )
 

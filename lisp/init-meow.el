@@ -8,6 +8,10 @@
 
 (global-set-key (kbd "M-d") 'delete-char)
 
+(use-package golden-ratio-scroll-screen
+  :config
+  (setq golden-ratio-scroll-highlight-flag nil))
+
 ;; meow
 (defun meow-setup ()
   (setq meow--kbd-delete-char "M-d")
@@ -84,7 +88,7 @@
    '("c" . meow-change)
    '("C" . meow-change-save)
    '("d" . meow-kill-whole-line)
-   '("C-d" . scroll-up)
+   '("C-d" . golden-ratio-scroll-screen-up)
    '("e" . meow-next-word)
    '("E" . meow-next-symbol)
    '("f" . meow-find)
@@ -116,7 +120,7 @@
    '("t" . meow-till)
    '("T" . meow-till-expand)
    '("u" . undo)
-   '("C-u" . scroll-down)
+   '("C-u" . golden-ratio-scroll-screen-down)
    '("v" . meow-line)
    ;; '("V" . meow-kmacro-matches)
    '("w" . meow-mark-word)
