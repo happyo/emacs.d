@@ -56,12 +56,8 @@
 
 ;; (if (needRime)
 ;;     (require 'init-rime))
-;; (require 'init-completion)
-;; (require 'init-keyfreq)
 ;; (require 'init-dired)
-;; (require 'init-ibuffer)
 ;; 感觉这个和lsp功能重复了
-;; (require 'init-flycheck)
 ;; (require 'init-docs)
 ;; ;; eaf
 ;; (if (needEAF)
