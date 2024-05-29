@@ -18,6 +18,11 @@
   (interactive)
   (delete-region (point) (line-beginning-position)))
 
+(defun my-kill-this-buffer ()
+  "Kill the current buffer."
+  (interactive)
+  (kill-buffer (current-buffer)))
+
 (defvar my-custom-minor-mode-map (make-sparse-keymap)
   "自定义的 keymap，用于覆盖其他 mode 的快捷键。")
 
@@ -29,7 +34,7 @@
 (define-key my-custom-minor-mode-map (kbd "M-c") 'kill-ring-save)
 (define-key my-custom-minor-mode-map (kbd "M-s") 'save-buffer)
 (define-key my-custom-minor-mode-map (kbd "M-z") 'undo)
-(define-key my-custom-minor-mode-map (kbd "M-k") 'kill-this-buffer)
+(define-key my-custom-minor-mode-map (kbd "M-k") 'my-kill-this-buffer)
 (define-key my-custom-minor-mode-map (kbd "M-K") 'delete-window)
 (define-key my-custom-minor-mode-map (kbd "M-D") 'delete-other-windows)
 (define-key my-custom-minor-mode-map (kbd "M-v") 'yank)
