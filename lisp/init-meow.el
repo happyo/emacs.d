@@ -148,12 +148,12 @@
                                           (meow-change . meow-change-char)
                                           (meow-kill . meow-C-d)
                                           )) 
-  (meow-expand-exclude-mode-list '(markdown-mode org-mode eaf-mode treemacs-mode))
+  (meow-expand-exclude-mode-list '(markdown-mode org-mode eaf-mode treemacs-mode vterm-mode))
   :config
   ;; meow-setup is your custom function, see below
   ;; If you want relative line number in NORMAL state(for display-line-numbers-mode)
   ;; (meow-setup-line-number)
-  (add-to-list 'meow-mode-state-list '(eaf-mode . normal))
+  ;; (add-to-list 'meow-mode-state-list '(eaf-mode . normal))
   (setq meow-goto-line-function #'goto-line)
   (meow-setup)
   (meow-global-mode 1))

@@ -1,3 +1,4 @@
+
 ;;; init-keybinding.el --- Global key binding -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
@@ -38,6 +39,7 @@
 (define-key my-custom-minor-mode-map (kbd "M-K") 'delete-window)
 (define-key my-custom-minor-mode-map (kbd "M-D") 'delete-other-windows)
 (define-key my-custom-minor-mode-map (kbd "M-v") 'yank)
+(define-key my-custom-minor-mode-map (kbd "M-o") 'other-window)
 
 (define-minor-mode my-custom-minor-mode
   "自定义的 minor mode，用于覆盖其他 mode 的快捷键。"

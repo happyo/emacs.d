@@ -11,7 +11,6 @@
 
 
 ;; Make "M-o" prompt for a target window when there are more than 2
-(global-set-key (kbd "M-o") 'other-window)
 (windmove-default-keybindings)
 
 (provide 'init-windows)
