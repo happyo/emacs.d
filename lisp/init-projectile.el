@@ -4,14 +4,14 @@
 
 (require 'init-elpa)
 
-(defun my-projectile-switch-project-advice (orig-fun &rest args)
-  "Advice function for `projectile-switch-project'.
-ORIG-FUN is the original `projectile-switch-project' function.
-ARGS are the arguments passed to the original function."
-  (let ((project-path (car args)))
-    (tab-new)
-    ;; (tab-rename (file-name-nondirectory (directory-file-name project-path)))
-    (apply orig-fun args)))
+;; (defun my-projectile-switch-project-advice (orig-fun &rest args)
+;;   "Advice function for `projectile-switch-project'.
+;; ORIG-FUN is the original `projectile-switch-project' function.
+;; ARGS are the arguments passed to the original function."
+;;   (let ((project-path (car args)))
+;;     (tab-new)
+;;     ;; (tab-rename (file-name-nondirectory (directory-file-name project-path)))
+;;     (apply orig-fun args)))
 
 
 (use-package projectile
@@ -25,7 +25,7 @@ ARGS are the arguments passed to the original function."
   (when (executable-find "rg")
     (setq-default projectile-generic-command "rg --files --hidden"))
   (projectile-global-mode)
-  (advice-add 'projectile-switch-project :around #'my-projectile-switch-project-advice)
+  ;; (advice-add 'projectile-switch-project :around #'my-projectile-switch-project-advice)
 
   (use-package ibuffer-projectile)
   (global-set-key (kbd "M-p") 'projectile-switch-project)

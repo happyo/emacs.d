@@ -4,6 +4,9 @@
 (require 'init-elpa)
 (require 'init-func)
 
+(use-package imenu-list
+  :ensure t
+  )
 ;; Suppress GUI features
 
 (setq use-file-dialog nil)
