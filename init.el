@@ -9,6 +9,9 @@
 
 ;;(setq debug-on-error t)
 
+(setq gc-cons-threshold most-positive-fixnum)
+
+
 ;; Load path
 (push (expand-file-name "site-lisp" user-emacs-directory) load-path)
 (push (expand-file-name "lisp" user-emacs-directory) load-path)
