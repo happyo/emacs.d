@@ -5,9 +5,10 @@
 (use-package magit
   :demand t
   :bind ("M-m" . magit)
-  ;; :config
-  ;; (setq magit-status-buffer-switch-function 'switch-to-buffer)
+  :config
+  (setq magit-status-buffer-switch-function 'switch-to-buffer)
 
+  (setq magit-display-buffer-function #'magit-display-buffer-fullframe-status-v1)
   ;; (setq magit-display-buffer-function
   ;;     (lambda (buffer)
   ;;       (display-buffer buffer '(display-buffer-same-window))))

@@ -12,35 +12,6 @@
   "Check if font with FONT-NAME is available."
   (find-font (font-spec :name font-name)))
 
-
-;; (use-package cnfonts
-;;   :ensure t
-;;   :init
-;;   (setq cnfonts-personal-fontnames
-;;         '(
-;;           ("Hack" "SF Mono" "Victor Mono" "JetBrains Mono" "Monego")
-;;           ("Xingkai SC" "Zhi Mang Xing" "Monego")
-;;           ("3270 Nerd Font Mono" "SF Mono" "Zhi Mang Xing" "Monego")
-;;           ("3270 Nerd Font Mono" "SF Mono" "Zhi Mang Xing" "Monego")
-;;           ("3270 Nerd Font Mono" "SF Mono" "Zhi Mang Xing" "Monego")
-;;           ))
-;;   (setq cnfonts-profiles
-;;         '("program" "org-profile" "read-book"))
-;;   :hook (cnfonts-set-font-finish
-;;          . (lambda (fontsizes-list)
-;;              (set-fontset-font t 'unicode (font-spec :family "all-the-icons") nil 'append)
-;;              (set-fontset-font t 'unicode (font-spec :family "file-icons") nil 'append)
-;;              (set-fontset-font t 'unicode (font-spec :family "Material Icons") nil 'append)
-;;              (set-fontset-font t 'unicode (font-spec :family "github-octicons") nil 'append)
-;;              (set-fontset-font t 'unicode (font-spec :family "FontAwesome") nil 'append)
-;;              (set-fontset-font t 'unicode (font-spec :family "Weather Icons") nil 'append)))
-;;   :config
-;;   (cnfonts--select-profile "program")
-;;   (cnfonts-enable)
-;; )
-;; (cl-prettyprint (font-family-list))
-;; (cnfonts-mode 1)
-
 (defun centaur-setup-fonts ()
   "Setup fonts."
   (when (display-graphic-p)
