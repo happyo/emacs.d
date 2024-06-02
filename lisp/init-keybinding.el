@@ -29,7 +29,7 @@
 
 (define-key my-custom-minor-mode-map (kbd "M-w") 'tab-close)
 (define-key my-custom-minor-mode-map (kbd "M-DEL") 'my-delete-to-line-beginning)
-(define-key my-custom-minor-mode-map (kbd "C-o") 'universal-argument)
+(define-key my-custom-minor-mode-map (kbd "C-o") 'other-frame)
 (define-key my-custom-minor-mode-map (kbd "M--") 'text-scale-decrease)
 (define-key my-custom-minor-mode-map (kbd "M-=") 'text-scale-increase)
 (define-key my-custom-minor-mode-map (kbd "M-c") 'kill-ring-save)
