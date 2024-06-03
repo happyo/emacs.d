@@ -47,7 +47,7 @@
 (require 'init-editing-utils)
 
 (require 'init-windows)
-;; (require 'init-treemacs)
+(require 'init-treemacs)
 
 (require 'init-lisp)
 (require 'init-keybinding)
@@ -59,7 +59,7 @@
 
 ;; (if (needRime)
 ;;     (require 'init-rime))
-(require 'init-dired)
+;; (require 'init-dired)
 ;; 感觉这个和lsp功能重复了
 ;; (require 'init-docs)
 ;; ;; eaf
