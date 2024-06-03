@@ -137,7 +137,7 @@
   ;; Configure other variables and modes in the :config section,
   ;; after lazily loading the package.
   :config
-  (setq consult-ripgrep-args "rg --null --line-buffered --color=never --max-columns=500 --path-separator /   --smart-case --no-heading --with-filename --line-number --search-zip --glob !**/*.xcworkspace --glob !**/*.xcodeproj --glob !Target Support Files/")
+  (setq consult-ripgrep-args "rg --null --line-buffered --color=never --max-columns=500 --path-separator /   --smart-case --no-heading --with-filename --line-number --search-zip --glob !**/*.xcworkspace --glob !**/*.xcodeproj --glob !Target Support Files/ --glob !site-lisp/")
   ;; Optionally configure preview. The default value
   ;; is 'any, such that any key triggers the preview.
   ;; (setq consult-preview-key 'any)
@@ -180,8 +180,9 @@
   (defun my-consult-fd-options (re buffer)
     "根据关联的文件名返回 fd 选项列表。"
     (let ((options (list consult--fd-command
-                           "--color=never" "--full-path"
-                           (consult--join-regexps re 'extended))))
+                         "--color=never"
+                         "--type" "f"
+                         (consult--join-regexps re 'extended))))
       options))
 
   (defun consult--fd-builder (input buffer)
