@@ -21,7 +21,7 @@
       (goto-char (point-max))
       (insert ";;; " fname " ends here\n"))))
 
-
+(global-set-key (kbd "M-r") 'eval-last-sexp)
 
 ;; Interactive macro expander
 ;; (use-package macrostep
