@@ -16,13 +16,16 @@
   "Setup fonts."
   (when (display-graphic-p)
     ;; Set default font
-    (cl-loop for font in '("Iosevka Comfy" "Kode Mono" "Consolas" "Monego" "TerminessTTF Nerd Font Mono" "Jetbrains Mono"
+    (cl-loop for font in '("Iosevka Comfy" "Operator Mono" "Iosevka Comfy" "Kode Mono" "Consolas" "Monego" "TerminessTTF Nerd Font Mono" "Jetbrains Mono"
                            "SF Mono" "Iosevka Comfy Wide Motion" "Source Code Pro" "Menlo"
                            "Monaco" "DejaVu Sans Mono" "Consolas")
              when (font-installed-p font)
              return (set-face-attribute 'default nil
                                         :family font
-                                        :height 160)
+                                        :height 160
+                                        ;; :slant 'italic
+                                        :weight 'light
+                                        )
              )
 
     ;; Set mode-line font
