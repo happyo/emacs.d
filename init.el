@@ -109,6 +109,8 @@
 ;;     (require 'init-python))
 (require 'init-swift)
 
+(require 'init-pomodoro)
+
 (server-start)
 
 (setq custom-file (locate-user-emacs-file "custom.el"))
