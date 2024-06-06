@@ -1,0 +1,26 @@
+# -*- mode: snippet -*-
+# name: pageGen
+# key: pageGen
+# --
+
+import SwiftUI
+import SwiftUIRedux
+import NetworkingCore
+import LoginLayer
+
+public struct ${1: HomePage}: View {
+    @ObservedObject var store: Store<HomeFeature> = StoreFactory.createStore()
+    @Environment(\.networkingManager) var networkingManager
+    @EnvironmentObject var loginManager: LoginManager
+
+    public init() {}
+
+    public var body: some View {
+        VStack {
+            Text("Home Page")
+            Button("Logout") {
+                loginManager.logout()
+            }
+        }
+    }
+}
