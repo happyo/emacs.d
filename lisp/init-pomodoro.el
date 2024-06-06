@@ -65,5 +65,15 @@
   (call-process "osascript" nil 0 nil
                 "-e" (format "display notification \"%s\" with title \"%s\"" message title)))
 
+(defun my-pomodoro-start-todo ()
+  "Start a pomodoro timer for the current task."
+  (interactive)
+  (my-posframe-start-countdown 25))
+
+(defun my-pomodoro-start-rest ()
+  "Start a rest timer."
+  (interactive)
+  (my-posframe-start-countdown 5))
+
 (provide 'init-pomodoro)
 ;;; init-pomodoro.el ends here
