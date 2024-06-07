@@ -49,3 +49,6 @@
 [submodule "site-lisp/yasnippet"]
 	path = site-lisp/yasnippet
 	url = https://github.com/joaotavora/yasnippet.git
+[submodule "site-lisp/EmacsMacOSModule"]
+	path = site-lisp/EmacsMacOSModule
+	url = https://github.com/xenodium/EmacsMacOSModule.git

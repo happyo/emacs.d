@@ -51,7 +51,7 @@
 
 (defun set-my-prog-mode-line-spacing ()
   "Set line spacing in programming modes."
-  (setq line-spacing 0.2))  ; 可以调整这个值来适应你的喜好
+  (setq line-spacing 0.3))  ; 可以调整这个值来适应你的喜好
 
 (add-hook 'prog-mode-hook 'set-my-prog-mode-line-spacing)
 

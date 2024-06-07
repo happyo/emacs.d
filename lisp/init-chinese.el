@@ -16,7 +16,7 @@
   "Setup fonts."
   (when (display-graphic-p)
     ;; Set default font
-    (cl-loop for font in '("Iosevka Comfy" "Operator Mono" "Iosevka Comfy" "Kode Mono" "Consolas" "Monego" "TerminessTTF Nerd Font Mono" "Jetbrains Mono"
+    (cl-loop for font in '("Noto Sans Condensed" "Roboto Mono" "Comic Mono" "Operator Mono" "Iosevka Comfy" "Kode Mono" "Consolas" "Monego" "TerminessTTF Nerd Font Mono" "Jetbrains Mono"
                            "SF Mono" "Iosevka Comfy Wide Motion" "Source Code Pro" "Menlo"
                            "Monaco" "DejaVu Sans Mono" "Consolas")
              when (font-installed-p font)
