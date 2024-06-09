@@ -52,3 +52,6 @@
 [submodule "site-lisp/EmacsMacOSModule"]
 	path = site-lisp/EmacsMacOSModule
 	url = https://github.com/xenodium/EmacsMacOSModule.git
+[submodule "site-lisp/EmacsMacPluginModule"]
+	path = site-lisp/EmacsMacPluginModule
+	url = git@github.com:happyo/EmacsMacPluginModule.git
