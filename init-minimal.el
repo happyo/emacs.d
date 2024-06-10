@@ -40,6 +40,7 @@
 (require 'init-lisp)
 (require 'init-keybinding)
 
+(require 'init-macos)
 
 (server-start)
 
