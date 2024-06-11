@@ -9,7 +9,7 @@
   :init
   (savehist-mode))
 
-(desktop-save-mode 1)
+;; (desktop-save-mode 1)
 
 ;; ;; Restore histories and registers after saving
 
