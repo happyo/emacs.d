@@ -8,9 +8,21 @@
 
 (global-set-key (kbd "M-d") 'delete-char)
 
-(use-package golden-ratio-scroll-screen
-  :config
-  (setq golden-ratio-scroll-highlight-flag nil))
+(defun scroll-up-20-lines ()
+  "Scroll up 20 lines."
+  (interactive)
+  (scroll-up-command 20))
+
+(defun scroll-down-20-lines ()
+  "Scroll down 20 lines."
+  (interactive)
+  (scroll-down-command 20))
+
+;; (use-package smooth-scrolling
+;;   :ensure t
+;;   :config
+;;   (smooth-scrolling-mode 1))
+
 
 ;; meow
 (defun meow-setup ()
@@ -88,7 +100,7 @@
    '("c" . meow-change)
    '("C" . meow-change-save)
    '("d" . meow-kill-whole-line)
-   '("C-d" . golden-ratio-scroll-screen-up)
+   '("C-d" . scroll-up-20-lines)
    '("e" . meow-next-word)
    '("E" . meow-next-symbol)
    '("f" . meow-find)
@@ -120,7 +132,7 @@
    '("t" . meow-till)
    '("T" . meow-till-expand)
    '("u" . undo)
-   '("C-u" . golden-ratio-scroll-screen-down)
+   '("C-u" . scroll-down-20-lines)
    '("v" . meow-line)
    ;; '("V" . meow-kmacro-matches)
    '("w" . meow-mark-word)

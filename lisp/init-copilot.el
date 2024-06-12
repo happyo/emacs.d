@@ -7,6 +7,8 @@
 (use-package f
   :ensure t)
 
+(use-package editorconfig)
+
 (defun my/copilot-tab ()
   (interactive)
   (or (copilot-accept-completion)

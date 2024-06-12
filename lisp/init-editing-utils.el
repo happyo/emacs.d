@@ -87,11 +87,11 @@
 (global-set-key (kbd "C-c d") 'move-dup-duplicate-down)
 (global-set-key (kbd "C-c u") 'move-dup-duplicate-up)
 
-(use-package which-key
-  :init
-  (setq-default which-key-idle-delay 1.5)
-  :config
-  (which-key-mode))
+;; (use-package which-key
+;;   :init
+;;   (setq-default which-key-idle-delay 1.5)
+;;   :config
+;;   (which-key-mode))
 
 (use-package smartparens-mode
   :ensure smartparens  ;; install the package
