@@ -54,6 +54,7 @@
   )
 
 (use-package vertico-posframe
+  :demand t
   :ensure t 
   :after vertico
   :config
