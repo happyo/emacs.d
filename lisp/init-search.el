@@ -137,6 +137,11 @@
   ;; Configure other variables and modes in the :config section,
   ;; after lazily loading the package.
   :config
+  ;; 设置 debounce 时间为 0.3 秒，适用于较快的输入
+  (setq consult-async-input-debounce 0.1)
+  ;; 设置 throttle 时间为 0.2 秒，保证输入处理不会过于频繁
+  (setq consult-async-input-throttle 0.1)
+  (setq consult-async-min-input 1)
   (setq consult-ripgrep-args "rg --null --line-buffered --color=never --max-columns=500 --path-separator /   --smart-case --no-heading --with-filename --line-number --search-zip --glob !**/*.xcworkspace --glob !**/*.xcodeproj --glob !Target Support Files/ --glob !site-lisp/")
   ;; Optionally configure preview. The default value
   ;; is 'any, such that any key triggers the preview.
