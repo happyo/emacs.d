@@ -1,0 +1,27 @@
+# -*- mode: snippet -*-
+# name: sg
+# key: sg
+# --
+private lazy var searchTextField: UITextField = {
+    let textField = UITextField()
+    textField.placeholder = "$0"
+    textField.returnKeyType = .search
+    textField.font = .jy_pingfangRegular(14)
+    
+    return textField
+}()
+
+private lazy var searchBackgroundView: UIView = {
+    let view = UIView()
+    view.backgroundColor = .jy_hexColor("#000000", 0.04)
+    view.layer.cornerRadius = 16.jy_UIScale()
+    
+    return view
+}()
+
+private lazy var searchIconImageView: UIImageView = {
+    let imageView = UIImageView()
+    imageView.image = .jyvCourseVip_imageNamed("cv_ss_search_icon")
+    
+    return imageView
+}()

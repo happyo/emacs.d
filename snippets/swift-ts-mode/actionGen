@@ -1,0 +1,25 @@
+# -*- mode: snippet -*-
+# name: actionGen
+# key: actionGen
+# --
+
+func createAction(manager: NetworkingManager) -> ThunkEffectAction<${1: Home}Feature.State, ${1}Feature.Action> {
+    let fetchDataAction = ThunkEffectAction<${1}Feature.State, ${1}Feature.Action> { dispatch, getState in
+
+        let homeListAPI = HomeFeedListAPI()
+        
+        dispatch(.startFetching)
+        manager.request(homeListAPI) { (result: Result<${2: APIDataModel}, Error>) in
+            switch result {
+            case .success(let response):
+
+                dispatch(.setHomeFeedList(homeFeedListModels))
+            case .failure(let error):
+                print(error.localizedDescription)
+                dispatch(.endLoading)
+            }
+        }
+    }
+        
+    return fetchDataAction
+}

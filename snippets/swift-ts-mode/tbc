@@ -1,0 +1,47 @@
+# -*- mode: snippet -*-
+# name: tbc
+# key: tbc
+# --
+import JYTableViewManager
+import SnapKit
+import JYUIStandardKit
+import RxSwift
+import RxCocoa
+
+public class $0: JYTableViewItem {
+}
+
+public class $1: UITableViewCell, JYTableViewCellDelegate {
+    // MARK: Variable
+
+    private var disposeBag = DisposeBag()
+
+    // MARK: JYTableViewCellDelegate
+
+    public func cellDidLoad() {
+        selectionStyle = .none
+        setupSubviews()
+        setupBindings()
+    }
+
+    public func configCellWithItem(_ item: JYTableViewItem) {
+        if let cellModel = item as? $0 {
+        }
+    }
+    
+    public static func heightForCellWithItem(_ item: JYTableViewItem) -> CGFloat {
+        return UITableView.automaticDimension
+    }
+
+    // MARK: Private
+
+    private func setupSubviews() {
+        
+    }
+
+    private func setupBindings() {
+    }
+
+    // MARK: Lazy
+}
+

@@ -1,0 +1,43 @@
+# -*- mode: snippet -*-
+# name: featureGen
+# key: featureGen
+# --
+
+import SwiftUIRedux
+import SwiftUI
+
+struct ${1: HomeFeature}: Feature {
+    
+    struct State: Equatable {
+        var isLoading: Bool = false
+    }
+
+    enum Action: Equatable {
+    }
+
+    struct Reducer: ReducerProtocol {
+        func reduce(oldState: State, action: Action) -> State {
+            var state = oldState
+            
+            switch action {
+            }
+            
+            return state
+        }
+    }
+    
+    static func initialState() -> State {
+        State()
+    }
+    
+    static func createReducer() -> Reducer {
+        Reducer()
+    }
+    
+    static func middlewares() -> [AnyMiddleware<${1}>] {
+        let thunkMiddleware = ThunkMiddleware<${1}>()
+        
+        return [AnyMiddleware(thunkMiddleware)]
+    }
+
+}
