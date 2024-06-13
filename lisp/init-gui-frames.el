@@ -45,9 +45,8 @@
   (when *is-a-mac* (ns-auto-titlebar-mode))
   )
 
-(setq frame-title-format "")
+(setq-default frame-title-format "")
 
-;; so we zero it explicitly in those cases.
 (setq line-spacing 0.3)
 
 ;; (defun set-my-prog-mode-line-spacing ()
