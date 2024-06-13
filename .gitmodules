@@ -4,9 +4,6 @@
 [submodule "site-lisp/ef-themes"]
 	path = site-lisp/ef-themes
 	url = git@github.com:happyo/ef-themes.git
-[submodule "site-lisp/emacs-application-framework"]
-	path = site-lisp/emacs-application-framework
-	url = https://github.com/emacs-eaf/emacs-application-framework.git
 [submodule "site-lisp/meow"]
 	path = site-lisp/meow
 	url = git@github.com:happyo/meow.git

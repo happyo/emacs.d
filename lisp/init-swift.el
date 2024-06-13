@@ -61,7 +61,6 @@
 ;;         (shell-command full-command)
 ;;         (message "Xcode 项目在模拟器上构建、安装和启动完成。")))))
 
-
 (provide 'init-swift)
 ;;; init-swift.el ends here
 

@@ -28,7 +28,12 @@
 
 (let ((no-border '(internal-border-width . 0)))
   (add-to-list 'default-frame-alist no-border)
-  (add-to-list 'initial-frame-alist no-border))
+  (add-to-list 'initial-frame-alist no-border)
+  (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
+  (add-to-list 'default-frame-alist '(ns-appearance . dark))
+)
+;; (setq default-frame-alist '((undecorated . t)))
+
 
 (use-package transwin)
 (global-set-key (kbd "M-C-e") (lambda () (interactive) (transwin-dec)))
@@ -38,22 +43,18 @@
   :demand t
   :config
   (when *is-a-mac* (ns-auto-titlebar-mode))
-)
+  )
 
-(setq frame-title-format
-      '((:eval (if (buffer-file-name)
-                   (abbreviate-file-name (buffer-file-name))
-                 "%b"))))
+(setq frame-title-format "")
 
-;; Non-zero values for `line-spacing' can mess up ansi-term and co,
 ;; so we zero it explicitly in those cases.
-;; (setq line-spacing 20)
+(setq line-spacing 0.3)
 
-(defun set-my-prog-mode-line-spacing ()
-  "Set line spacing in programming modes."
-  (setq line-spacing 0.3))  ; 可以调整这个值来适应你的喜好
+;; (defun set-my-prog-mode-line-spacing ()
+;;   "Set line spacing in programming modes."
+;;   (setq line-spacing 0.3))  ; 可以调整这个值来适应你的喜好
 
-(add-hook 'prog-mode-hook 'set-my-prog-mode-line-spacing)
+;; (add-hook 'prog-mode-hook 'set-my-prog-mode-line-spacing)
 
 ;; Change global font size easily
 
