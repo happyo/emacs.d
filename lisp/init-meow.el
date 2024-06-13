@@ -18,10 +18,10 @@
   (interactive)
   (scroll-down-command 20))
 
-;; (use-package smooth-scrolling
-;;   :ensure t
-;;   :config
-;;   (smooth-scrolling-mode 1))
+(use-package smooth-scrolling
+  :ensure t
+  :config
+  (smooth-scrolling-mode 1))
 
 
 ;; meow
