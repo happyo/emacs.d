@@ -14,6 +14,3 @@ brew install fd
 pip3 install epc orjson sexpdata==0.0.3 six
 pip3 install openai epc sexpdata six
 
-cd emacs-application-framework
-chmod +x ./install-eaf.py
-./install-eaf.py

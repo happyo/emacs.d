@@ -60,12 +60,6 @@
 ;; (if (needRime)
 ;;     (require 'init-rime))
 ;; (require 'init-dired)
-;; 感觉这个和lsp功能重复了
-;; (require 'init-docs)
-;; ;; eaf
-;; (if (needEAF)
-;;     (require 'init-eaf)
-;;   )
 
 ;; (require 'init-beframe)
 
