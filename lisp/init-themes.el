@@ -38,7 +38,7 @@
       (yellow          "#F2C830")
       (yellow-warmer   "#D78812")
       (yellow-cooler   "#B2A421")
-      (yellow-faint    "#927B2B")
+      (yellow-faint    ,tcc-216-qiuxiang)
       (blue            "#2296D7")
       (blue-warmer     "#8D68F3")
       (blue-cooler     "#002FA7")
@@ -151,7 +151,7 @@
 ;;;; Code mappings
 
       (builtin magenta)
-      ;; (comment yellow-faint)
+      (comment yellow-faint)
       ;; (constant red-cooler)
       ;; (fnname magenta-warmer)
       ;; (keyword magenta-cooler)
@@ -288,7 +288,7 @@
   :group 'font-lock-faces)
 
 (defface font-lock-property-ref-face
-  '((t :foreground "#ff69b4" :weight bold))
+  '((t :foreground "#ef92b5"))
   "Face for property names."
   :group 'font-lock-faces)
 

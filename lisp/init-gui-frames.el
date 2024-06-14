@@ -47,7 +47,7 @@
 
 (setq-default frame-title-format "")
 
-(setq line-spacing 0.3)
+(setq-default line-spacing 0.3)
 
 ;; (defun set-my-prog-mode-line-spacing ()
 ;;   "Set line spacing in programming modes."
