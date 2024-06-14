@@ -13,7 +13,7 @@
       `(
 ;;; Basic values
       ;; (bg-main     ,tcc-108-ziyun)
-      (bg-main     "#dcdcdc")
+      (bg-main     "#eff1f5")
       (fg-main     ,tcc-326-yanmo)
       ;; (fg-main     "#333333")
       (bg-dim      ,tcc-116-fenqing)
@@ -115,7 +115,7 @@
       (bg-info            "#bbefda") ; check with info
 
       (border        "#b4c4c0")
-      (cursor        ,tcc-171-minghuang)
+      (cursor        ,tcc-059-qiaohong)
       ;; (fg-intense    "#282828")
 
       (modeline-err     "#9f0030")
