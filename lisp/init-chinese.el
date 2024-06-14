@@ -7,6 +7,7 @@
 (require 'init-elpa)
 (require 'init-func)
 
+;; 最好使用 cnfonts 来设置中文字体，下面这种方式对于有些字体不起作用
 ;; ;; Font
 ;; (defun font-installed-p (font-name)
 ;;   "Check if font with FONT-NAME is available."
