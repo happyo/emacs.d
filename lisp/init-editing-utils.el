@@ -4,7 +4,7 @@
 (require 'init-elpa)
 
 (global-auto-revert-mode 1)
-(global-hl-line-mode 1)
+;; (global-hl-line-mode 1)
 
 (use-package format-all)
 
@@ -25,13 +25,13 @@
 )
 
 ;;; Some basic preferences
-
+(blink-cursor-mode -1)
 (setq-default
- blink-cursor-interval 0.4
+ ;; blink-cursor-interval 0.4
  bookmark-default-file (locate-user-emacs-file ".bookmarks.el")
  buffers-menu-max-size 30
  case-fold-search t
- column-number-mode t
+ ;; column-number-mode t
  ediff-window-setup-function 'ediff-setup-windows-plain
  ediff-split-window-function 'split-window-horizontally
  indent-tabs-mode nil

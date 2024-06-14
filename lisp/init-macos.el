@@ -9,7 +9,7 @@
 
 (mac-plugin-load-release)
 (atmosphere-enable)
-(mac-plugin-set-cursor-color tcc-059-qiaohong)
+(mac-plugin-set-cursor-color tcc-082-langganzi)
 (mac-plugin-set-shadow-opacity 1.0)
 
 (provide 'init-macos)
