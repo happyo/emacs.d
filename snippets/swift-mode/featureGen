@@ -13,6 +13,8 @@ struct ${1: HomeFeature}: Feature {
     }
 
     enum Action: Equatable {
+        case startFetching
+        case endLoading
     }
 
     struct Reducer: ReducerProtocol {
@@ -20,6 +22,10 @@ struct ${1: HomeFeature}: Feature {
             var state = oldState
             
             switch action {
+            case .startFetching:
+            state.isLoading = true
+            case .endLoading:
+            state.isLoading = false
             }
             
             return state
