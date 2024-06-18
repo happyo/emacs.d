@@ -134,7 +134,7 @@
    '("u" . undo)
    '("C-u" . scroll-down-20-lines)
    '("v" . meow-line)
-   ;; '("V" . meow-kmacro-matches)
+   '("V" . meow-block)
    '("w" . meow-mark-word)
    '("W" . meow-mark-symbol)
    '("x" . meow-kill)
