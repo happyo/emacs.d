@@ -193,6 +193,7 @@
         '("\\` "
           "\\`\\*"
           "\\`\\magit"
+          "\\`\\vterm"
           "\\`\\*Completions\\*\\'"
           "\\`\\*Flymake log\\*\\'"
           "\\`\\*Semantic SymRef\\*\\'"
