@@ -47,7 +47,7 @@
   :demand t
   :ensure t
   :config
-  (setq dashboard-banner-logo-title "Welcome to Emacs Dashboard")
+  (setq dashboard-banner-logo-title "Happy hacking, belyenochi - Emacs ♥ you!")
   (setq dashboard-center-content t)
   (setq dashboard-projects-backend 'project-el)
   (setq dashboard-vertically-center-content t)
@@ -55,7 +55,12 @@
   (setq dashboard-items '((recents   . 5)
                           (projects  . 5)
                           ))
-  (setq dashboard-startup-banner 'official)
+  (setq dashboard-startup-banner "~/.emacs.d/icon/ascii-art.txt")
+  (setq dashboard-item-shortcuts '((recents   . "r")
+                                 (bookmarks . "m")
+                                 (projects  . "p")
+                                 (agenda    . "a")
+                                 (registers . "e")))
   (dashboard-setup-startup-hook))
 
 (provide 'init-sessions)
