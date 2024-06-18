@@ -189,6 +189,16 @@
   ;;;; 5. No project support
   ;; (setq consult-project-function nil)
 
+  (setq consult-buffer-filter
+        '("\\` "
+          "\\`\\*"
+          "\\`\\magit"
+          "\\`\\*Completions\\*\\'"
+          "\\`\\*Flymake log\\*\\'"
+          "\\`\\*Semantic SymRef\\*\\'"
+          "\\`\\*tramp/.*\\*\\'"))
+
+
   (defvar consult--fd-command nil)
 
   (defun my-consult-fd-options (re buffer)

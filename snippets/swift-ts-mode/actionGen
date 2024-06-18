@@ -3,8 +3,8 @@
 # key: actionGen
 # --
 
-func createAction(manager: NetworkingManager) -> ThunkEffectAction<${1: Home}Feature.State, ${1}Feature.Action> {
-    let fetchDataAction = ThunkEffectAction<${1}Feature.State, ${1}Feature.Action> { dispatch, getState in
+func createAction(manager: NetworkingManager) -> ThunkEffectAction<${1:Home}Feature.State, ${1}Feature.Action> {
+    ThunkEffectAction<${1}Feature.State, ${1}Feature.Action> { dispatch, getState in
 
         let homeListAPI = HomeFeedListAPI()
         
@@ -20,6 +20,4 @@ func createAction(manager: NetworkingManager) -> ThunkEffectAction<${1: Home}Fea
             }
         }
     }
-        
-    return fetchDataAction
 }
