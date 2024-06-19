@@ -23,6 +23,11 @@
 
 (global-set-key (kbd "M-r") 'eval-last-sexp)
 
+(use-package slime
+  :ensure t
+  :config
+  (setq inferior-lisp-program "sbcl")
+  )
 ;; Interactive macro expander
 ;; (use-package macrostep
 ;;   :custom-face
