@@ -56,9 +56,11 @@
   )
 
 (use-package flx
+  :demand t
   :ensure t)
 
 (use-package fussy
+  :demand t
   :ensure t
   :after flx
   :config
