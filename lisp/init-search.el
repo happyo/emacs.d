@@ -36,8 +36,9 @@
   :load-path "~/.emacs.d/site-lisp/vertico"
   :config
   (vertico-mode)
-(global-set-key (kbd "C-d") 'vertico-scroll-up)
-(global-set-key (kbd "C-u") 'vertico-scroll-down)
+  (global-set-key (kbd "C-d") 'vertico-scroll-up)
+  (global-set-key (kbd "C-u") 'vertico-scroll-down)
+  (setq completion-styles '(fussy substring partial-completion initials))
   ;; Different scroll margin
   ;; (setq vertico-scroll-margin 0)
 
@@ -52,6 +53,18 @@
   ;; (setq vertico-cycle t)
   ;; Persist history over Emacs restarts. Vertico sorts by history position.
   )
+
+(use-package flx
+  :ensure t)
+(use-package fussy
+  :ensure t
+  :config
+  (setq
+   ;; For example, project-find-file uses 'project-files which uses
+   ;; substring completion by default. Set to nil to make sure it's using
+   ;; flx.
+   completion-category-defaults nil
+   completion-category-overrides nil))
 
 (use-package vertico-posframe
   :demand t
@@ -97,14 +110,14 @@
   (setq read-extended-command-predicate #'command-completion-default-include-p))
 
 ;; Optionally use the `orderless' completion style.
-(use-package orderless
-  :init
-  ;; Configure a custom style dispatcher (see the Consult wiki)
-  ;; (setq orderless-style-dispatchers '(+orderless-consult-dispatch orderless-affix-dispatch)
-  ;;       orderless-component-separator #'orderless-escapable-split-on-space)
-  (setq completion-styles '(orderless basic)
-        completion-category-defaults nil
-        completion-category-overrides '((file (styles partial-completion)))))
+;; (use-package orderless
+;;   :init
+;;   ;; Configure a custom style dispatcher (see the Consult wiki)
+;;   ;; (setq orderless-style-dispatchers '(+orderless-consult-dispatch orderless-affix-dispatch)
+;;   ;;       orderless-component-separator #'orderless-escapable-split-on-space)
+;;   (setq completion-styles '(orderless basic)
+;;         completion-category-defaults nil
+;;         completion-category-overrides '((file (styles partial-completion)))))
 
                                         ; Example configuration for Consult
 (use-package consult
