@@ -34,6 +34,7 @@
   :demand t
   :ensure nil
   :load-path "~/.emacs.d/site-lisp/vertico"
+  :after fussy
   :config
   (vertico-mode)
   (global-set-key (kbd "C-d") 'vertico-scroll-up)
@@ -56,8 +57,10 @@
 
 (use-package flx
   :ensure t)
+
 (use-package fussy
   :ensure t
+  :after flx
   :config
   (setq
    ;; For example, project-find-file uses 'project-files which uses
