@@ -13,8 +13,8 @@
       `(
 ;;; Basic values
       ;; (bg-main     ,tcc-108-ziyun)
-      (bg-main     "#eff1f5")
-      (fg-main     ,tcc-326-yanmo)
+      (bg-main     "#F1F0F7")
+      (fg-main     ,tcc-324-jinqing)
       ;; (fg-main     "#333333")
       (bg-dim      ,tcc-116-fenqing)
       (fg-dim      "#777294")
@@ -45,7 +45,7 @@
       (blue-faint      "#82D8CF")
       (magenta         ,tcc-100-ziyuan)
       (magenta-warmer  ,tcc-085-hongzhizhu)
-      (magenta-cooler  "#810DAE")
+      (magenta-cooler  ,tcc-084-lianhong)
       (magenta-faint   "#CCA4E3")
       (cyan            "#3AB6DD")
       (cyan-warmer     "#53976F")
@@ -154,7 +154,7 @@
       (comment yellow-faint)
       ;; (constant red-cooler)
       ;; (fnname magenta-warmer)
-      ;; (keyword magenta-cooler)
+      (keyword magenta-cooler)
       ;; (preprocessor green-warmer)
       ;; (docstring cyan-faint)
       ;; (string yellow-warmer)
