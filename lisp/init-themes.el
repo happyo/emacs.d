@@ -12,8 +12,8 @@
 (setq ef-summer-palette-overrides
       `(
 ;;; Basic values
-      ;; (bg-main     ,tcc-108-ziyun)
-      (bg-main     "#F1F0F7")
+      (bg-main     ,tcc-124-yuebai)
+      ;; (bg-main     "#F1F0F7")
       (fg-main     ,tcc-324-jinqing)
       ;; (fg-main     "#333333")
       (bg-dim      ,tcc-116-fenqing)
