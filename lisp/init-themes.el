@@ -48,7 +48,8 @@
       (magenta-cooler  "#8F5ED4")
       (magenta-faint   "#CCA4E3")
       (cyan            "#3AB6DD")
-      (cyan-warmer     ,tcc-249-silv)
+      ;; (cyan-warmer     ,tcc-249-silv)
+      (cyan-warmer     "#009D91")
       (cyan-cooler     "#289BA3")
       (cyan-faint      "#AED0EE")
 
