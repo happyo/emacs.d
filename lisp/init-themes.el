@@ -40,15 +40,15 @@
       (yellow-cooler   ,tcc-192-hupo)
       (yellow-faint    ,tcc-216-qiuxiang)
       (blue            "#2296D7")
-      (blue-warmer     "#8D68F3")
+      (blue-warmer     ,tcc-131-cangcang)
       (blue-cooler     "#002FA7")
       (blue-faint      "#82D8CF")
       (magenta         ,tcc-100-ziyuan)
       (magenta-warmer  ,tcc-085-hongzhizhu)
-      (magenta-cooler  ,tcc-084-lianhong)
+      (magenta-cooler  "#8F5ED4")
       (magenta-faint   "#CCA4E3")
       (cyan            "#3AB6DD")
-      (cyan-warmer     "#53976F")
+      (cyan-warmer     ,tcc-249-silv)
       (cyan-cooler     "#289BA3")
       (cyan-faint      "#AED0EE")
 
@@ -158,8 +158,8 @@
       ;; (preprocessor green-warmer)
       ;; (docstring cyan-faint)
       ;; (string yellow-warmer)
-      ;; (type cyan-warmer)
-      ;; (variable blue-warmer)
+      (type cyan-warmer)
+      (variable blue-warmer)
       ;; (rx-escape cyan-cooler) ; compare with `string'
       ;; (rx-construct red-cooler)
 
@@ -282,13 +282,13 @@
   "Face for operators."
   :group 'font-lock-faces)
 
-(defface font-lock-property-name-face
-  '((t :foreground "green" :weight bold))
-  "Face for property names."
-  :group 'font-lock-faces)
+;; (defface font-lock-property-name-face
+;;   '((t :foreground "green" :weight bold))
+;;   "Face for property names."
+;;   :group 'font-lock-faces)
 
 (defface font-lock-property-ref-face
-  '((t :foreground "#ef92b5"))
+  `((t :foreground ,tcc-173-chaomi))
   "Face for property names."
   :group 'font-lock-faces)
 
