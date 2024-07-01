@@ -152,15 +152,15 @@
 ;;;; Code mappings
 
       (builtin magenta)
-      (comment yellow-faint)
+      (comment ,tcc-317-hehui)
       ;; (constant red-cooler)
-      ;; (fnname magenta-warmer)
+      (fnname blue-warmer)
       (keyword magenta-cooler)
       ;; (preprocessor green-warmer)
       ;; (docstring cyan-faint)
       ;; (string yellow-warmer)
       (type cyan-warmer)
-      (variable blue-warmer)
+      (variable red-warmer)
       ;; (rx-escape cyan-cooler) ; compare with `string'
       ;; (rx-construct red-cooler)
 
@@ -289,7 +289,7 @@
 ;;   :group 'font-lock-faces)
 
 (defface font-lock-property-ref-face
-  `((t :foreground ,tcc-173-chaomi))
+  `((t :foreground ,tcc-058-lingxiao))
   "Face for property names."
   :group 'font-lock-faces)
 
