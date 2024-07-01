@@ -13,7 +13,7 @@
       `(
 ;;; Basic values
       (bg-main     ,tcc-118-tianqing)
-      ;; (bg-main     "#F1F0F7")
+      ;; (bg-main     "#FFFACD")
       ;; (fg-main     ,tcc-015-wanse)
       (fg-main     "#CC99FF")
       (bg-dim      ,tcc-116-fenqing)
