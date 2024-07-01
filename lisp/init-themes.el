@@ -12,7 +12,7 @@
 (setq ef-summer-palette-overrides
       `(
 ;;; Basic values
-      (bg-main     ,tcc-124-yuebai)
+      (bg-main     ,tcc-118-tianqing)
       ;; (bg-main     "#F1F0F7")
       (fg-main     ,tcc-324-jinqing)
       ;; (fg-main     "#333333")
@@ -39,8 +39,8 @@
       (yellow-warmer   ,tcc-181-guihuang)
       (yellow-cooler   ,tcc-192-hupo)
       (yellow-faint    ,tcc-216-qiuxiang)
-      (blue            "#2296D7")
-      (blue-warmer     ,tcc-131-cangcang)
+      (blue            ,tcc-131-cangcang)
+      (blue-warmer     ,tcc-129-ruolan)
       (blue-cooler     "#002FA7")
       (blue-faint      "#82D8CF")
       (magenta         ,tcc-100-ziyuan)
@@ -48,8 +48,8 @@
       (magenta-cooler  "#8F5ED4")
       (magenta-faint   "#CCA4E3")
       (cyan            "#3AB6DD")
-      ;; (cyan-warmer     ,tcc-249-silv)
-      (cyan-warmer     "#009D91")
+      (cyan-warmer     ,tcc-249-silv)
+      ;; (cyan-warmer     "#009D91")
       (cyan-cooler     "#289BA3")
       (cyan-faint      "#AED0EE")
 
@@ -289,7 +289,7 @@
 ;;   :group 'font-lock-faces)
 
 (defface font-lock-property-ref-face
-  `((t :foreground ,tcc-058-lingxiao))
+  `((t :foreground ,tcc-029-zhuyantuo))
   "Face for property names."
   :group 'font-lock-faces)
 
