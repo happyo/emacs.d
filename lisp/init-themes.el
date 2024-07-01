@@ -14,8 +14,8 @@
 ;;; Basic values
       (bg-main     ,tcc-118-tianqing)
       ;; (bg-main     "#F1F0F7")
-      (fg-main     ,tcc-324-jinqing)
-      ;; (fg-main     "#333333")
+      ;; (fg-main     ,tcc-097-qiehua)
+      (fg-main     "#C678DD")
       (bg-dim      ,tcc-116-fenqing)
       (fg-dim      "#777294")
       
