@@ -51,6 +51,7 @@
   :demand t
   :ensure t
   :after lsp-bridge
+  :bind (("M-]" . apheleia-format-buffer))
   :config
   (setq +format-with-lsp nil)
   ;; which formatter to use
