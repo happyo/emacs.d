@@ -4,8 +4,6 @@
 
 (require 'init-elpa)
 
-;; (require 'treemacs-all-the-icons)
-
 (use-package treemacs
   :ensure t
   :defer t
@@ -28,7 +26,6 @@
   (define-key treemacs-mode-map (kbd "M-m") 'magit-status)
   (setq treemacs-user-mode-line-format 'none)
   (setq treemacs-show-cursor nil)
-  ;; (treemacs-load-all-the-icons-with-workaround-font "monego")
   )
 
 (use-package treemacs-projectile
@@ -42,21 +39,6 @@
 (use-package treemacs-magit
   :after (treemacs magit)
   :ensure t)
-
-
-(use-package treemacs-tab-bar ;;treemacs-tab-bar if you use tab-bar-mode
-  :after (treemacs)
-  :ensure t
-  :config (treemacs-set-scope-type 'Tabs))
-
-;; (use-package treemacs-persp ;;treemacs-perspective if you use perspective.el vs. persp-mode
-;;   :after (treemacs persp-mode) ;;or perspective vs. persp-mode
-;;   :ensure t
-;;   :config (treemacs-set-scope-type 'Perspectives))
-
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/treemacs-nerd-icons")
-;; (require 'treemacs-nerd-icons)
-;; (treemacs-load-theme "nerd-icons")
 
 (provide 'init-treemacs)
 ;;; init-treemacs.el ends here

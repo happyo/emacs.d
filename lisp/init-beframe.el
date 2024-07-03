@@ -4,9 +4,6 @@
 
 (require 'init-elpa)
 
-;; (use-package 'frame-tabs
-;;    :ensure t)
-
 ;; (use-package pulsar
 ;;   :config
 ;;   ;; integration with the `consult' package:
@@ -20,23 +17,6 @@
 
 ;;   (pulsar-global-mode 1)
 ;;   )
-
-;; (use-package cursory
-;;   :config
-;;   ;; Check the `cursory-presets' for how to set your own preset styles.
-
-;;   (setq cursory-latest-state-file (locate-user-emacs-file "cursory-latest-state"))
-
-;;   ;; Set last preset or fall back to desired style from `cursory-presets'.
-;;   (cursory-set-preset (or (cursory-restore-latest-preset) 'bar))
-
-;;   ;; The other side of `cursory-restore-latest-preset'.
-;;   (add-hook 'kill-emacs-hook #'cursory-store-latest-preset)
-
-;;   ;; We have to use the "point" mnemonic, because C-c c is often the
-;;   ;; suggested binding for `org-capture'.
-;;   (define-key global-map (kbd "C-c p") #'cursory-set-preset))
-
 
 (use-package beframe
   :demand t
