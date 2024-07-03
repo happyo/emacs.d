@@ -5,7 +5,6 @@
 
 (global-set-key (kbd "M-/") 'comment-line)
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
-(global-set-key (kbd "M-[") 'indent-region)
 
 
 ;; (defun my-custom-m-dot-function ()

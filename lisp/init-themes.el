@@ -12,8 +12,8 @@
 (setq ef-summer-palette-overrides
       `(
 ;;; Basic values
-      (bg-main     ,tcc-118-tianqing)
-      ;; (bg-main     "#FFFACD")
+      ;; (bg-main     ,tcc-118-tianqing)
+      (bg-main     "#FFFACD")
       ;; (fg-main     ,tcc-015-wanse)
       (fg-main     "#CC99FF")
       (bg-dim      ,tcc-116-fenqing)

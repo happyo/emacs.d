@@ -26,6 +26,8 @@
   :config
   (setq treemacs-indentation 1)
   (define-key treemacs-mode-map (kbd "M-m") 'magit-status)
+  (setq treemacs-user-mode-line-format 'none)
+  (setq treemacs-show-cursor nil)
   ;; (treemacs-load-all-the-icons-with-workaround-font "monego")
   )
 

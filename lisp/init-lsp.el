@@ -20,8 +20,8 @@
   :bind (
          ("M-." . lsp-bridge-find-def)
          ("M-," . lsp-bridge-find-def-return)
-         ("M-]" . lsp-bridge-code-format)
-      )
+         ("M-[" . lsp-bridge-code-format)
+         )
   :load-path "~/.emacs.d/site-lisp/lsp-bridge"
   :config
   (setq lsp-bridge-python-command (pythonPath))
@@ -39,15 +39,28 @@
   (setq lsp-bridge-find-def-fallback-function 'xref-find-definitions)
   (setq lsp-bridge-find-def-return-fallback-function 'xref-pop-marker-stack)
   (setq acm-backend-lsp-match-mode "prefix")
-;; (define-key my-custom-minor-mode-map (kbd "M-.") 'my-custom-m-dot-function)
-;; (define-key my-custom-minor-mode-map (kbd "M-,") 'lsp-bridge-find-def-return)
-;; (define-key my-custom-minor-mode-map (kbd "M-]") 'lsp-bridge-code-format)
+  ;; (define-key my-custom-minor-mode-map (kbd "M-.") 'my-custom-m-dot-function)
+  ;; (define-key my-custom-minor-mode-map (kbd "M-,") 'lsp-bridge-find-def-return)
+  ;; (define-key my-custom-minor-mode-map (kbd "M-]") 'lsp-bridge-code-format)
   (global-lsp-bridge-mode)
   )
 
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/treesit-auto")
 
-(use-package prettier-js)
+(use-package apheleia
+  :demand t
+  :ensure t
+  :after lsp-bridge
+  :config
+  (setq +format-with-lsp nil)
+  ;; which formatter to use
+  (setf (alist-get 'python-mode apheleia-mode-alist) 'ruff)
+  (setf (alist-get 'python-ts-mode apheleia-mode-alist) 'ruff)
+
+  (setq apheleia-remote-algorithm 'local)
+  (add-hook 'apheleia-post-format-hook #'lsp-bridge-update-tramp-docker-file-mod-time))
+
+;; (use-package prettier-js)
 
 (provide 'init-lsp)
 ;;; init-lsp.el ends here
