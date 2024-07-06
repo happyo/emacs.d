@@ -107,6 +107,8 @@
 
 (require 'init-macos)
 
+(require 'init-browser)
+
 (server-start)
 
 (setq custom-file (locate-user-emacs-file "custom.el"))

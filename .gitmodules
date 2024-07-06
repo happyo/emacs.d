@@ -52,3 +52,6 @@
 [submodule "site-lisp/EmacsMacPluginModule"]
 	path = site-lisp/EmacsMacPluginModule
 	url = git@github.com:happyo/EmacsMacPluginModule.git
+[submodule "site-lisp/xwwp"]
+	path = site-lisp/xwwp
+	url = git@github.com:happyo/xwwp.git
