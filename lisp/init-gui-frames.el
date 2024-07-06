@@ -35,7 +35,7 @@
   (add-to-list 'initial-frame-alist no-border)
   (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
   (add-to-list 'default-frame-alist '(ns-appearance . dark))
-)
+  )
 ;; (setq default-frame-alist '((undecorated . t)))
 
 
@@ -77,6 +77,16 @@
   (setq olivetti-body-width 0.5)
   :hook
   (prog-mode . olivetti-mode))
+
+(use-package xwidget
+  :ensure nil
+  :bind (:map xwidget-webkit-mode-map
+              ("C-d" . xwidget-webkit-scroll-up)
+              ("C-u" . xwidget-webkit-scroll-down)
+              ("b" . xwidget-webkit-back)
+              ("f" . xwidget-webkit-forward)
+              )
+  )
 
 (provide 'init-gui-frames)
 ;;; init-gui-frames.el ends here

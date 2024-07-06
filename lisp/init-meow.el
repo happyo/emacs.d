@@ -160,7 +160,7 @@
                                      (meow-change . meow-change-char)
                                      (meow-kill . delete-char)
                                           )) 
-  (meow-expand-exclude-mode-list '(markdown-mode org-mode eaf-mode treemacs-mode vterm-mode))
+  (meow-expand-exclude-mode-list '(markdown-mode org-mode eaf-mode treemacs-mode vterm-mode xwidget-webkit-mode))
   :config
   ;; meow-setup is your custom function, see below
   ;; If you want relative line number in NORMAL state(for display-line-numbers-mode)
