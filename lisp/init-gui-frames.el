@@ -78,6 +78,11 @@
   :hook
   (prog-mode . olivetti-mode))
 
+(window-divider-mode 1)
+(setq window-divider-default-places t)         ; 显示分割线
+(setq window-divider-default-right-width 1)  ; 右侧分割线宽度
+(setq window-divider-default-bottom-width 1) ; 底部分割线宽度
+
 
 (provide 'init-gui-frames)
 ;;; init-gui-frames.el ends here
