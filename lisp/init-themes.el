@@ -16,7 +16,7 @@
       (bg-main     "#FFFACD")
       ;; (fg-main     ,tcc-015-wanse)
       (fg-main     "#CC99FF")
-      (bg-dim      ,tcc-116-fenqing)
+      (bg-dim      ,tcc-118-tianqing)
       (fg-dim      "#777294")
       
       (bg-alt      ,tcc-242-fenlv)

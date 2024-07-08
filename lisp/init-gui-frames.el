@@ -78,11 +78,17 @@
   :hook
   (prog-mode . olivetti-mode))
 
-(window-divider-mode 1)
-(setq window-divider-default-places t)         ; 显示分割线
-(setq window-divider-default-right-width 1)  ; 右侧分割线宽度
-(setq window-divider-default-bottom-width 1) ; 底部分割线宽度
-
+(use-package auto-dim-other-buffers
+  :demand t
+  :ensure t
+  :config
+  (auto-dim-other-buffers-mode t)
+  (setq auto-dim-other-buffers-dim-on-switch-to-minibuffer nil)
+  ;; 自定义灰显颜色
+  (custom-set-faces
+   '(auto-dim-other-buffers-face
+     ((((background light)) (:background "#FFF5D3"))
+      (t (:background "#FFF5D3")))))) 
 
 (provide 'init-gui-frames)
 ;;; init-gui-frames.el ends here
