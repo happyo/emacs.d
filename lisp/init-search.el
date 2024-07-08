@@ -209,7 +209,12 @@
 
   (setq consult-buffer-filter
         '("\\` "
-          "\\`\\*"
+          ;; "\\`\\*"
+          "\\`\\*Warnings"
+          "\\`\\*copilot"
+          "\\`\\*dashboard"
+          "\\`\\*scratch"
+          "\\`\\*lsp"
           "\\`\\magit"
           "\\`\\vterm"
           "\\`\\*Completions\\*\\'"
