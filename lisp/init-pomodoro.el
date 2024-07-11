@@ -75,5 +75,23 @@
   (interactive)
   (my-posframe-start-countdown 5))
 
+;; tell application "Music"
+;;     next track
+;; end tell
+;; tell application "Music"
+;;     previous track
+;; end tell
+(defun my-next-track ()
+  "Skip to the next track."
+  (interactive)
+  (call-process "osascript" nil 0 nil
+                "-e" "tell application \"Music\" to next track"))
+
+(defun my-previous-track ()
+  "Skip to the previous track."
+  (interactive)
+  (call-process "osascript" nil 0 nil
+                "-e" "tell application \"Music\" to previous track"))
+
 (provide 'init-pomodoro)
 ;;; init-pomodoro.el ends here

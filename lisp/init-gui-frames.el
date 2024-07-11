@@ -51,6 +51,9 @@
 
 (setq-default frame-title-format "")
 
+;; (setq frame-title-format
+;;       (:eval (format "Line: %l, Col: %c")))
+
 (setq-default line-spacing 0.3)
 
 ;; (defun set-my-prog-mode-line-spacing ()
