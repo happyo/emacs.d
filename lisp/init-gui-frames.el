@@ -49,10 +49,7 @@
   (when *is-a-mac* (ns-auto-titlebar-mode))
   )
 
-(setq-default frame-title-format "")
-
-;; (setq frame-title-format
-;;       (:eval (format "Line: %l, Col: %c")))
+(setq frame-title-format "")
 
 (setq-default line-spacing 0.3)
 
@@ -81,17 +78,17 @@
   :hook
   (prog-mode . olivetti-mode))
 
-(use-package auto-dim-other-buffers
-  :demand t
-  :ensure t
-  :config
-  (auto-dim-other-buffers-mode t)
-  (setq auto-dim-other-buffers-dim-on-switch-to-minibuffer nil)
-  ;; 自定义灰显颜色
-  (custom-set-faces
-   '(auto-dim-other-buffers-face
-     ((((background light)) (:background "#FFF5D3"))
-      (t (:background "#FFF5D3")))))) 
+;; (use-package auto-dim-other-buffers
+;;   :demand t
+;;   :ensure t
+;;   :config
+;;   (auto-dim-other-buffers-mode t)
+;;   (setq auto-dim-other-buffers-dim-on-switch-to-minibuffer nil)
+;;   ;; 自定义灰显颜色
+;;   (custom-set-faces
+;;    '(auto-dim-other-buffers-face
+;;      ((((background light)) (:background "#FFF5D3"))
+;;       (t (:background "#FFF5D3")))))) 
 
 (provide 'init-gui-frames)
 ;;; init-gui-frames.el ends here

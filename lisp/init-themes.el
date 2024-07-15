@@ -116,7 +116,7 @@
       (bg-info            "#bbefda") ; check with info
 
       (border        "#b4c4c0")
-      (cursor        ,tcc-165-zhizi)
+      (cursor        ,tcc-076-danfeng)
       ;; (fg-intense    "#282828")
 
       (modeline-err     "#9f0030")
