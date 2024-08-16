@@ -8,8 +8,8 @@ import SwiftUIRedux
 import NetworkingCore
 import LoginLayer
 
-public struct ${1: HomePage}: View {
-    @ObservedObject var store: Store<HomeFeature> = StoreFactory.createStore()
+public struct ${1: Home}Page: View {
+    @StateObject var store: Store<${1}Feature> = StoreFactory.createStore()
     @Environment(\.networkingManager) var networkingManager
     @EnvironmentObject var loginManager: LoginManager
 
@@ -18,9 +18,6 @@ public struct ${1: HomePage}: View {
     public var body: some View {
         VStack {
             Text("Home Page")
-            Button("Logout") {
-                loginManager.logout()
-            }
         }
     }
 }
