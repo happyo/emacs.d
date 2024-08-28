@@ -4,7 +4,7 @@
         ("Rec Mono Happyo" "Roboto Mono" "Comic Mono" "Operator Mono" "Iosevka Comfy" "Kode Mono" "Consolas" "Monego" "TerminessTTF Nerd Font Mono" "Jetbrains Mono" "SF Mono" "Iosevka Comfy Wide Motion" "Source Code Pro" "Menlo" "Monaco" "DejaVu Sans Mono" "Droid Sans Mono" "PragmataPro Mono" "Courier" "Courier New" "Ubuntu Mono" "Liberation Mono" "MonacoB" "MonacoB2" "MonacoBSemi" "Droid Sans Mono Pro" "Inconsolata" "Lucida Console" "Envy Code R" "Andale Mono" "Lucida Sans Typewriter" "monoOne" "Lucida Typewriter" "Panic Sans" "Hack" "Bitstream Vera Sans Mono" "HyperFont" "PT Mono" "Ti92Pluspc" "Excalibur Monospace" "Menlof" "Cousine" "Fira Mono" "Lekton" "M+ 1mn" "BPmono" "Free Mono" "Anonymous Pro" "ProFont" "ProFontWindows" "Latin Modern Mono" "Code 2002" "ProggyCleanTT" "ProggyTinyTT" "Iosevka Term" "Inconsolata-dz" "American Typewriter" "Anka/Coder Condensed" "Fantasque Sans Mono" "M+ 1m" "CamingoCode" "Office Code Pro" "Input Mono" "Courier Prime Code" "NanumGothicCoding" "Monoid" "Edlo" "Iosevka" "Mononoki" "Robot Mono" "Fantasque" "Fira Code" "Go Mono" "Noto Sans Mono CJK" "InputMonoCompressed" "Hasklig" "Terminus" "FantasqueSansMono" "AnonymousPro" "Arimo" "D2Coding" "Inconsolata-g" "Noto Mono" "ProFont for Powerline" "Meslo" "Meslo Dotted" "Symbol Neu" "Tinos" "Space Mono" "SFMono Nerd Font")
         ("霞鹜文楷等宽" "Xingkai SC" "Zhi Mang Xing" "PingFang SC" "LXGW WenKai" "STFangsong" "微软雅黑" "Noto Sans Mono CJK SC" "Noto Sans Mono CJK TC" "Noto Sans CJK SC" "Noto Sans CJK TC" "Microsoft Yahei" "Microsoft YaHei Mono" "Microsoft_Yahei" "Ubuntu Mono" "文泉驿等宽微米黑" "文泉驿等宽正黑" "黑体" "Source Han Serif CN" "Source Han Sans CN" "思源黑体 CN" "思源宋体 CN" "Hiragino Sans GB" "文泉驿正黑" "文泉驿点阵正黑" "SimHei" "SimSun" "NSimSun" "FangSong" "KaiTi" "FangSong_GB2312" "KaiTi_GB2312" "LiSu" "YouYuan" "新宋体" "宋体" "楷体_GB2312" "仿宋_GB2312" "幼圆" "隶书" "STXihei" "STKaiti" "STSong" "STXingkai" "华文仿宋" "华文行楷" "华文细黑" "华文楷体")
         ("SimSun-ExtB" "HanaMinB" "MingLiU-ExtB" "PMingLiU-ExtB" "MingLiU_HKSCS-ExtB" "Hanazono Mincho" "Hanazono Mincho A" "Hanazono Mincho B" "Hanazono Mincho C" "Hanazono Mincho Ex" "Hanazono Mincho Ex A1" "Hanazono Mincho Ex A2" "Hanazono Mincho Ex B" "Hanazono Mincho Ex C" "Hanazono Mincho I")
-        ("Noto Color Emoji" "Apple Color Emoji" "Segoe UI Emoji" "Segoe UI Symbol" "Symbola" "Standard Symbols L")
+        ("Apple Color Emoji" "Noto Color Emoji" "Segoe UI Emoji" "Segoe UI Symbol" "Symbola" "Standard Symbols L")
         ("Rec Mono Happyo" "Symbols Nerd Font Mono" "Space Mono" "Azeret Mono" "3270 Nerd Font Mono" "Segoe UI Symbol" "Symbola" "Symbol" "NanumGothic" "Arial Unicode MS" "MS Gothic" "Lucida Sans Unicode")
         ))
 
@@ -25,7 +25,7 @@
         (14   16.5 16.5 14   14  )
         (14.5 17.0 17.0 14.5 14.5)
         (15   18.0 18.0 15   15  )
-        (16   19.5 19.5 16   16  )
+        (16   19.5 19.5 19.0 20.0)
         (18   21.0 21.0 18   18  )
         (20   24.0 24.0 20   20  )
         (22   25.5 25.5 22   22  )

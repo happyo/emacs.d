@@ -18,6 +18,7 @@
            ("[-]" . ?)
            ("[X]" . ?)
            ("*" . ?☰)
+           ;; ("*" . ?)
            ("**" . ?☱)
            ("***" . ?☲)
            ("****" . ?☳)
@@ -25,16 +26,17 @@
            ("******" . ?☵)
            ("*******" . ?☶)
            ("********" . ?☷)
-           ("-" . ?󰧞)
-           ("+" . ?󰧞)
-           ("TODO" . ?󰞇)
-           ("DONE" . ?󰒘)
+           ;; ("-" . ?󰧞)
+           ;; ("+" . ?󰧞)
+           ("TODO" . ?)
+           ("DONE" . ?)
            ("STODO" . ?)
            ("ATODO" . ?)
            ("BTODO" . ?)
            ("CTODO" . ?)
            ("YDONE" . ?)
-           ("XCANCEL" . ?󱎘))))
+           ("XCANCEL" . ?)
+           )))
     (setq-local prettify-symbols-alist org-prettify-symbols-alist))
 
   (prettify-symbols-mode 1)
@@ -86,11 +88,11 @@
   ;;       ("YDONE" . ,tcc-317-hehui)
   ;;       ("XCANCEL" . ,tcc-317-hehui)))
 
-;;   (org-babel-do-load-languages
-;;  'org-babel-load-languages
-;;  '((swift . t)       ; 已存在的 Swift 支持
-;;    (C . t);; 其他需要支持的语言
-;;     ))
+  ;;   (org-babel-do-load-languages
+  ;;  'org-babel-load-languages
+  ;;  '((swift . t)       ; 已存在的 Swift 支持
+  ;;    (C . t);; 其他需要支持的语言
+  ;;     ))
   
   )
 
