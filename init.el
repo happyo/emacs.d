@@ -96,7 +96,7 @@
 ;; ;; (require 'init-citre)
 
 ;; (require 'init-haskell)
-;; ;; (require 'init-web)
+(require 'init-web)
 ;; ;; (require 'init-scheme)
 ;; (require 'init-dart)
 ;; (if (needConda)
