@@ -76,7 +76,9 @@
   :init
   (setq olivetti-body-width 0.5)
   :hook
-  (prog-mode . olivetti-mode))
+  (prog-mode . olivetti-mode)
+  (org-mode . olivetti-mode)
+  )
 
 ;; (use-package auto-dim-other-buffers
 ;;   :demand t

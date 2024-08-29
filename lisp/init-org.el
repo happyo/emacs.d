@@ -42,7 +42,7 @@
   (prettify-symbols-mode 1)
 
   ;; Line spacing
-  (setq-local line-spacing 8)
+  (setq-local line-spacing 0.5)
   )
 
 (use-package org
@@ -51,7 +51,7 @@
          (org-mode . org-indent-mode))
   :init
   (setq org-indent-mode-turns-on-hiding-stars nil)
-  (setq org-indent-indentation-per-level 1)
+  (setq org-indent-indentation-per-level 2)
   (setq org-agenda-span 'day)
   (setq org-agenda-files '("~/Zettelkasten/PersonalTasks/" "~/Zettelkasten/WorkTasks/" "~/Zettelkasten/TodoList/"))
   (setq org-agenda-include-diary t)
