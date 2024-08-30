@@ -22,7 +22,10 @@
 (when (fboundp 'electric-pair-mode)
   (add-hook 'after-init-hook 'electric-pair-mode)
   (add-hook 'after-init-hook 'electric-indent-mode)
-)
+  )
+
+(set-face-background 'vertical-border (face-background 'default))
+(set-face-foreground 'vertical-border (face-background 'default))
 
 ;;; Some basic preferences
 (blink-cursor-mode -1)
