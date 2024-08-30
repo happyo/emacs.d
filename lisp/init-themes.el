@@ -12,217 +12,220 @@
 (setq ef-summer-palette-overrides
       `(
 ;;; Basic values
-      (bg-main     ,tcc-351-ningzhi)
-      ;; (bg-main     "#FFFACD")
-      ;; (fg-main     ,tcc-015-wanse)
-      (fg-main     "#CC99FF")
-      (bg-dim      ,tcc-118-tianqing)
-      (fg-dim      "#777294")
-      
-      (bg-alt      ,tcc-242-fenlv)
-      (fg-alt      "#F07C82")
+        ;; (bg-main     ,tcc-351-ningzhi)
+        ;; (bg-main     "#FFFACD")
+        ;; (bg-main     "#F8E9FF")
+        (bg-main     "#FFFBE9")
+        ;; (bg-main     "#FDFFE9")
+        ;; (fg-main     ,tcc-015-wanse)
+        (fg-main     "#CC99FF")
+        (bg-dim      ,tcc-118-tianqing)
+        (fg-dim      "#777294")
+        
+        (bg-alt      ,tcc-242-fenlv)
+        (fg-alt      "#F07C82")
 
-      (bg-active   ,tcc-155-songshi)
-      (bg-inactive ,tcc-124-yuebai)
+        (bg-active   ,tcc-155-songshi)
+        (bg-inactive ,tcc-124-yuebai)
 
 ;;; Basic hues for foreground values
 
-      (red             ,tcc-021-yanzhi)
-      (red-warmer      ,tcc-010-handan)
-      (red-cooler      ,tcc-024-meiguizi)
-      (red-faint       ,tcc-080-yinghua)
-      (green           ,tcc-231-zumulv)
-      (green-warmer    ,tcc-226-sunlv)
-      (green-cooler    ,tcc-232-yangse)
-      (green-faint     ,tcc-224-lvcha)
-      (yellow          ,tcc-166-huangliliu)
-      (yellow-warmer   ,tcc-181-guihuang)
-      (yellow-cooler   ,tcc-192-hupo)
-      (yellow-faint    ,tcc-216-qiuxiang)
-      (blue            ,tcc-131-cangcang)
-      (blue-warmer     ,tcc-129-ruolan)
-      (blue-cooler     "#002FA7")
-      (blue-faint      "#82D8CF")
-      (magenta         ,tcc-100-ziyuan)
-      (magenta-warmer  ,tcc-085-hongzhizhu)
-      (magenta-cooler  "#8F5ED4")
-      (magenta-faint   "#CCA4E3")
-      (cyan            "#3AB6DD")
-      (cyan-warmer     ,tcc-249-silv)
-      ;; (cyan-warmer     "#009D91")
-      (cyan-cooler     "#289BA3")
-      (cyan-faint      "#AED0EE")
+        (red             ,tcc-021-yanzhi)
+        (red-warmer      ,tcc-010-handan)
+        (red-cooler      ,tcc-024-meiguizi)
+        (red-faint       ,tcc-080-yinghua)
+        (green           ,tcc-231-zumulv)
+        (green-warmer    ,tcc-226-sunlv)
+        (green-cooler    ,tcc-232-yangse)
+        (green-faint     ,tcc-224-lvcha)
+        (yellow          ,tcc-166-huangliliu)
+        (yellow-warmer   ,tcc-181-guihuang)
+        (yellow-cooler   ,tcc-192-hupo)
+        (yellow-faint    ,tcc-216-qiuxiang)
+        (blue            ,tcc-131-cangcang)
+        (blue-warmer     ,tcc-129-ruolan)
+        (blue-cooler     "#002FA7")
+        (blue-faint      "#82D8CF")
+        (magenta         ,tcc-100-ziyuan)
+        (magenta-warmer  ,tcc-085-hongzhizhu)
+        (magenta-cooler  "#8F5ED4")
+        (magenta-faint   "#CCA4E3")
+        (cyan            "#3AB6DD")
+        (cyan-warmer     ,tcc-249-silv)
+        ;; (cyan-warmer     "#009D91")
+        (cyan-cooler     "#289BA3")
+        (cyan-faint      "#AED0EE")
 
 ;;; Basic hues for background values
 
-      ;; (bg-red      "#F6BEC8")
-      ;; (bg-green    "#C3D94E")
-      ;; (bg-yellow   "#FFFBC7")
-      ;; (bg-blue     "#afdfff")
-      ;; (bg-magenta  "#CCA4E3")
-      ;; (bg-cyan     "#7397AB")
+        ;; (bg-red      "#F6BEC8")
+        ;; (bg-green    "#C3D94E")
+        ;; (bg-yellow   "#FFFBC7")
+        ;; (bg-blue     "#afdfff")
+        ;; (bg-magenta  "#CCA4E3")
+        ;; (bg-cyan     "#7397AB")
 
-      ;; (bg-red-subtle      "#ffcfbf")
-      ;; (bg-green-subtle    "#b9f2c6")
-      ;; (bg-yellow-subtle   "#fff576")
-      ;; (bg-blue-subtle     "#ccdfff")
-      ;; (bg-magenta-subtle  "#ffcdff")
-      ;; (bg-cyan-subtle     "#bfeaff")
+        ;; (bg-red-subtle      "#ffcfbf")
+        ;; (bg-green-subtle    "#b9f2c6")
+        ;; (bg-yellow-subtle   "#fff576")
+        ;; (bg-blue-subtle     "#ccdfff")
+        ;; (bg-magenta-subtle  "#ffcdff")
+        ;; (bg-cyan-subtle     "#bfeaff")
 
 ;;; Diffs
 
-      ;; (bg-added          "#caf4da")
-      ;; (bg-added-faint    "#dff6ea")
-      ;; (bg-added-refine   "#bae9cf")
-      ;; (fg-added          "#005000")
+        ;; (bg-added          "#caf4da")
+        ;; (bg-added-faint    "#dff6ea")
+        ;; (bg-added-refine   "#bae9cf")
+        ;; (fg-added          "#005000")
 
-      ;; (bg-changed        "#ffdfb9")
-      ;; (bg-changed-faint  "#ffefcb")
-      ;; (bg-changed-refine "#ffcfa0")
-      ;; (fg-changed        "#553d00")
+        ;; (bg-changed        "#ffdfb9")
+        ;; (bg-changed-faint  "#ffefcb")
+        ;; (bg-changed-refine "#ffcfa0")
+        ;; (fg-changed        "#553d00")
 
-      ;; (bg-removed        "#ffcee0")
-      ;; (bg-removed-faint  "#ffdfe6")
-      ;; (bg-removed-refine "#f5b6c8")
-      ;; (fg-removed        "#8f1313")
+        ;; (bg-removed        "#ffcee0")
+        ;; (bg-removed-faint  "#ffdfe6")
+        ;; (bg-removed-refine "#f5b6c8")
+        ;; (fg-removed        "#8f1313")
 
 ;;; Graphs
 
-      ;; (bg-graph-red-0     "#ef7969")
-      ;; (bg-graph-red-1     "#ffaab4")
-      ;; (bg-graph-green-0   "#2fe029")
-      ;; (bg-graph-green-1   "#75ef30")
-      ;; (bg-graph-yellow-0  "#ffcf00")
-      ;; (bg-graph-yellow-1  "#f9ff00")
-      ;; (bg-graph-blue-0    "#7f90ff")
-      ;; (bg-graph-blue-1    "#9fc6ff")
-      ;; (bg-graph-magenta-0 "#e07fff")
-      ;; (bg-graph-magenta-1 "#fad0ff")
-      ;; (bg-graph-cyan-0    "#70d3f0")
-      ;; (bg-graph-cyan-1    "#afefff")
+        ;; (bg-graph-red-0     "#ef7969")
+        ;; (bg-graph-red-1     "#ffaab4")
+        ;; (bg-graph-green-0   "#2fe029")
+        ;; (bg-graph-green-1   "#75ef30")
+        ;; (bg-graph-yellow-0  "#ffcf00")
+        ;; (bg-graph-yellow-1  "#f9ff00")
+        ;; (bg-graph-blue-0    "#7f90ff")
+        ;; (bg-graph-blue-1    "#9fc6ff")
+        ;; (bg-graph-magenta-0 "#e07fff")
+        ;; (bg-graph-magenta-1 "#fad0ff")
+        ;; (bg-graph-cyan-0    "#70d3f0")
+        ;; (bg-graph-cyan-1    "#afefff")
 
 ;;; Special hues
 
-      (bg-mode-line       ,tcc-173-chaomi)
-      (fg-mode-line       ,tcc-351-ningzhi)
-      (bg-completion      "#f4cfff")
-      (bg-hover           "#b4cfff")
-      (bg-hover-secondary "#aaeccf")
-      (bg-hl-line         "#ffd6e5")
-      (bg-region          "#eecfff")
-      (bg-paren           "#9fc0ef")
-      (bg-err             "#ffd0e6") ; check with err
-      (bg-warning         "#ffe5ba") ; check with warning
-      (bg-info            "#bbefda") ; check with info
+        (bg-mode-line       ,tcc-173-chaomi)
+        (fg-mode-line       ,tcc-351-ningzhi)
+        (bg-completion      "#f4cfff")
+        (bg-hover           "#b4cfff")
+        (bg-hover-secondary "#aaeccf")
+        (bg-hl-line         "#ffd6e5")
+        (bg-region          "#eecfff")
+        (bg-paren           "#9fc0ef")
+        (bg-err             "#ffd0e6") ; check with err
+        (bg-warning         "#ffe5ba") ; check with warning
+        (bg-info            "#bbefda") ; check with info
 
-      (border        "#b4c4c0")
-      (cursor        ,tcc-076-danfeng)
-      ;; (cursor        ,tcc-351-ningzhi)
-      ;; (fg-intense    "#282828")
+        (border        "#b4c4c0")
+        (cursor        ,tcc-076-danfeng)
+        ;; (cursor        ,tcc-351-ningzhi)
+        ;; (fg-intense    "#282828")
 
-      (modeline-err     "#9f0030")
-      (modeline-warning "#5f0f9f")
-      (modeline-info    "#1240af")
+        (modeline-err     "#9f0030")
+        (modeline-warning "#5f0f9f")
+        (modeline-info    "#1240af")
 
-      (underline-err     "#ef0f1f")
-      (underline-warning "#bf5f00")
-      (underline-info    "#02af52")
+        (underline-err     "#ef0f1f")
+        (underline-warning "#bf5f00")
+        (underline-info    "#02af52")
 
-      ;; (bg-char-0 "#7feaff")
-      ;; (bg-char-1 "#ffaaff")
-      ;; (bg-char-2 "#dff000")
+        ;; (bg-char-0 "#7feaff")
+        ;; (bg-char-1 "#ffaaff")
+        ;; (bg-char-2 "#dff000")
 ;;; Conditional hues
 
-      (bg-region-intense "#cfb5f0")
+        (bg-region-intense "#cfb5f0")
 
 ;;; Mappings
 
 ;;;; General mappings
 
-      ;; (err red-warmer)
-      ;; (warning yellow)
-      ;; (info green-cooler)
+        ;; (err red-warmer)
+        ;; (warning yellow)
+        ;; (info green-cooler)
 
-      ;; (link blue)
-      ;; (link-alt green-cooler)
-      ;; (name magenta-warmer)
-      ;; (keybind red-cooler)
-      ;; (identifier magenta-faint)
-      ;; (prompt magenta-warmer)
+        ;; (link blue)
+        ;; (link-alt green-cooler)
+        ;; (name magenta-warmer)
+        ;; (keybind red-cooler)
+        ;; (identifier magenta-faint)
+        ;; (prompt magenta-warmer)
 
 ;;;; Code mappings
 
-      (builtin magenta)
-      (comment ,tcc-317-hehui)
-      ;; (constant red-cooler)
-      (fnname blue-warmer)
-      (keyword magenta-cooler)
-      ;; (preprocessor green-warmer)
-      ;; (docstring cyan-faint)
-      ;; (string yellow-warmer)
-      (type cyan-warmer)
-      (variable red-warmer)
-      ;; (rx-escape cyan-cooler) ; compare with `string'
-      ;; (rx-construct red-cooler)
+        (builtin magenta)
+        (comment ,tcc-317-hehui)
+        ;; (constant red-cooler)
+        (fnname blue-warmer)
+        (keyword magenta-cooler)
+        ;; (preprocessor green-warmer)
+        ;; (docstring cyan-faint)
+        ;; (string yellow-warmer)
+        (type cyan-warmer)
+        (variable red-warmer)
+        ;; (rx-escape cyan-cooler) ; compare with `string'
+        ;; (rx-construct red-cooler)
 
 ;;;; Accent mappings
 
-      ;; (accent-0 magenta-cooler)
-      ;; (accent-1 yellow)
-      ;; (accent-2 cyan-cooler)
-      ;; (accent-3 red)
+        ;; (accent-0 magenta-cooler)
+        ;; (accent-1 yellow)
+        ;; (accent-2 cyan-cooler)
+        ;; (accent-3 red)
 
 ;;;; Date mappings
 
-      ;; (date-common cyan-cooler)
-      ;; (date-deadline red-warmer)
-      ;; (date-event fg-alt)
-      ;; (date-holiday cyan-cooler)
-      ;; (date-now fg-main)
-      ;; (date-range fg-alt)
-      ;; (date-scheduled yellow)
-      ;; (date-weekday cyan)
-      ;; (date-weekend red-faint)
+        ;; (date-common cyan-cooler)
+        ;; (date-deadline red-warmer)
+        ;; (date-event fg-alt)
+        ;; (date-holiday cyan-cooler)
+        ;; (date-now fg-main)
+        ;; (date-range fg-alt)
+        ;; (date-scheduled yellow)
+        ;; (date-weekday cyan)
+        ;; (date-weekend red-faint)
 
 ;;;; Prose mappings
 
-      ;; (prose-code yellow)
-      (prose-done ,tcc-319-buzao)
-      ;; (prose-macro cyan-cooler)
-      ;; (prose-metadata fg-dim)
-      ;; (prose-metadata-value fg-alt)
-      ;; (prose-table fg-alt)
-      ;; (prose-tag yellow-faint)
-      (prose-todo ,tcc-076-danfeng)
-      ;; (prose-verbatim magenta-cooler)
+        ;; (prose-code yellow)
+        (prose-done ,tcc-319-buzao)
+        ;; (prose-macro cyan-cooler)
+        ;; (prose-metadata fg-dim)
+        ;; (prose-metadata-value fg-alt)
+        ;; (prose-table fg-alt)
+        ;; (prose-tag yellow-faint)
+        (prose-todo ,tcc-076-danfeng)
+        ;; (prose-verbatim magenta-cooler)
 
 ;;;; Mail mappings
 
-      ;; (mail-cite-0 yellow-cooler)
-      ;; (mail-cite-1 magenta)
-      ;; (mail-cite-2 blue-warmer)
-      ;; 
-      ;; (mail-cite-3 cyan-warmer)
-      ;; (mail-part magenta-faint)
-      ;; (mail-recipient magenta-warmer)
-      ;; (mail-subject magenta-cooler)
-      ;; (mail-other magenta)
+        ;; (mail-cite-0 yellow-cooler)
+        ;; (mail-cite-1 magenta)
+        ;; (mail-cite-2 blue-warmer)
+        ;; 
+        ;; (mail-cite-3 cyan-warmer)
+        ;; (mail-part magenta-faint)
+        ;; (mail-recipient magenta-warmer)
+        ;; (mail-subject magenta-cooler)
+        ;; (mail-other magenta)
 ;;;; Tab mappings
 
-      (bg-tab-bar      bg-main)
-      (bg-tab-current  ,tcc-026-haitianxia)
-      (bg-tab-other    ,tcc-124-yuebai)
-      
+        (bg-tab-bar      bg-main)
+        (bg-tab-current  ,tcc-026-haitianxia)
+        (bg-tab-other    ,tcc-124-yuebai)
+        
 ;;;; Rainbow mappings
 
-  (rainbow-0 ,tcc-091-putaoqing)
-  (rainbow-1 ,tcc-102-ziluolan)
-  (rainbow-2 ,tcc-131-cangcang)
-  (rainbow-3 ,tcc-156-tianshuibi)
-  (rainbow-4 ,tcc-157-facui)
-  (rainbow-5 ,tcc-013-meihong)
-  (rainbow-6 ,tcc-013-meihong)
-      ))
+        (rainbow-0 ,tcc-091-putaoqing)
+        (rainbow-1 ,tcc-102-ziluolan)
+        (rainbow-2 ,tcc-131-cangcang)
+        (rainbow-3 ,tcc-156-tianshuibi)
+        (rainbow-4 ,tcc-157-facui)
+        (rainbow-5 ,tcc-013-meihong)
+        (rainbow-6 ,tcc-013-meihong)
+        ))
 
 (setq ef-themes-to-toggle '(ef-spring ef-autumn))
 
@@ -345,7 +348,7 @@
 ;; Load the theme of choice:
 ;; (ef-themes-select 'ef-spring)
 
- ; original value is blue-warmer
+                                        ; original value is blue-warmer
 
 ;; The themes we provide:
 ;;      ;; (bg-main     ,tcc-351-ningzhi)
@@ -392,12 +395,12 @@
 (set-face-attribute 'tab-bar-tab nil
                     :box `(:line-width 6 :color ,tcc-026-haitianxia)
                     :weight 'normal
-  )
+                    )
 
 (set-face-attribute 'tab-bar-tab-inactive nil
                     :box `(:line-width 6 :color ,tcc-124-yuebai)
                     :weight 'normal
-  )
+                    )
 
 (setq tab-bar-new-button-show nil)
 (setq tab-bar-close-button-show nil)
@@ -408,18 +411,18 @@
 
 ;; 自定义函数格式化标签名以增加宽度
 (setq tab-bar-tab-name-format-function
-        (lambda (tab i)
-          (let ((face (funcall tab-bar-tab-face-function tab)))
-            (concat
-             (propertize " " 'face face)
-             (propertize (number-to-string i) 'face `(:inherit ,face :weight ultra-bold))
-             (propertize " " 'face face)
-             (propertize (concat " " (alist-get 'name tab) " ") 'face face)))))
+      (lambda (tab i)
+        (let ((face (funcall tab-bar-tab-face-function tab)))
+          (concat
+           (propertize " " 'face face)
+           (propertize (number-to-string i) 'face `(:inherit ,face :weight ultra-bold))
+           (propertize " " 'face face)
+           (propertize (concat " " (alist-get 'name tab) " ") 'face face)))))
 
 (setq tab-bar-format '(tab-bar-format-tabs))
 
 (set-face-attribute 'mode-line nil
-                   :box `(:line-width 5 :color ,tcc-173-chaomi :style nil))
+                    :box `(:line-width 5 :color ,tcc-173-chaomi :style nil))
 (set-face-attribute 'mode-line-inactive nil
                     :box `(:line-width 5 :color ,tcc-242-fenlv :style nil))
 
