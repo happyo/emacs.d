@@ -111,7 +111,7 @@
         (bg-completion      "#f4cfff")
         (bg-hover           "#b4cfff")
         (bg-hover-secondary "#aaeccf")
-        (bg-hl-line         "#ffd6e5")
+        (bg-hl-line         ,tcc-343-qianyun)
         (bg-region          "#eecfff")
         (bg-paren           "#9fc0ef")
         (bg-err             "#ffd0e6") ; check with err

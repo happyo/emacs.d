@@ -16,7 +16,7 @@
          (y 10))                                 ; 10 pixels from the top edge
     (cons x y)))
 
-(defun my-posframe-show (text poshandler)
+(defun my-posframe-show (text poshandler width)
   "Show a posframe with TEXT at the specified position using POSHANDLER."
   (posframe-show "my-posframe"
                  :string text
@@ -24,7 +24,7 @@
                  :timeout nil
                  :background-color "#2c3e50"
                  :foreground-color "#FFFFFF"
-                 :internal-border-width 10
+                 :internal-border-width width
                  :internal-border-color "#2c3e50"))
 
 (defun my-posframe-hide ()
@@ -39,10 +39,10 @@
           (my-posframe-hide)
           (message "Time's up!")
           (my-mac-notify "Pomodoro Timer" "Time's up! Take a break.")
-          (my-posframe-show "Time's up!" 'posframe-poshandler-frame-center))
+          (my-posframe-show "Time's up!" 'posframe-poshandler-frame-center 100))
       (let ((minutes (/ (nth 1 remaining) 60))
             (seconds (% (nth 1 remaining) 60)))
-        (my-posframe-show (format "Time remaining: %02d:%02d" minutes seconds) 'my-posframe-poshandler-frame-top-right))
+        (my-posframe-show (format "Time remaining: %02d:%02d" minutes seconds) 'my-posframe-poshandler-frame-top-right 10))
       (run-at-time 1 nil #'my-posframe-update))))
 
 (defun my-posframe-start-countdown (minutes)

@@ -3,8 +3,8 @@
 # key: actionGen
 # --
 
-func createAction(manager: NetworkingManager) -> ThunkEffectAction<${1:Home}Feature.State, ${1}Feature.Action> {
-    ThunkEffectAction<${1}Feature.State, ${1}Feature.Action> { dispatch, getState in
+static func createAction(manager: NetworkingManager) -> ThunkEffectAction<State, Action> {
+    ThunkEffectAction<State, Action> { dispatch, getState in
 
         let homeListAPI = HomeFeedListAPI()
         
@@ -12,10 +12,9 @@ func createAction(manager: NetworkingManager) -> ThunkEffectAction<${1:Home}Feat
         manager.request(homeListAPI) { (result: Result<${2: APIDataModel}, Error>) in
             switch result {
             case .success(let response):
+                print(response)
 
-                dispatch(.setHomeFeedList(homeFeedListModels))
             case .failure(let error):
-                print(error.localizedDescription)
                 dispatch(.endLoading)
             }
         }
