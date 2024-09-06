@@ -40,6 +40,7 @@
 (define-key my-custom-minor-mode-map (kbd "M-v") 'yank)
 (define-key my-custom-minor-mode-map (kbd "M-o") 'other-window)
 (define-key my-custom-minor-mode-map (kbd "M-l") 'imenu-list-smart-toggle)
+(define-key my-custom-minor-mode-map (kbd "C-i") 'universal-argument)
 
 (define-minor-mode my-custom-minor-mode
   "自定义的 minor mode，用于覆盖其他 mode 的快捷键。"
