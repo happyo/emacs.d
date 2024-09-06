@@ -114,6 +114,7 @@
 (require 'init-macos)
 
 (require 'init-browser)
+(require 'init-gpt)
 
 (server-start)
 

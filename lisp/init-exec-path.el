@@ -10,7 +10,9 @@
             (daemonp)))
     (use-package exec-path-from-shell
       :init
-      (exec-path-from-shell-initialize)))
+      (exec-path-from-shell-initialize)
+      (exec-path-from-shell-copy-env "GITHUB_TOKEN")
+      ))
 
 (provide 'init-exec-path)
 ;;; init-exec-path.el ends here
