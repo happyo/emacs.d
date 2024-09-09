@@ -55,3 +55,6 @@
 [submodule "site-lisp/xwwp"]
 	path = site-lisp/xwwp
 	url = git@github.com:happyo/xwwp.git
+[submodule "site-lisp/elysium"]
+	path = site-lisp/elysium
+	url = https://github.com/lanceberge/elysium.git
