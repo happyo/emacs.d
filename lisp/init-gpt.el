@@ -19,12 +19,12 @@
   (gptel-model "gpt-4o")
   :config (add-hook 'gptel-post-response-functions 'gptel-end-of-response)
   (setq gptel-backend
-                (gptel-make-openai "GithubModels"
-                  :host "models.inference.ai.azure.com"
-                  :endpoint "/chat/completions"
-                  :models '("gpt-4o")
-                  :stream t
-                  :header `(("Authorization" . ,(concat "Bearer " (getenv "GITHUB_TOKEN")))))))
+        (gptel-make-openai "GithubModels"
+          :host "models.inference.ai.azure.com"
+          :endpoint "/chat/completions"
+          :models '("gpt-4o")
+          :stream t
+          :header `(("Authorization" . ,(concat "Bearer " (getenv "GITHUB_TOKEN")))))))
 
 (provide 'init-gpt)
 ;;; init-gpt.el ends here
