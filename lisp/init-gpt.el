@@ -12,6 +12,10 @@
   (elysium-window-size 0.33) ; The elysium buffer will be 1/3 your screen
   (elysium-window-style 'vertical)) ; Can be customized to horizontal
 
+(use-package smerge-mode
+  :ensure nil
+  :hook (prog-mode . smerge-mode))
+
 (use-package gptel
   :demand t
   :custom
