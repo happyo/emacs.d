@@ -115,6 +115,7 @@
 
 (require 'init-browser)
 (require 'init-gpt)
+(require 'init-svg)
 
 (server-start)
 

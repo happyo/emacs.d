@@ -18,7 +18,8 @@
         (bg-main     "#FFFBE9")
         ;; (bg-main     "#FDFFE9")
         ;; (fg-main     ,tcc-015-wanse)
-        (fg-main     "#CC99FF")
+        (fg-main     "#445682")
+        ;; (fg-main     "#CC99FF")
         (bg-dim      ,tcc-118-tianqing)
         (fg-dim      "#777294")
         
@@ -391,40 +392,6 @@
   (add-hook 'help-mode-hook 'rainbow-mode)
   (add-hook 'swift-ts-mode-hook 'rainbow-mode)
   )
-
-(set-face-attribute 'tab-bar-tab nil
-                    :box `(:line-width 6 :color ,tcc-026-haitianxia)
-                    :weight 'normal
-                    )
-
-(set-face-attribute 'tab-bar-tab-inactive nil
-                    :box `(:line-width 6 :color ,tcc-124-yuebai)
-                    :weight 'normal
-                    )
-
-(setq tab-bar-new-button-show nil)
-(setq tab-bar-close-button-show nil)
-;; (setq tab-bar-format '(tab-bar-format-tabs tab-bar-separator))
-(setq tab-bar-tab-hints t)
-(customize-set-variable 'tab-bar-select-tab-modifiers '(meta))
-;; (tab-bar-mode 1)                           ;; enable tab bar
-
-;; 自定义函数格式化标签名以增加宽度
-(setq tab-bar-tab-name-format-function
-      (lambda (tab i)
-        (let ((face (funcall tab-bar-tab-face-function tab)))
-          (concat
-           (propertize " " 'face face)
-           (propertize (number-to-string i) 'face `(:inherit ,face :weight ultra-bold))
-           (propertize " " 'face face)
-           (propertize (concat " " (alist-get 'name tab) " ") 'face face)))))
-
-(setq tab-bar-format '(tab-bar-format-tabs))
-
-(set-face-attribute 'mode-line nil
-                    :box `(:line-width 5 :color ,tcc-173-chaomi :style nil))
-(set-face-attribute 'mode-line-inactive nil
-                    :box `(:line-width 5 :color ,tcc-242-fenlv :style nil))
 
 (provide 'init-themes)
 ;;; init-themes.el end

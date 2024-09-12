@@ -58,3 +58,6 @@
 [submodule "site-lisp/elysium"]
 	path = site-lisp/elysium
 	url = https://github.com/lanceberge/elysium.git
+[submodule "site-lisp/svg-lib"]
+	path = site-lisp/svg-lib
+	url = git@github.com:happyo/svg-lib.git
