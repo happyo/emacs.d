@@ -367,6 +367,30 @@
 ;; - `ef-themes-preview-colors'
 ;; - `ef-themes-preview-colors-current'
 
+(custom-set-faces
+ '(treemacs-directory-face ((t (:foreground "unspecified-fg" :inherit default))))
+ '(treemacs-file-face ((t (:foreground "unspecified-fg" :inherit default))))
+ ;; 根目录图标颜色
+ '(treemacs-nerd-icons-root-face ((t (:foreground "#179299"
+                                                  :background "unspecified-bg"
+                                                  :color "gtk_selection_bg_color"
+                                                 
+                                     :weight bold
+                                     :height 1.4))))
+;; 文件夹图标颜色
+'(treemacs-nerd-icons-dir-face ((t (:foreground "#00B4D8"))))
+'(treemacs-root-face ((t (:foreground "#ff79c6"
+                                      :background "unspecified-bg"
+                                      :weight bold :height 1.4 :line-spacing 0.4))))
+
+
+;; 文件图标颜色
+'(treemacs-nerd-icons-file-face ((t (:foreground "#00B4D8"))))
+'(nerd-icons-green
+  ((((background dark)) :foreground "#FA7343")  
+   (((background light)) :foreground "#FA7343")))
+)
+
 (use-package nerd-icons
   :demand t
   :custom
@@ -379,7 +403,14 @@
 
 (use-package treemacs-nerd-icons
   :demand t
+  :after treemacs
   :config
+  (treemacs-modify-theme "nerd-icons"
+    :config
+    (progn
+      (treemacs-create-icon :icon (format "%s%s" (nerd-icons-octicon "nf-oct-home"   :face 'treemacs-nerd-icons-root-face) treemacs-nerd-icons-tab)
+                            :extensions (root-closed root-open)
+                            :fallback 'same-as-icon)))
   (treemacs-load-theme "nerd-icons"))
 
 

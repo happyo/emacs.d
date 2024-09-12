@@ -26,6 +26,7 @@
   (define-key treemacs-mode-map (kbd "M-m") 'magit-status)
   (setq treemacs-user-mode-line-format 'none)
   (setq treemacs-show-cursor nil)
+
   )
 
 (use-package treemacs-projectile
@@ -34,7 +35,8 @@
 
 (use-package treemacs-icons-dired
   :hook (dired-mode . treemacs-icons-dired-enable-once)
-  :ensure t)
+  :ensure t
+  )
 
 (use-package treemacs-magit
   :after (treemacs magit)
