@@ -51,7 +51,7 @@
 
 (setq frame-title-format "")
 
-(setq-default line-spacing 0.3)
+(setq-default line-spacing 0.4)
 
 ;; (defun set-my-prog-mode-line-spacing ()
 ;;   "Set line spacing in programming modes."
@@ -74,11 +74,25 @@
 (use-package olivetti
   :ensure t
   :init
-  (setq olivetti-body-width 0.5)
+  (setq olivetti-body-width 0.618)
   :hook
   (prog-mode . olivetti-mode)
   (org-mode . olivetti-mode)
   )
+;; 启用 window-divider-mode
+(window-divider-mode 1)
+(setq window-divider-default-right-width 2)  ;; 右侧分割线宽度
+(setq window-divider-default-bottom-width 1) ;; 底部分割线宽度
+(custom-set-faces
+ '(window-divider ((t (:foreground "#FFFBE9"))))           
+ ) 
+
+;; (use-package solaire-mode
+;;   :demand t
+;;   :ensure t
+;;   :config
+;;   (solaire-global-mode +1))
+;;   )
 
 ;; (use-package auto-dim-other-buffers
 ;;   :demand t
