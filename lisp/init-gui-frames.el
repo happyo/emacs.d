@@ -49,7 +49,8 @@
   (when *is-a-mac* (ns-auto-titlebar-mode))
   )
 
-(setq frame-title-format "")
+(setq ns-use-proxy-icon nil)
+(setq frame-title-format " ")
 
 (setq-default line-spacing 0.4)
 

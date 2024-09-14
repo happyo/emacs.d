@@ -107,6 +107,7 @@
    '("F" . meow-find-expand)
    '("g" . meow-goto-line)
    '("G" . meow-grab)
+   '("M-h" . meow-block)
    '("h" . meow-left)
    '("H" . meow-left-expand)
    '("i" . meow-insert)

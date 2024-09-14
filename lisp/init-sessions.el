@@ -46,6 +46,7 @@
 (use-package dashboard
   :demand t
   :ensure t
+  :hook (dashboard-mode . my-dashboard-setup)
   :config
   (setq dashboard-banner-logo-title "Happy hacking, belyenochi - Emacs ♥ you!")
   (setq dashboard-center-content t)
@@ -57,11 +58,17 @@
                           ))
   (setq dashboard-startup-banner "~/.emacs.d/icon/ascii-art.txt")
   (setq dashboard-item-shortcuts '((recents   . "r")
-                                 (bookmarks . "m")
-                                 (projects  . "p")
-                                 (agenda    . "a")
-                                 (registers . "e")))
+                                   (bookmarks . "m")
+                                   (projects  . "p")
+                                   (agenda    . "a")
+                                   (registers . "e")))
+  
   (dashboard-setup-startup-hook))
+
+(defun my-dashboard-setup ()
+  ;; Line spacing
+  (setq-local line-spacing nil)
+  )
 
 (provide 'init-sessions)
 ;;; init-sessions.el ends here
