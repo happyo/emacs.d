@@ -91,6 +91,7 @@
 (require 'init-lsp)
 ;; Need copilot-install-server and copilot-login
 (require 'init-copilot)
+(require 'init-gpt)
 
 ;; Language mode
 (require 'init-treesit)
@@ -114,7 +115,6 @@
 (require 'init-macos)
 
 (require 'init-browser)
-(require 'init-gpt)
 (require 'init-svg)
 
 (server-start)

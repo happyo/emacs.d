@@ -425,5 +425,4 @@ Return nil if there is no name or if NODE is not a defun node."
             (use-local-map swift-ts-mode-map)))
 
 (provide 'swift-ts-mode)
-
 ;;; swift-ts-mode.el ends here

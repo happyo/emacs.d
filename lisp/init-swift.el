@@ -5,6 +5,8 @@
 
 (require 'swift-mode)
 
+(setq swift-basic-offset 4)
+
 (use-package async
   :demand t
   :ensure t)
@@ -14,6 +16,7 @@
   :load-path "~/.emacs.d/site-lisp/ob-swift-enhanced")
 
 (require 'ob-swift-enhanced)
+
 (use-package swift-ts-mode
   :ensure nil
   :bind (:map swift-ts-mode-map
