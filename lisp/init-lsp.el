@@ -46,6 +46,10 @@
   (global-lsp-bridge-mode)
   )
 
+;; (with-eval-after-load 'eglot
+;;   (add-to-list 'eglot-server-programs
+;;     '(swift-ts-mode . ("xcrun" "sourcekit-lsp"))))
+
 ;; (add-to-list 'load-path "~/.emacs.d/site-lisp/treesit-auto")
 
 (use-package apheleia
