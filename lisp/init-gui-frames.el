@@ -86,7 +86,14 @@
 (setq window-divider-default-bottom-width 1) ;; 底部分割线宽度
 (custom-set-faces
  '(window-divider ((t (:foreground "#FFFBE9"))))           
- ) 
+ )
+
+(use-package symbol-overlay
+  :demand t
+  :ensure t
+  :hook
+  (prog-mode . symbol-overlay-mode)
+  )
 
 ;; (use-package solaire-mode
 ;;   :demand t
