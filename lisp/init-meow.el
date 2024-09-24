@@ -171,5 +171,12 @@
   (meow-setup)
   (meow-global-mode 1))
 
+(use-package wrap-region
+  :demand t
+  :ensure t
+  :config
+  (wrap-region-global-mode t)
+)
+
 (provide 'init-meow)
 ;;; init-meow.el ends here
