@@ -26,7 +26,6 @@
   (define-key treemacs-mode-map (kbd "M-m") 'magit-status)
   (setq treemacs-user-mode-line-format 'none)
   (setq treemacs-show-cursor nil)
-
   )
 
 (use-package treemacs-projectile

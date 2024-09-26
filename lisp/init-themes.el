@@ -113,7 +113,8 @@
         (bg-hover           "#b4cfff")
         (bg-hover-secondary "#aaeccf")
         (bg-hl-line         ,tcc-343-qianyun)
-        (bg-region          "#eecfff")
+        ;; (bg-region          "#eecfff")
+        (bg-region          ,tcc-162-huangbaiyou)
         (bg-paren           "#9fc0ef")
         (bg-err             "#ffd0e6") ; check with err
         (bg-warning         "#ffe5ba") ; check with warning
@@ -137,7 +138,8 @@
         ;; (bg-char-2 "#dff000")
 ;;; Conditional hues
 
-        (bg-region-intense "#cfb5f0")
+        ;; (bg-region-intense "#cfb5f0")
+        (bg-region-intense ,tcc-162-huangbaiyou)
 
 ;;; Mappings
 

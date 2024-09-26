@@ -17,13 +17,14 @@
   :config
   (setq vterm-buffer-name-string "vterm: %s")
   (setq vterm-buffer-name "*vterm*")
+  (hl-line-mode -1)
   (define-key vterm-mode-map (kbd "M-i") 'vterm-toggle)
 )
 
 (use-package vterm-toggle
   :demand t
   :ensure t 
-  :config 
+  :config
   (global-set-key (kbd "M-i") 'vterm-toggle)
   )
 
