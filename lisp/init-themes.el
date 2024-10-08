@@ -165,7 +165,7 @@
         (keyword magenta-cooler)
         ;; (preprocessor green-warmer)
         ;; (docstring cyan-faint)
-        ;; (string yellow-warmer)
+        (string red-warmer)
         (type cyan-warmer)
         (variable red-warmer)
         ;; (rx-escape cyan-cooler) ; compare with `string'
