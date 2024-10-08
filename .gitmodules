@@ -61,3 +61,6 @@
 [submodule "site-lisp/svg-lib"]
 	path = site-lisp/svg-lib
 	url = git@github.com:happyo/svg-lib.git
+[submodule "site-lisp/aider"]
+	path = site-lisp/aider
+	url = https://github.com/tninja/aider.el.git

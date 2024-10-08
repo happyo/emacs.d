@@ -1,4 +1,4 @@
-;;; init-gpt.el --- Insert description here -*- lexical-binding: t -*-
+;;; init-gpt.el --- Insert description here -*- lexical-binding: jjjjjjjjt -*-
 ;;; Commentary:
 ;;; Code:
 
@@ -29,6 +29,14 @@
           :models '("gpt-4o")
           :stream t
           :header `(("Authorization" . ,(concat "Bearer " (getenv "GITHUB_TOKEN")))))))
+
+(use-package aider
+  :demand t
+  :ensure nil
+  :load-path "~/.emacs.d/site-lisp/aider"
+  :config
+  (setq aider-args '("--model" "gpt-4o" "--no-auto-commits"))
+  (global-set-key (kbd "C-c a") 'aider-transient-menu))
 
 (provide 'init-gpt)
 ;;; init-gpt.el ends here
