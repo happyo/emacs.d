@@ -55,7 +55,7 @@
 (use-package apheleia
   :demand t
   :ensure t
-  :after lsp-bridge
+  :after (lsp-bridge web-mode)
   :bind (("M-]" . apheleia-format-buffer))
   :config
   (setq +format-with-lsp nil)
