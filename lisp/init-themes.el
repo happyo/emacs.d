@@ -192,7 +192,7 @@
 
 ;;;; Prose mappings
 
-        ;; (prose-code yellow)
+        (prose-code yellow-cooler)
         (prose-done ,tcc-319-buzao)
         ;; (prose-macro cyan-cooler)
         ;; (prose-metadata fg-dim)
