@@ -175,6 +175,7 @@
   :demand t
   :ensure t
   :config
+  (wrap-region-add-wrapper "`" "`")
   (wrap-region-global-mode t)
 )
 
