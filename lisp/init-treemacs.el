@@ -27,6 +27,7 @@
   (setq treemacs-user-mode-line-format 'none)
   (setq treemacs-show-cursor nil)
   (setq treemacs-tag-follow-delay 0.3)
+  (setq treemacs-width 50)
   )
 
 (use-package treemacs-projectile

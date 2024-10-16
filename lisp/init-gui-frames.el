@@ -82,10 +82,11 @@
   )
 ;; 启用 window-divider-mode
 (window-divider-mode 1)
-(setq window-divider-default-right-width 2)  ;; 右侧分割线宽度
+(setq window-divider-default-right-width 1)  ;; 右侧分割线宽度
 (setq window-divider-default-bottom-width 1) ;; 底部分割线宽度
 (custom-set-faces
- '(window-divider ((t (:foreground "#FFFBE9"))))           
+ ;; '(window-divider ((t (:foreground "#FFFBE9"))))
+  '(window-divider ((t (:foreground "#445682"))))           
  )
 
 (use-package symbol-overlay
