@@ -14,7 +14,7 @@ static func createAction(manager: NetworkingManager) -> ThunkEffectAction<State,
             case .success(let response):
                 print(response)
 
-            case .failure(let error):
+            case .failure(_):
                 dispatch(.endLoading)
             }
         }

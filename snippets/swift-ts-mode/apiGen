@@ -7,29 +7,19 @@ import NetworkingCore
 import Foundation
 
 struct ${1: HomeList}API: BaseAPIProtocol {
-    var lastId: String?
-    
-    private let clientSetTime = "1"
+    let clientSetTime = "1"
     
     func pathString() -> String {
         return ""
     }
     
     func params() -> [String: Any]? {
-        var parameters: [String: Any] = [
+        let parameters: [String: Any] = [
             "client_set_time": clientSetTime
         ]
         
-        if let lastId = lastId {
-            parameters["last_id"] = lastId
-        }
-        
         return parameters
     }
-
-//    func enableLogging() -> Bool {
-//        return true
-//    }
 }
 
 

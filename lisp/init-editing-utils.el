@@ -4,7 +4,36 @@
 (require 'init-elpa)
 
 (global-auto-revert-mode 1)
-(global-hl-line-mode 1)
+
+;; (global-hl-line-mode 1)
+(use-package lin
+  :ensure t
+  :demand t
+  :config
+  (setq lin-face 'lin-cyan) ; check doc string for alternative styles
+  (setq lin-mode-hooks
+        '(bongo-mode-hook
+          dired-mode-hook
+          elfeed-search-mode-hook
+          git-rebase-mode-hook
+          grep-mode-hook
+          ibuffer-mode-hook
+          ilist-mode-hook
+          ledger-report-mode-hook
+          log-view-mode-hook
+          magit-log-mode-hook
+          mu4e-headers-mode-hook
+          notmuch-search-mode-hook
+          notmuch-tree-mode-hook
+          occur-mode-hook
+          org-agenda-mode-hook
+          pdf-outline-buffer-mode-hook
+          proced-mode-hook
+          tabulated-list-mode-hook
+          prog-mode-hook
+          ))
+  (lin-global-mode 1)
+  )
 
 (use-package format-all)
 
@@ -105,6 +134,33 @@
 
 ;; undo
 (use-package vundo)
+
+(use-package dogears
+  :ensure t
+  :demand t
+  :hook (after-init . dogears-mode)
+  :bind (:map global-map
+              ("M-g d" . dogears-go)
+              ("M-g b" . dogears-back)
+              ("M-g f" . dogears-forward)
+              ("M-g l" . dogears-list)
+              ("M-g D" . dogears-sidebar))
+  :config
+  (setq dogears-idle 1
+        dogears-limit 200
+        dogears-position-delta 20)
+  (setq dogears-functions '(find-file recenter-top-bottom
+                                      other-window switch-to-buffer
+                                      aw-select toggle-window-split
+                                      windmove-do-window-select
+                                      pager-page-down pager-page-up
+                                      tab-bar-select-tab
+                                      pop-to-mark-command
+                                      pop-global-mark
+                                      goto-last-change
+                                      xref-go-back
+                                      xref-find-definitions
+                                      xref-find-references)))
 
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here
