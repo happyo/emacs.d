@@ -80,14 +80,12 @@
   (prog-mode . olivetti-mode)
   (org-mode . olivetti-mode)
   )
-;; 启用 window-divider-mode
-(window-divider-mode 1)
-(setq window-divider-default-right-width 1)  ;; 右侧分割线宽度
-(setq window-divider-default-bottom-width 1) ;; 底部分割线宽度
+
+(setq window-divider-default-right-width 1)  
+(setq window-divider-default-bottom-width 1) 
 (custom-set-faces
- ;; '(window-divider ((t (:foreground "#FFFBE9"))))
-  '(window-divider ((t (:foreground "#445682"))))           
- )
+ '(window-divider ((t (:foreground "#445682")))))
+(window-divider-mode 1)
 
 (use-package symbol-overlay
   :demand t
@@ -113,7 +111,7 @@
 ;;   (custom-set-faces
 ;;    '(auto-dim-other-buffers-face
 ;;      ((((background light)) (:background "#FFF5D3"))
-;;       (t (:background "#FFF5D3")))))) 
+;;       (t (:background "#FFF5D3"))))))
 
 (provide 'init-gui-frames)
 ;;; init-gui-frames.el ends here
