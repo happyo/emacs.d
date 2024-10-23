@@ -8,15 +8,15 @@
   :load-path "~/.emacs.d/site-lisp/svg-lib"
   )
 
-(use-package tab-bar
-  :ensure nil
-  :after svg-lib
-  :config
-  (setq tab-bar-new-button-show nil)
-  (setq tab-bar-close-button-show nil)
-  (setq tab-bar-tab-hints t)
-  (customize-set-variable 'tab-bar-select-tab-modifiers '(meta))
-  (tab-bar-mode 1))
+;; (use-package tab-bar
+;;   :ensure nil
+;;   :after svg-lib
+;;   :config
+;;   (setq tab-bar-new-button-show nil)
+;;   (setq tab-bar-close-button-show nil)
+;;   (setq tab-bar-tab-hints t)
+;;   (customize-set-variable 'tab-bar-select-tab-modifiers '(meta))
+;;   (tab-bar-mode 1))
 
 ;; 自定义 tab-bar 的标签格式函数
 (defun happyo/tab-bar-tab-name-with-svg (tab i)

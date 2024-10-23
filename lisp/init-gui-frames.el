@@ -53,6 +53,9 @@
 (setq frame-title-format " ")
 
 (setq-default line-spacing 0.4)
+(setq header-line-format " ")
+(set-face-attribute 'header-line nil :height 1.9)
+(set-face-attribute 'header-line nil :background "#FFFFFF")
 
 ;; (defun set-my-prog-mode-line-spacing ()
 ;;   "Set line spacing in programming modes."
@@ -79,6 +82,7 @@
   :hook
   (prog-mode . olivetti-mode)
   (org-mode . olivetti-mode)
+  (markdown-mode . olivetti-mode)
   )
 
 (setq window-divider-default-right-width 1)  
