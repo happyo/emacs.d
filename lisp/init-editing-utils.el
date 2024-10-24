@@ -10,7 +10,7 @@
   :ensure t
   :demand t
   :config
-  (setq lin-face 'lin-cyan) ; check doc string for alternative styles
+  (setq lin-face 'lin-blue) ; check doc string for alternative styles
   (setq lin-mode-hooks
         '(bongo-mode-hook
           dired-mode-hook
