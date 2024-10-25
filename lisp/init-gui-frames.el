@@ -85,11 +85,6 @@
   (markdown-mode . olivetti-mode)
   )
 
-(setq window-divider-default-right-width 1)  
-(setq window-divider-default-bottom-width 1) 
-(custom-set-faces
- '(window-divider ((t (:foreground "#445682")))))
-(window-divider-mode 1)
 
 (use-package symbol-overlay
   :demand t
