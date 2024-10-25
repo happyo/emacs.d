@@ -16,7 +16,7 @@
         ;; (bg-main     "#FFFACD")
         ;; (bg-main     "#F8E9FF")
         ;; (bg-main     "#FFFBE9")
-        (bg-main     "#FFFFFF")
+        (bg-main     "#eff1f5")
         ;; (fg-main     ,tcc-015-wanse)
         (fg-main     "#445682")
         ;; (fg-main     "#CC99FF")
@@ -45,7 +45,7 @@
         (yellow-faint    ,tcc-216-qiuxiang)
         (blue            ,tcc-131-cangcang)
         (blue-warmer     ,tcc-129-ruolan)
-        (blue-cooler     "#002FA7")
+        (blue-cooler     "#1e66f5")
         (blue-faint      "#82D8CF")
         (magenta         ,tcc-100-ziyuan)
         (magenta-warmer  ,tcc-085-hongzhizhu)
@@ -161,11 +161,12 @@
         (builtin magenta)
         (comment ,tcc-317-hehui)
         ;; (constant red-cooler)
-        (fnname blue-warmer)
+        ;; (fnname blue-cooler)
+        (fnname ,tcc-157-facui)
         (keyword magenta-cooler)
         ;; (preprocessor green-warmer)
         ;; (docstring cyan-faint)
-        (string red-warmer)
+        (string magenta-warmer)
         (type cyan-warmer)
         (variable red-warmer)
         ;; (rx-escape cyan-cooler) ; compare with `string'
@@ -270,10 +271,10 @@
   "Face for escape characters."
   :group 'font-lock-faces)
 
-(defface font-lock-function-call-face
-  '((t :foreground "blue" :weight bold))
-  "Face for function calls."
-  :group 'font-lock-faces)
+;; (defface font-lock-function-call-face
+;;   '((t :foreground "blue" :weight bold))
+;;   "Face for function calls."
+;;   :group 'font-lock-faces)
 
 (defface font-lock-misc-punctuation-face
   '((t :foreground "yellow"))
