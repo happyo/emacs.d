@@ -1,4 +1,4 @@
-;;; init-gpt.el --- Insert description here -*- lexical-binding: jjjjjjjjt -*-
+;;; init-gpt.el --- Insert description here -*- lexical-binding -*-
 ;;; Commentary:
 ;;; Code:
 
@@ -37,6 +37,13 @@
   :config
   (setq aider-args '("--model" "gpt-4o" "--no-auto-commits"))
   (global-set-key (kbd "C-c a") 'aider-transient-menu))
+
+(use-package copilot-chat
+  :demand t
+  :after (magit)
+  :config
+  (add-hook 'git-commit-setup-hook 'copilot-chat-insert-commit-message)
+  )
 
 (provide 'init-gpt)
 ;;; init-gpt.el ends here

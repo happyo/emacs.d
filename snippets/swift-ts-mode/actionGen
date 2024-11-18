@@ -5,17 +5,18 @@
 
 static func createAction(manager: NetworkingManager) -> ThunkEffectAction<State, Action> {
     ThunkEffectAction<State, Action> { dispatch, getState in
-
-        let homeListAPI = HomeFeedListAPI()
+        Task {
+             let homeListAPI = HomeFeedListAPI()
         
-        dispatch(.startFetching)
-        manager.request(homeListAPI) { (result: Result<${2: APIDataModel}, Error>) in
+            dispatch(.startFetching)
+            let result: Result<${2: APIDataModel}, Error> = manager.request(homeListAPI)
+        
             switch result {
             case .success(let response):
-                print(response)
+                 print(response)
 
             case .failure(_):
-                dispatch(.endLoading)
+                 dispatch(.endLoading)
             }
         }
     }
