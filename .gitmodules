@@ -1,9 +1,6 @@
 [submodule "site-lisp/lsp-bridge"]
 	path = site-lisp/lsp-bridge
 	url = git@github.com:happyo/lsp-bridge.git
-[submodule "site-lisp/ef-themes"]
-	path = site-lisp/ef-themes
-	url = git@github.com:happyo/ef-themes.git
 [submodule "site-lisp/meow"]
 	path = site-lisp/meow
 	url = git@github.com:happyo/meow.git
@@ -64,3 +61,6 @@
 [submodule "site-lisp/aider"]
 	path = site-lisp/aider
 	url = https://github.com/tninja/aider.el.git
+[submodule "site-lisp/modus-themes"]
+	path = site-lisp/modus-themes
+	url = https://github.com/protesilaos/modus-themes.git
