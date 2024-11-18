@@ -10,6 +10,8 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/chinese-color")
 (require 'chinese-color)
 
+(fringe-mode 0)
+
 (setq modus-operandi-palette-overrides
       `(
 ;;; Basic values
