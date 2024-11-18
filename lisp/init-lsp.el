@@ -50,8 +50,6 @@
 ;;   (add-to-list 'eglot-server-programs
 ;;     '(swift-ts-mode . ("xcrun" "sourcekit-lsp"))))
 
-;; (add-to-list 'load-path "~/.emacs.d/site-lisp/treesit-auto")
-
 (use-package apheleia
   :demand t
   :ensure t
