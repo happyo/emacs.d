@@ -207,16 +207,16 @@
 
      ;; TODO: Match on any level of switch patterns
      (switch_pattern
-      (pattern "." (simple_identifier) @font-lock-property-ref-face))
+      (pattern "." (simple_identifier) @font-lock-property-use-face))
      
      (switch_pattern
       (pattern (simple_identifier)
-               (pattern "." (simple_identifier) @font-lock-property-ref-face)))
+               (pattern "." (simple_identifier) @font-lock-property-use-face)))
 
      (switch_pattern
       (pattern (simple_identifier)
                (pattern (simple_identifier)
-                        (pattern "." (simple_identifier) @font-lock-property-ref-face))))
+                        (pattern "." (simple_identifier) @font-lock-property-use-face))))
      
      (class_body
       (property_declaration (pattern (simple_identifier)) @font-lock-property-name-face))
@@ -267,9 +267,8 @@
        target: (simple_identifier) @font-lock-variable-name-face
        suffix: (navigation_suffix suffix: (simple_identifier) @font-lock-function-call-face)))
 
-     ;; TODO: Which feature does this belong?
      (navigation_expression
-       suffix: (navigation_suffix suffix: (simple_identifier) @font-lock-property-ref-face))
+      suffix: (navigation_suffix suffix: (simple_identifier) @font-lock-property-use-face))
      
      ((directive) @font-lock-preprocessor-face)
      (prefix_expression (simple_identifier) @font-lock-function-call-face)
