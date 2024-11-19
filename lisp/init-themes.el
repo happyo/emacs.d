@@ -15,12 +15,10 @@
 (setq modus-operandi-palette-overrides
       `(
 ;;; Basic values
-        ;; (bg-main     ,tcc-351-ningzhi)
-        ;; (bg-main     "#FFFACD")
-        ;; (bg-main     "#F8E9FF")
+        (bg-main     ,tcc-351-ningzhi)
         ;; (bg-main     "#FFFBE9")
         ;; (bg-main     "#eff1f5")
-        (bg-main     "#FFFFFF")
+        ;; (bg-main     "#FFFFFF")
         (fg-main     "#445682")
         (bg-dim      ,tcc-118-tianqing)
         (fg-dim      "#777294")
@@ -109,18 +107,17 @@
 
 ;;; Special hues
 
-        (bg-mode-line       ,tcc-173-chaomi)
-        (fg-mode-line       ,tcc-351-ningzhi)
-        (bg-completion      "#f4cfff")
-        (bg-hover           "#b4cfff")
-        (bg-hover-secondary "#aaeccf")
+        ;; (bg-completion      "#f4cfff")
+        ;; (bg-hover           "#b4cfff")
+        ;; (bg-hover-secondary "#aaeccf")
         (bg-hl-line         ,tcc-343-qianyun)
         ;; (bg-region          "#eecfff")
-        (bg-region          ,tcc-162-huangbaiyou)
-        (bg-paren           "#9fc0ef")
-        (bg-err             "#ffd0e6") ; check with err
-        (bg-warning         "#ffe5ba") ; check with warning
-        (bg-info            "#bbefda") ; check with info
+        (bg-region          ,tcc-126-dongfangjibai)
+        (fg-region          fg-main)
+        ;; (bg-paren           "#9fc0ef")
+        ;; (bg-err             "#ffd0e6") ; check with err
+        ;; (bg-warning         "#ffe5ba") ; check with warning
+        ;; (bg-info            "#bbefda") ; check with info
 
         (border        "#b4c4c0")
         (cursor        ,tcc-076-danfeng)
@@ -141,7 +138,7 @@
 ;;; Conditional hues
 
         ;; (bg-region-intense "#cfb5f0")
-        (bg-region-intense ,tcc-162-huangbaiyou)
+        ;; (bg-region-intense ,tcc-162-huangbaiyou)
 
 ;;; Mappings
 
@@ -159,7 +156,7 @@
         ;; (prompt magenta-warmer)
 
 ;;;; Code mappings
-         (bracket fg-main)
+         (bracket red-cooler)
         (builtin magenta)
         (comment ,tcc-317-hehui)
       ;; (constant blue-cooler)
@@ -169,14 +166,14 @@
         (fnname ,tcc-158-baiqing)
         (keyword magenta-cooler)
         (number blue-cooler)
-        (operator blue-cooler)
+        (operator cyan-cooler)
         (preprocessor red-cooler)
         (punctuation fg-main)
         (rx-backslash magenta)
         (rx-construct green-cooler)
         (string red-warmer)
         (type cyan-warmer)
-        (variable red-warmer)
+        ;; (variable red-warmer)
 
 
 ;;;; Accent mappings
