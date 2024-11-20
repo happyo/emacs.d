@@ -7,15 +7,11 @@
 
 (setq swift-basic-offset 4)
 
-(use-package async
-  :demand t
-  :ensure t)
+;;(use-package ob-swift-enhanced
+;;  :ensure nil
+ ;; :load-path "~/.emacs.d/site-lisp/ob-swift-enhanced")
 
-(use-package ob-swift-enhanced
-  :ensure nil
-  :load-path "~/.emacs.d/site-lisp/ob-swift-enhanced")
-
-(require 'ob-swift-enhanced)
+;;(require 'ob-swift-enhanced)
 
 (use-package swift-ts-mode
   :ensure nil

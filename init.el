@@ -114,11 +114,36 @@
 
 (require 'init-macos)
 
-(require 'init-browser)
+;;(require 'init-browser)
 (require 'init-svg)
 
 (server-start)
 
-(setq custom-file (locate-user-emacs-file "custom.el"))
-(when (file-exists-p custom-file)
-  (load custom-file))
+(provide 'init)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages nil))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(meow-position-highlight-number-1 ((((class color) (min-colors 256)) :inherit (bold modus-themes-reset-soft) :background "#7feaff")))
+ '(meow-position-highlight-number-2 ((((class color) (min-colors 256)) :inherit (bold modus-themes-reset-soft) :background "#ffaaff")))
+ '(meow-position-highlight-number-3 ((((class color) (min-colors 256)) :inherit (bold modus-themes-reset-soft) :background "#dff000")))
+ '(meow-region-cursor-1 ((((class color) (min-colors 256)) :inherit (bold modus-themes-reset-soft) :background "#7feaff")))
+ '(meow-region-cursor-2 ((((class color) (min-colors 256)) :inherit (bold modus-themes-reset-soft) :background "#ffaaff")))
+ '(meow-region-cursor-3 ((((class color) (min-colors 256)) :inherit (bold modus-themes-reset-soft) :background "#dff000")))
+ '(nerd-icons-green ((((background dark)) :foreground "#FA7343") (((background light)) :foreground "#FA7343")))
+ '(success ((t (:weight regular))))
+ '(treemacs-directory-face ((t (:foreground "unspecified-fg" :inherit default))))
+ '(treemacs-file-face ((t (:foreground "unspecified-fg" :inherit default))))
+ '(treemacs-nerd-icons-dir-face ((t (:foreground "#00B4D8"))))
+ '(treemacs-nerd-icons-file-face ((t (:foreground "#00B4D8"))))
+ '(treemacs-nerd-icons-root-face ((t (:foreground "#179299" :background "#EEEEEE" :color "gtk_selection_bg_color" :weight bold :height 1.4))))
+ '(treemacs-root-face ((t (:foreground "#ff79c6" :background "#EEEEEE" :weight bold :height 1.4 :line-spacing 0.4))))
+ '(treemacs-window-background-face ((t (:background "#EEEEEE"))))
+ '(warning ((t (:weight regular)))))
