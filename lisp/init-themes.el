@@ -260,10 +260,11 @@
 (custom-set-faces
  '(success ((t (:weight regular))))
  '(warning ((t (:weight regular))))
+ '(treemacs-window-background-face ((t (:background "#EEEEEE"))))
  '(treemacs-directory-face ((t (:foreground "unspecified-fg" :inherit default))))
  '(treemacs-file-face ((t (:foreground "unspecified-fg" :inherit default))))
  '(treemacs-nerd-icons-root-face ((t (:foreground "#179299"
-                                                  :background "unspecified-bg"
+                                                  :background "#EEEEEE"
                                                   :color "gtk_selection_bg_color"
                                                  
                                      :weight bold
@@ -271,7 +272,7 @@
  
 '(treemacs-nerd-icons-dir-face ((t (:foreground "#00B4D8"))))
 '(treemacs-root-face ((t (:foreground "#ff79c6"
-                                      :background "unspecified-bg"
+                                      :background "#EEEEEE"
                                       :weight bold :height 1.4 :line-spacing 0.4))))
 
 
