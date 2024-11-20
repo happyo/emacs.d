@@ -15,6 +15,8 @@
 
 
 (use-package projectile
+  :ensure t
+  :demand t
   :bind
   ("C-c p" . 'projectile-command-map)
   :config

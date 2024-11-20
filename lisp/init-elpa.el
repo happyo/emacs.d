@@ -20,8 +20,8 @@
 ;; (setq package-archives '(("gnu"   . "http://mirrors.163.com/elpa/gnu/")
 ;;                          ("melpa" . "http://mirrors.163.com/elpa/melpa/")))
 
-(setq package-archives '(("gnu"   . "http://elpa.gnu.org/packages/")
-                         ("melpa" . "http://melpa.org/packages/")))
+(setq package-archives '(("gnu"   . "https://elpa.gnu.org/packages/")
+                         ("melpa" . "https://melpa.org/packages/")))
 ;; Official MELPA Mirror, in case necessary.
 ;; (add-to-list 'package-archives (cons "melpa-mirror" (concat proto "://www.mirrorservice.org/sites/melpa.org/packages/")) t)
 

@@ -10,7 +10,7 @@
   :bind
   (:map global-map
         ("M-0"       . treemacs-select-window)
-        ("M-T"   . treemacs-add-and-display-current-project-exclusively)
+        ("M-T"   . treemacs-display-current-project-exclusively)
         ("M-t"   . treemacs)
         ("M-J"   . treemacs-find-file)
         ("M-1"   . treemacs-delete-other-windows)
@@ -32,7 +32,11 @@
 
 (use-package treemacs-projectile
   :after (treemacs projectile)
-  :ensure t)
+  :ensure t
+  :demand t
+  :config
+  (add-hook 'projectile-after-switch-project-hook 'treemacs-display-current-project-exclusively)
+)
 
 (use-package treemacs-icons-dired
   :hook (dired-mode . treemacs-icons-dired-enable-once)

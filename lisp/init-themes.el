@@ -211,15 +211,15 @@
 
 ;;;; Mail mappings
 
-        ;; (mail-cite-0 yellow-cooler)
-        ;; (mail-cite-1 magenta)
-        ;; (mail-cite-2 blue-warmer)
-        ;; 
-        ;; (mail-cite-3 cyan-warmer)
-        ;; (mail-part magenta-faint)
-        ;; (mail-recipient magenta-warmer)
-        ;; (mail-subject magenta-cooler)
-        ;; (mail-other magenta)
+      (fg-heading-0 cyan-cooler)
+      (fg-heading-1 fg-main)
+      (fg-heading-2 blue)
+      (fg-heading-3 fg-alt)
+      (fg-heading-4 magenta)
+      (fg-heading-5 green-faint)
+      (fg-heading-6 red-faint)
+      (fg-heading-7 cyan-warmer)
+      (fg-heading-8 fg-dim)
 ;;;; Tab mappings
 
         (bg-tab-bar      bg-main)
@@ -258,6 +258,8 @@
 
 
 (custom-set-faces
+ '(success ((t (:weight regular))))
+ '(warning ((t (:weight regular))))
  '(treemacs-directory-face ((t (:foreground "unspecified-fg" :inherit default))))
  '(treemacs-file-face ((t (:foreground "unspecified-fg" :inherit default))))
  '(treemacs-nerd-icons-root-face ((t (:foreground "#179299"
