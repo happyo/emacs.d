@@ -17,7 +17,7 @@
   :hook (prog-mode . smerge-mode))
 
 (use-package gptel
-  :demand t
+  :ensure t
   :custom
   (gptel-temperature 0.1)
   (gptel-model "gpt-4o")
@@ -39,7 +39,7 @@
   (global-set-key (kbd "C-c a") 'aider-transient-menu))
 
 (use-package copilot-chat
-  :demand t
+  :ensure t
   :after (magit)
   :config
   (add-hook 'git-commit-setup-hook 'copilot-chat-insert-commit-message)
