@@ -41,11 +41,6 @@
 (declare-function treesit-node-parent "treesit.c")
 (declare-function treesit-query-compile "treesit.c")
 
-(defvar swift-ts-mode-map
-  (let ((keymap (make-sparse-keymap)))
-    keymap)
-  "Keymap for `swift-ts-mode'.")
-
 (defcustom swift-ts-mode-indent-offset 4
   "Number of spaces for each indentation step in `swift-ts-mode'."
   :version "29.1"
@@ -55,13 +50,15 @@
 
 (defun swift-ts-mode--treesit-last-child (node)
   "Gets the last child of the given treesit NODE."
-  (treesit-node-child node (- (treesit-node-child-count node) 1)))
+  (if (treesit-node-children node)
+      (treesit-node-child node (- (treesit-node-child-count node) 1))
+    node))
 
 (defun swift-ts-mode--navigation-expression-indent (node &rest _)
   "Handles indentation for the given navigation expression NODE."
   (let* ((prev-node
           (swift-ts-mode--treesit-last-child
-           (treesit-node-child (treesit-node-prev-sibling node) 1)))
+           (treesit-node-prev-sibling node)))
          
          (min-point
           (save-excursion
@@ -103,9 +100,19 @@
      ;; .padding()
      (t min-point))))
 
+(defun swift-ts-mode--default-indent (_n parent bol &rest _)
+  (if parent
+      (save-excursion
+        (goto-char (treesit-node-start parent))
+        (back-to-indentation)
+        (point))
+    (save-excursion
+      (goto-char bol)
+      (line-beginning-position))))
+
 (defvar swift-ts-mode--indent-rules
   `((swift
-     ((parent-is "source_file") point-min 0)
+     ((parent-is "source_file") column-0 0)
      ((node-is ")") parent-bol 0)
      ((node-is "]") parent-bol 0)
      ((node-is ">") parent-bol 0)
@@ -144,6 +151,7 @@
      ((parent-is "willset_clause") parent-bol swift-ts-mode-indent-offset)
      ((parent-is "property_declaration") parent-bol 0)
      ((parent-is "modifiers") parent-bol 0)
+     (no-node swift-ts-mode--default-indent 0)
      ((parent-is "navigation_expression") swift-ts-mode--navigation-expression-indent 0)))
   "Tree-sitter indent rules for `swift-ts-mode'.")
 
@@ -206,22 +214,16 @@
        (user_type (type_identifier) @font-lock-type-face)])
 
      ;; TODO: Match on any level of switch patterns
-     (switch_pattern
-      (pattern "." (simple_identifier) @font-lock-property-use-face))
-     
-     (switch_pattern
-      (pattern (simple_identifier)
-               (pattern "." (simple_identifier) @font-lock-property-use-face)))
-
-     (switch_pattern
-      (pattern (simple_identifier)
-               (pattern (simple_identifier)
-                        (pattern "." (simple_identifier) @font-lock-property-use-face))))
+     (switch_pattern (pattern (simple_identifier) @font-lock-property-use-face))
+     (switch_pattern (pattern (pattern (simple_identifier) @font-lock-property-use-face)))
+     (switch_pattern (pattern (pattern (pattern (simple_identifier) @font-lock-property-use-face))))
+     (switch_pattern (pattern (pattern (pattern (pattern (simple_identifier) @font-lock-property-use-face)))))
+     (switch_pattern (pattern (pattern (pattern (pattern (pattern (simple_identifier) @font-lock-property-use-face))))))
+     (switch_pattern (pattern (pattern (pattern (pattern (pattern (pattern (simple_identifier) @font-lock-property-use-face)))))))
      
      (class_body
       (property_declaration (pattern (simple_identifier)) @font-lock-property-name-face))
-     (property_declaration
-      name: (pattern bound_identifier: (simple_identifier) @font-lock-property-name-face))
+     
      (enum_entry (simple_identifier) @font-lock-property-name-face))
    
    :language 'swift
@@ -264,9 +266,9 @@
    :feature 'function
    '((call_expression
       (navigation_expression
-       target: (simple_identifier) @font-lock-variable-name-face
        suffix: (navigation_suffix suffix: (simple_identifier) @font-lock-function-call-face)))
 
+     ;; TODO: Which feature does this belong?
      (navigation_expression
       suffix: (navigation_suffix suffix: (simple_identifier) @font-lock-property-use-face))
      
@@ -280,7 +282,8 @@
      (call_expression (simple_identifier) @font-lock-type-face)
      (class_declaration (type_identifier) @font-lock-type-face)
      (inheritance_specifier (user_type (type_identifier)) @font-lock-type-face)
-     ((navigation_expression (simple_identifier) @font-lock-type-face)))
+     ((navigation_expression (simple_identifier) @font-lock-type-face)
+      (:match "^[A-Z]" @font-lock-type-face)))
 
    :language 'swift
    :feature 'keyword
@@ -288,12 +291,12 @@
      (super_expression "super" @font-lock-keyword-face)
      (availability_condition "#available" @font-lock-keyword-face)
      (availability_condition "#unavailable" @font-lock-keyword-face)
-     (lambda_literal "in" @font-lock-operator-face)
+     (lambda_literal "in" @font-lock-keyword-face)
      (for_statement "in" @font-lock-keyword-face)
-     ;; TODO: Only highlight "self" in capture lists
-     (capture_list_item (simple_identifier) @font-lock-keyword-face)
      (for_statement "for" @font-lock-keyword-face)
-     ((self_expression) @font-lock-keyword-face))
+     ((self_expression) @font-lock-keyword-face)
+     ((simple_identifier) @font-lock-keyword-face
+      (:match "^\\(:?self\\)$" @font-lock-keyword-face)))
 
    :language 'swift
    :feature 'operator
@@ -317,13 +320,11 @@
    ;; cases like private(set) and \.keyPaths.
    :language 'swift
    :feature 'bracket
-    `([,@swift-ts-mode--brackets] @font-lock-bracket-face)
-    
+   `([,@swift-ts-mode--brackets] @font-lock-bracket-face)
+
    :language 'swift
    :feature 'delimiter
-    '((["." ";" ":" ","]) @font-lock-delimiter-face))
-
-  
+   '((["." ";" ":" ","]) @font-lock-delimiter-face))
   
   "Tree-sitter font-lock settings for `swift-ts-mode'.")
 
@@ -359,14 +360,36 @@
   "Return t if NODE is a struct."
   (swift-ts-mode--class-declaration-node-p "struct" node))
 
+(defun swift-ts-mode--parameter-name (parameter)
+  "Return the parameter name of the given PARAMETER node."
+  (let ((parameter-name
+         (treesit-node-text
+          (or (treesit-node-child-by-field-name parameter "external_name")
+              (treesit-node-child-by-field-name parameter "name")))))
+    (if parameter-name
+        (substring-no-properties parameter-name)
+      parameter-name)))
+
+(defun swift-ts-mode--function-name (node)
+  "Return the name including parameters of the given NODE."
+  (let ((name
+         (treesit-node-text
+          (treesit-node-child-by-field-name node "name") t))
+        (parameter-names
+         (remq nil (mapcar #'swift-ts-mode--parameter-name (treesit-node-children node "parameter")))))
+    (if (null parameter-names)
+        (concat name "()")
+      (concat name "(" (mapconcat 'identity parameter-names ":") ":)"))))
+
 (defun swift-ts-mode--defun-name (node)
   "Return the defun name of NODE.
 Return nil if there is no name or if NODE is not a defun node."
   (pcase (treesit-node-type node)
-    ("class_declaration"
-     (treesit-node-text
-      (treesit-node-child-by-field-name node "name") t))
+    ("init_declaration"
+     (swift-ts-mode--function-name node))
     ("function_declaration"
+     (swift-ts-mode--function-name node))
+    ("class_declaration"
      (treesit-node-text
       (treesit-node-child-by-field-name node "name") t))
     ("protocol_declaration"
@@ -402,7 +425,8 @@ Return nil if there is no name or if NODE is not a defun node."
 
     ;; Imenu.
     (setq-local treesit-simple-imenu-settings
-                `(("Func" "\\function_declaration\\'" nil nil)
+                `(("Init" "\\init_declaration\\'" nil nil)
+                  ("Func" "\\function_declaration\\'" nil nil)
                   ("Enum" "\\class_declaration\\'" swift-ts-mode--enum-node-p nil)
                   ("Class" "\\class_declaration\\'" swift-ts-mode--class-node-p nil)
                   ("Struct" "\\class_declaration\\'" swift-ts-mode--struct-node-p nil)
@@ -413,15 +437,13 @@ Return nil if there is no name or if NODE is not a defun node."
     (setq-local indent-tabs-mode nil
                 treesit-simple-indent-rules swift-ts-mode--indent-rules)
 
+    (setq-local electric-indent-chars (append electric-indent-chars '(?.)))
+
     (treesit-major-mode-setup)))
 
 (if (treesit-ready-p 'swift)
     (add-to-list 'auto-mode-alist '("\\.swift\\'" . swift-ts-mode)))
 
-;; 绑定键映射到 swift-ts-mode
-(add-hook 'swift-ts-mode-hook
-          (lambda ()
-            (use-local-map swift-ts-mode-map)))
-
 (provide 'swift-ts-mode)
+
 ;;; swift-ts-mode.el ends here

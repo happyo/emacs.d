@@ -20,6 +20,8 @@ nerd-icon-install-fonts
 
 brew install fd
 
-pip3 install epc orjson sexpdata==0.0.3 six
-pip3 install openai epc sexpdata six
+// copilot
+brew install node
 
+// lsp bridge
+https://github.com/manateelazycat/lsp-bridge init
