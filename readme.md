@@ -25,3 +25,10 @@ brew install node
 
 // lsp bridge
 https://github.com/manateelazycat/lsp-bridge init
+
+// treesit
+download https://github.com/alex-pinkus/tree-sitter-swift?tab=readme-ov-file
+
+parser Artifacts, save to path ~/develop/openSourceProject/swif-ts/src
+
+
