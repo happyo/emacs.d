@@ -6,34 +6,34 @@
 (global-auto-revert-mode 1)
 
 ;; (global-hl-line-mode 1)
-(use-package lin
-  :ensure t
-  :demand t
-  :config
-  (setq lin-face 'lin-cyan) ; check doc string for alternative styles
-  (setq lin-mode-hooks
-        '(bongo-mode-hook
-          dired-mode-hook
-          elfeed-search-mode-hook
-          git-rebase-mode-hook
-          grep-mode-hook
-          ibuffer-mode-hook
-          ilist-mode-hook
-          ledger-report-mode-hook
-          log-view-mode-hook
-          magit-log-mode-hook
-          mu4e-headers-mode-hook
-          notmuch-search-mode-hook
-          notmuch-tree-mode-hook
-          occur-mode-hook
-          org-agenda-mode-hook
-          pdf-outline-buffer-mode-hook
-          proced-mode-hook
-          tabulated-list-mode-hook
-          prog-mode-hook
-          ))
-  (lin-global-mode 1)
-  )
+;; (use-package lin
+;;   :ensure t
+;;   :demand t
+;;   :config
+;;   (setq lin-face 'lin-cyan) ; check doc string for alternative styles
+;;   (setq lin-mode-hooks
+;;         '(bongo-mode-hook
+;;           dired-mode-hook
+;;           elfeed-search-mode-hook
+;;           git-rebase-mode-hook
+;;           grep-mode-hook
+;;           ibuffer-mode-hook
+;;           ilist-mode-hook
+;;           ledger-report-mode-hook
+;;           log-view-mode-hook
+;;           magit-log-mode-hook
+;;           mu4e-headers-mode-hook
+;;           notmuch-search-mode-hook
+;;           notmuch-tree-mode-hook
+;;           occur-mode-hook
+;;           org-agenda-mode-hook
+;;           pdf-outline-buffer-mode-hook
+;;           proced-mode-hook
+;;           tabulated-list-mode-hook
+;;           prog-mode-hook
+;;           ))
+;;   (lin-global-mode 1)
+;;   )
 
 (use-package format-all)
 
@@ -57,9 +57,10 @@
 (set-face-foreground 'vertical-border (face-background 'default))
 
 ;;; Some basic preferences
-(blink-cursor-mode -1)
+(blink-cursor-mode 1)
 (setq-default
- ;; blink-cursor-interval 0.4
+ blink-cursor-interval 0.5
+ blink-cursor-blinks 0
  bookmark-default-file (locate-user-emacs-file ".bookmarks.el")
  buffers-menu-max-size 30
  case-fold-search t
