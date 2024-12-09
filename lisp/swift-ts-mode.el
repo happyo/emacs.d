@@ -254,6 +254,7 @@
      (function_declaration (simple_identifier) @font-lock-function-name-face)
      ;; TODO: Use custom font face with fallback on default for parameters.
      (value_argument (simple_identifier) @font-lock-type-face)
+     (value_argument_label (simple_identifier) @font-lock-type-face)
      (parameter external_name: (simple_identifier) @font-lock-variable-name-face)
      (parameter name: (simple_identifier) @font-lock-variable-name-face)
      (tuple_type_item name: (simple_identifier) @font-lock-variable-name-face)
@@ -271,6 +272,9 @@
      ;; TODO: Which feature does this belong?
      (navigation_expression
       suffix: (navigation_suffix suffix: (simple_identifier) @font-lock-property-use-face))
+     
+     (navigation_expression
+      target: (simple_identifier) @font-lock-property-use-face)
      
      ((directive) @font-lock-preprocessor-face)
      (prefix_expression (simple_identifier) @font-lock-function-call-face)
