@@ -140,7 +140,7 @@
   (modus-themes-with-colors
     (custom-set-faces
      ;; `(font-lock-property-use-face ((,c :inherit (bold modus-themes-reset-soft) :foreground ,tcc-164-huangbo)))
-     `(font-lock-property-name-face ((,c :inherit (modus-themes-reset-soft) :foreground ,tcc-249-silv)))
+     `(font-lock-property-name-face ((,c :inherit (modus-themes-reset-soft) :foreground ,tcc-011-yangfei)))
      ;; `(font-lock-function-call-face ((,c :inherit (bold modus-themes-reset-soft) :foreground ,tcc-164-huangbo)))
      `(meow-region-cursor-1 ((,c :inherit (bold modus-themes-reset-soft) :background ,bg-char-0)))
      `(meow-region-cursor-2 ((,c :inherit (bold modus-themes-reset-soft) :background ,bg-char-1)))
@@ -206,16 +206,19 @@
                             :fallback 'same-as-icon)))
   (treemacs-load-theme "nerd-icons"))
 
-
-(use-package rainbow-mode
-  :init
-  (defun sanityinc/enable-rainbow-mode-if-theme ()
-    (when (and (buffer-file-name) (string-match-p "-theme\\.el" (buffer-file-name)))
-      (rainbow-mode)))
-  (add-hook 'emacs-lisp-mode-hook 'sanityinc/enable-rainbow-mode-if-theme)
-  (add-hook 'help-mode-hook 'rainbow-mode)
-  (add-hook 'swift-ts-mode-hook 'rainbow-mode)
+(use-package colorful-mode
+  :ensure t ; Optional
+  :hook (prog-mode text-mode)
   )
+;; (use-package rainbow-mode
+;;   :init
+;;   (defun sanityinc/enable-rainbow-mode-if-theme ()
+;;     (when (and (buffer-file-name) (string-match-p "-theme\\.el" (buffer-file-name)))
+;;       (rainbow-mode)))
+;;   (add-hook 'emacs-lisp-mode-hook 'sanityinc/enable-rainbow-mode-if-theme)
+;;   (add-hook 'help-mode-hook 'rainbow-mode)
+;;   (add-hook 'swift-ts-mode-hook 'rainbow-mode)
+;;   )
 
 (provide 'init-themes)
 ;;; init-themes.el end
