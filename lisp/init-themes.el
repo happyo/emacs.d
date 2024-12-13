@@ -209,6 +209,8 @@
 (use-package colorful-mode
   :ensure t ; Optional
   :hook (prog-mode text-mode)
+  :config
+  (setq colorful-use-prefix t)
   )
 ;; (use-package rainbow-mode
 ;;   :init
