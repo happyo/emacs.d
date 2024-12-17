@@ -274,7 +274,7 @@
       suffix: (navigation_suffix suffix: (simple_identifier) @font-lock-property-use-face))
      
      (navigation_expression
-      target: (simple_identifier) @font-lock-property-use-face)
+      target: (simple_identifier) @font-lock-builtin-face)
      
      ((directive) @font-lock-preprocessor-face)
      (prefix_expression (simple_identifier) @font-lock-function-call-face)
@@ -310,7 +310,7 @@
 
    :language 'swift
    :feature 'variable
-   `(((simple_identifier) @font-lock-variable-ref-face))
+   `(((simple_identifier) @font-lock-variable-use-face))
 
    :language 'swift
    :feature 'constant
@@ -448,6 +448,9 @@ Return nil if there is no name or if NODE is not a defun node."
 (if (treesit-ready-p 'swift)
     (add-to-list 'auto-mode-alist '("\\.swift\\'" . swift-ts-mode)))
 
+    ;; (directly_assignable_expression
+    ;;   (navigation_expression target: (simple_identifier)
+    ;;    suffix: (navigation_suffix . suffix: (simple_identifier))))
 (provide 'swift-ts-mode)
 
 ;;; swift-ts-mode.el ends here

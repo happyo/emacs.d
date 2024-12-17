@@ -19,7 +19,8 @@
         ;; (bg-main     "#FFFBE9")
         ;; (bg-main     "#eff1f5")
         ;; (bg-main     "#FFFFFF")
-        (fg-main     "#445682")
+        (fg-main     "#304050")
+                ;; (fg-main     "#445682")
         (bg-dim      ,tcc-118-tianqing)
         (fg-dim      "#777294")
         
@@ -139,8 +140,8 @@
 (defun my-modus-themes-custom-faces (&rest _)
   (modus-themes-with-colors
     (custom-set-faces
-     ;; `(font-lock-property-use-face ((,c :inherit (bold modus-themes-reset-soft) :foreground ,tcc-164-huangbo)))
-     `(font-lock-property-name-face ((,c :inherit (modus-themes-reset-soft) :foreground ,tcc-011-yangfei)))
+     `(font-lock-variable-use-face ((,c :inherit (bold modus-themes-reset-soft) :foreground ,tcc-164-huangbo)))
+     `(font-lock-property-name-face ((,c :inherit (modus-themes-reset-soft) :foreground ,tcc-013-meihong)))
      ;; `(font-lock-function-call-face ((,c :inherit (bold modus-themes-reset-soft) :foreground ,tcc-164-huangbo)))
      `(meow-region-cursor-1 ((,c :inherit (bold modus-themes-reset-soft) :background ,bg-char-0)))
      `(meow-region-cursor-2 ((,c :inherit (bold modus-themes-reset-soft) :background ,bg-char-1)))
