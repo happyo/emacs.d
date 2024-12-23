@@ -12,6 +12,11 @@
 
 ;; Make "M-o" prompt for a target window when there are more than 2
 (windmove-default-keybindings)
+(use-package transpose-frame
+  :bind ("C-x 5" . transpose-frame)
+  )
+(setq split-width-threshold 0)
+(setq split-height-threshold nil)
 
 (provide 'init-windows)
 ;;; init-windows.el ends here

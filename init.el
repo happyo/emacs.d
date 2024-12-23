@@ -131,7 +131,8 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(font-lock-property-name-face ((((class color) (min-colors 256)) :inherit (modus-themes-reset-soft) :foreground "#ee95a1")))
+ '(font-lock-property-name-face ((((class color) (min-colors 256)) :inherit (modus-themes-reset-soft) :foreground "#da6d83")))
+ '(font-lock-variable-use-face ((((class color) (min-colors 256)) :inherit (bold modus-themes-reset-soft) :foreground "#fef263")))
  '(meow-position-highlight-number-1 ((((class color) (min-colors 256)) :inherit (bold modus-themes-reset-soft) :background "#7feaff")))
  '(meow-position-highlight-number-2 ((((class color) (min-colors 256)) :inherit (bold modus-themes-reset-soft) :background "#ffaaff")))
  '(meow-position-highlight-number-3 ((((class color) (min-colors 256)) :inherit (bold modus-themes-reset-soft) :background "#dff000")))
