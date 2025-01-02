@@ -11,8 +11,13 @@
 
 (defun my/copilot-tab ()
   (interactive)
-  (or (copilot-accept-completion)
-      (indent-for-tab-command)))
+  (cond
+   ((and (bound-and-true-p yas-minor-mode)
+         (yas-active-snippets))
+    (yas-next-field))
+   ((copilot-accept-completion))
+   (t
+    (indent-for-tab-command))))
 
 (use-package copilot
   :demand t

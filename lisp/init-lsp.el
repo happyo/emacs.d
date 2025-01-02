@@ -38,7 +38,7 @@
   (setq lsp-bridge-enable-completion-in-minibuffer t)
   (setq lsp-bridge-find-def-fallback-function 'xref-find-definitions)
   (setq lsp-bridge-find-def-return-fallback-function 'xref-pop-marker-stack)
-  (setq acm-backend-lsp-match-mode "prefix")
+  ;; (setq acm-backend-lsp-match-mode "prefix")
   (setq acm-enable-capf t)
   ;; (define-key my-custom-minor-mode-map (kbd "M-.") 'my-custom-m-dot-function)
   ;; (define-key my-custom-minor-mode-map (kbd "M-,") 'lsp-bridge-find-def-return)
