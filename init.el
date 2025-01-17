@@ -142,7 +142,7 @@
  '(nerd-icons-green ((((background dark)) :foreground "#FA7343") (((background light)) :foreground "#FA7343")))
  '(success ((t (:weight regular))))
  '(treemacs-directory-face ((t (:foreground "unspecified-fg" :inherit default))))
- '(treemacs-file-face ((t (:foreground "unspecified-fg" :inherit default))))
+ '(treemacs-file-face ((t (:foreground "#333333" :height 0.8))))
  '(treemacs-nerd-icons-dir-face ((t (:foreground "#00B4D8"))))
  '(treemacs-nerd-icons-file-face ((t (:foreground "#00B4D8"))))
  '(treemacs-nerd-icons-root-face ((t (:foreground "#179299" :background "#EEEEEE" :color "gtk_selection_bg_color" :weight bold :height 1.4))))

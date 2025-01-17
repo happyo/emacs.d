@@ -161,7 +161,7 @@
  '(warning ((t (:weight regular))))
  '(treemacs-window-background-face ((t (:background "#EEEEEE"))))
  '(treemacs-directory-face ((t (:foreground "unspecified-fg" :inherit default))))
- '(treemacs-file-face ((t (:foreground "unspecified-fg" :inherit default))))
+ '(treemacs-file-face ((t (:foreground "#999999" :height 0.8))))
  '(treemacs-nerd-icons-root-face ((t (:foreground "#179299"
                                                   :background "#EEEEEE"
                                                   :color "gtk_selection_bg_color"
