@@ -4,9 +4,16 @@
 
 (require 'init-elpa)
 (require 'chinese-color)
+  (require 'ob-swiftui)
+  (ob-swiftui-setup)
 
 (defun my-org-setup ()
   "Setup for Org mode."
+  
+(add-hook 'org-babel-after-execute-hook (lambda ()
+                                          (when org-startup-with-inline-images
+                                            (org-redisplay-inline-images))))
+
 
   ;; Prettify symbols
   (let ((org-prettify-symbols-alist
@@ -50,6 +57,8 @@
   :hook ((org-mode . my-org-setup)
          (org-mode . org-indent-mode))
   :init
+  (setq org-confirm-babel-evaluate nil)
+  (setq org-startup-with-inline-images t)
   (setq org-indent-mode-turns-on-hiding-stars nil)
   (setq org-indent-indentation-per-level 2)
   (setq org-agenda-span 'day)

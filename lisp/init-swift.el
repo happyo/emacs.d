@@ -33,6 +33,9 @@
   :ensure t
   :hook (objc-mode . objc-font-lock-mode))
 
+;; (use-package ob-swiftui
+;;   :ensure t
+;;   :config
 ;; (defun my-swift-mode-save-hook ()
 ;;   "在 Swift 模式文件保存时执行 'swift build'。"
 ;;   (when (eq major-mode 'swift-mode)  ; 确保我们处于 Swift 模式
