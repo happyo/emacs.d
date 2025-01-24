@@ -64,3 +64,6 @@
 [submodule "site-lisp/modus-themes"]
 	path = site-lisp/modus-themes
 	url = https://github.com/protesilaos/modus-themes.git
+[submodule "site-lisp/org-numbering"]
+	path = site-lisp/org-numbering
+	url = https://github.com/yibie/org-numbering.git

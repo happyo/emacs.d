@@ -5,7 +5,10 @@
 (require 'init-elpa)
 (require 'chinese-color)
   (require 'ob-swiftui)
-  (ob-swiftui-setup)
+(ob-swiftui-setup)
+
+(add-to-list 'load-path "~/.emacs.d/site-lisp/org-numbering")
+(require 'org-numbering)
 
 (defun my-org-setup ()
   "Setup for Org mode."
