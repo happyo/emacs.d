@@ -65,7 +65,7 @@
   (setq org-indent-mode-turns-on-hiding-stars nil)
   (setq org-indent-indentation-per-level 2)
   (setq org-agenda-span 'day)
-  (setq org-agenda-files '("~/Zettelkasten/PersonalTasks/" "~/Zettelkasten/WorkTasks/" "~/Zettelkasten/TodoList/"))
+  (setq org-agenda-files '("~/Zettelkasten/PersonalTasks/" "~/Zettelkasten/2025/"))
   (setq org-agenda-include-diary t)
   (setq diary-file "~/Zettelkasten/standard-diary")
   (setq org-agenda-include-diary "~/Zettelkasten/standard-diary")

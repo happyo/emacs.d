@@ -51,5 +51,11 @@
 ;; (dotimes (i 9)
 ;;   (define-key global-map (kbd (format "M-%d" (1+ i))) '(select-tab-key i)))
 
+(use-package general
+  :config
+  (general-def :keymaps 'org-mode-map
+    :override t
+    "M-." #'org-open-at-point))
+
 (provide 'init-keybinding)
 ;;; init-keybinding.el ends here
