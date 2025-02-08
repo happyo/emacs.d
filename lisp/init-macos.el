@@ -2,15 +2,17 @@
 ;;; Commentary:
 ;;; Code:
 
-(add-to-list 'load-path "~/.emacs.d/site-lisp/EmacsMacPluginModule")
+(when (display-graphic-p)
+  (add-to-list 'load-path "~/.emacs.d/site-lisp/EmacsMacPluginModule")
 
-(require 'mac-plugin)
-(require 'chinese-color)
+  (require 'mac-plugin)
+  (require 'chinese-color)
 
-(mac-plugin-load-release)
-(atmosphere-enable)
-(mac-plugin-set-cursor-color tcc-076-danfeng)
-(mac-plugin-set-shadow-opacity 1.0)
+  (mac-plugin-load-release)
+  (atmosphere-enable)
+  (mac-plugin-set-cursor-color tcc-076-danfeng)
+  (mac-plugin-set-shadow-opacity 1.0)
+  )
 
 (provide 'init-macos)
 ;;; init-macos.el ends here
