@@ -10,7 +10,17 @@
 (use-package markdown-mode
   :ensure t
   :mode ("README\\.md\\'" . gfm-mode)
-  :init (setq markdown-command "multimarkdown"))
+  :init
+  (setq markdown-command "multimarkdown")
+  :config
+(set-face-attribute 'markdown-header-delimiter-face nil :foreground "#616161" :height 0.9)
+(set-face-attribute 'markdown-header-face-1 nil :height 1.8 :foreground "#A3BE8C" :weight 'extra-bold :inherit 'markdown-header-face)
+(set-face-attribute 'markdown-header-face-2 nil :height 1.4 :foreground "#EBCB8B" :weight 'extra-bold :inherit 'markdown-header-face)
+(set-face-attribute 'markdown-header-face-3 nil :height 1.2 :foreground "#D08770" :weight 'extra-bold :inherit 'markdown-header-face)
+(set-face-attribute 'markdown-header-face-4 nil :height 1.15 :foreground "#BF616A" :weight 'bold :inherit 'markdown-header-face)
+(set-face-attribute 'markdown-header-face-5 nil :height 1.1 :foreground "#b48ead" :weight 'bold :inherit 'markdown-header-face)
+(set-face-attribute 'markdown-header-face-6 nil :height 1.05 :foreground "#5e81ac" :weight 'semi-bold :inherit 'markdown-header-face)
+  )
 
 (use-package posframe)
 

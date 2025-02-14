@@ -2,41 +2,35 @@
 ;;; Commentary:
 ;;; Code:
 
-(use-package elysium
-  :demand t
-  :ensure nil
-  :load-path "~/.emacs.d/site-lisp/elysium"
-  :after gptel
-  :custom
-  ;; Below are the default values
-  (elysium-window-size 0.33) ; The elysium buffer will be 1/3 your screen
-  (elysium-window-style 'vertical)) ; Can be customized to horizontal
-
 (use-package smerge-mode
   :ensure nil
   :hook (prog-mode . smerge-mode))
 
 (use-package gptel
   :ensure t
+  :demand t
   :custom
   (gptel-temperature 0.1)
   (gptel-model "gpt-4o")
   :config (add-hook 'gptel-post-response-functions 'gptel-end-of-response)
+  (setq gptel-api-key (getenv "GITHUB_TOKEN"))
   (setq gptel-backend
         (gptel-make-openai "GithubModels"
           :host "models.inference.ai.azure.com"
           :endpoint "/chat/completions"
-          :models '("gpt-4o")
           :stream t
-          :header `(("Authorization" . ,(concat "Bearer " (getenv "GITHUB_TOKEN")))))))
+          :key gptel-api-key
+          :models '(gpt-4o)
+          )))
 
-(use-package aider
+(use-package gptel-aibo
+  :after (gptel)
   :demand t
   :ensure nil
-  :load-path "~/.emacs.d/site-lisp/aider"
+  :load-path "~/.emacs.d/site-lisp/gptel-aibo"
   :config
-  (setq aider-args '("--model" "gpt-4o" "--no-auto-commits"))
-  (global-set-key (kbd "C-c a") 'aider-transient-menu))
+  (define-key gptel-aibo-mode-map
+              (kbd "C-c /") #'gptel-aibo-apply-last-suggestions))
 
 (use-package copilot-chat
   :ensure t
