@@ -30,7 +30,7 @@
 
 (menu-bar-mode -1)
 
-(let ((no-border '(internal-border-width . 0)))
+(let ((no-border '(internal-border-width . 10)))
   (add-to-list 'default-frame-alist no-border)
   (add-to-list 'initial-frame-alist no-border)
   (add-to-list 'default-frame-alist '(ns-transparent-titlebar . t))
@@ -50,12 +50,13 @@
   )
 
 (setq ns-use-proxy-icon nil)
-(setq frame-title-format " ")
+(setq frame-title-format "   ")
 
-(setq-default line-spacing 0.4)
-(setq header-line-format " ")
-(set-face-attribute 'header-line nil :height 1.9)
-(set-face-attribute 'header-line nil :background "#FFFFFF")
+(setq-default line-spacing 0.2)
+
+;; (setq header-line-format "")
+;; (set-face-attribute 'header-line nil :height 1.9)
+;; (set-face-attribute 'header-line nil :background "#FFFFFF")
 
 ;; (defun set-my-prog-mode-line-spacing ()
 ;;   "Set line spacing in programming modes."
@@ -78,7 +79,8 @@
 (use-package olivetti
   :ensure t
   :init
-  (setq olivetti-body-width 0.618)
+  (setq olivetti-body-width 0.9)
+    ;; (setq olivetti-body-width 0.618)
   :hook
   (prog-mode . olivetti-mode)
   (org-mode . olivetti-mode)

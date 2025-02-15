@@ -76,6 +76,10 @@
   :ensure t 
   :after vertico
   :config
+  (setq vertico-posframe-parameters
+      '((left-fringe . 10)
+        (right-fringe . 10)))
+  (setq vertico-posframe-poshandler #'posframe-poshandler-frame-top-center)
   (vertico-posframe-mode 1)
   )
 
