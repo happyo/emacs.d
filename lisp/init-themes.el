@@ -7,6 +7,15 @@
 (add-to-list 'load-path "~/.emacs.d/site-lisp/modus-themes")
 (require 'modus-themes)
 
+(use-package catppuccin-theme
+  :ensure t
+  :demand t
+  :config
+  (load-theme 'catppuccin :no-confirm)
+  (setq catppuccin-flavor 'frappe) ;; or 'latte, 'macchiato, or 'mocha
+(catppuccin-reload)
+  )
+
 (add-to-list 'load-path "~/.emacs.d/site-lisp/chinese-color")
 (require 'chinese-color)
 
@@ -151,31 +160,31 @@
      `(meow-position-highlight-number-2 ((,c :inherit (bold modus-themes-reset-soft) :background ,bg-char-1)))
      `(meow-position-highlight-number-3 ((,c :inherit (bold modus-themes-reset-soft) :background ,bg-char-2))))))
 
-(add-hook 'enable-theme-functions #'my-modus-themes-custom-faces)
+;; (add-hook 'enable-theme-functions #'my-modus-themes-custom-faces)
 
-(load-theme 'modus-operandi :no-confirm)
+;; (load-theme 'modus-operandi :no-confirm)
 
 
 (custom-set-faces
  '(success ((t (:weight regular))))
  '(warning ((t (:weight regular))))
- '(treemacs-window-background-face ((t (:background "#EEEEEE"))))
- '(treemacs-directory-face ((t (:foreground "unspecified-fg" :inherit default))))
- '(treemacs-file-face ((t (:foreground "#999999" :height 0.8))))
- '(treemacs-nerd-icons-root-face ((t (:foreground "#179299"
-                                                  :background "#EEEEEE"
-                                                  :color "gtk_selection_bg_color"
+ ;; '(treemacs-window-background-face ((t (:background "#EEEEEE"))))
+ ;; '(treemacs-directory-face ((t (:foreground "unspecified-fg" :inherit default))))
+ ;; '(treemacs-file-face ((t (:foreground "#999999" :height 0.8))))
+;;  '(treemacs-nerd-icons-root-face ((t (:foreground "#179299"
+;;                                                   :background "#EEEEEE"
+;;                                                   :color "gtk_selection_bg_color"
                                                  
-                                     :weight bold
-                                     :height 1.4))))
+;;                                      :weight bold
+;;                                      :height 1.4))))
  
-'(treemacs-nerd-icons-dir-face ((t (:foreground "#00B4D8"))))
-'(treemacs-root-face ((t (:foreground "#ff79c6"
-                                      :background "#EEEEEE"
-                                      :weight bold :height 1.4 :line-spacing 0.4))))
+;; '(treemacs-nerd-icons-dir-face ((t (:foreground "#00B4D8"))))
+;; '(treemacs-root-face ((t (:foreground "#ff79c6"
+;;                                       :background "#EEEEEE"
+;;                                       :weight bold :height 1.4 :line-spacing 0.4))))
 
 
-'(treemacs-nerd-icons-file-face ((t (:foreground "#00B4D8"))))
+;; '(treemacs-nerd-icons-file-face ((t (:foreground "#00B4D8"))))
 '(nerd-icons-green
   ((((background dark)) :foreground "#FA7343")  
    (((background light)) :foreground "#FA7343")))
