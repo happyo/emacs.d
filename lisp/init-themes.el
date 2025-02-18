@@ -146,19 +146,19 @@
 
 ;; This is not complete, because it is difficult for a non-user to
 ;; make sense of where all the faces are used in.
-(defun my-modus-themes-custom-faces (&rest _)
-  (modus-themes-with-colors
-    (custom-set-faces
-     `(font-lock-variable-use-face ((,c :inherit (bold modus-themes-reset-soft) :foreground ,tcc-164-huangbo)))
-     `(font-lock-property-name-face ((,c :inherit (modus-themes-reset-soft) :foreground ,tcc-013-meihong)))
-     ;; `(font-lock-function-call-face ((,c :inherit (bold modus-themes-reset-soft) :foreground ,tcc-164-huangbo)))
-     `(meow-region-cursor-1 ((,c :inherit (bold modus-themes-reset-soft) :background ,bg-char-0)))
-     `(meow-region-cursor-2 ((,c :inherit (bold modus-themes-reset-soft) :background ,bg-char-1)))
-     `(meow-region-cursor-3 ((,c :inherit (bold modus-themes-reset-soft) :background ,bg-char-2)))
+;; (defun my-modus-themes-custom-faces (&rest _)
+;;   (modus-themes-with-colors
+;;     (custom-set-faces
+;;      `(font-lock-variable-use-face ((,c :inherit (bold modus-themes-reset-soft) :foreground ,tcc-164-huangbo)))
+;;      `(font-lock-property-name-face ((,c :inherit (modus-themes-reset-soft) :foreground ,tcc-013-meihong)))
+;;      ;; `(font-lock-function-call-face ((,c :inherit (bold modus-themes-reset-soft) :foreground ,tcc-164-huangbo)))
+;;      `(meow-region-cursor-1 ((,c :inherit (bold modus-themes-reset-soft) :background ,bg-char-0)))
+;;      `(meow-region-cursor-2 ((,c :inherit (bold modus-themes-reset-soft) :background ,bg-char-1)))
+;;      `(meow-region-cursor-3 ((,c :inherit (bold modus-themes-reset-soft) :background ,bg-char-2)))
 
-     `(meow-position-highlight-number-1 ((,c :inherit (bold modus-themes-reset-soft) :background ,bg-char-0)))
-     `(meow-position-highlight-number-2 ((,c :inherit (bold modus-themes-reset-soft) :background ,bg-char-1)))
-     `(meow-position-highlight-number-3 ((,c :inherit (bold modus-themes-reset-soft) :background ,bg-char-2))))))
+;;      `(meow-position-highlight-number-1 ((,c :inherit (bold modus-themes-reset-soft) :background ,bg-char-0)))
+;;      `(meow-position-highlight-number-2 ((,c :inherit (bold modus-themes-reset-soft) :background ,bg-char-1)))
+;;      `(meow-position-highlight-number-3 ((,c :inherit (bold modus-themes-reset-soft) :background ,bg-char-2))))))
 
 ;; (add-hook 'enable-theme-functions #'my-modus-themes-custom-faces)
 
