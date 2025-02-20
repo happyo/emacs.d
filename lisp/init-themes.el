@@ -169,20 +169,18 @@
  ;; '(treemacs-window-background-face ((t (:background "#EEEEEE"))))
  ;; '(treemacs-directory-face ((t (:foreground "unspecified-fg" :inherit default))))
  ;; '(treemacs-file-face ((t (:foreground "#999999" :height 0.8))))
-;;  '(treemacs-nerd-icons-root-face ((t (:foreground "#179299"
-;;                                                   :background "#EEEEEE"
-;;                                                   :color "gtk_selection_bg_color"
+ '(treemacs-nerd-icons-root-face ((t (:foreground "#179299"
+                                                  :color "gtk_selection_bg_color"
                                                  
-;;                                      :weight bold
-;;                                      :height 1.4))))
+                                     :weight bold
+                                     :height 1.4))))
  
-;; '(treemacs-nerd-icons-dir-face ((t (:foreground "#00B4D8"))))
-;; '(treemacs-root-face ((t (:foreground "#ff79c6"
-;;                                       :background "#EEEEEE"
-;;                                       :weight bold :height 1.4 :line-spacing 0.4))))
+'(treemacs-nerd-icons-dir-face ((t (:foreground "#00B4D8"))))
+'(treemacs-root-face ((t (:foreground "#ff79c6"
+                                      :weight bold :height 1.4 :line-spacing 0.4))))
 
 
-;; '(treemacs-nerd-icons-file-face ((t (:foreground "#00B4D8"))))
+'(treemacs-nerd-icons-file-face ((t (:foreground "#00B4D8"))))
 '(nerd-icons-green
   ((((background dark)) :foreground "#FA7343")  
    (((background light)) :foreground "#FA7343")))

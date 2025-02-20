@@ -7,7 +7,7 @@
 (use-package yasnippet
   :demand t
   :ensure t
-  :straight t
+  :vc (:url "https://github.com/joaotavora/yasnippet.git")
   :config
   (yas-global-mode 1)
   )

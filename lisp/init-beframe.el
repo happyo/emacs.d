@@ -21,7 +21,7 @@
 (use-package beframe
   :demand t
   :ensure t
-  :straight t
+  :vc (:url "https://github.com/protesilaos/beframe.git")
   :config
   ;; This is the default value.  Write here the names of buffers that
   ;; should not be beframed.

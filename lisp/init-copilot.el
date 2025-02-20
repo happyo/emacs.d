@@ -22,7 +22,7 @@
 (use-package copilot
   :demand t
   :ensure t
-  :straight t
+  :vc (:url "https://github.com/copilot-emacs/copilot.el.git")
   :hook (prog-mode . copilot-mode)
   :config
   (define-key copilot-mode-map (kbd "<tab>") #'my/copilot-tab)

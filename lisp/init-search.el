@@ -33,7 +33,7 @@
 (use-package vertico
   :ensure t
   :demand t
-  :straight t
+  :vc (:url "https://github.com/minad/vertico.git")
   :after fussy
   :config
   (vertico-mode)
@@ -72,7 +72,8 @@
    completion-category-overrides nil))
 
 (use-package vertico-posframe
-  :ensure t 
+  :ensure t
+  :demand t
   :after vertico
   :config
   (setq vertico-posframe-parameters
@@ -130,7 +131,7 @@
 (use-package consult
   :ensure t
   :demand t
-  :straight t
+  :vc (:url "https://github.com/minad/consult.git")
   ;; Replace bindings. Lazily loaded due by `use-package'.
   :bind (;; C-c bindings (mode-specific-map)
          ("C-c h" . consult-history)
@@ -274,7 +275,7 @@
 
 (use-package embark
   :ensure t
-  :straight t
+  :vc (:url "https://github.com/oantolin/embark.git")
   :bind
   (("C-." . embark-act)         ;; pick some comfortable binding
    ("C-;" . embark-dwim)        ;; good alternative: M-.
@@ -305,7 +306,6 @@
 ;; Consult users will also want the embark-consult package.
 (use-package embark-consult
   :ensure t ; only need to install it, embark loads it after consult if found
-  :straight t
   :hook
   (embark-collect-mode . consult-preview-at-point-mode))
 

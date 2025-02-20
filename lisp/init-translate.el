@@ -9,7 +9,7 @@
 (use-package go-translate
   :demand t
   :ensure t
-  :straight t
+  :vc (:url "https://github.com/lorniu/go-translate.git")
   :config
   (setq gt-langs '(zh en))
   (setq gt-default-translator (gt-translator :engines (gt-google-engine)

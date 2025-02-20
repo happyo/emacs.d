@@ -7,7 +7,7 @@
 (use-package denote
   :demand t
   :ensure t
-  :straight t
+  :vc (:url "https://github.com/protesilaos/denote.git")
   :config
 (setq denote-silo-extras-directories '("~/Documents/ProcrastinationTerminator/doc/design/" "~/work/lining/doc"))
 ;; Remember to check the doc strings of those variables.
@@ -142,7 +142,7 @@
 (use-package consult-notes
   :ensure t
   :demand t
-  :straight t
+  :vc (:url "https://github.com/mclear-tools/consult-notes.git")
   :commands (consult-notes
              consult-notes-search-in-all-notes)
   :config

@@ -9,7 +9,7 @@
   ;; Currently only on github
   :demand t
   :ensure t
-  :straight t
+  :vc (:url "https://github.com/svaante/dape.git")
   :config
   (add-to-list 'dape-configs
              `(ios

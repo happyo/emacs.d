@@ -34,6 +34,7 @@
 
 (use-package copilot-chat
   :ensure t
+  :demand t
   :after (magit)
   :config
   (add-hook 'git-commit-setup-hook 'copilot-chat-insert-commit-message)

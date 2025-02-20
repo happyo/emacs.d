@@ -155,7 +155,7 @@
 (use-package meow
   :demand t
   :ensure t
-  :straight t
+  :vc (:url "https://github.com/meow-edit/meow.git")
   :custom
   (meow-selection-command-fallback '(
                                      (meow-change . meow-change-char)
