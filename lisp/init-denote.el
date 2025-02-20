@@ -140,8 +140,8 @@
                  :jump-to-captured t)))
 
 (use-package consult-notes
-  :demand t
   :ensure nil
+  :demand t
   :load-path "~/.emacs.d/site-lisp/consult-notes"
   :commands (consult-notes
              consult-notes-search-in-all-notes)
