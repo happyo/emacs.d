@@ -6,8 +6,8 @@
 
 (use-package denote
   :demand t
-  :ensure nil
-  :load-path "~/.emacs.d/site-lisp/denote"
+  :ensure t
+  :straight t
   :config
 (setq denote-silo-extras-directories '("~/Documents/ProcrastinationTerminator/doc/design/" "~/work/lining/doc"))
 ;; Remember to check the doc strings of those variables.
@@ -140,9 +140,9 @@
                  :jump-to-captured t)))
 
 (use-package consult-notes
-  :ensure nil
+  :ensure t
   :demand t
-  :load-path "~/.emacs.d/site-lisp/consult-notes"
+  :straight t
   :commands (consult-notes
              consult-notes-search-in-all-notes)
   :config

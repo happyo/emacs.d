@@ -8,8 +8,8 @@
 (use-package dape
   ;; Currently only on github
   :demand t
-  :ensure nil
-  :load-path "~/.emacs.d/site-lisp/dape"
+  :ensure t
+  :straight t
   :config
   (add-to-list 'dape-configs
              `(ios

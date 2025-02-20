@@ -4,45 +4,21 @@
 [submodule "site-lisp/meow"]
 	path = site-lisp/meow
 	url = git@github.com:happyo/meow.git
-[submodule "site-lisp/denote"]
-	path = site-lisp/denote
-	url = https://github.com/protesilaos/denote.git
-[submodule "site-lisp/consult-notes"]
-	path = site-lisp/consult-notes
-	url = https://github.com/mclear-tools/consult-notes.git
 [submodule "site-lisp/org-super-links"]
 	path = site-lisp/org-super-links
 	url = https://github.com/toshism/org-super-links.git
 [submodule "site-lisp/copilot"]
 	path = site-lisp/copilot
 	url = git@github.com:happyo/copilot.el.git
-[submodule "site-lisp/beframe"]
-	path = site-lisp/beframe
-	url = https://github.com/protesilaos/beframe.git
 [submodule "site-lisp/chinese-color"]
 	path = site-lisp/chinese-color
 	url = git@github.com:happyo/chinese-color.git
-[submodule "site-lisp/dape"]
-	path = site-lisp/dape
-	url = git@github.com:happyo/dape.git
 [submodule "site-lisp/ob-swift-enhanced"]
 	path = site-lisp/ob-swift-enhanced
 	url = git@github.com:happyo/ob-swift-enhanced.git
 [submodule "site-lisp/dart-ts-mode"]
 	path = site-lisp/dart-ts-mode
 	url = https://github.com/50ways2sayhard/dart-ts-mode.git
-[submodule "site-lisp/go-translate"]
-	path = site-lisp/go-translate
-	url = https://github.com/lorniu/go-translate.git
-[submodule "site-lisp/vertico"]
-	path = site-lisp/vertico
-	url = https://github.com/minad/vertico.git
-[submodule "site-lisp/consult"]
-	path = site-lisp/consult
-	url = https://github.com/minad/consult.git
-[submodule "site-lisp/yasnippet"]
-	path = site-lisp/yasnippet
-	url = https://github.com/joaotavora/yasnippet.git
 [submodule "site-lisp/EmacsMacOSModule"]
 	path = site-lisp/EmacsMacOSModule
 	url = https://github.com/xenodium/EmacsMacOSModule.git

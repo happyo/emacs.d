@@ -6,8 +6,8 @@
 
 (use-package yasnippet
   :demand t
-  :ensure nil
-  :load-path "~/.emacs.d/site-lisp/yasnippet"
+  :ensure t
+  :straight t
   :config
   (yas-global-mode 1)
   )

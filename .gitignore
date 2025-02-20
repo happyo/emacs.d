@@ -126,7 +126,6 @@ projects
 blink-search/
 
 .extension/
-tree-sitter/
 
 tabsession.el
 
@@ -137,3 +136,5 @@ devdocs/
 *.cache
 # End of https://www.toptal.com/developers/gitignore/api/emacs
 .aider*
+straight/
+tree-sitter/

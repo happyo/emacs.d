@@ -20,8 +20,8 @@
 
 (use-package beframe
   :demand t
-  :ensure nil
-  :load-path "~/.emacs.d/site-lisp/beframe"
+  :ensure t
+  :straight t
   :config
   ;; This is the default value.  Write here the names of buffers that
   ;; should not be beframed.

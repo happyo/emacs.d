@@ -8,8 +8,8 @@
 
 (use-package go-translate
   :demand t
-  :ensure nil
-  :load-path "~/.emacs.d/site-lisp/go-translate"
+  :ensure t
+  :straight t
   :config
   (setq gt-langs '(zh en))
   (setq gt-default-translator (gt-translator :engines (gt-google-engine)
