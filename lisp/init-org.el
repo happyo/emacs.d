@@ -8,8 +8,12 @@
 ;;   (require 'ob-swiftui)
 ;; (ob-swiftui-setup)
 
-(add-to-list 'load-path "~/.emacs.d/site-lisp/org-numbering")
-(require 'org-numbering)
+;; (add-to-list 'load-path "~/.emacs.d/site-lisp/org-numbering")
+;; (require 'org-numbering)
+
+;; (use-package org-numbering
+;;   :ensure t
+;;   :straight t)
 
 (defun my-org-setup ()
   "Setup for Org mode."

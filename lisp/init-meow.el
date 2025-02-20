@@ -154,8 +154,8 @@
 
 (use-package meow
   :demand t
-  :ensure nil
-  :load-path "~/.emacs.d/site-lisp/meow"
+  :ensure t
+  :straight t
   :custom
   (meow-selection-command-fallback '(
                                      (meow-change . meow-change-char)

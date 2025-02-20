@@ -23,14 +23,14 @@
           :models '(gpt-4o)
           )))
 
-(use-package gptel-aibo
-  :after (gptel)
-  :demand t
-  :ensure nil
-  :load-path "~/.emacs.d/site-lisp/gptel-aibo"
-  :config
-  (define-key gptel-aibo-mode-map
-              (kbd "C-c /") #'gptel-aibo-apply-last-suggestions))
+;; (use-package gptel-aibo
+;;   :after (gptel)
+;;   :demand t
+;;   :ensure t
+;;   :straight t
+;;   :config
+;;   (define-key gptel-aibo-mode-map
+;;               (kbd "C-c /") #'gptel-aibo-apply-last-suggestions))
 
 (use-package copilot-chat
   :ensure t

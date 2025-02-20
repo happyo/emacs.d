@@ -1,15 +1,6 @@
 [submodule "site-lisp/lsp-bridge"]
 	path = site-lisp/lsp-bridge
 	url = git@github.com:happyo/lsp-bridge.git
-[submodule "site-lisp/meow"]
-	path = site-lisp/meow
-	url = git@github.com:happyo/meow.git
-[submodule "site-lisp/org-super-links"]
-	path = site-lisp/org-super-links
-	url = https://github.com/toshism/org-super-links.git
-[submodule "site-lisp/copilot"]
-	path = site-lisp/copilot
-	url = git@github.com:happyo/copilot.el.git
 [submodule "site-lisp/chinese-color"]
 	path = site-lisp/chinese-color
 	url = git@github.com:happyo/chinese-color.git
@@ -31,12 +22,3 @@
 [submodule "site-lisp/svg-lib"]
 	path = site-lisp/svg-lib
 	url = git@github.com:happyo/svg-lib.git
-[submodule "site-lisp/modus-themes"]
-	path = site-lisp/modus-themes
-	url = https://github.com/protesilaos/modus-themes.git
-[submodule "site-lisp/org-numbering"]
-	path = site-lisp/org-numbering
-	url = https://github.com/yibie/org-numbering.git
-[submodule "site-lisp/gptel-aibo"]
-	path = site-lisp/gptel-aibo
-	url = https://github.com/dolmens/gptel-aibo.git

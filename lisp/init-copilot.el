@@ -21,8 +21,8 @@
 
 (use-package copilot
   :demand t
-  :ensure nil
-  :load-path "~/.emacs.d/site-lisp/copilot"
+  :ensure t
+  :straight t
   :hook (prog-mode . copilot-mode)
   :config
   (define-key copilot-mode-map (kbd "<tab>") #'my/copilot-tab)
