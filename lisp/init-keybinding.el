@@ -6,6 +6,7 @@
 (global-set-key (kbd "M-/") 'comment-line)
 (global-set-key (kbd "M-a") 'mark-whole-buffer)
 (global-set-key (kbd "C-i") 'universal-argument)
+(global-set-key (kbd "M-s") 'save-buffer)
 
 ;; (defun my-custom-m-dot-function ()
 ;;   "Execute different functions based on the current major mode."
@@ -32,7 +33,6 @@
 (define-key my-custom-minor-mode-map (kbd "M--") 'text-scale-decrease)
 (define-key my-custom-minor-mode-map (kbd "M-=") 'text-scale-increase)
 (define-key my-custom-minor-mode-map (kbd "M-c") 'kill-ring-save)
-(define-key my-custom-minor-mode-map (kbd "M-s") 'save-buffer)
 (define-key my-custom-minor-mode-map (kbd "M-z") 'undo)
 (define-key my-custom-minor-mode-map (kbd "M-k") 'my-kill-this-buffer)
 (define-key my-custom-minor-mode-map (kbd "M-K") 'delete-window)

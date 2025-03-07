@@ -5,6 +5,10 @@
 
 (global-auto-revert-mode 1)
 
+(use-package persistent-scratch
+  :hook (lisp-interaction-mode . persistent-scratch-mode)
+  )
+
 (use-package hl-line
   :hook (after-init . global-hl-line-mode)
   :config
@@ -113,7 +117,12 @@
 ;; rainbow-delimiters is a "rainbow parentheses"-like mode which highlights delimiters such as parentheses
 (use-package rainbow-delimiters
   :hook
-  (prog-mode . rainbow-delimiters-mode))
+  (prog-mode . rainbow-delimiters-mode)
+  )
+
+(setq blink-matching-paren-highlight-offscreen t
+      show-paren-context-when-offscreen t
+      )
 
 ;; Show matching parens
 (add-hook 'after-init-hook 'show-paren-mode)

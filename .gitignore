@@ -138,3 +138,4 @@ devdocs/
 .aider*
 straight/
 tree-sitter/
+.persistent-scratch

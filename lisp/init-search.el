@@ -55,6 +55,10 @@
   ;; Persist history over Emacs restarts. Vertico sorts by history position.
   )
 
+;; (use-package savehist
+;;   :init
+;;   (savehist-mode))
+
 (use-package flx
   :demand t
   :ensure t)
