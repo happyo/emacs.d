@@ -77,7 +77,6 @@
 
 (use-package vertico-posframe
   :ensure t
-  :demand t
   :after vertico
   :config
   (setq vertico-posframe-parameters

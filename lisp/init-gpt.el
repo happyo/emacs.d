@@ -14,14 +14,28 @@
   (gptel-model "gpt-4o")
   :config (add-hook 'gptel-post-response-functions 'gptel-end-of-response)
   (setq gptel-api-key (getenv "GITHUB_TOKEN"))
-  (setq gptel-backend
-        (gptel-make-openai "GithubModels"
-          :host "models.inference.ai.azure.com"
-          :endpoint "/chat/completions"
-          :stream t
-          :key gptel-api-key
-          :models '(gpt-4o)
-          )))
+  (setq ds-api-key (getenv "DS_TOKEN"))
+  ;; (setq gptel-backend
+  ;;       (gptel-make-openai "GithubModels"
+  ;;         :host "models.inference.ai.azure.com"
+  ;;         :endpoint "/chat/completions"
+  ;;         :stream t
+  ;;         :key gptel-api-key
+  ;;         :models '(gpt-4o)
+  ;;         ))
+  ;; OPTIONAL configuration
+(setq gptel-model   'deepseek-chat
+      gptel-backend
+      (gptel-make-openai "DeepSeek"     ;Any name you want
+        :host "api.deepseek.com"
+        :endpoint "/chat/completions"
+        :stream t
+        :key ds-api-key             ;can be a function that returns the key
+        :models '(deepseek-reasoner
+                  ;; deepseek-chat
+                  ;; deepseek-coder
+                  )))
+  )
 
 ;; (use-package gptel-aibo
 ;;   :after (gptel)
