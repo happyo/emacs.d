@@ -12,7 +12,12 @@
   :custom
   (gptel-temperature 0.1)
   (gptel-model "gpt-4o")
-  :config (add-hook 'gptel-post-response-functions 'gptel-end-of-response)
+  (gptel-default-mode 'org-mode)
+  (gptel-org-branching-context t)
+  :config
+  (add-hook 'gptel-post-response-functions 'gptel-end-of-response)
+  (setf (alist-get 'org-mode gptel-prompt-prefix-alist) "@user\n")
+(setf (alist-get 'org-mode gptel-response-prefix-alist) "@assistant\n")
   (setq gptel-api-key (getenv "GITHUB_TOKEN"))
   (setq ds-api-key (getenv "DS_TOKEN"))
   ;; (setq gptel-backend
