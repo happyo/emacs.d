@@ -125,20 +125,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages
-   '(apheleia catppuccin-theme cnfonts colorful-mode consult-notes
-              copilot copilot-chat dape dashboard default-text-scale
-              denote disable-mouse dogears embark-consult
-              exec-path-from-shell f format-all fussy general
-              go-translate gptel ibuffer-projectile imenu-list
-              indent-guide kkp lin marginalia meow move-dup
-              ns-auto-titlebar ob-swiftui objc-font-lock olivetti
-              persistent-scratch plz rainbow-delimiters rainbow-mode
-              slime smartparens smooth-scrolling speed-type
-              symbol-overlay transpose-frame transwin
-              treemacs-icons-dired treemacs-magit treemacs-nerd-icons
-              treemacs-projectile unicode-escape vertico-posframe
-              vterm-toggle vundo web-mode wgrep wrap-region yasnippet))
+ '(package-selected-packages nil)
  '(package-vc-selected-packages
    '((dape :url "https://github.com/svaante/dape.git")
      (copilot :url "https://github.com/copilot-emacs/copilot.el.git")

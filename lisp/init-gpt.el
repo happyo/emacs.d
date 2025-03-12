@@ -11,36 +11,29 @@
   :demand t
   :custom
   (gptel-temperature 0.1)
-  (gptel-model "gpt-4o")
+  (gptel-model "DeepSeek-R1")
   (gptel-default-mode 'org-mode)
   (gptel-org-branching-context t)
   :config
   (add-hook 'gptel-post-response-functions 'gptel-end-of-response)
   (setf (alist-get 'org-mode gptel-prompt-prefix-alist) "@user\n")
-(setf (alist-get 'org-mode gptel-response-prefix-alist) "@assistant\n")
+  (setf (alist-get 'org-mode gptel-response-prefix-alist) "@assistant\n")
   (setq gptel-api-key (getenv "GITHUB_TOKEN"))
-  (setq ds-api-key (getenv "DS_TOKEN"))
-  ;; (setq gptel-backend
-  ;;       (gptel-make-openai "GithubModels"
-  ;;         :host "models.inference.ai.azure.com"
-  ;;         :endpoint "/chat/completions"
-  ;;         :stream t
-  ;;         :key gptel-api-key
-  ;;         :models '(gpt-4o)
-  ;;         ))
-  ;; OPTIONAL configuration
-(setq gptel-model   'deepseek-chat
-      gptel-backend
-      (gptel-make-openai "DeepSeek"     ;Any name you want
-        :host "api.deepseek.com"
-        :endpoint "/chat/completions"
-        :stream t
-        :key ds-api-key             ;can be a function that returns the key
-        :models '(deepseek-reasoner
-                  ;; deepseek-chat
-                  ;; deepseek-coder
-                  )))
+  (setq gptel-backend
+        (gptel-make-openai "GithubModels"
+          :host "models.inference.ai.azure.com"
+          :endpoint "/chat/completions"
+          :stream t
+          :key gptel-api-key
+          :models '(gpt-4o)
+          ))
+
+  (add-hook 'gptel-mode-hook #'gptel-set-default-directory)
   )
+
+(defun gptel-set-default-directory ()
+  (unless (buffer-file-name)
+    (setq default-directory "~/developer/chatgpt/")))
 
 ;; (use-package gptel-aibo
 ;;   :after (gptel)
