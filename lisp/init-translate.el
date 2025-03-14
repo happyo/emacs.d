@@ -29,7 +29,7 @@
       :engines (gt-google-engine)  ; 从 gt-langs 设置获取翻译引擎配置
       :render (gt-buffer-render)))))  ; 使用 buffer 渲染翻译结果
 
-(global-set-key (kbd "M-n") 'my-translate-prompt-and-translate)
+;; (global-set-key (kbd "M-n") 'my-translate-prompt-and-translate)
 
 
 (provide 'init-translate)

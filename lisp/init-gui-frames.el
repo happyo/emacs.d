@@ -50,7 +50,11 @@
   )
 
 (setq ns-use-proxy-icon nil)
-(setq frame-title-format "   ")
+;; (setq frame-title-format "   ")
+(setq frame-title-format
+      '((:eval (if (buffer-file-name)
+                   (abbreviate-file-name (buffer-file-name))
+                 "%b"))))
 
 (setq-default line-spacing 0.2)
 

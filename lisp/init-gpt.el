@@ -18,6 +18,7 @@
   (add-hook 'gptel-post-response-functions 'gptel-end-of-response)
   (setf (alist-get 'org-mode gptel-prompt-prefix-alist) "@user\n")
   (setf (alist-get 'org-mode gptel-response-prefix-alist) "@assistant\n")
+  (setq gptel-display-buffer-action '((display-buffer-same-window)))
   (setq gptel-api-key (getenv "GITHUB_TOKEN"))
   (setq gptel-backend
         (gptel-make-openai "GithubModels"
@@ -29,6 +30,22 @@
           ))
 
   (add-hook 'gptel-mode-hook #'gptel-set-default-directory)
+  (defun my-gptel-global-prompt-and-send ()
+    "Prompt user for input and send it to a global gptel buffer."
+    (interactive)
+    (let ((buffer-name "*gptel-global*")
+          (input (read-string "Enter your prompt: ")))
+      (unless (get-buffer buffer-name)
+        (with-current-buffer (get-buffer-create buffer-name)
+          (org-mode)
+          (gptel-mode)))
+      (with-current-buffer buffer-name
+        (goto-char (point-max))
+        (insert input)
+        (gptel-send input))
+      (pop-to-buffer buffer-name)))
+
+  (global-set-key (kbd "M-n") #'my-gptel-global-prompt-and-send)
   )
 
 (defun gptel-set-default-directory ()
