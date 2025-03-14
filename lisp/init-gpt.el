@@ -39,11 +39,11 @@
         (with-current-buffer (get-buffer-create buffer-name)
           (org-mode)
           (gptel-mode)))
-      (with-current-buffer buffer-name
-        (goto-char (point-max))
-        (insert input)
-        (gptel-send input))
-      (pop-to-buffer buffer-name)))
+      (switch-to-buffer buffer-name)
+      (goto-char (point-max))
+      (insert input)
+      (gptel-send input)
+      ))
 
   (global-set-key (kbd "M-n") #'my-gptel-global-prompt-and-send)
   )
