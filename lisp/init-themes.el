@@ -10,8 +10,8 @@
   :demand t
   :config
   (load-theme 'catppuccin :no-confirm)
-  (setq catppuccin-flavor 'frappe) ;; or 'latte, 'macchiato, or 'mocha
-(catppuccin-reload)
+  (setq catppuccin-flavor 'frappe) ;; or 'frappe, 'latte, 'macchiato, or 'mocha
+  (catppuccin-reload)
   )
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp/chinese-color")
@@ -30,7 +30,7 @@
 ;;                 ;; (fg-main     "#445682")
 ;;         (bg-dim      ,tcc-118-tianqing)
 ;;         (fg-dim      "#777294")
-        
+
 ;;         (bg-alt      ,tcc-242-fenlv)
 ;;         (fg-alt      "#F07C82")
 
@@ -130,7 +130,7 @@
 ;;         (bg-tab-bar      bg-main)
 ;;         (bg-tab-current  ,tcc-026-haitianxia)
 ;;         (bg-tab-other    ,tcc-124-yuebai)
-        
+
 ;; ;;;; Rainbow mappings
 
 ;;         (rainbow-0 ,tcc-091-putaoqing)
@@ -171,10 +171,10 @@
  ;; '(treemacs-file-face ((t (:foreground "#999999" :height 0.8))))
  '(treemacs-nerd-icons-root-face ((t (:foreground "#179299"
                                                   :color "gtk_selection_bg_color"
-                                                 
+
                                      :weight bold
                                      :height 1.4))))
- 
+
 '(treemacs-nerd-icons-dir-face ((t (:foreground "#00B4D8"))))
 '(treemacs-root-face ((t (:foreground "#ff79c6"
                                       :weight bold :height 1.4 :line-spacing 0.4))))
@@ -182,11 +182,11 @@
 
 '(treemacs-nerd-icons-file-face ((t (:foreground "#00B4D8"))))
 '(nerd-icons-green
-  ((((background dark)) :foreground "#FA7343")  
+  ((((background dark)) :foreground "#FA7343")
    (((background light)) :foreground "#FA7343")))
 )
 
-(setq window-divider-default-right-width 1)  
+(setq window-divider-default-right-width 1)
 (setq window-divider-default-bottom-width 1)
 (window-divider-mode 1)
 
@@ -209,7 +209,11 @@
     (progn
       (treemacs-create-icon :icon (format "%s%s" (nerd-icons-octicon "nf-oct-home"   :face 'treemacs-nerd-icons-root-face) treemacs-nerd-icons-tab)
                             :extensions (root-closed root-open)
-                            :fallback 'same-as-icon)))
+                            :fallback 'same-as-icon)
+      (treemacs-create-icon :icon (format " %s%s%s" treemacs-nerd-icons-tab (nerd-icons-octicon "nf-oct-file" :face 'treemacs-nerd-icons-file-face) treemacs-nerd-icons-tab)
+                            :extensions (fallback)
+                            :fallback 'same-as-icon)
+      ))
   (treemacs-load-theme "nerd-icons"))
 
 (use-package colorful-mode
@@ -230,4 +234,3 @@
 
 (provide 'init-themes)
 ;;; init-themes.el end
-

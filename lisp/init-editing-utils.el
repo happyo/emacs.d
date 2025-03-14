@@ -4,6 +4,7 @@
 (require 'init-elpa)
 
 (global-auto-revert-mode 1)
+(add-hook 'prog-mode-hook #'display-line-numbers-mode)
 
 (use-package persistent-scratch
   :hook (lisp-interaction-mode . persistent-scratch-mode)
