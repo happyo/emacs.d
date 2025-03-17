@@ -12,7 +12,7 @@
     :init
     (exec-path-from-shell-initialize)
     (exec-path-from-shell-copy-env "GITHUB_TOKEN")
-    (exec-path-from-shell-copy-env "DS_TOKEN")
+    (exec-path-from-shell-copy-env "DEEPSEEK_API_KEY")
     (exec-path-from-shell-copy-env "OPENAI_API_BASE")
     (exec-path-from-shell-copy-env "OPENAI_API_KEY")
     ))

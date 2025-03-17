@@ -125,17 +125,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(package-selected-packages nil)
- '(package-vc-selected-packages
-   '((dape :url "https://github.com/svaante/dape.git")
-     (copilot :url "https://github.com/copilot-emacs/copilot.el.git")
-     (yasnippet :url "https://github.com/joaotavora/yasnippet.git")
-     (consult-notes :url
-                    "https://github.com/mclear-tools/consult-notes.git")
-     (denote :url "https://github.com/protesilaos/denote.git")
-     (go-translate :url "https://github.com/lorniu/go-translate.git")
-     (consult :url "https://github.com/minad/consult.git")
-     (meow :url "https://github.com/meow-edit/meow.git"))))
+ '(package-vc-selected-packages '((gptel :url "https://github.com/karthink/gptel.git"))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

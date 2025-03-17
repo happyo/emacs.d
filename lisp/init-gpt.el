@@ -9,9 +9,10 @@
 (use-package gptel
   :ensure t
   :demand t
+  :vc (:url "https://github.com/karthink/gptel.git")
   :custom
-  (gptel-temperature 0.1)
-  (gptel-model "DeepSeek-R1")
+  ;; (gptel-temperature 0.1)
+  ;; (gptel-model "DeepSeek-R1")
   (gptel-default-mode 'org-mode)
   (gptel-org-branching-context t)
   :config
@@ -20,14 +21,31 @@
   (setf (alist-get 'org-mode gptel-response-prefix-alist) "@assistant\n")
   (setq gptel-display-buffer-action '((display-buffer-same-window)))
   (setq gptel-api-key (getenv "GITHUB_TOKEN"))
-  (setq gptel-backend
-        (gptel-make-openai "GithubModels"
-          :host "models.inference.ai.azure.com"
-          :endpoint "/chat/completions"
-          :stream t
-          :key gptel-api-key
-          :models '(gpt-4o)
-          ))
+  (setq ds-api-key (getenv "DEEPSEEK_API_KEY"))
+  ;; (setq gptel-backend
+  ;;       (gptel-make-openai "GithubModels"
+  ;;         :host "models.inference.ai.azure.com"
+  ;;         :endpoint "/chat/completions"
+  ;;         :stream t
+  ;;         :key gptel-api-key
+  ;;         :models '("DeepSeek-R1")
+  ;;         )
+  ;; (setq gptel-model 'DeepSeek-R1
+  ;;     gptel-backend
+  ;;     (gptel-make-openai "Github Models" ;Any name you want
+  ;;       :host "models.inference.ai.azure.com"
+  ;;       :endpoint "/chat/completions"
+  ;;       :stream t
+  ;;       :key gptel-api-key
+  ;;       :models '(DeepSeek-R1))
+  (setq gptel-model   'deepseek-reasoner
+        gptel-backend (gptel-make-deepseek "DeepSeek"
+                        :stream t
+                        :key ds-api-key))
+  (defun gptel-set-default-directory ()
+    (unless (buffer-file-name)
+      (setq default-directory "~/developer/chatgpt/")))
+
 
   (add-hook 'gptel-mode-hook #'gptel-set-default-directory)
   (defun my-gptel-global-prompt-and-send ()
@@ -47,10 +65,6 @@
 
   (global-set-key (kbd "M-n") #'my-gptel-global-prompt-and-send)
   )
-
-(defun gptel-set-default-directory ()
-  (unless (buffer-file-name)
-    (setq default-directory "~/developer/chatgpt/")))
 
 ;; (use-package gptel-aibo
 ;;   :after (gptel)
