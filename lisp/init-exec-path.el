@@ -15,6 +15,7 @@
     (exec-path-from-shell-copy-env "DEEPSEEK_API_KEY")
     (exec-path-from-shell-copy-env "OPENAI_API_BASE")
     (exec-path-from-shell-copy-env "OPENAI_API_KEY")
+    (exec-path-from-shell-copy-env "TAVILY_API_KEY")
     ))
 
 (provide 'init-exec-path)

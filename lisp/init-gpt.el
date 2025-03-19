@@ -6,6 +6,15 @@
   :ensure nil
   :hook (prog-mode . smerge-mode))
 
+(use-package plz
+  :ensure t
+  :demand t
+  )
+(use-package shr
+  :ensure t
+  :demand t
+  )
+
 (use-package gptel
   :ensure t
   :demand t
@@ -22,14 +31,13 @@
   (setq gptel-display-buffer-action '((display-buffer-same-window)))
   (setq gptel-api-key (getenv "GITHUB_TOKEN"))
   (setq ds-api-key (getenv "DEEPSEEK_API_KEY"))
-  ;; (setq gptel-backend
-  ;;       (gptel-make-openai "GithubModels"
-  ;;         :host "models.inference.ai.azure.com"
-  ;;         :endpoint "/chat/completions"
-  ;;         :stream t
-  ;;         :key gptel-api-key
-  ;;         :models '("DeepSeek-R1")
-  ;;         )
+  (gptel-make-openai "GithubModels"
+    :host "models.inference.ai.azure.com"
+    :endpoint "/chat/completions"
+    :stream t
+    :key gptel-api-key
+    :models '("DeepSeek-R1")
+    )
   ;; (setq gptel-model 'DeepSeek-R1
   ;;     gptel-backend
   ;;     (gptel-make-openai "Github Models" ;Any name you want
