@@ -113,17 +113,16 @@
            (request-data
             `(
               ("query" . ,query)
-              ;; ("search_depth" . ,search-depth)
-              ;; ("max_results" . ,max-results)
+              ("search_depth" . ,search-depth)
+              ("max_results" . ,max-results)
               ))
-           (cb callback)
            )
       (plz 'post url
         :headers request-headers
         :body (json-encode request-data)
         :as 'string
         :then (lambda (result)
-                (funcall cb result)))
+                (funcall callback result)))
       )
     )
 
