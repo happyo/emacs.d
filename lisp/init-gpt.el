@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t -*-
 ;;; init-gpt.el --- Insert description here -*- lexical-binding -*-
 ;;; Commentary:
 ;;; Code:
@@ -72,6 +73,86 @@
       ))
 
   (global-set-key (kbd "M-n") #'my-gptel-global-prompt-and-send)
+
+
+  ;; 你需要定义一个 tavily-api-key 函数
+
+  (gptel-make-tool
+   :category "web"
+   :name "search"
+   :async t
+   :function (lambda (cb keyword)
+               (tavily-search-async cb keyword))
+   :description "Search the Internet"
+   :args (list '(:name "keyword"
+                       :type string
+                       :description "The keyword to search")))
+
+  (gptel-make-tool
+   :category "web"
+   :name "fetch_url_text"
+   :async t
+   :description "Fetch the plaintext contents from an HTML page specified by its URL"
+   :args (list '(:name "url"
+                       :type string
+                       :description "The url of the web page"))
+   :function (lambda (cb url)
+               (fetch-url-text-async cb url)))
+
+  (setq tavily-api-key
+        (getenv "TAVILY_API_KEY"))
+
+  (defun tavily-search-async (callback query &optional search-depth max-results)
+    "Perform a search using the Tavily API and return results as JSON string."
+    (let* ((url "https://api.tavily.com/search")
+           (search-depth (or search-depth "basic"))
+           (max-results (or max-results 5))
+           (request-headers            ; 根据 cURL 示例需要 Authorization 头
+            `(("Content-Type" . "application/json")
+              ("Authorization" . ,(format "Bearer %s" tavily-api-key))))  ; 关键修复点
+           (request-data
+            `(
+              ("query" . ,query)
+              ;; ("search_depth" . ,search-depth)
+              ;; ("max_results" . ,max-results)
+              ))
+           (cb callback)
+           )
+      (plz 'post url
+        :headers request-headers
+        :body (json-encode request-data)
+        :as 'string
+        :then (lambda (result)
+                (funcall cb result)))
+      )
+    )
+
+  (defun fetch-url-text-async (callback url)
+    "Fetch text content from URL."
+    (require 'plz)
+    (require 'shr)
+    (plz 'get url
+      :as 'string
+      :then (lambda (html)
+              (with-temp-buffer
+                (insert html)
+                (shr-render-region (point-min) (point-max))
+                (shr-link-to-markdown)
+                (funcall callback (buffer-substring-no-properties (point-min) (point-max)))))))
+
+  (defun shr-link-to-markdown ()
+    "Replace all shr-link in the current buffer to markdown format"
+    (goto-char (point-min))
+    (while (setq prop (text-property-search-forward 'shr-url))
+      (let* ((start (prop-match-beginning prop))
+             (end (prop-match-end prop))
+             (text (buffer-substring-no-properties start end))
+             (link (prop-match-value prop)))
+        (delete-region start end)
+        (goto-char start)
+        (insert (format "[%s](%s)" text link)))))
+
+
   )
 
 ;; (use-package gptel-aibo
