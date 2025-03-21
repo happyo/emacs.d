@@ -19,6 +19,7 @@
 (use-package gptel
   :ensure t
   :demand t
+  :bind (("C-c g" . gptel-menu))
   :vc (:url "https://github.com/karthink/gptel.git")
   :custom
   ;; (gptel-temperature 0.1)
@@ -116,13 +117,14 @@
               ("search_depth" . ,search-depth)
               ("max_results" . ,max-results)
               ))
+           (cb callback)
            )
       (plz 'post url
         :headers request-headers
         :body (json-encode request-data)
         :as 'string
         :then (lambda (result)
-                (funcall callback result)))
+                (funcall cb result)))
       )
     )
 
@@ -150,22 +152,21 @@
         (delete-region start end)
         (goto-char start)
         (insert (format "[%s](%s)" text link)))))
-
-
   )
 
-;; (use-package gptel-aibo
-;;   :after (gptel)
-;;   :demand t
-;;   :ensure t
-;;   :straight t
-;;   :config
-;;   (define-key gptel-aibo-mode-map
-;;               (kbd "C-c /") #'gptel-aibo-apply-last-suggestions))
+(use-package aidermacs
+  :bind (("C-c a" . aidermacs-transient-menu))
+  :custom
+  (aidermacs-backend 'vterm)
+  (aidermacs-use-architect-mode t)
+  (aidermacs-architect-model "deepseek") ; default
+  (aidermacs-vterm-multiline-newline-key "S-<return>")
+  (aidermacs-default-model "deepseek"))
 
 (use-package copilot-chat
   :ensure t
   :demand t
+  :vc (:url "https://github.com/chep/copilot-chat.el.git")
   :after (magit)
   :config
   (add-hook 'git-commit-setup-hook 'copilot-chat-insert-commit-message)

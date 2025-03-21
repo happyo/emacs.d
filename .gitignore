@@ -140,3 +140,4 @@ straight/
 tree-sitter/
 .persistent-scratch
 *.eld
+request/

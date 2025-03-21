@@ -21,10 +21,10 @@
 
 (use-package copilot
   :demand t
-  :ensure t
-  :vc (:url "https://github.com/copilot-emacs/copilot.el.git")
+  :vc (:url "https://github.com/copilot-emacs/copilot.el.git" :branch "main")
   :hook (prog-mode . copilot-mode)
   :config
+  (setq copilot-version "1.290.0")
   (define-key copilot-mode-map (kbd "<tab>") #'my/copilot-tab)
   ;; (define-key copilot-mode-map (kbd "s-<tab>") #'copilot-accept-completion-by-word)
   (define-key copilot-mode-map (kbd "M-e") #'copilot-accept-completion-by-word)
