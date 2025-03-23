@@ -36,6 +36,7 @@
       large-hscroll-threshold 1000
       syntax-wholeline-max 1000)
 
+
 (require 'init-func)
 (require 'init-chinese)
 (require 'init-osx-keys)
@@ -117,20 +118,10 @@
 ;;(require 'init-browser)
 (require 'init-svg)
 
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+
+(load custom-file 'noerror 'nomessage)
+
 (server-start)
 
 (provide 'init)
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(copilot-chat-model "claude-3.7-sonnet-thought")
- '(package-selected-packages '(copilot))
- '(package-vc-selected-packages '((gptel :url "https://github.com/karthink/gptel.git"))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )

@@ -17,6 +17,7 @@
 ;; Official MELPA Mirror, in case necessary.
 ;; (add-to-list 'package-archives (cons "melpa-mirror" (concat proto "://www.mirrorservice.org/sites/melpa.org/packages/")) t)
 
+(setq use-package-vc-prefer-newest t)
 ;; Initialize packages
 (setq package-native-compile t)
 (package-initialize)

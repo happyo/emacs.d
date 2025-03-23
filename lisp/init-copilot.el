@@ -20,8 +20,7 @@
     (indent-for-tab-command))))
 
 (use-package copilot
-  :demand t
-  :vc (:url "https://github.com/copilot-emacs/copilot.el.git" :branch "main")
+  :vc (:url "https://github.com/copilot-emacs/copilot.el.git" :branch "main" :rev :newest)
   :hook (prog-mode . copilot-mode)
   :config
   (setq copilot-version "1.290.0")
