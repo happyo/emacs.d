@@ -133,10 +133,4 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(nerd-icons-green ((((background dark)) :foreground "#FA7343") (((background light)) :foreground "#FA7343")))
- '(success ((t (:weight regular))))
- '(treemacs-nerd-icons-dir-face ((t (:foreground "#00B4D8"))))
- '(treemacs-nerd-icons-file-face ((t (:foreground "#00B4D8"))))
- '(treemacs-nerd-icons-root-face ((t (:foreground "#179299" :color "gtk_selection_bg_color" :weight bold :height 1.4))))
- '(treemacs-root-face ((t (:foreground "#ff79c6" :weight bold :height 1.4 :line-spacing 0.4))))
- '(warning ((t (:weight regular)))))
+ )

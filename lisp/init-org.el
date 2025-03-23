@@ -94,7 +94,7 @@
   (setq org-todo-keywords
         '((sequence "TODO(t)" "|" "DONE(d)")
           (type "STODO(s)" "ATODO(a)" "BTODO(b)" "CTODO(c)" "|" "YDONE(y)" "XCANCEL(x)")))
-
+(setq org-switch-to-buffer-other-window nil)
   ;; (setq org-todo-keyword-faces
   ;;     `(("TODO" . ,tcc-063-zhushi)
   ;;       ("DONE" . ,tcc-317-hehui)

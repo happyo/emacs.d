@@ -32,11 +32,11 @@
 
 (use-package vertico
   :ensure t
-  :demand t
   :vc (:url "https://github.com/minad/vertico.git")
-  :after fussy
-  :config
+  :init
   (vertico-mode)
+;;  (vertico-multiform-mode)
+  :config
   (global-set-key (kbd "C-d") 'vertico-scroll-up)
   (global-set-key (kbd "C-u") 'vertico-scroll-down)
   (setq completion-styles '(fussy substring partial-completion initials))
@@ -55,17 +55,18 @@
   ;; Persist history over Emacs restarts. Vertico sorts by history position.
   )
 
+(use-package vertico-multiform
+  :ensure nil
+  :after vertico
+  )
+
 ;; (use-package savehist
 ;;   :init
 ;;   (savehist-mode))
 
-(use-package flx
-  :demand t
-  :ensure t)
+(use-package flx)
 
 (use-package fussy
-  :demand t
-  :ensure t
   :after flx
   :config
   (setq
@@ -77,7 +78,6 @@
 
 (use-package vertico-posframe
   :ensure t
-  :demand t
   :after vertico
   :config
   (setq vertico-posframe-parameters
