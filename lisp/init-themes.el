@@ -188,7 +188,7 @@
 
 (setq window-divider-default-right-width 1)
 (setq window-divider-default-bottom-width 1)
-(window-divider-mode 1)
+(window-divider-mode -1)
 
 (use-package nerd-icons
   :demand t
