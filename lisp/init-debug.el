@@ -11,6 +11,7 @@
   :ensure t
   :vc (:url "https://github.com/svaante/dape.git")
   :config
+  (setq dape-buffer-window-arrangement 'right)
   (add-to-list 'dape-configs
              `(ios
                modes (swift-mode swift-ts-mode)
@@ -24,7 +25,7 @@
                              "--settings" "{\"sourceLanguages\":[\"swift\"]}"
                              "--liblldb" "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB")
                port :autoport
-               simulator-id "iPhone 15 Plus"
+               simulator-id "iPhone 16 Pro Max"
                app-bundle-id "ai.lilyn.FinPal"
                fn (dape-config-autoport
                    ,(lambda (config)
@@ -48,6 +49,40 @@
                :type "lldb"
                :request "attach"
                :cwd "."))
+(add-to-list 'dape-configs
+           `(swift-single-file
+             modes (swift-mode)
+             command-cwd dape-command-cwd
+             command ,(file-name-concat dape-adapter-dir
+                                      "codelldb"
+                                      "extension"
+                                      "adapter"
+                                      "codelldb")
+             command-args ("--port" :autoport
+                          "--settings" "{\"sourceLanguages\":[\"swift\"],\"showDisassembly\":\"auto\"}"
+                          "--liblldb" "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB")
+             port :autoport
+             fn (dape-config-autoport
+                 ,(lambda (config)
+                    (let* ((src-file (buffer-file-name))
+                           (dir (file-name-directory src-file))
+                           (output-file (expand-file-name "ttt" dir)))
+                      (when (yes-or-no-p "Compile current file?")
+                        (compile (format "swiftc -g '%s' -o '%s'"
+                                       src-file
+                                       output-file))
+                        ;; 等待编译完成
+                        (with-current-buffer "*compilation*"
+                          (while (and (eq (process-status (get-buffer-process (current-buffer))) 'run)
+                                      (accept-process-output (get-buffer-process (current-buffer)) 0.1)))))
+                      ;; 更新并返回配置
+                      (plist-put config :program output-file)
+                      (plist-put config :cwd dir)
+                      config)))
+             :type "lldb"
+             :request "launch"
+             :sourceMap (("." . "."))
+             :cwd "."))
   ;; (setq dape--debug-on '(io info error std-server))
   ;; (add-to-list 'dape-configs
   ;;              `(debugpy
