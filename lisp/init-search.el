@@ -79,14 +79,13 @@
 (use-package vertico-posframe
   :ensure t
   :after vertico
-  :config
-  (setq vertico-posframe-parameters
-      '((left-fringe . 10)
-        (right-fringe . 10)))
-  (setq vertico-posframe-poshandler #'posframe-poshandler-frame-top-center)
-  (vertico-posframe-mode 1)
-  )
-
+  :custom
+  (vertico-posframe-parameters
+   '((left-fringe . 10)
+     (right-fringe . 10)))
+  (vertico-posframe-poshandler #'posframe-poshandler-frame-top-center)
+  :init
+  (vertico-posframe-mode 1))
 
 ;; Optionally use the `orderless' completion style. See
 ;; `+orderless-dispatch' in the Consult wiki for an advanced Orderless style

@@ -125,19 +125,24 @@
 
 
   )
-(require 'denote-silo-extras)
+;; (require 'denote-silo-extras)
+(use-package denote-silo)
 
 (with-eval-after-load 'org-capture
-  (require 'denote-org-capture)
-  (setq denote-org-capture-specifiers "%l\n%i\n%?")
   (add-to-list 'org-capture-templates
-               '("n" "New note (with denote.el)" plain
+               '("n" "New note (with Denote)" plain
                  (file denote-last-path)
                  #'denote-org-capture
                  :no-save t
                  :immediate-finish nil
                  :kill-buffer t
-                 :jump-to-captured t)))
+                 :jump-to-captured t))
+  (add-to-list 'org-capture-templates
+               '("j" "Journal" entry (file+datetree "~/work/notes/diary.org")
+                 "* %? %U"
+                 :tree-type week
+                 :empty-lines 1))
+  )
 
 (use-package consult-notes
   :ensure t
