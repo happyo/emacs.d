@@ -26,7 +26,7 @@
                              "--liblldb" "/Applications/Xcode.app/Contents/SharedFrameworks/LLDB.framework/Versions/A/LLDB")
                port :autoport
                simulator-id "iPhone 16 Pro Max"
-               app-bundle-id "ai.lilyn.FinPal"
+               app-bundle-id ""
                fn (dape-config-autoport
                    ,(lambda (config)
                       (with-temp-buffer
