@@ -142,3 +142,4 @@ tree-sitter/
 *.eld
 request/
 .emigo_repomap/
+easysession/
