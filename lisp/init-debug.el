@@ -66,7 +66,7 @@
                  ,(lambda (config)
                     (let* ((src-file (buffer-file-name))
                            (dir (file-name-directory src-file))
-                           (output-file (expand-file-name "ttt" dir)))
+                           (output-file (file-name-sans-extension (buffer-file-name))))
                       (when (yes-or-no-p "Compile current file?")
                         (compile (format "swiftc -g '%s' -o '%s'"
                                        src-file
