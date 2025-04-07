@@ -16,6 +16,7 @@
   :demand t
   )
 
+
 (use-package gptel
   :ensure t
   :demand t
@@ -154,14 +155,68 @@
         (insert (format "[%s](%s)" text link)))))
   )
 
-(use-package aidermacs
-  :bind (("C-c a" . aidermacs-transient-menu))
-  :custom
-  (aidermacs-backend 'vterm)
-  (aidermacs-use-architect-mode t)
-  (aidermacs-architect-model "deepseek") ; default
-  (aidermacs-vterm-multiline-newline-key "S-<return>")
-  (aidermacs-default-model "deepseek"))
+;; (use-package aidermacs
+;;   :bind (("C-c a" . aidermacs-transient-menu))
+;;   :custom
+;;   (aidermacs-backend 'vterm)
+;;   (aidermacs-use-architect-mode t)
+;;   (aidermacs-architect-model "deepseek") ; default
+;;   (aidermacs-vterm-multiline-newline-key "S-<return>")
+;;   (aidermacs-default-model "deepseek"))
+
+;; (use-package emigo
+;;   :vc (:url "https://github.com/MatthewZMD/emigo.git" :branch "main")
+;;   :config
+;;   (emigo-enable) ;; Starts the background process automatically
+;;   :custom
+;;   (emigo-python-command (pythonPath))
+;;   ;; Encourage using OpenRouter with Deepseek
+;;   (emigo-model "deepseek-chat")
+;;   (emigo-base-url "https://api.deepseek.com/v1")
+;;   ;; Securely load your API key (replace with your preferred method)
+;;   (emigo-api-key (getenv "DEEPSEEK_API_KEY")))
+
+(use-package mcp-hub
+  :vc (:url "https://github.com/lizqwerscott/mcp.el.git")
+  :config
+  (setq mcp-hub-servers
+        '(("fetch" . (:command "python3" :args ("-m" "mcp_server_fetch")))
+          ("filesystem" . (:command "npx" :args ("-y" "@modelcontextprotocol/server-filesystem" "~/developer")))))
+
+  (defun gptel-mcp-register-tool ()
+    (interactive)
+    (let ((tools (mcp-hub-get-all-tool :asyncp t :categoryp t)))
+      (mapcar #'(lambda (tool)
+                  (apply #'gptel-make-tool
+                         tool))
+              tools)))
+
+  ;; 激活所有 mcp 工具
+  (defun gptel-mcp-use-tool ()
+    (interactive)
+    (let ((tools (mcp-hub-get-all-tool :asyncp t :categoryp t)))
+      (mapcar #'(lambda (tool)
+                  (let ((path (list (plist-get tool :category)
+                                    (plist-get tool :name))))
+                    (push (gptel-get-tool path)
+                          gptel-tools)))
+              tools)))
+
+  ;; 关闭所有 mcp 工具
+  (defun gptel-mcp-close-use-tool ()
+    (interactive)
+    (let ((tools (mcp-hub-get-all-tool :asyncp t :categoryp t)))
+      (mapcar #'(lambda (tool)
+                  (let ((path (list (plist-get tool :category)
+                                    (plist-get tool :name))))
+                    (setq gptel-tools
+                          (cl-remove-if #'(lambda (tool)
+                                            (equal path
+                                                   (list (gptel-tool-category tool)
+                                                         (gptel-tool-name tool))))
+                                        gptel-tools))))
+              tools)))
+  )
 
 (use-package copilot-chat
   :ensure t

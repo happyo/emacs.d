@@ -17,6 +17,9 @@
 (push (expand-file-name "lisp" user-emacs-directory) load-path)
 
 (setq warning-minimum-level :error)
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+
+(load custom-file 'noerror 'nomessage)
 
 ;; Packages
 ;; Without this comment Emacs25 adds (package-initialize) here
@@ -118,9 +121,6 @@
 ;;(require 'init-browser)
 (require 'init-svg)
 
-(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
-
-(load custom-file 'noerror 'nomessage)
 
 (server-start)
 

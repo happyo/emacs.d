@@ -141,3 +141,4 @@ tree-sitter/
 .persistent-scratch
 *.eld
 request/
+.emigo_repomap/
