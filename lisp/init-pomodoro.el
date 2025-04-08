@@ -167,6 +167,34 @@ This program is used for switching between input methods on macOS."
   (switch-input-select switch-input-chinese-index)
   (message "Switched to Chinese input method"))
 
+(defun my/meow-exit-insert-mode-handler ()
+  "当退出 meow insert 模式时执行的函数"
+  (switch-input-to-english))
+
+;; 添加到 meow-insert-exit-hook
+(add-hook 'meow-insert-exit-hook #'my/meow-exit-insert-mode-handler)
+
+(defun my/meow-enter-insert-mode-handler ()
+  "当进入 meow insert 模式时执行的函数，会判断当前的 major-mode"
+  (let ((current-major-mode major-mode))
+    (message "进入了 Meow Insert 模式，当前 major-mode 是: %s" current-major-mode)
+    
+    ;; 根据不同的 major-mode 执行不同的操作
+    (cond
+     ((eq current-major-mode 'org-mode)
+      (switch-input-to-chinese))
+     ((eq current-major-mode 'copilot-chat-org-prompt-mode)
+      (switch-input-to-chinese))
+     ((derived-mode-p 'prog-mode)
+      (switch-input-to-english))
+     (t
+      (message "其他模式")))))
+
+;; 添加到 meow-insert-enter-hook
+(add-hook 'meow-insert-enter-hook #'my/meow-enter-insert-mode-handler)
+;; (add-hook 'meow-insert-exit-hook #'switch-input-to-english)
+;; (add-hook 'meow-insert-enter-hook #'sis-set-english)
+
 ;; (defun comiple-switch-input ()
 ;;   (interactive)
 ;;   (call-process "swift" nil 0 nil "-o" switch-input-path (concat switch-input-path ".swift")))
