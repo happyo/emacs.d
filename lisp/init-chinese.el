@@ -27,7 +27,7 @@
 ;;                                         ;; :slant 'italic
 ;;                                         ;; :weight 'light
 ;;                                         :weight 'normal
-                                        
+
 ;;                                         )
 ;;              )
 
@@ -78,6 +78,15 @@
   (setq cnfonts-profiles
     '("program" "org-mode" "read-book"))
   (cnfonts-mode 1))
+
+(use-package pangu-spacing
+  :ensure t
+  :config
+  (global-pangu-spacing-mode 1)
+  (add-hook 'org-mode-hook
+            '(lambda ()
+               (set (make-local-variable 'pangu-spacing-real-insert-separtor) t)))
+  )
 
 (provide 'init-chinese)
 ;;; init-chinese.el ends here

@@ -147,10 +147,44 @@
    '("'" . repeat)
    '("\\" . quoted-insert)
    '("/" . meow-visit)
-   '("<escape>" . ignore)
+   '("<escape>" . my-ignore)
    '("DEL" . meow-beacon-kill-delete)
    ;; '("TAB" . hs-toggle-hiding)
    ))
+
+(defun my/meow-exit-insert-mode-handler ()
+  "当退出 meow insert 模式时执行的函数"
+  (switch-input-to-english))
+
+;; 添加到 meow-insert-exit-hook
+(add-hook 'meow-insert-exit-hook #'my/meow-exit-insert-mode-handler)
+
+(defun my/meow-enter-insert-mode-handler ()
+  "当进入 meow insert 模式时执行的函数，会判断当前的 major-mode"
+  (let ((current-major-mode major-mode))
+    (message "进入了 Meow Insert 模式，当前 major-mode 是: %s" current-major-mode)
+    
+    ;; 根据不同的 major-mode 执行不同的操作
+    (cond
+     ((eq current-major-mode 'org-mode)
+      (switch-input-to-chinese))
+     ((eq current-major-mode 'copilot-chat-org-prompt-mode)
+      (switch-input-to-chinese))
+     ((derived-mode-p 'prog-mode)
+      (switch-input-to-english))
+     (t
+      (message "其他模式")))))
+
+;; (defun my-ignore ()
+;;   (ignore)
+;;   (switch-input-to-english)
+;;   )
+
+(defun my-ignore ()
+  (interactive)
+  (ignore)
+  (switch-input-to-english)
+  )
 
 (use-package meow
   :demand t
@@ -163,6 +197,7 @@
                                           )) 
   (meow-expand-exclude-mode-list '(markdown-mode org-mode eaf-mode treemacs-mode vterm-mode xwidget-webkit-mode))
   :config
+  (add-hook 'meow-insert-enter-hook #'my/meow-enter-insert-mode-handler)
   ;; meow-setup is your custom function, see below
   ;; If you want relative line number in NORMAL state(for display-line-numbers-mode)
   ;; (add-to-list 'meow-mode-state-list '(eaf-mode . normal))
@@ -179,6 +214,10 @@
   (wrap-region-add-wrapper "`" "`")
   (wrap-region-global-mode t)
   )
+
+
+;; 添加到 meow-insert-enter-hook
+
 
 (provide 'init-meow)
 ;;; init-meow.el ends here
