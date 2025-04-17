@@ -12,6 +12,8 @@
 ;;; Standard package repositories
 
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(add-to-list 'package-archives
+             '("nongnu" . "https://elpa.nongnu.org/nongnu/"))
 (add-to-list 'package-unsigned-archives "melpa")
 
 ;; Official MELPA Mirror, in case necessary.
