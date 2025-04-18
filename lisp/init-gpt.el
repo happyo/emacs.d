@@ -221,9 +221,10 @@
 (use-package copilot-chat
   :ensure t
   :demand t
-  :vc (:url "https://github.com/chep/copilot-chat.el.git")
+  :vc (:url "https://github.com/chep/copilot-chat.el.git" :branch "master")
   :after (magit)
   :config
+  (setq copilot-chat-commit-model "gpt-4.1")
   (add-hook 'git-commit-setup-hook 'copilot-chat-insert-commit-message)
   )
 
