@@ -172,6 +172,8 @@
       (switch-input-to-chinese))
      ((derived-mode-p 'prog-mode)
       (switch-input-to-english))
+     ((derived-mode-p 'markdown-mode)
+      (switch-input-to-chinese))
      (t
       (message "其他模式")))))
 
