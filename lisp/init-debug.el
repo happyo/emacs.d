@@ -9,7 +9,7 @@
   ;; Currently only on github
   :demand t
   :ensure t
-  :vc (:url "https://github.com/svaante/dape.git")
+  :vc (:url "https://github.com/svaante/dape.git" :branch"master")
   :config
   (setq dape-buffer-window-arrangement 'right)
   (add-to-list 'dape-configs

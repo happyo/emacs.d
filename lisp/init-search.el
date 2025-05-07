@@ -129,7 +129,7 @@
 (use-package consult
   :ensure t
   :demand t
-  :vc (:url "https://github.com/minad/consult.git")
+  :vc (:url "https://github.com/minad/consult.git" :branch "main")
   ;; Replace bindings. Lazily loaded due by `use-package'.
   :bind (;; C-c bindings (mode-specific-map)
          ("C-c h" . consult-history)
@@ -273,7 +273,7 @@
 
 (use-package embark
   :ensure t
-  :vc (:url "https://github.com/oantolin/embark.git")
+  :vc (:url "https://github.com/oantolin/embark.git" :branch "master")
   :bind
   (("C-." . embark-act)         ;; pick some comfortable binding
    ("C-;" . embark-dwim)        ;; good alternative: M-.

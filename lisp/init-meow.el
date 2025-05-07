@@ -191,7 +191,7 @@
 (use-package meow
   :demand t
   :ensure t
-  :vc (:url "https://github.com/meow-edit/meow.git")
+  :vc (:url "https://github.com/meow-edit/meow.git" :branch "master")
   :custom
   (meow-selection-command-fallback '(
                                      (meow-change . meow-change-char)

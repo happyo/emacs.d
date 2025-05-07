@@ -21,7 +21,7 @@
   :ensure t
   :demand t
   :bind (("C-c g" . gptel-menu))
-  :vc (:url "https://github.com/karthink/gptel.git")
+  :vc (:url "https://github.com/karthink/gptel.git" :branch "master")
   :custom
   ;; (gptel-temperature 0.1)
   ;; (gptel-model "DeepSeek-R1")
