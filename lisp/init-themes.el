@@ -12,6 +12,20 @@
   (load-theme 'catppuccin :no-confirm)
   (setq catppuccin-flavor 'frappe) ;; or 'frappe, 'latte, 'macchiato, or 'mocha
   (catppuccin-reload)
+  (custom-set-faces
+   '(tab-bar-tab
+     ((t :inherit tab-bar-tab
+         :box (:line-width 6 :color "#3b3f50")
+         :height 1.1    
+         :overline nil 
+         :underline nil)))
+   '(tab-bar-tab-inactive
+     ((t :inherit tab-bar-tab-inactive
+         :box (:line-width 6 :color "#303446")
+         :height 1.1   
+         :overline nil 
+         :underline nil)))
+   )
   )
 
 (add-to-list 'load-path "~/.emacs.d/site-lisp/chinese-color")
