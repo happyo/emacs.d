@@ -26,6 +26,7 @@
   (gptel-default-mode 'org-mode)
   (gptel-org-branching-context t)
   :config
+  (setq gptel-log-level 'debug)
   (add-hook 'gptel-post-response-functions 'gptel-end-of-response)
   (setf (alist-get 'org-mode gptel-prompt-prefix-alist) "@user\n")
   (setf (alist-get 'org-mode gptel-response-prefix-alist) "@assistant\n")
@@ -179,7 +180,11 @@
   :config
   (setq mcp-hub-servers
         '(("fetch" . (:command "python3" :args ("-m" "mcp_server_fetch")))
-          ("filesystem" . (:command "npx" :args ("-y" "@modelcontextprotocol/server-filesystem" "~/developer")))))
+          
+          ("filesystem" . (:command "npx" :args ("-y" "@modelcontextprotocol/server-filesystem" "~/developer")))
+
+          ("weather" . (:command "python3" :args ("-m" "weather")))
+          ))
 
   (defun gptel-mcp-register-tool ()
     (interactive)
@@ -190,15 +195,34 @@
               tools)))
 
   ;; 激活所有 mcp 工具
-  (defun gptel-mcp-use-tool ()
-    (interactive)
-    (let ((tools (mcp-hub-get-all-tool :asyncp t :categoryp t)))
-      (mapcar #'(lambda (tool)
-                  (let ((path (list (plist-get tool :category)
-                                    (plist-get tool :name))))
-                    (push (gptel-get-tool path)
-                          gptel-tools)))
-              tools)))
+  ;; (defun gptel-mcp-use-tool ()
+  ;;   (interactive)
+  ;;   (let ((tools (mcp-hub-get-all-tool :asyncp t :categoryp t)))
+  ;;     (mapcar #'(lambda (tool)
+  ;;                 (let ((path (list (plist-get tool :category)
+  ;;                                   (plist-get tool :name))))
+  ;;                   (push (gptel-get-tool path)
+  ;;                         gptel-tools)))
+  ;;             tools)))
+
+  (defun gptel-mcp-register-tool ()
+  "Fetch tools from mcp-hub and register with gptel, ensuring all args have :description."
+  (interactive)
+  (let ((tools (mcp-hub-get-all-tool :asyncp t :categoryp t)))
+    (mapcar
+     (lambda (tool)
+       ;; 修复 tool 中每个 arg 缺少 description 的问题
+       (let* ((args (plist-get tool :args))
+              (fixed-args
+               (mapcar (lambda (arg)
+                         (if (plist-member arg :description)
+                             arg
+                           (plist-put arg :description "")))
+                       args)))
+         (apply #'gptel-make-tool
+                (plist-put tool :args fixed-args))))
+     tools)))
+
 
   ;; 关闭所有 mcp 工具
   (defun gptel-mcp-close-use-tool ()
