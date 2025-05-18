@@ -18,10 +18,8 @@
 
 
 (use-package gptel
-  :ensure t
-  :demand t
   :bind (("C-c g" . gptel-menu))
-  :vc (:url "https://github.com/karthink/gptel.git" :branch "master")
+  :vc (:url "https://github.com/karthink/gptel.git" :rev "v0.9.8")
   :custom
   ;; (gptel-temperature 0.1)
   ;; (gptel-model "DeepSeek-R1")
@@ -221,7 +219,7 @@
 (use-package copilot-chat
   :ensure t
   :demand t
-  :vc (:url "https://github.com/chep/copilot-chat.el.git" :branch "master")
+  :vc (:url "https://github.com/chep/copilot-chat.el.git" :rev "v2.0.1")
   :after (magit)
   :config
   (setq copilot-chat-commit-model "gpt-4.1")

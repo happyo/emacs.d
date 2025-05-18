@@ -1,4 +1,3 @@
-
 ;;; init-keybinding.el --- Global key binding -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:

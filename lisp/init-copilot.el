@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t -*-
 ;;; init-copilot.el --- Integrate copilot -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
@@ -20,7 +21,7 @@
     (indent-for-tab-command))))
 
 (use-package copilot
-  :vc (:url "https://github.com/copilot-emacs/copilot.el.git" :branch "main" :rev :newest)
+  :vc (:url "https://github.com/copilot-emacs/copilot.el.git" :rev "v0.2.0")
   :hook (prog-mode . copilot-mode)
   :config
   (setq copilot-version "1.290.0")
