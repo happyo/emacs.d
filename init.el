@@ -95,7 +95,7 @@
 ;; pip3 install epc orjson sexpdata six setuptools paramiko rapidfuzz, require markdown-mode, yasnippet
 (require 'init-lsp)
 ;; Need copilot-install-server and copilot-login
-;;(require 'init-copilot)
+(require 'init-copilot)
 (require 'init-gpt)
 
 ;; Language mode
@@ -110,7 +110,7 @@
 ;; (require 'init-haskell)
 (require 'init-web)
 ;; ;; (require 'init-scheme)
-;; (require 'init-dart)
+(require 'init-dart)
 ;; (if (needConda)
 ;;     (require 'init-python))
 (require 'init-swift)
