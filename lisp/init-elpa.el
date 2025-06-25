@@ -23,7 +23,8 @@
 ;; Initialize packages
 (setq package-native-compile t)
 (package-initialize)
-;; (package-refresh-contents)
+(unless package-archive-contents
+  (package-refresh-contents))
 
 ;; Setup `use-package'
 

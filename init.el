@@ -78,7 +78,7 @@
 (require 'init-themes)
 (require 'init-gui-frames)
 (require 'init-mode-line)
-(require 'init-translate)
+;; (require 'init-translate)
 ;; org
 (require 'init-org)
 (require 'init-denote)

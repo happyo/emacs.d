@@ -44,7 +44,6 @@
 (global-set-key (kbd "M-C-r") (lambda () (interactive) (transwin-inc)))
 
 (use-package ns-auto-titlebar
-  :demand t
   :config
   (when *is-a-mac* (ns-auto-titlebar-mode))
   )

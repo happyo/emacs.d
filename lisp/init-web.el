@@ -15,7 +15,7 @@
   (setq web-mode-indent-style 4)
   (setq indent-tabs-mode nil))
 
-(use-package typescript-ts-mode)
+;; (use-package tsx-ts-mode)
 
 (provide 'init-web)
 ;;; init-web.el ends here

@@ -22,6 +22,7 @@
     (treesit-install-language-grammar (car source))))
 
 (add-to-list 'auto-mode-alist '("\\.swift\\'" . swift-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . tsx-ts-mode))
 (add-to-list 'major-mode-remap-alist '(swift-mode . swift-ts-mode))
 (add-to-list 'major-mode-remap-alist '(python-mode . python-ts-mode))
 

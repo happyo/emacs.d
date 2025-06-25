@@ -3,6 +3,17 @@
 ;;; Commentary:
 ;;; Code:
 
+(use-package poly-markdown
+  :ensure t)
+
+(use-package request
+  :ensure t
+  :defer t)
+
+(use-package aio
+  :ensure t
+  :defer t)
+
 (use-package smerge-mode
   :ensure nil
   :hook (prog-mode . smerge-mode))
@@ -241,11 +252,10 @@
   )
 
 (use-package copilot-chat
-  :ensure t
-  :demand t
-  :vc (:url "https://github.com/chep/copilot-chat.el.git" :rev "v2.0.1")
+  :vc (:url "https://github.com/chep/copilot-chat.el.git" :rev :newest)
   :after (magit)
   :config
+  (setq copilot-chat-backend 'request)
   (setq copilot-chat-commit-model "gpt-4.1")
   (add-hook 'git-commit-setup-hook 'copilot-chat-insert-commit-message)
   )
