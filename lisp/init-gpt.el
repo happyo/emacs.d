@@ -30,7 +30,7 @@
 
 (use-package gptel
   :bind (("C-c g" . gptel-menu))
-  :vc (:url "https://github.com/karthink/gptel.git" :rev "v0.9.8")
+  :vc (:url "https://github.com/karthink/gptel.git" :rev :newest)
   :custom
   ;; (gptel-temperature 0.1)
   ;; (gptel-model "DeepSeek-R1")
