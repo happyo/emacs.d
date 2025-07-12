@@ -80,6 +80,17 @@
              :request "launch"
              :sourceMap (("." . "."))
              :cwd "."))
+(add-to-list 'dape-configs
+             `(flutter-ios
+               modes (dart-mode)
+               command "flutter"
+     command-args ("debug_adapter")
+     command-cwd dape-command-cwd
+     :type "dart"
+     :cwd "."
+     :program "lib/main.dart"
+     :toolArgs ["-d" "0BA964E1-117A-492F-A443-5FDBDF90A292"])
+               )
   ;; (setq dape--debug-on '(io info error std-server))
   ;; (add-to-list 'dape-configs
   ;;              `(debugpy
