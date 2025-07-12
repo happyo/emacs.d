@@ -256,8 +256,17 @@
   :after (magit)
   :config
   (setq copilot-chat-backend 'request)
-  (setq copilot-chat-commit-model "gpt-4.1")
+  (setq copilot-chat-commit-model "gpt-4o")
   (add-hook 'git-commit-setup-hook 'copilot-chat-insert-commit-message)
+  )
+
+(use-package claude-code
+  :defer t
+  :vc (:url "https://github.com/stevemolitor/claude-code.el" :rev :newest)
+  :bind-keymap ("C-c c" . claude-code-command-map)
+  :config
+  (setq claude-code-terminal-backend 'vterm)
+  (claude-code-mode)
   )
 
 (provide 'init-gpt)
