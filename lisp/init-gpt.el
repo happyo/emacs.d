@@ -44,12 +44,20 @@
   (setq gptel-display-buffer-action '((display-buffer-same-window)))
   (setq gptel-api-key (getenv "GITHUB_TOKEN"))
   (setq ds-api-key (getenv "DEEPSEEK_API_KEY"))
+  (setq work-api-key (getenv "DUIBA_API_KEY"))
   (gptel-make-openai "GithubModels"
     :host "models.inference.ai.azure.com"
     :endpoint "/chat/completions"
     :stream t
     :key gptel-api-key
     :models '("DeepSeek-R1")
+    )
+  (gptel-make-openai "WorkModels"
+    :host "api.zhizengzeng.com"
+    :endpoint "/v1/chat/completions"
+    :stream t
+    :key work-api-key
+    :models '("o3")
     )
   ;; (setq gptel-model 'DeepSeek-R1
   ;;     gptel-backend
@@ -191,7 +199,7 @@
   :config
   (setq mcp-hub-servers
         '(("fetch" . (:command "python3" :args ("-m" "mcp_server_fetch")))
-          
+
           ("filesystem" . (:command "npx" :args ("-y" "@modelcontextprotocol/server-filesystem" "~/developer")))
 
           ("weather" . (:command "python3" :args ("-m" "weather")))
