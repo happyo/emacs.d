@@ -24,7 +24,7 @@
   :vc (:url "https://github.com/copilot-emacs/copilot.el.git" :rev :newest)
   :hook (prog-mode . copilot-mode)
   :config
-  (setq copilot-version "1.323.0")
+  ;; (setq copilot-version "1.323.0")
   (define-key copilot-mode-map (kbd "<tab>") #'my/copilot-tab)
   ;; (define-key copilot-mode-map (kbd "s-<tab>") #'copilot-accept-completion-by-word)
   (define-key copilot-mode-map (kbd "M-e") #'copilot-accept-completion-by-word)
