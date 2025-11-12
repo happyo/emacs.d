@@ -17,6 +17,8 @@
     (exec-path-from-shell-copy-env "OPENAI_API_KEY")
     (exec-path-from-shell-copy-env "TAVILY_API_KEY")
     (exec-path-from-shell-copy-env "DUIBA_API_KEY")
+    (exec-path-from-shell-copy-env "ANTHROPIC_BASE_URL")
+    (exec-path-from-shell-copy-env "ANTHROPIC_AUTH_TOKEN")
     ))
 
 (provide 'init-exec-path)

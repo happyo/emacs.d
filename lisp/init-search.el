@@ -31,13 +31,22 @@
 
 
 (use-package vertico
-  :ensure t
-  :init
-  (vertico-mode)
+  :ensure nil
+  :demand t
+  :load-path "~/.emacs.d/site-lisp/vertico"
   :config
+  ;; Add extensions directory to load-path so extensions can be found
+  (add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp/vertico/extensions"))
+  ;; Enable vertico-mode - must be in :config to ensure package is loaded
+  (vertico-mode)
   (global-set-key (kbd "C-d") 'vertico-scroll-up)
   (global-set-key (kbd "C-u") 'vertico-scroll-down)
-  (setq completion-styles '(fussy substring partial-completion initials))
+  (setq completion-styles '(fussy substring partial-completion initials)))
+
+;; Enable vertico-mode after package is loaded
+;; (eval-after-load 'vertico
+;;   '(when (fboundp 'vertico-mode)
+;;      (vertico-mode)))
   ;; Different scroll margin
   ;; (setq vertico-scroll-margin 0)
 
@@ -51,18 +60,20 @@
 
   ;; (setq vertico-cycle t)
   ;; Persist history over Emacs restarts. Vertico sorts by history position.
-  )
 
 
 (use-package vertico-posframe
+  :after vertico
+  :ensure nil
+  :demand t
+  :load-path "~/.emacs.d/site-lisp/vertico-posframe"
   :custom
   (vertico-posframe-parameters
    '((left-fringe . 10)
      (right-fringe . 10)))
   (vertico-posframe-poshandler #'posframe-poshandler-frame-top-center)
-  :init
-  (vertico-posframe-mode 1)
-)
+  :config
+  (vertico-posframe-mode 1))
 
 (use-package savehist
   :init

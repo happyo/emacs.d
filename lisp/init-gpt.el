@@ -273,6 +273,7 @@
   :vc (:url "https://github.com/stevemolitor/claude-code.el" :rev :newest)
   :bind-keymap ("C-c c" . claude-code-command-map)
   :config
+  (setq claude-code-program-switches '("--dangerously-skip-permissions"))
   (setq claude-code-terminal-backend 'vterm)
   (claude-code-mode)
   )

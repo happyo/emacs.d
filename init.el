@@ -19,6 +19,7 @@
 
 (setq warning-minimum-level :error)
 (setq custom-file (expand-file-name "custom.el" user-emacs-directory))
+;; (setq custom-file nil)
 
 (load custom-file 'noerror 'nomessage)
 

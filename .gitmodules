@@ -22,3 +22,9 @@
 [submodule "site-lisp/svg-lib"]
 	path = site-lisp/svg-lib
 	url = git@github.com:happyo/svg-lib.git
+[submodule "site-lisp/vertico"]
+	path = site-lisp/vertico
+	url = https://github.com/minad/vertico.git
+[submodule "site-lisp/vertico-posframe"]
+	path = site-lisp/vertico-posframe
+	url = https://github.com/tumashu/vertico-posframe.git

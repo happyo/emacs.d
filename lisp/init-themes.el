@@ -14,14 +14,12 @@
   (catppuccin-reload)
   (custom-set-faces
    '(tab-bar-tab
-     ((t :inherit tab-bar-tab
-         :box (:line-width 6 :color "#3b3f50")
+     ((t :box (:line-width 6 :color "#3b3f50")
          :height 1.1    
          :overline nil 
          :underline nil)))
    '(tab-bar-tab-inactive
-     ((t :inherit tab-bar-tab-inactive
-         :box (:line-width 6 :color "#303446")
+     ((t :box (:line-width 6 :color "#303446")
          :height 1.1   
          :overline nil 
          :underline nil)))
