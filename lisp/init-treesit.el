@@ -5,6 +5,8 @@
 (require 'swift-ts-mode)
 
 (require 'treesit)
+(use-package treesit-fold
+  :hook (json-ts-mode . treesit-fold-mode))
 
 ;; (setq treesit-language-source-alist
 ;;       '((swift . ("https://github.com/alex-pinkus/tree-sitter-swift"  "main" "src"))))

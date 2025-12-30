@@ -263,20 +263,16 @@
   :vc (:url "https://github.com/chep/copilot-chat.el.git" :rev :newest)
   :after (magit)
   :config
-  (setq copilot-chat-backend 'request)
+  ;; (setq copilot-chat-backend 'request)
   (setq copilot-chat-commit-model "gpt-4o")
   (add-hook 'git-commit-setup-hook 'copilot-chat-insert-commit-message)
   )
 
-(use-package claude-code
-  :defer t
-  :vc (:url "https://github.com/stevemolitor/claude-code.el" :rev :newest)
-  :bind-keymap ("C-c c" . claude-code-command-map)
+(use-package claude-code-ide
+  :vc (:url "https://github.com/manzaltu/claude-code-ide.el" :rev :newest)
+  :bind ("C-c C-'" . claude-code-ide-menu) ; Set your favorite keybinding
   :config
-  (setq claude-code-program-switches '("--dangerously-skip-permissions"))
-  (setq claude-code-terminal-backend 'vterm)
-  (claude-code-mode)
-  )
+  (claude-code-ide-emacs-tools-setup)) ; Optionally enable Emacs MCP tools
 
 (provide 'init-gpt)
 ;;; init-gpt.el ends here

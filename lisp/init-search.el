@@ -203,6 +203,10 @@
   ;; You may want to use `embark-prefix-help-command' or which-key instead.
   ;; (define-key consult-narrow-map (vconcat consult-narrow-key "?") #'consult-narrow-help)
 
+  ;; Configure consult-history to sort by history (most recent first)
+  (consult-customize consult-history
+                      :sort 'vertico-sort-history-alpha)
+
   ;; By default `consult-project-function' uses `project-root' from project.el.
   ;; Optionally configure a different project root function.
   ;;;; 1. project.el (the default)

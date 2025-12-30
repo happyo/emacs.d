@@ -17,6 +17,8 @@
          (yas-active-snippets))
     (yas-next-field))
    ((copilot-accept-completion))
+   ((and (bound-and-true-p treesit-fold-mode)
+         (treesit-fold-toggle)))
    (t
     (indent-for-tab-command))))
 
