@@ -41,6 +41,9 @@
   (vertico-mode)
   (global-set-key (kbd "C-d") 'vertico-scroll-up)
   (global-set-key (kbd "C-u") 'vertico-scroll-down)
+  (require 'vertico-sort)
+  ;; Sort by history (most recent first), then by length and alpha
+  (setq vertico-sort-function #'vertico-sort-history-length-alpha)
   (setq completion-styles '(fussy substring partial-completion initials)))
 
 ;; Enable vertico-mode after package is loaded
