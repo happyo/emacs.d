@@ -180,5 +180,13 @@
                                       xref-find-definitions
                                       xref-find-references)))
 
+;; Better help system
+(use-package helpful
+  :bind (("C-h f" . helpful-callable)
+         ("C-h v" . helpful-variable)
+         ("C-h k" . helpful-key)
+         ("C-h x" . helpful-command)
+         ("C-c C-d" . helpful-at-point)))
+
 (provide 'init-editing-utils)
 ;;; init-editing-utils.el ends here

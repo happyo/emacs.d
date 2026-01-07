@@ -145,7 +145,7 @@
   ;; Replace bindings. Lazily loaded due by `use-package'.
   :bind (;; C-c bindings (mode-specific-map)
          ("C-c h" . consult-history)
-         ("M-f" . consult-ripgrep)
+         ("M-f" . my/consult-ripgrep-with-history)
          ("M-b" . consult-buffer)
          ("M-O" . consult-fd)
          :map isearch-mode-map
@@ -274,6 +274,14 @@
                                 (lambda (input)
                                   (consult--fd-builder input current-buffer))
                                 initial))))
+
+  ;; 带历史记录的 consult-ripgrep
+  (defun my/consult-ripgrep-with-history (&optional dir initial)
+    "调用 consult-ripgrep，默认填入上次搜索的内容。"
+    (interactive "P")
+    (let ((initial-input (or initial
+                             (car consult--grep-history))))
+      (consult-ripgrep dir initial-input)))
   )
 
 (use-package wgrep
