@@ -19,10 +19,17 @@
 ;; Official MELPA Mirror, in case necessary.
 ;; (add-to-list 'package-archives (cons "melpa-mirror" (concat proto "://www.mirrorservice.org/sites/melpa.org/packages/")) t)
 
-(setq use-package-vc-prefer-newest t)
+;; Don't try to upgrade :vc packages on every startup.
+;; This avoids network requests to elpa/melpa/nongnu and
+;; the "Package already installed. Override?" prompt from copilot.
+;; Use M-x package-vc-upgrade to upgrade manually when needed.
+(setq use-package-vc-prefer-newest nil)
+
 ;; Initialize packages
 (setq package-native-compile t)
 (package-initialize)
+
+;; Refresh package archive contents if not yet cached
 (unless package-archive-contents
   (package-refresh-contents))
 

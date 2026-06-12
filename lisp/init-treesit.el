@@ -5,7 +5,9 @@
 (require 'swift-ts-mode)
 
 (require 'treesit)
+;; treesit-fold is not on MELPA; install from GitHub via :vc.
 (use-package treesit-fold
+  :vc (:url "https://github.com/emacs-tree-sitter/treesit-fold.git" :rev :newest)
   :hook (json-ts-mode . treesit-fold-mode))
 
 ;; (setq treesit-language-source-alist

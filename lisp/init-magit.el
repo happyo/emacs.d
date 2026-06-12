@@ -2,11 +2,16 @@
 ;;; Commentary:
 ;;; Code:
 
+(use-package transient
+  :demand t)
+
 (use-package with-editor
-  :ensure t)
+  :demand t)
 
 (use-package magit
   :ensure t
+  :demand t
+  :after (transient with-editor)
   :bind ("M-m" . magit)
   :config
   (setq magit-status-buffer-switch-function 'switch-to-buffer)
@@ -19,3 +24,5 @@
 
 (provide 'init-magit)
 ;;; init-magit.el ends here
+
+

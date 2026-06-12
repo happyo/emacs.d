@@ -3,9 +3,10 @@
 ;;; Code:
 (require 'init-elpa)
 
-(require 'swift-mode)
-
-(setq swift-basic-offset 4)
+(use-package swift-mode
+  :defer t
+  :init
+  (setq swift-basic-offset 4))
 
 ;;(use-package ob-swift-enhanced
 ;;  :ensure nil

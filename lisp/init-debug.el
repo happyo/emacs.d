@@ -6,7 +6,7 @@
 (require 'swift-ts-mode)
 
 (use-package dape
-  :vc (:url "https://github.com/svaante/dape.git" :rev :newest)
+  ;; :vc (:url "https://github.com/svaante/dape.git" :rev :newest)
   :config
   (setq dape-buffer-window-arrangement 'right)
   (add-to-list 'dape-configs

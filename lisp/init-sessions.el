@@ -44,7 +44,7 @@
 
 ;; use-package with package.el:
 (use-package dashboard
-  :demand t
+  ;; :demand t
   :ensure t
   :hook (dashboard-mode . my-dashboard-setup)
   :config

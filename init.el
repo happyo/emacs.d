@@ -53,7 +53,7 @@
 (require 'init-projectile)
 
 ;; Need brew install cmake, brew install libtool
-(require 'init-xterm)
+;;(require 'init-xterm)
 
 (require 'init-search)
 (require 'init-keybinding)

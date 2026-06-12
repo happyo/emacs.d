@@ -6,7 +6,7 @@
 (use-package yasnippet
   :demand t
   :ensure t
-  :vc (:url "https://github.com/joaotavora/yasnippet.git" :rev "0.14.0")
+  ;; :vc (:url "https://github.com/joaotavora/yasnippet.git" :rev "0.14.0")
   :config
   (yas-global-mode 1)
   )

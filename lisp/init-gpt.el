@@ -19,18 +19,21 @@
   :hook (prog-mode . smerge-mode))
 
 (use-package plz
-  :ensure t
-  :demand t
+  ;; :ensure t
+  
+  ;; :demand t
   )
 (use-package shr
-  :ensure t
-  :demand t
+  ;; :ensure t
+  ;; :demand t
   )
 
 
 (use-package gptel
   :bind (("C-c g" . gptel-menu))
-  :vc (:url "https://github.com/karthink/gptel.git" :rev :newest)
+  ;; :vc (:url "https://github.com/karthink/gptel.git" :rev :newest)
+  :after
+  (plz shr)
   :custom
   ;; (gptel-temperature 0.1)
   ;; (gptel-model "DeepSeek-R1")
@@ -194,73 +197,73 @@
 ;;   ;; Securely load your API key (replace with your preferred method)
 ;;   (emigo-api-key (getenv "DEEPSEEK_API_KEY")))
 
-(use-package mcp-hub
-  :vc (:url "https://github.com/lizqwerscott/mcp.el.git")
-  :config
-  (setq mcp-hub-servers
-        '(("fetch" . (:command "python3" :args ("-m" "mcp_server_fetch")))
+;; (use-package mcp-hub
+;;   :vc (:url "https://github.com/lizqwerscott/mcp.el.git")
+;;   :config
+;;   (setq mcp-hub-servers
+;;         '(("fetch" . (:command "python3" :args ("-m" "mcp_server_fetch")))
 
-          ("filesystem" . (:command "npx" :args ("-y" "@modelcontextprotocol/server-filesystem" "~/developer")))
+;;           ("filesystem" . (:command "npx" :args ("-y" "@modelcontextprotocol/server-filesystem" "~/developer")))
 
-          ("weather" . (:command "python3" :args ("-m" "weather")))
-          ))
+;;           ("weather" . (:command "python3" :args ("-m" "weather")))
+;;           ))
 
-  (defun gptel-mcp-register-tool ()
-    (interactive)
-    (let ((tools (mcp-hub-get-all-tool :asyncp t :categoryp t)))
-      (mapcar #'(lambda (tool)
-                  (apply #'gptel-make-tool
-                         tool))
-              tools)))
+;;   (defun gptel-mcp-register-tool ()
+;;     (interactive)
+;;     (let ((tools (mcp-hub-get-all-tool :asyncp t :categoryp t)))
+;;       (mapcar #'(lambda (tool)
+;;                   (apply #'gptel-make-tool
+;;                          tool))
+;;               tools)))
 
-  ;; 激活所有 mcp 工具
-  ;; (defun gptel-mcp-use-tool ()
-  ;;   (interactive)
-  ;;   (let ((tools (mcp-hub-get-all-tool :asyncp t :categoryp t)))
-  ;;     (mapcar #'(lambda (tool)
-  ;;                 (let ((path (list (plist-get tool :category)
-  ;;                                   (plist-get tool :name))))
-  ;;                   (push (gptel-get-tool path)
-  ;;                         gptel-tools)))
-  ;;             tools)))
+;;   ;; 激活所有 mcp 工具
+;;   ;; (defun gptel-mcp-use-tool ()
+;;   ;;   (interactive)
+;;   ;;   (let ((tools (mcp-hub-get-all-tool :asyncp t :categoryp t)))
+;;   ;;     (mapcar #'(lambda (tool)
+;;   ;;                 (let ((path (list (plist-get tool :category)
+;;   ;;                                   (plist-get tool :name))))
+;;   ;;                   (push (gptel-get-tool path)
+;;   ;;                         gptel-tools)))
+;;   ;;             tools)))
 
-  (defun gptel-mcp-register-tool ()
-  "Fetch tools from mcp-hub and register with gptel, ensuring all args have :description."
-  (interactive)
-  (let ((tools (mcp-hub-get-all-tool :asyncp t :categoryp t)))
-    (mapcar
-     (lambda (tool)
-       ;; 修复 tool 中每个 arg 缺少 description 的问题
-       (let* ((args (plist-get tool :args))
-              (fixed-args
-               (mapcar (lambda (arg)
-                         (if (plist-member arg :description)
-                             arg
-                           (plist-put arg :description "")))
-                       args)))
-         (apply #'gptel-make-tool
-                (plist-put tool :args fixed-args))))
-     tools)))
+;;   (defun gptel-mcp-register-tool ()
+;;   "Fetch tools from mcp-hub and register with gptel, ensuring all args have :description."
+;;   (interactive)
+;;   (let ((tools (mcp-hub-get-all-tool :asyncp t :categoryp t)))
+;;     (mapcar
+;;      (lambda (tool)
+;;        ;; 修复 tool 中每个 arg 缺少 description 的问题
+;;        (let* ((args (plist-get tool :args))
+;;               (fixed-args
+;;                (mapcar (lambda (arg)
+;;                          (if (plist-member arg :description)
+;;                              arg
+;;                            (plist-put arg :description "")))
+;;                        args)))
+;;          (apply #'gptel-make-tool
+;;                 (plist-put tool :args fixed-args))))
+;;      tools)))
 
 
-  ;; 关闭所有 mcp 工具
-  (defun gptel-mcp-close-use-tool ()
-    (interactive)
-    (let ((tools (mcp-hub-get-all-tool :asyncp t :categoryp t)))
-      (mapcar #'(lambda (tool)
-                  (let ((path (list (plist-get tool :category)
-                                    (plist-get tool :name))))
-                    (setq gptel-tools
-                          (cl-remove-if #'(lambda (tool)
-                                            (equal path
-                                                   (list (gptel-tool-category tool)
-                                                         (gptel-tool-name tool))))
-                                        gptel-tools))))
-              tools)))
-  )
+;;   ;; 关闭所有 mcp 工具
+;;   (defun gptel-mcp-close-use-tool ()
+;;     (interactive)
+;;     (let ((tools (mcp-hub-get-all-tool :asyncp t :categoryp t)))
+;;       (mapcar #'(lambda (tool)
+;;                   (let ((path (list (plist-get tool :category)
+;;                                     (plist-get tool :name))))
+;;                     (setq gptel-tools
+;;                           (cl-remove-if #'(lambda (tool)
+;;                                             (equal path
+;;                                                    (list (gptel-tool-category tool)
+;;                                                          (gptel-tool-name tool))))
+;;                                         gptel-tools))))
+;;               tools)))
+;;   )
 
 (use-package copilot-chat
-  :vc (:url "https://github.com/chep/copilot-chat.el.git" :rev :newest)
+  ;; :vc (:url "https://github.com/chep/copilot-chat.el.git" :rev :newest)
   :after (magit)
   :config
   ;; (setq copilot-chat-backend 'request)
@@ -268,6 +271,9 @@
   (add-hook 'git-commit-setup-hook 'copilot-chat-insert-commit-message)
   )
 
+;; claude-code-ide is not on MELPA; install from GitHub via :vc.
+;; (:vc disables the ELPA :ensure, and only installs when the package
+;; is missing, so it won't contact melpa.org on every startup.)
 (use-package claude-code-ide
   :vc (:url "https://github.com/manzaltu/claude-code-ide.el" :rev :newest)
   :bind ("C-c C-'" . claude-code-ide-menu) ; Set your favorite keybinding

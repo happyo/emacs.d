@@ -31,13 +31,9 @@
 
 
 (use-package vertico
-  :ensure nil
   :demand t
-  :load-path "~/.emacs.d/site-lisp/vertico"
   :config
   ;; Add extensions directory to load-path so extensions can be found
-  (add-to-list 'load-path (expand-file-name "~/.emacs.d/site-lisp/vertico/extensions"))
-  ;; Enable vertico-mode - must be in :config to ensure package is loaded
   (vertico-mode)
   (global-set-key (kbd "C-d") 'vertico-scroll-up)
   (global-set-key (kbd "C-u") 'vertico-scroll-down)
@@ -66,10 +62,8 @@
 
 
 (use-package vertico-posframe
-  :after vertico
-  :ensure nil
   :demand t
-  :load-path "~/.emacs.d/site-lisp/vertico-posframe"
+  :after vertico
   :custom
   (vertico-posframe-parameters
    '((left-fringe . 10)
@@ -141,7 +135,7 @@
 (use-package consult
   :ensure t
   :demand t
-  :vc (:url "https://github.com/minad/consult.git" :branch "main")
+  ;; :vc (:url "https://github.com/minad/consult.git" :branch "main")
   ;; Replace bindings. Lazily loaded due by `use-package'.
   :bind (;; C-c bindings (mode-specific-map)
          ("C-c h" . consult-history)
@@ -297,7 +291,7 @@
 
 (use-package embark
   :ensure t
-  :vc (:url "https://github.com/oantolin/embark.git" :branch "master")
+  ;; :vc (:url "https://github.com/oantolin/embark.git" :branch "master")
   :bind
   (("C-." . embark-act)         ;; pick some comfortable binding
    ("C-;" . embark-dwim)        ;; good alternative: M-.
